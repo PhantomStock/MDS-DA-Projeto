@@ -4,7 +4,7 @@
 Seguindo a regra de que cada StoryPoint Representa 1 a 2 horas de Trabalho e usando a sequencia de fibonacci podemos atribuir SP ás tasks baseado na estimativa de tempo que completar a mesma deve demorar
 
 ## Métrica de Cores
-Roxo - Epics
-Azul - Tasks
-Verde - User Stories
+Roxo - Epics <br>
+Azul - Tasks <br>
+Verde - User Stories <br>
 Vermelho - Bugs
