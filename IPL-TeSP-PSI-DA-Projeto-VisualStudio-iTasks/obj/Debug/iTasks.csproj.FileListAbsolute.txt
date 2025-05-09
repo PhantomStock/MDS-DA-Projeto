@@ -1,0 +1,11 @@
+C:\Users\glamo\OneDrive - IPLeiria\Ambiente de Trabalho\ProjetoDA\PSI-DA-Wilson_Campos_2240115-Pedro_Pereira_2241606\IPL-TeSP-PSI-DA-Projeto-VisualStudio-iTasks\obj\Debug\iTasks.csproj.AssemblyReference.cache
+C:\Users\glamo\OneDrive - IPLeiria\Ambiente de Trabalho\ProjetoDA\PSI-DA-Wilson_Campos_2240115-Pedro_Pereira_2241606\IPL-TeSP-PSI-DA-Projeto-VisualStudio-iTasks\obj\Debug\iTasks.frmConsultarTarefasConcluidas.resources
+C:\Users\glamo\OneDrive - IPLeiria\Ambiente de Trabalho\ProjetoDA\PSI-DA-Wilson_Campos_2240115-Pedro_Pereira_2241606\IPL-TeSP-PSI-DA-Projeto-VisualStudio-iTasks\obj\Debug\iTasks.frmConsultaTarefasEmCurso.resources
+C:\Users\glamo\OneDrive - IPLeiria\Ambiente de Trabalho\ProjetoDA\PSI-DA-Wilson_Campos_2240115-Pedro_Pereira_2241606\IPL-TeSP-PSI-DA-Projeto-VisualStudio-iTasks\obj\Debug\iTasks.frmDetalhesTarefa.resources
+C:\Users\glamo\OneDrive - IPLeiria\Ambiente de Trabalho\ProjetoDA\PSI-DA-Wilson_Campos_2240115-Pedro_Pereira_2241606\IPL-TeSP-PSI-DA-Projeto-VisualStudio-iTasks\obj\Debug\iTasks.frmGereTiposTarefas.resources
+C:\Users\glamo\OneDrive - IPLeiria\Ambiente de Trabalho\ProjetoDA\PSI-DA-Wilson_Campos_2240115-Pedro_Pereira_2241606\IPL-TeSP-PSI-DA-Projeto-VisualStudio-iTasks\obj\Debug\iTasks.frmGereUtilizadores.resources
+C:\Users\glamo\OneDrive - IPLeiria\Ambiente de Trabalho\ProjetoDA\PSI-DA-Wilson_Campos_2240115-Pedro_Pereira_2241606\IPL-TeSP-PSI-DA-Projeto-VisualStudio-iTasks\obj\Debug\iTasks.frmKanban.resources
+C:\Users\glamo\OneDrive - IPLeiria\Ambiente de Trabalho\ProjetoDA\PSI-DA-Wilson_Campos_2240115-Pedro_Pereira_2241606\IPL-TeSP-PSI-DA-Projeto-VisualStudio-iTasks\obj\Debug\iTasks.frmLogin.resources
+C:\Users\glamo\OneDrive - IPLeiria\Ambiente de Trabalho\ProjetoDA\PSI-DA-Wilson_Campos_2240115-Pedro_Pereira_2241606\IPL-TeSP-PSI-DA-Projeto-VisualStudio-iTasks\obj\Debug\iTasks.Properties.Resources.resources
+C:\Users\glamo\OneDrive - IPLeiria\Ambiente de Trabalho\ProjetoDA\PSI-DA-Wilson_Campos_2240115-Pedro_Pereira_2241606\IPL-TeSP-PSI-DA-Projeto-VisualStudio-iTasks\obj\Debug\iTasks.csproj.GenerateResource.cache
+C:\Users\glamo\OneDrive - IPLeiria\Ambiente de Trabalho\ProjetoDA\PSI-DA-Wilson_Campos_2240115-Pedro_Pereira_2241606\IPL-TeSP-PSI-DA-Projeto-VisualStudio-iTasks\obj\Debug\iTasks.csproj.CoreCompileInputs.cache
