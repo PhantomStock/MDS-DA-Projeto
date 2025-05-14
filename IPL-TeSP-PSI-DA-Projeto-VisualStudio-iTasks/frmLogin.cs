@@ -1,4 +1,5 @@
-﻿using System;
+﻿using iTasks.DataBase;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,35 @@ namespace iTasks
         public frmLogin()
         {
             InitializeComponent();
+        }
+
+        private void btRegistar_Click(object sender, EventArgs e)
+        {
+            frmRegistar registar = new frmRegistar();
+            registar.Show();
+            this.Hide();
+        }
+        private void btLogin_Click(object sender, EventArgs e)
+        {
+            string username = txtUsername.Text;
+            string password = txtPassword.Text;
+
+            using (var db = new BaseDeDados())
+            {
+                var utilizador = db.Utilizadores
+                    .FirstOrDefault(u => u.Username == username && u.Password == password);
+
+                if (utilizador != null)
+                {
+                    MessageBox.Show("Login successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    // Example: new MainForm().Show(); this.Hide();
+                }
+                else
+                {
+                    MessageBox.Show("Invalid username or password.", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+
         }
     }
 }

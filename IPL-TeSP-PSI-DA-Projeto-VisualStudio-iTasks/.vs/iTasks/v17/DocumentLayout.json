@@ -1,34 +1,34 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "F:\\UNI\\Segundo Semestre\\DA - Desenvolvimento Aplica\u00E7\u00F5es\\Pr\u00E1tico\\Projeto DA\\MDS-DA-Projeto_Wilson_Campos-2240115_Pedro_Pereira-2241606\\IPL-TeSP-PSI-DA-Projeto-VisualStudio-iTasks\\",
+  "WorkspaceRootPath": "C:\\Users\\glamo\\OneDrive - IPLeiria\\Ambiente de Trabalho\\ProjetoDA\\PSI-DA-Wilson_Campos_2240115-Pedro_Pereira_2241606\\IPL-TeSP-PSI-DA-Projeto-VisualStudio-iTasks\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{40078359-763C-472D-9D7E-8C252267F6FC}|iTasks.csproj|f:\\uni\\segundo semestre\\da - desenvolvimento aplica\u00E7\u00F5es\\pr\u00E1tico\\projeto da\\mds-da-projeto_wilson_campos-2240115_pedro_pereira-2241606\\ipl-tesp-psi-da-projeto-visualstudio-itasks\\frmlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{40078359-763C-472D-9D7E-8C252267F6FC}|iTasks.csproj|solutionrelative:frmlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{40078359-763C-472D-9D7E-8C252267F6FC}|iTasks.csproj|f:\\uni\\segundo semestre\\da - desenvolvimento aplica\u00E7\u00F5es\\pr\u00E1tico\\projeto da\\mds-da-projeto_wilson_campos-2240115_pedro_pereira-2241606\\ipl-tesp-psi-da-projeto-visualstudio-itasks\\frmkanban.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{40078359-763C-472D-9D7E-8C252267F6FC}|iTasks.csproj|c:\\users\\glamo\\onedrive - ipleiria\\ambiente de trabalho\\projetoda\\psi-da-wilson_campos_2240115-pedro_pereira_2241606\\ipl-tesp-psi-da-projeto-visualstudio-itasks\\frmkanban.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{40078359-763C-472D-9D7E-8C252267F6FC}|iTasks.csproj|solutionrelative:frmkanban.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{40078359-763C-472D-9D7E-8C252267F6FC}|iTasks.csproj|f:\\uni\\segundo semestre\\da - desenvolvimento aplica\u00E7\u00F5es\\pr\u00E1tico\\projeto da\\mds-da-projeto_wilson_campos-2240115_pedro_pereira-2241606\\ipl-tesp-psi-da-projeto-visualstudio-itasks\\frmgereutilizadores.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{40078359-763C-472D-9D7E-8C252267F6FC}|iTasks.csproj|c:\\users\\glamo\\onedrive - ipleiria\\ambiente de trabalho\\projetoda\\psi-da-wilson_campos_2240115-pedro_pereira_2241606\\ipl-tesp-psi-da-projeto-visualstudio-itasks\\frmgereutilizadores.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{40078359-763C-472D-9D7E-8C252267F6FC}|iTasks.csproj|solutionrelative:frmgereutilizadores.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{40078359-763C-472D-9D7E-8C252267F6FC}|iTasks.csproj|f:\\uni\\segundo semestre\\da - desenvolvimento aplica\u00E7\u00F5es\\pr\u00E1tico\\projeto da\\mds-da-projeto_wilson_campos-2240115_pedro_pereira-2241606\\ipl-tesp-psi-da-projeto-visualstudio-itasks\\frmgeretipostarefas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{40078359-763C-472D-9D7E-8C252267F6FC}|iTasks.csproj|solutionrelative:frmgeretipostarefas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{40078359-763C-472D-9D7E-8C252267F6FC}|iTasks.csproj|c:\\users\\glamo\\onedrive - ipleiria\\ambiente de trabalho\\projetoda\\psi-da-wilson_campos_2240115-pedro_pereira_2241606\\ipl-tesp-psi-da-projeto-visualstudio-itasks\\frmlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{40078359-763C-472D-9D7E-8C252267F6FC}|iTasks.csproj|solutionrelative:frmlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{40078359-763C-472D-9D7E-8C252267F6FC}|iTasks.csproj|f:\\uni\\segundo semestre\\da - desenvolvimento aplica\u00E7\u00F5es\\pr\u00E1tico\\projeto da\\mds-da-projeto_wilson_campos-2240115_pedro_pereira-2241606\\ipl-tesp-psi-da-projeto-visualstudio-itasks\\frmdetalhestarefa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{40078359-763C-472D-9D7E-8C252267F6FC}|iTasks.csproj|solutionrelative:frmdetalhestarefa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{40078359-763C-472D-9D7E-8C252267F6FC}|iTasks.csproj|c:\\users\\glamo\\onedrive - ipleiria\\ambiente de trabalho\\projetoda\\psi-da-wilson_campos_2240115-pedro_pereira_2241606\\ipl-tesp-psi-da-projeto-visualstudio-itasks\\frmregistar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{40078359-763C-472D-9D7E-8C252267F6FC}|iTasks.csproj|solutionrelative:frmregistar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{40078359-763C-472D-9D7E-8C252267F6FC}|iTasks.csproj|f:\\uni\\segundo semestre\\da - desenvolvimento aplica\u00E7\u00F5es\\pr\u00E1tico\\projeto da\\mds-da-projeto_wilson_campos-2240115_pedro_pereira-2241606\\ipl-tesp-psi-da-projeto-visualstudio-itasks\\frmconsultatarefasemcurso.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{40078359-763C-472D-9D7E-8C252267F6FC}|iTasks.csproj|solutionrelative:frmconsultatarefasemcurso.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{40078359-763C-472D-9D7E-8C252267F6FC}|iTasks.csproj|c:\\users\\glamo\\onedrive - ipleiria\\ambiente de trabalho\\projetoda\\psi-da-wilson_campos_2240115-pedro_pereira_2241606\\ipl-tesp-psi-da-projeto-visualstudio-itasks\\frmlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{40078359-763C-472D-9D7E-8C252267F6FC}|iTasks.csproj|solutionrelative:frmlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{40078359-763C-472D-9D7E-8C252267F6FC}|iTasks.csproj|f:\\uni\\segundo semestre\\da - desenvolvimento aplica\u00E7\u00F5es\\pr\u00E1tico\\projeto da\\mds-da-projeto_wilson_campos-2240115_pedro_pereira-2241606\\ipl-tesp-psi-da-projeto-visualstudio-itasks\\frmconsultartarefasconcluidas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{40078359-763C-472D-9D7E-8C252267F6FC}|iTasks.csproj|solutionrelative:frmconsultartarefasconcluidas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{40078359-763C-472D-9D7E-8C252267F6FC}|iTasks.csproj|c:\\users\\glamo\\onedrive - ipleiria\\ambiente de trabalho\\projetoda\\psi-da-wilson_campos_2240115-pedro_pereira_2241606\\ipl-tesp-psi-da-projeto-visualstudio-itasks\\frmregistar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{40078359-763C-472D-9D7E-8C252267F6FC}|iTasks.csproj|solutionrelative:frmregistar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{40078359-763C-472D-9D7E-8C252267F6FC}|iTasks.csproj|c:\\users\\glamo\\onedrive - ipleiria\\ambiente de trabalho\\projetoda\\psi-da-wilson_campos_2240115-pedro_pereira_2241606\\ipl-tesp-psi-da-projeto-visualstudio-itasks\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{40078359-763C-472D-9D7E-8C252267F6FC}|iTasks.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,7 +38,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -50,87 +50,90 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "frmConsultarTarefasConcluidas.cs [Design]",
-              "DocumentMoniker": "F:\\UNI\\Segundo Semestre\\DA - Desenvolvimento Aplica\u00E7\u00F5es\\Pr\u00E1tico\\Projeto DA\\MDS-DA-Projeto_Wilson_Campos-2240115_Pedro_Pereira-2241606\\IPL-TeSP-PSI-DA-Projeto-VisualStudio-iTasks\\frmConsultarTarefasConcluidas.cs",
-              "RelativeDocumentMoniker": "frmConsultarTarefasConcluidas.cs",
-              "ToolTip": "F:\\UNI\\Segundo Semestre\\DA - Desenvolvimento Aplica\u00E7\u00F5es\\Pr\u00E1tico\\Projeto DA\\MDS-DA-Projeto_Wilson_Campos-2240115_Pedro_Pereira-2241606\\IPL-TeSP-PSI-DA-Projeto-VisualStudio-iTasks\\frmConsultarTarefasConcluidas.cs [Design]",
-              "RelativeToolTip": "frmConsultarTarefasConcluidas.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-12T13:31:00.331Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "frmConsultaTarefasEmCurso.cs [Design]",
-              "DocumentMoniker": "F:\\UNI\\Segundo Semestre\\DA - Desenvolvimento Aplica\u00E7\u00F5es\\Pr\u00E1tico\\Projeto DA\\MDS-DA-Projeto_Wilson_Campos-2240115_Pedro_Pereira-2241606\\IPL-TeSP-PSI-DA-Projeto-VisualStudio-iTasks\\frmConsultaTarefasEmCurso.cs",
-              "RelativeDocumentMoniker": "frmConsultaTarefasEmCurso.cs",
-              "ToolTip": "F:\\UNI\\Segundo Semestre\\DA - Desenvolvimento Aplica\u00E7\u00F5es\\Pr\u00E1tico\\Projeto DA\\MDS-DA-Projeto_Wilson_Campos-2240115_Pedro_Pereira-2241606\\IPL-TeSP-PSI-DA-Projeto-VisualStudio-iTasks\\frmConsultaTarefasEmCurso.cs [Design]",
-              "RelativeToolTip": "frmConsultaTarefasEmCurso.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-12T13:31:03.277Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "frmDetalhesTarefa.cs [Design]",
-              "DocumentMoniker": "F:\\UNI\\Segundo Semestre\\DA - Desenvolvimento Aplica\u00E7\u00F5es\\Pr\u00E1tico\\Projeto DA\\MDS-DA-Projeto_Wilson_Campos-2240115_Pedro_Pereira-2241606\\IPL-TeSP-PSI-DA-Projeto-VisualStudio-iTasks\\frmDetalhesTarefa.cs",
-              "RelativeDocumentMoniker": "frmDetalhesTarefa.cs",
-              "ToolTip": "F:\\UNI\\Segundo Semestre\\DA - Desenvolvimento Aplica\u00E7\u00F5es\\Pr\u00E1tico\\Projeto DA\\MDS-DA-Projeto_Wilson_Campos-2240115_Pedro_Pereira-2241606\\IPL-TeSP-PSI-DA-Projeto-VisualStudio-iTasks\\frmDetalhesTarefa.cs [Design]",
-              "RelativeToolTip": "frmDetalhesTarefa.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-12T13:31:05.383Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "frmGereTiposTarefas.cs [Design]",
-              "DocumentMoniker": "F:\\UNI\\Segundo Semestre\\DA - Desenvolvimento Aplica\u00E7\u00F5es\\Pr\u00E1tico\\Projeto DA\\MDS-DA-Projeto_Wilson_Campos-2240115_Pedro_Pereira-2241606\\IPL-TeSP-PSI-DA-Projeto-VisualStudio-iTasks\\frmGereTiposTarefas.cs",
-              "RelativeDocumentMoniker": "frmGereTiposTarefas.cs",
-              "ToolTip": "F:\\UNI\\Segundo Semestre\\DA - Desenvolvimento Aplica\u00E7\u00F5es\\Pr\u00E1tico\\Projeto DA\\MDS-DA-Projeto_Wilson_Campos-2240115_Pedro_Pereira-2241606\\IPL-TeSP-PSI-DA-Projeto-VisualStudio-iTasks\\frmGereTiposTarefas.cs [Design]",
-              "RelativeToolTip": "frmGereTiposTarefas.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-12T14:57:13.42Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "frmGereUtilizadores.cs [Design]",
-              "DocumentMoniker": "F:\\UNI\\Segundo Semestre\\DA - Desenvolvimento Aplica\u00E7\u00F5es\\Pr\u00E1tico\\Projeto DA\\MDS-DA-Projeto_Wilson_Campos-2240115_Pedro_Pereira-2241606\\IPL-TeSP-PSI-DA-Projeto-VisualStudio-iTasks\\frmGereUtilizadores.cs",
+              "DocumentMoniker": "C:\\Users\\glamo\\OneDrive - IPLeiria\\Ambiente de Trabalho\\ProjetoDA\\PSI-DA-Wilson_Campos_2240115-Pedro_Pereira_2241606\\IPL-TeSP-PSI-DA-Projeto-VisualStudio-iTasks\\frmGereUtilizadores.cs",
               "RelativeDocumentMoniker": "frmGereUtilizadores.cs",
-              "ToolTip": "F:\\UNI\\Segundo Semestre\\DA - Desenvolvimento Aplica\u00E7\u00F5es\\Pr\u00E1tico\\Projeto DA\\MDS-DA-Projeto_Wilson_Campos-2240115_Pedro_Pereira-2241606\\IPL-TeSP-PSI-DA-Projeto-VisualStudio-iTasks\\frmGereUtilizadores.cs [Design]",
+              "ToolTip": "C:\\Users\\glamo\\OneDrive - IPLeiria\\Ambiente de Trabalho\\ProjetoDA\\PSI-DA-Wilson_Campos_2240115-Pedro_Pereira_2241606\\IPL-TeSP-PSI-DA-Projeto-VisualStudio-iTasks\\frmGereUtilizadores.cs [Design]",
               "RelativeToolTip": "frmGereUtilizadores.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-12T14:57:14.045Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "frmKanban.cs [Design]",
-              "DocumentMoniker": "F:\\UNI\\Segundo Semestre\\DA - Desenvolvimento Aplica\u00E7\u00F5es\\Pr\u00E1tico\\Projeto DA\\MDS-DA-Projeto_Wilson_Campos-2240115_Pedro_Pereira-2241606\\IPL-TeSP-PSI-DA-Projeto-VisualStudio-iTasks\\frmKanban.cs",
-              "RelativeDocumentMoniker": "frmKanban.cs",
-              "ToolTip": "F:\\UNI\\Segundo Semestre\\DA - Desenvolvimento Aplica\u00E7\u00F5es\\Pr\u00E1tico\\Projeto DA\\MDS-DA-Projeto_Wilson_Campos-2240115_Pedro_Pereira-2241606\\IPL-TeSP-PSI-DA-Projeto-VisualStudio-iTasks\\frmKanban.cs [Design]",
-              "RelativeToolTip": "frmKanban.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-12T16:15:42.527Z",
+              "WhenOpened": "2025-05-14T12:51:45.692Z",
               "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "frmLogin.cs [Design]",
-              "DocumentMoniker": "F:\\UNI\\Segundo Semestre\\DA - Desenvolvimento Aplica\u00E7\u00F5es\\Pr\u00E1tico\\Projeto DA\\MDS-DA-Projeto_Wilson_Campos-2240115_Pedro_Pereira-2241606\\IPL-TeSP-PSI-DA-Projeto-VisualStudio-iTasks\\frmLogin.cs",
+              "Title": "frmKanban.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\glamo\\OneDrive - IPLeiria\\Ambiente de Trabalho\\ProjetoDA\\PSI-DA-Wilson_Campos_2240115-Pedro_Pereira_2241606\\IPL-TeSP-PSI-DA-Projeto-VisualStudio-iTasks\\frmKanban.cs",
+              "RelativeDocumentMoniker": "frmKanban.cs",
+              "ToolTip": "C:\\Users\\glamo\\OneDrive - IPLeiria\\Ambiente de Trabalho\\ProjetoDA\\PSI-DA-Wilson_Campos_2240115-Pedro_Pereira_2241606\\IPL-TeSP-PSI-DA-Projeto-VisualStudio-iTasks\\frmKanban.cs [Design]",
+              "RelativeToolTip": "frmKanban.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-14T12:51:31.97Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "frmRegistar.cs",
+              "DocumentMoniker": "C:\\Users\\glamo\\OneDrive - IPLeiria\\Ambiente de Trabalho\\ProjetoDA\\PSI-DA-Wilson_Campos_2240115-Pedro_Pereira_2241606\\IPL-TeSP-PSI-DA-Projeto-VisualStudio-iTasks\\frmRegistar.cs",
+              "RelativeDocumentMoniker": "frmRegistar.cs",
+              "ToolTip": "C:\\Users\\glamo\\OneDrive - IPLeiria\\Ambiente de Trabalho\\ProjetoDA\\PSI-DA-Wilson_Campos_2240115-Pedro_Pereira_2241606\\IPL-TeSP-PSI-DA-Projeto-VisualStudio-iTasks\\frmRegistar.cs",
+              "RelativeToolTip": "frmRegistar.cs",
+              "ViewState": "AgIAACEAAAAAAAAAAAAmwC4AAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-14T12:35:16.404Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "frmLogin.cs",
+              "DocumentMoniker": "C:\\Users\\glamo\\OneDrive - IPLeiria\\Ambiente de Trabalho\\ProjetoDA\\PSI-DA-Wilson_Campos_2240115-Pedro_Pereira_2241606\\IPL-TeSP-PSI-DA-Projeto-VisualStudio-iTasks\\frmLogin.cs",
               "RelativeDocumentMoniker": "frmLogin.cs",
-              "ToolTip": "F:\\UNI\\Segundo Semestre\\DA - Desenvolvimento Aplica\u00E7\u00F5es\\Pr\u00E1tico\\Projeto DA\\MDS-DA-Projeto_Wilson_Campos-2240115_Pedro_Pereira-2241606\\IPL-TeSP-PSI-DA-Projeto-VisualStudio-iTasks\\frmLogin.cs [Design]",
+              "ToolTip": "C:\\Users\\glamo\\OneDrive - IPLeiria\\Ambiente de Trabalho\\ProjetoDA\\PSI-DA-Wilson_Campos_2240115-Pedro_Pereira_2241606\\IPL-TeSP-PSI-DA-Projeto-VisualStudio-iTasks\\frmLogin.cs",
+              "RelativeToolTip": "frmLogin.cs",
+              "ViewState": "AgIAABwAAAAAAAAAAAAAwCAAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-14T11:15:48.134Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "frmRegistar.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\glamo\\OneDrive - IPLeiria\\Ambiente de Trabalho\\ProjetoDA\\PSI-DA-Wilson_Campos_2240115-Pedro_Pereira_2241606\\IPL-TeSP-PSI-DA-Projeto-VisualStudio-iTasks\\frmRegistar.cs",
+              "RelativeDocumentMoniker": "frmRegistar.cs",
+              "ToolTip": "C:\\Users\\glamo\\OneDrive - IPLeiria\\Ambiente de Trabalho\\ProjetoDA\\PSI-DA-Wilson_Campos_2240115-Pedro_Pereira_2241606\\IPL-TeSP-PSI-DA-Projeto-VisualStudio-iTasks\\frmRegistar.cs [Design]",
+              "RelativeToolTip": "frmRegistar.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-14T12:33:12.846Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "frmLogin.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\glamo\\OneDrive - IPLeiria\\Ambiente de Trabalho\\ProjetoDA\\PSI-DA-Wilson_Campos_2240115-Pedro_Pereira_2241606\\IPL-TeSP-PSI-DA-Projeto-VisualStudio-iTasks\\frmLogin.cs",
+              "RelativeDocumentMoniker": "frmLogin.cs",
+              "ToolTip": "C:\\Users\\glamo\\OneDrive - IPLeiria\\Ambiente de Trabalho\\ProjetoDA\\PSI-DA-Wilson_Campos_2240115-Pedro_Pereira_2241606\\IPL-TeSP-PSI-DA-Projeto-VisualStudio-iTasks\\frmLogin.cs [Design]",
               "RelativeToolTip": "frmLogin.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-12T16:15:44.729Z",
+              "WhenOpened": "2025-05-14T11:17:37.696Z",
               "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\glamo\\OneDrive - IPLeiria\\Ambiente de Trabalho\\ProjetoDA\\PSI-DA-Wilson_Campos_2240115-Pedro_Pereira_2241606\\IPL-TeSP-PSI-DA-Projeto-VisualStudio-iTasks\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\glamo\\OneDrive - IPLeiria\\Ambiente de Trabalho\\ProjetoDA\\PSI-DA-Wilson_Campos_2240115-Pedro_Pereira_2241606\\IPL-TeSP-PSI-DA-Projeto-VisualStudio-iTasks\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAkwBcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-14T11:21:43.432Z",
+              "EditorCaption": ""
             }
           ]
         }

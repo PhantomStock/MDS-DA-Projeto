@@ -56,7 +56,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataBase\BaseDeDados.cs" />
     <Compile Include="frmConsultarTarefasConcluidas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -99,6 +98,13 @@
     <Compile Include="frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmRegistar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRegistar.Designer.cs">
+      <DependentUpon>frmRegistar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\BaseDeDados.cs" />
     <Compile Include="Models\Gestor.cs" />
     <Compile Include="Models\Programador.cs" />
     <Compile Include="Models\Tarefa.cs" />
@@ -127,6 +133,9 @@
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmRegistar.resx">
+      <DependentUpon>frmRegistar.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -150,9 +159,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Models\models\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

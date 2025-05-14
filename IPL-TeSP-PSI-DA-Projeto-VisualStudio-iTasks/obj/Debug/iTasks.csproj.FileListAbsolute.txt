@@ -9,3 +9,14 @@ C:\Users\glamo\OneDrive - IPLeiria\Ambiente de Trabalho\ProjetoDA\PSI-DA-Wilson_
 C:\Users\glamo\OneDrive - IPLeiria\Ambiente de Trabalho\ProjetoDA\PSI-DA-Wilson_Campos_2240115-Pedro_Pereira_2241606\IPL-TeSP-PSI-DA-Projeto-VisualStudio-iTasks\obj\Debug\iTasks.Properties.Resources.resources
 C:\Users\glamo\OneDrive - IPLeiria\Ambiente de Trabalho\ProjetoDA\PSI-DA-Wilson_Campos_2240115-Pedro_Pereira_2241606\IPL-TeSP-PSI-DA-Projeto-VisualStudio-iTasks\obj\Debug\iTasks.csproj.GenerateResource.cache
 C:\Users\glamo\OneDrive - IPLeiria\Ambiente de Trabalho\ProjetoDA\PSI-DA-Wilson_Campos_2240115-Pedro_Pereira_2241606\IPL-TeSP-PSI-DA-Projeto-VisualStudio-iTasks\obj\Debug\iTasks.csproj.CoreCompileInputs.cache
+C:\Users\glamo\OneDrive - IPLeiria\Ambiente de Trabalho\ProjetoDA\PSI-DA-Wilson_Campos_2240115-Pedro_Pereira_2241606\IPL-TeSP-PSI-DA-Projeto-VisualStudio-iTasks\bin\Debug\iTasks.exe.config
+C:\Users\glamo\OneDrive - IPLeiria\Ambiente de Trabalho\ProjetoDA\PSI-DA-Wilson_Campos_2240115-Pedro_Pereira_2241606\IPL-TeSP-PSI-DA-Projeto-VisualStudio-iTasks\bin\Debug\iTasks.exe
+C:\Users\glamo\OneDrive - IPLeiria\Ambiente de Trabalho\ProjetoDA\PSI-DA-Wilson_Campos_2240115-Pedro_Pereira_2241606\IPL-TeSP-PSI-DA-Projeto-VisualStudio-iTasks\bin\Debug\iTasks.pdb
+C:\Users\glamo\OneDrive - IPLeiria\Ambiente de Trabalho\ProjetoDA\PSI-DA-Wilson_Campos_2240115-Pedro_Pereira_2241606\IPL-TeSP-PSI-DA-Projeto-VisualStudio-iTasks\bin\Debug\EntityFramework.dll
+C:\Users\glamo\OneDrive - IPLeiria\Ambiente de Trabalho\ProjetoDA\PSI-DA-Wilson_Campos_2240115-Pedro_Pereira_2241606\IPL-TeSP-PSI-DA-Projeto-VisualStudio-iTasks\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\glamo\OneDrive - IPLeiria\Ambiente de Trabalho\ProjetoDA\PSI-DA-Wilson_Campos_2240115-Pedro_Pereira_2241606\IPL-TeSP-PSI-DA-Projeto-VisualStudio-iTasks\bin\Debug\EntityFramework.xml
+C:\Users\glamo\OneDrive - IPLeiria\Ambiente de Trabalho\ProjetoDA\PSI-DA-Wilson_Campos_2240115-Pedro_Pereira_2241606\IPL-TeSP-PSI-DA-Projeto-VisualStudio-iTasks\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\glamo\OneDrive - IPLeiria\Ambiente de Trabalho\ProjetoDA\PSI-DA-Wilson_Campos_2240115-Pedro_Pereira_2241606\IPL-TeSP-PSI-DA-Projeto-VisualStudio-iTasks\obj\Debug\iTasks.csproj.Up2Date
+C:\Users\glamo\OneDrive - IPLeiria\Ambiente de Trabalho\ProjetoDA\PSI-DA-Wilson_Campos_2240115-Pedro_Pereira_2241606\IPL-TeSP-PSI-DA-Projeto-VisualStudio-iTasks\obj\Debug\iTasks.exe
+C:\Users\glamo\OneDrive - IPLeiria\Ambiente de Trabalho\ProjetoDA\PSI-DA-Wilson_Campos_2240115-Pedro_Pereira_2241606\IPL-TeSP-PSI-DA-Projeto-VisualStudio-iTasks\obj\Debug\iTasks.pdb
+C:\Users\glamo\OneDrive - IPLeiria\Ambiente de Trabalho\ProjetoDA\PSI-DA-Wilson_Campos_2240115-Pedro_Pereira_2241606\IPL-TeSP-PSI-DA-Projeto-VisualStudio-iTasks\obj\Debug\iTasks.frmRegistar.resources

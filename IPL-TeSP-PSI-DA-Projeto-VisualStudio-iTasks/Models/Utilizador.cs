@@ -7,15 +7,13 @@ using System.Threading.Tasks;
 
 namespace iTasks
 {
+
     class Utilizador
     {
         [Key] public int Id { get; set; }
         public string Nome { get; set; }
         public string Username { get; set; }
         public string Password { get; set; }
-        public string Tipo { get; set; }
-        // "Gestor" ou "Programador"
-
 
     }
 }
