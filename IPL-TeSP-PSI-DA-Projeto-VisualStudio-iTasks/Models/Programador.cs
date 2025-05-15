@@ -8,14 +8,14 @@ using System.Threading.Tasks;
 
 namespace iTasks
 {
+    public enum NivelExperiencia
+    {
+        Júnior = 0,
+        Sénior = 1
+    }
     class Programador : Utilizador
     {
-        [Key] public int Id { get; set; }
-        public string NivelExperiencia { get; set; }
-        // "Júnior", "Sénior"
-        public Gestor Gestor { get; set; }
-        public List<Tarefa> Tarefas { get; set; }
-        public int IdGestor { get; set; }
-        
+        public NivelExperiencia NivelExperiencia { get; set; }
+        public Gestor idGestor { get; set; }
     }
 }
