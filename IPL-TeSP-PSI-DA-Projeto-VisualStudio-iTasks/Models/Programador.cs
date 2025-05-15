@@ -10,18 +10,12 @@ namespace iTasks
 {
     public enum NivelExperiencia
     {
-        Júnior,
-        Sénior
+        Júnior = 0,
+        Sénior = 1
     }
     class Programador : Utilizador
     {
         public NivelExperiencia NivelExperiencia { get; set; }
-        // "Júnior", "Sénior"
-
-        //Foregeing Key (e necessario instanciar a um gestor e o entiy framework identifica a key)
-        public int IdGestor { get; set; }
-        public Gestor Gestor { get; set; }
-        public List<Tarefa> Tarefas { get; set; }
-
+        public Gestor idGestor { get; set; }
     }
 }
