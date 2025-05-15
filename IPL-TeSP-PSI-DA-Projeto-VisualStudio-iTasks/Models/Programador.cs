@@ -16,6 +16,19 @@ namespace iTasks
     class Programador : Utilizador
     {
         public NivelExperiencia NivelExperiencia { get; set; }
-        public Gestor idGestor { get; set; }
+        public int idGestor { get; set; }
+
+        public Programador() { }
+
+        public Programador(string nome, string username, string password, NivelExperiencia experiencia, int idGestor)
+        : base(nome, username, password)
+        {
+            this.NivelExperiencia = experiencia;
+            this.idGestor = idGestor;
+        }
+
+
+
+
     }
 }

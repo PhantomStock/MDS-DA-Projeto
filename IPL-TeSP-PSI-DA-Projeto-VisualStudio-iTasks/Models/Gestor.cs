@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace iTasks
 {
@@ -16,5 +17,22 @@ namespace iTasks
     {
         public Departamento Departamento { get; set; }
         public bool GereUtilizadores { get; set; }
+
+        public Gestor() { }
+        public Gestor (string nome, string username, string password, Departamento departamento,bool gereUtilizador) 
+        : base (nome, username, password)
+        {
+
+            this.Departamento = Departamento;
+            this.GereUtilizadores = GereUtilizadores;
+        }
+
+        public override string ToString()
+        {
+
+            return this.Username;
+        }
+
+
     }
 }

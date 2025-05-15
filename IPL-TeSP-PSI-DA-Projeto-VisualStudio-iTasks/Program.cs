@@ -17,19 +17,7 @@ namespace iTasks
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmLogin());
-
-            using (var db = new BaseDeDados())
-            {
-                var utilizador1 = new Utilizador
-                {
-                    Nome = "João",
-                    Username = "wil",
-                    Password = "1234",
-                };
-                db.Utilizadores.Add(utilizador1);
-                db.SaveChanges();
-            }
+            Application.Run(new frmLogin()); 
         }
     }
 }
