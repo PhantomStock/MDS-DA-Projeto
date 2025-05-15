@@ -1,4 +1,5 @@
-﻿using iTasks.DataBase;
+﻿using iTasks.Controllers;
+using iTasks.DataBase;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -26,18 +27,13 @@ namespace iTasks
             cbDepartamento.Items.Add(Departamento.Administração);
 
             //ComboBox Gestor Usernames
-            using (BaseDeDados db = new BaseDeDados())
-            {
-                //Query base de dados que atribui o nome de todos os gerentes
-                var gestorUsername = db.Gestores
-                .ToList();
+            ControllerRegistar controller = new ControllerRegistar();
+            var gestores = controller.ObterGestores();
 
-                //Faz o foreach da base de dados relacioando o id com username
-                foreach (var GestorNome in gestorUsername) {
+            //Faz o foreach da base de dados relacioando o id com username
+            foreach (var GestorNome in gestores) {
                     cbGestor.Items.Add(GestorNome);
-                }
             }
-
         }
 
         private void btRegistar_Click(object sender, EventArgs e)
@@ -75,27 +71,19 @@ namespace iTasks
                 {
                     if (password == confirmarPass)
                     {
+                        ControllerRegistar novoRegisto = new ControllerRegistar();
+
                         if (rbUtilizadorComum.Checked)
                         {
-                            var utilizador = new Utilizador(nome, username, password);
-                            db.Utilizadores.Add(utilizador);
-                            db.SaveChanges();
+                            novoRegisto.RegistarUtilizador(nome, username, password);
 
-                            MessageBox.Show("Utilizador registado com sucesso", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }else if (rbProgramador.Checked)
                         {
-
-                            var programador = new Programador(nome, username, password, experiencia, Gestor.Id);
-                            db.Programadores.Add(programador);
-                            db.SaveChanges();
-                            MessageBox.Show("Programador registado com sucesso", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            novoRegisto.RegistarProgramador(nome, username, password, experiencia, Gestor.Id);
                         }
                         else if(rbGestor.Checked)
                         {
-                            var gestor = new Gestor(nome, username, password, departamento, gereUtilizadores);
-                            db.Gestores.Add(gestor);
-                            db.SaveChanges();
-                            MessageBox.Show("Gestor registado com sucesso", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            novoRegisto.RegistarGestor(nome, username, password, departamento, gereUtilizadores);
                         }
                     }
                     else
