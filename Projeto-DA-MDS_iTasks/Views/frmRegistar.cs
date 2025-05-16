@@ -17,23 +17,12 @@ namespace iTasks
         public frmRegistar()
         {
             InitializeComponent();
-            //ComboBox Expericencia
-            cbExperiencia.Items.Add(NivelExperiencia.Júnior);
-            cbExperiencia.Items.Add(NivelExperiencia.Sénior);
-
-            //ComboBox Departamento
-            cbDepartamento.Items.Add(Departamento.IT);
-            cbDepartamento.Items.Add(Departamento.Marketing);
-            cbDepartamento.Items.Add(Departamento.Administração);
-
-            //ComboBox Gestor Usernames
+            //Intanciar o Controller
             ControllerRegistar controller = new ControllerRegistar();
-            var gestores = controller.ObterGestores();
 
-            //Faz o foreach da base de dados relacioando o id com username
-            foreach (var GestorNome in gestores) {
-                    cbGestor.Items.Add(GestorNome);
-            }
+            //Realiza o Setup das ComboBoxes
+            controller.SetupRegistar(cbExperiencia, cbDepartamento, cbGestor);
+
         }
 
         private void btRegistar_Click(object sender, EventArgs e)
@@ -50,18 +39,14 @@ namespace iTasks
             //Variaveis Base para o programador
             NivelExperiencia experiencia = (NivelExperiencia)cbExperiencia.SelectedIndex;
 
-            //Variavel Base Gestor
+            //Variavel Base Programador
             Departamento departamento = (Departamento)cbDepartamento.SelectedIndex;
-
             bool gereUtilizadores = cbxGereUtilizadores.Checked;
+
+            //Variavel Gestor
 
             Gestor Gestor = (Gestor)cbGestor.SelectedItem;
             
-
-
-
-
-
             using (var db = new BaseDeDados())
             {
                 var user = db.Utilizadores
@@ -88,7 +73,7 @@ namespace iTasks
                     }
                     else
                     {
-                        MessageBox.Show("As password não condizem", "Registo Falhou", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("As passwords não condizem", "Registo Falhou", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 else
@@ -107,19 +92,6 @@ namespace iTasks
             this.Hide();
 
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
         //Radio Buttons Check
         private void rbProgramador_CheckedChanged(object sender, EventArgs e)

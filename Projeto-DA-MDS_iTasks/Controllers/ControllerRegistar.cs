@@ -12,6 +12,28 @@ namespace iTasks.Controllers
 {
     class ControllerRegistar
     {
+        public void SetupRegistar(ComboBox cbExperiencia, ComboBox cbDepartamento, ComboBox cbGestor)
+        {
+            using (var db = new BaseDeDados())
+            {
+                var gestores = db.Gestores.ToList();
+
+                foreach (var GestorNome in gestores)
+                {
+                    cbGestor.Items.Add(GestorNome);
+                }
+            }
+
+            //ComboBox Expericencia
+            cbExperiencia.Items.Add(NivelExperiencia.Júnior);
+            cbExperiencia.Items.Add(NivelExperiencia.Sénior);
+
+            //ComboBox Departamento
+            cbDepartamento.Items.Add(Departamento.IT);
+            cbDepartamento.Items.Add(Departamento.Marketing);
+            cbDepartamento.Items.Add(Departamento.Administração);
+        }
+
 
         public void RegistarUtilizador(string nome, string username, string password)
         {
@@ -71,7 +93,7 @@ namespace iTasks.Controllers
             }
         }
         //Query base de dados que atribui o nome de todos os gerentes
-        public List<Gestor> ObterGestores() 
+        public List<Gestor> ObterGestores()
         {
             using (var db = new BaseDeDados()) 
             {
