@@ -36,8 +36,10 @@ namespace iTasks
 
                 if (utilizador != null)
                 {
+                    
                     MessageBox.Show("Login successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    // Example: new MainForm().Show(); this.Hide();
+                    new frmKanban().Show();
+                    this.Hide();
                 }
                 else
                 {
