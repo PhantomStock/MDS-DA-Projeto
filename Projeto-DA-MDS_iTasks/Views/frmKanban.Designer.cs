@@ -50,6 +50,8 @@
             this.btNova = new System.Windows.Forms.Button();
             this.labelNomeUtilizador = new System.Windows.Forms.Label();
             this.btPrevisao = new System.Windows.Forms.Button();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -152,12 +154,14 @@
             this.sairToolStripMenuItem.Name = "sairToolStripMenuItem";
             this.sairToolStripMenuItem.Size = new System.Drawing.Size(338, 26);
             this.sairToolStripMenuItem.Text = "Sair";
+            this.sairToolStripMenuItem.Click += new System.EventHandler(this.sairToolStripMenuItem_Click);
             // 
             // exportarParaCSVToolStripMenuItem
             // 
             this.exportarParaCSVToolStripMenuItem.Name = "exportarParaCSVToolStripMenuItem";
             this.exportarParaCSVToolStripMenuItem.Size = new System.Drawing.Size(338, 26);
             this.exportarParaCSVToolStripMenuItem.Text = "Exportar Tarefas Concluídas para CSV";
+            this.exportarParaCSVToolStripMenuItem.Click += new System.EventHandler(this.exportarParaCSVToolStripMenuItem_Click);
             // 
             // utilizadoresToolStripMenuItem
             // 
@@ -173,12 +177,14 @@
             this.gerirUtilizadoresToolStripMenuItem.Name = "gerirUtilizadoresToolStripMenuItem";
             this.gerirUtilizadoresToolStripMenuItem.Size = new System.Drawing.Size(235, 26);
             this.gerirUtilizadoresToolStripMenuItem.Text = "Gerir Utilizadores";
+            this.gerirUtilizadoresToolStripMenuItem.Click += new System.EventHandler(this.gerirUtilizadoresToolStripMenuItem_Click);
             // 
             // gerirTiposDeTarefasToolStripMenuItem
             // 
             this.gerirTiposDeTarefasToolStripMenuItem.Name = "gerirTiposDeTarefasToolStripMenuItem";
             this.gerirTiposDeTarefasToolStripMenuItem.Size = new System.Drawing.Size(235, 26);
             this.gerirTiposDeTarefasToolStripMenuItem.Text = "Gerir Tipos de Tarefas";
+            this.gerirTiposDeTarefasToolStripMenuItem.Click += new System.EventHandler(this.gerirTiposDeTarefasToolStripMenuItem_Click);
             // 
             // listagensToolStripMenuItem
             // 
@@ -192,14 +198,16 @@
             // tarefasTerminadasToolStripMenuItem
             // 
             this.tarefasTerminadasToolStripMenuItem.Name = "tarefasTerminadasToolStripMenuItem";
-            this.tarefasTerminadasToolStripMenuItem.Size = new System.Drawing.Size(214, 26);
+            this.tarefasTerminadasToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.tarefasTerminadasToolStripMenuItem.Text = "Tarefas Concluídas";
+            this.tarefasTerminadasToolStripMenuItem.Click += new System.EventHandler(this.tarefasTerminadasToolStripMenuItem_Click);
             // 
             // tarefasEmCursoToolStripMenuItem
             // 
             this.tarefasEmCursoToolStripMenuItem.Name = "tarefasEmCursoToolStripMenuItem";
-            this.tarefasEmCursoToolStripMenuItem.Size = new System.Drawing.Size(214, 26);
+            this.tarefasEmCursoToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.tarefasEmCursoToolStripMenuItem.Text = "Tarefas em Curso";
+            this.tarefasEmCursoToolStripMenuItem.Click += new System.EventHandler(this.tarefasEmCursoToolStripMenuItem_Click);
             // 
             // btSetDoing
             // 
@@ -261,6 +269,10 @@
             this.btPrevisao.Text = "Ver Previsão de Conclusão";
             this.btPrevisao.UseVisualStyleBackColor = true;
             // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
             // frmKanban
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -314,5 +326,7 @@
         private System.Windows.Forms.Button btNova;
         private System.Windows.Forms.Label labelNomeUtilizador;
         private System.Windows.Forms.Button btPrevisao;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }
