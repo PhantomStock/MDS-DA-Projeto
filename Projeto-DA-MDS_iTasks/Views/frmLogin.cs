@@ -38,7 +38,7 @@ namespace iTasks
                 {
                     
                     MessageBox.Show("Login successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    new frmKanban().Show();
+                    new frmKanban(utilizador.Id).Show();
                     this.Hide();
                 }
                 else

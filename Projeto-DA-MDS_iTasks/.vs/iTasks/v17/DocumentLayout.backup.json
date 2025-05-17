@@ -3,6 +3,22 @@
   "WorkspaceRootPath": "C:\\MDS-DA-Projeto\\Projeto-DA-MDS_iTasks\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{40078359-763C-472D-9D7E-8C252267F6FC}|iTasks.csproj|C:\\MDS-DA-Projeto\\Projeto-DA-MDS_iTasks\\views\\frmkanban.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{40078359-763C-472D-9D7E-8C252267F6FC}|iTasks.csproj|solutionrelative:views\\frmkanban.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{40078359-763C-472D-9D7E-8C252267F6FC}|iTasks.csproj|C:\\MDS-DA-Projeto\\Projeto-DA-MDS_iTasks\\views\\frmkanban.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{40078359-763C-472D-9D7E-8C252267F6FC}|iTasks.csproj|solutionrelative:views\\frmkanban.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{40078359-763C-472D-9D7E-8C252267F6FC}|iTasks.csproj|c:\\mds-da-projeto\\projeto-da-mds_itasks\\controllers\\controllerkanban.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{40078359-763C-472D-9D7E-8C252267F6FC}|iTasks.csproj|solutionrelative:controllers\\controllerkanban.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{40078359-763C-472D-9D7E-8C252267F6FC}|iTasks.csproj|C:\\MDS-DA-Projeto\\Projeto-DA-MDS_iTasks\\views\\frmregistar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{40078359-763C-472D-9D7E-8C252267F6FC}|iTasks.csproj|solutionrelative:views\\frmregistar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/iTasks.DataBase.BaseDeDados/True/SqlTable/dbo.Utilizadors.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
     },
     {
@@ -10,43 +26,31 @@
       "RelativeMoniker": "D:0:0:{40078359-763C-472D-9D7E-8C252267F6FC}|iTasks.csproj|solutionrelative:views\\frmlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{40078359-763C-472D-9D7E-8C252267F6FC}|iTasks.csproj|c:\\mds-da-projeto\\projeto-da-mds_itasks\\views\\frmkanban.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{40078359-763C-472D-9D7E-8C252267F6FC}|iTasks.csproj|solutionrelative:views\\frmkanban.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{40078359-763C-472D-9D7E-8C252267F6FC}|iTasks.csproj|C:\\MDS-DA-Projeto\\Projeto-DA-MDS_iTasks\\views\\frmlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{40078359-763C-472D-9D7E-8C252267F6FC}|iTasks.csproj|solutionrelative:views\\frmlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{40078359-763C-472D-9D7E-8C252267F6FC}|iTasks.csproj|C:\\MDS-DA-Projeto\\Projeto-DA-MDS_iTasks\\views\\frmregistar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{40078359-763C-472D-9D7E-8C252267F6FC}|iTasks.csproj|solutionrelative:views\\frmregistar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{40078359-763C-472D-9D7E-8C252267F6FC}|iTasks.csproj|c:\\mds-da-projeto\\projeto-da-mds_itasks\\views\\frmlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{40078359-763C-472D-9D7E-8C252267F6FC}|iTasks.csproj|solutionrelative:views\\frmlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{40078359-763C-472D-9D7E-8C252267F6FC}|iTasks.csproj|c:\\mds-da-projeto\\projeto-da-mds_itasks\\views\\frmregistar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{40078359-763C-472D-9D7E-8C252267F6FC}|iTasks.csproj|solutionrelative:views\\frmregistar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{40078359-763C-472D-9D7E-8C252267F6FC}|iTasks.csproj|c:\\mds-da-projeto\\projeto-da-mds_itasks\\views\\frmkanban.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{40078359-763C-472D-9D7E-8C252267F6FC}|iTasks.csproj|solutionrelative:views\\frmkanban.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{40078359-763C-472D-9D7E-8C252267F6FC}|iTasks.csproj|C:\\MDS-DA-Projeto\\Projeto-DA-MDS_iTasks\\models\\utilizador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{40078359-763C-472D-9D7E-8C252267F6FC}|iTasks.csproj|solutionrelative:models\\utilizador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{40078359-763C-472D-9D7E-8C252267F6FC}|iTasks.csproj|c:\\mds-da-projeto\\projeto-da-mds_itasks\\views\\frmdetalhestarefa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{40078359-763C-472D-9D7E-8C252267F6FC}|iTasks.csproj|C:\\MDS-DA-Projeto\\Projeto-DA-MDS_iTasks\\views\\frmdetalhestarefa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{40078359-763C-472D-9D7E-8C252267F6FC}|iTasks.csproj|solutionrelative:views\\frmdetalhestarefa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{40078359-763C-472D-9D7E-8C252267F6FC}|iTasks.csproj|c:\\mds-da-projeto\\projeto-da-mds_itasks\\views\\frmgeretipostarefas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{40078359-763C-472D-9D7E-8C252267F6FC}|iTasks.csproj|C:\\MDS-DA-Projeto\\Projeto-DA-MDS_iTasks\\views\\frmgeretipostarefas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{40078359-763C-472D-9D7E-8C252267F6FC}|iTasks.csproj|solutionrelative:views\\frmgeretipostarefas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{40078359-763C-472D-9D7E-8C252267F6FC}|iTasks.csproj|c:\\mds-da-projeto\\projeto-da-mds_itasks\\views\\frmgereutilizadores.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{40078359-763C-472D-9D7E-8C252267F6FC}|iTasks.csproj|C:\\MDS-DA-Projeto\\Projeto-DA-MDS_iTasks\\views\\frmgereutilizadores.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{40078359-763C-472D-9D7E-8C252267F6FC}|iTasks.csproj|solutionrelative:views\\frmgereutilizadores.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{40078359-763C-472D-9D7E-8C252267F6FC}|iTasks.csproj|c:\\mds-da-projeto\\projeto-da-mds_itasks\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{40078359-763C-472D-9D7E-8C252267F6FC}|iTasks.csproj|C:\\MDS-DA-Projeto\\Projeto-DA-MDS_iTasks\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{40078359-763C-472D-9D7E-8C252267F6FC}|iTasks.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -81,129 +85,21 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 3,
               "Title": "frmRegistar.cs",
               "DocumentMoniker": "C:\\MDS-DA-Projeto\\Projeto-DA-MDS_iTasks\\Views\\frmRegistar.cs",
               "RelativeDocumentMoniker": "Views\\frmRegistar.cs",
               "ToolTip": "C:\\MDS-DA-Projeto\\Projeto-DA-MDS_iTasks\\Views\\frmRegistar.cs",
               "RelativeToolTip": "Views\\frmRegistar.cs",
-              "ViewState": "AgIAAEcAAAAAAAAAAAAWwDQAAABBAAAAAAAAAA==",
+              "ViewState": "AgIAAE0AAAAAAAAAAAAWwDQAAABBAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-14T12:35:16.404Z",
               "IsPinned": true,
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "dbo.Utilizadors [Data]",
-              "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/iTasks.DataBase.BaseDeDados/True/SqlTable/dbo.Utilizadors.sql",
-              "ToolTip": "dbo.Utilizadors [Data]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
-              "WhenOpened": "2025-05-17T12:21:31.534Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "frmKanban.cs",
-              "DocumentMoniker": "C:\\MDS-DA-Projeto\\Projeto-DA-MDS_iTasks\\Views\\frmKanban.cs",
-              "RelativeDocumentMoniker": "Views\\frmKanban.cs",
-              "ToolTip": "C:\\MDS-DA-Projeto\\Projeto-DA-MDS_iTasks\\Views\\frmKanban.cs",
-              "RelativeToolTip": "Views\\frmKanban.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-17T12:19:05.444Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "frmLogin.cs",
-              "DocumentMoniker": "C:\\MDS-DA-Projeto\\Projeto-DA-MDS_iTasks\\Views\\frmLogin.cs",
-              "RelativeDocumentMoniker": "Views\\frmLogin.cs",
-              "ToolTip": "C:\\MDS-DA-Projeto\\Projeto-DA-MDS_iTasks\\Views\\frmLogin.cs",
-              "RelativeToolTip": "Views\\frmLogin.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAAQwCcAAABDAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-17T12:06:52.629Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "frmRegistar.cs [Design]",
-              "DocumentMoniker": "C:\\MDS-DA-Projeto\\Projeto-DA-MDS_iTasks\\Views\\frmRegistar.cs",
-              "RelativeDocumentMoniker": "Views\\frmRegistar.cs",
-              "ToolTip": "C:\\MDS-DA-Projeto\\Projeto-DA-MDS_iTasks\\Views\\frmRegistar.cs [Design]",
-              "RelativeToolTip": "Views\\frmRegistar.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-17T11:55:35.805Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "frmLogin.cs [Design]",
-              "DocumentMoniker": "C:\\MDS-DA-Projeto\\Projeto-DA-MDS_iTasks\\Views\\frmLogin.cs",
-              "RelativeDocumentMoniker": "Views\\frmLogin.cs",
-              "ToolTip": "C:\\MDS-DA-Projeto\\Projeto-DA-MDS_iTasks\\Views\\frmLogin.cs [Design]",
-              "RelativeToolTip": "Views\\frmLogin.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-17T12:17:57.815Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "frmDetalhesTarefa.cs [Design]",
-              "DocumentMoniker": "C:\\MDS-DA-Projeto\\Projeto-DA-MDS_iTasks\\Views\\frmDetalhesTarefa.cs",
-              "RelativeDocumentMoniker": "Views\\frmDetalhesTarefa.cs",
-              "ToolTip": "C:\\MDS-DA-Projeto\\Projeto-DA-MDS_iTasks\\Views\\frmDetalhesTarefa.cs [Design]",
-              "RelativeToolTip": "Views\\frmDetalhesTarefa.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-17T12:11:29.633Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "frmGereTiposTarefas.cs [Design]",
-              "DocumentMoniker": "C:\\MDS-DA-Projeto\\Projeto-DA-MDS_iTasks\\Views\\frmGereTiposTarefas.cs",
-              "RelativeDocumentMoniker": "Views\\frmGereTiposTarefas.cs",
-              "ToolTip": "C:\\MDS-DA-Projeto\\Projeto-DA-MDS_iTasks\\Views\\frmGereTiposTarefas.cs [Design]",
-              "RelativeToolTip": "Views\\frmGereTiposTarefas.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-17T12:11:15.807Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "frmGereUtilizadores.cs [Design]",
-              "DocumentMoniker": "C:\\MDS-DA-Projeto\\Projeto-DA-MDS_iTasks\\Views\\frmGereUtilizadores.cs",
-              "RelativeDocumentMoniker": "Views\\frmGereUtilizadores.cs",
-              "ToolTip": "C:\\MDS-DA-Projeto\\Projeto-DA-MDS_iTasks\\Views\\frmGereUtilizadores.cs [Design]",
-              "RelativeToolTip": "Views\\frmGereUtilizadores.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-17T12:09:52.933Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "frmKanban.cs [Design]",
-              "DocumentMoniker": "C:\\MDS-DA-Projeto\\Projeto-DA-MDS_iTasks\\Views\\frmKanban.cs",
-              "RelativeDocumentMoniker": "Views\\frmKanban.cs",
-              "ToolTip": "C:\\MDS-DA-Projeto\\Projeto-DA-MDS_iTasks\\Views\\frmKanban.cs [Design]",
-              "RelativeToolTip": "Views\\frmKanban.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-17T12:09:47.484Z",
-              "EditorCaption": " [Design]"
             },
             {
               "$type": "Bookmark",
@@ -215,7 +111,124 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "dbo.Utilizadors [Data]",
+              "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/iTasks.DataBase.BaseDeDados/True/SqlTable/dbo.Utilizadors.sql",
+              "ToolTip": "dbo.Utilizadors [Data]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2025-05-17T14:19:06.684Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ControllerKanban.cs",
+              "DocumentMoniker": "C:\\MDS-DA-Projeto\\Projeto-DA-MDS_iTasks\\Controllers\\ControllerKanban.cs",
+              "RelativeDocumentMoniker": "Controllers\\ControllerKanban.cs",
+              "ToolTip": "C:\\MDS-DA-Projeto\\Projeto-DA-MDS_iTasks\\Controllers\\ControllerKanban.cs",
+              "RelativeToolTip": "Controllers\\ControllerKanban.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-17T14:07:18.275Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "frmLogin.cs",
+              "DocumentMoniker": "C:\\MDS-DA-Projeto\\Projeto-DA-MDS_iTasks\\Views\\frmLogin.cs",
+              "RelativeDocumentMoniker": "Views\\frmLogin.cs",
+              "ToolTip": "C:\\MDS-DA-Projeto\\Projeto-DA-MDS_iTasks\\Views\\frmLogin.cs",
+              "RelativeToolTip": "Views\\frmLogin.cs",
+              "ViewState": "AgIAABoAAAAAAAAAAAA3wB8AAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-17T12:06:52.629Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "frmKanban.cs",
+              "DocumentMoniker": "C:\\MDS-DA-Projeto\\Projeto-DA-MDS_iTasks\\Views\\frmKanban.cs",
+              "RelativeDocumentMoniker": "Views\\frmKanban.cs",
+              "ToolTip": "C:\\MDS-DA-Projeto\\Projeto-DA-MDS_iTasks\\Views\\frmKanban.cs",
+              "RelativeToolTip": "Views\\frmKanban.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAqwBoAAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-17T12:19:05.444Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "frmKanban.cs [Design]",
+              "DocumentMoniker": "C:\\MDS-DA-Projeto\\Projeto-DA-MDS_iTasks\\Views\\frmKanban.cs",
+              "RelativeDocumentMoniker": "Views\\frmKanban.cs",
+              "ToolTip": "C:\\MDS-DA-Projeto\\Projeto-DA-MDS_iTasks\\Views\\frmKanban.cs [Design]",
+              "RelativeToolTip": "Views\\frmKanban.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-17T12:09:47.484Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "frmRegistar.cs [Design]",
+              "DocumentMoniker": "C:\\MDS-DA-Projeto\\Projeto-DA-MDS_iTasks\\Views\\frmRegistar.cs",
+              "RelativeDocumentMoniker": "Views\\frmRegistar.cs",
+              "ToolTip": "C:\\MDS-DA-Projeto\\Projeto-DA-MDS_iTasks\\Views\\frmRegistar.cs [Design]",
+              "RelativeToolTip": "Views\\frmRegistar.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-17T11:55:35.805Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "frmLogin.cs [Design]",
+              "DocumentMoniker": "C:\\MDS-DA-Projeto\\Projeto-DA-MDS_iTasks\\Views\\frmLogin.cs",
+              "RelativeDocumentMoniker": "Views\\frmLogin.cs",
+              "ToolTip": "C:\\MDS-DA-Projeto\\Projeto-DA-MDS_iTasks\\Views\\frmLogin.cs [Design]",
+              "RelativeToolTip": "Views\\frmLogin.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-17T12:17:57.815Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "frmDetalhesTarefa.cs [Design]",
+              "DocumentMoniker": "C:\\MDS-DA-Projeto\\Projeto-DA-MDS_iTasks\\Views\\frmDetalhesTarefa.cs",
+              "RelativeDocumentMoniker": "Views\\frmDetalhesTarefa.cs",
+              "ToolTip": "C:\\MDS-DA-Projeto\\Projeto-DA-MDS_iTasks\\Views\\frmDetalhesTarefa.cs [Design]",
+              "RelativeToolTip": "Views\\frmDetalhesTarefa.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-17T12:11:29.633Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "frmGereTiposTarefas.cs [Design]",
+              "DocumentMoniker": "C:\\MDS-DA-Projeto\\Projeto-DA-MDS_iTasks\\Views\\frmGereTiposTarefas.cs",
+              "RelativeDocumentMoniker": "Views\\frmGereTiposTarefas.cs",
+              "ToolTip": "C:\\MDS-DA-Projeto\\Projeto-DA-MDS_iTasks\\Views\\frmGereTiposTarefas.cs [Design]",
+              "RelativeToolTip": "Views\\frmGereTiposTarefas.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-17T12:11:15.807Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 11,
+              "Title": "frmGereUtilizadores.cs [Design]",
+              "DocumentMoniker": "C:\\MDS-DA-Projeto\\Projeto-DA-MDS_iTasks\\Views\\frmGereUtilizadores.cs",
+              "RelativeDocumentMoniker": "Views\\frmGereUtilizadores.cs",
+              "ToolTip": "C:\\MDS-DA-Projeto\\Projeto-DA-MDS_iTasks\\Views\\frmGereUtilizadores.cs [Design]",
+              "RelativeToolTip": "Views\\frmGereUtilizadores.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-17T12:09:52.933Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\MDS-DA-Projeto\\Projeto-DA-MDS_iTasks\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
@@ -223,12 +236,11 @@
               "RelativeToolTip": "Program.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-17T12:06:13.871Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-17T12:06:13.871Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 17,
               "Title": "TipoTarefa.cs",
               "DocumentMoniker": "C:\\MDS-DA-Projeto\\Projeto-DA-MDS_iTasks\\Models\\TipoTarefa.cs",
               "RelativeDocumentMoniker": "Models\\TipoTarefa.cs",
@@ -240,7 +252,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 13,
               "Title": "ControllerRegistar.cs",
               "DocumentMoniker": "C:\\MDS-DA-Projeto\\Projeto-DA-MDS_iTasks\\Controllers\\ControllerRegistar.cs",
               "RelativeDocumentMoniker": "Controllers\\ControllerRegistar.cs",
@@ -252,7 +264,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 16,
               "Title": "Tarefa.cs",
               "DocumentMoniker": "C:\\MDS-DA-Projeto\\Projeto-DA-MDS_iTasks\\Models\\Tarefa.cs",
               "RelativeDocumentMoniker": "Models\\Tarefa.cs",
@@ -264,7 +276,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "Utilizador.cs",
               "DocumentMoniker": "C:\\MDS-DA-Projeto\\Projeto-DA-MDS_iTasks\\Models\\Utilizador.cs",
               "RelativeDocumentMoniker": "Models\\Utilizador.cs",
@@ -272,12 +284,11 @@
               "RelativeToolTip": "Models\\Utilizador.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-15T12:30:01.421Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-15T12:30:01.421Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 15,
               "Title": "Programador.cs",
               "DocumentMoniker": "C:\\MDS-DA-Projeto\\Projeto-DA-MDS_iTasks\\Models\\Programador.cs",
               "RelativeDocumentMoniker": "Models\\Programador.cs",
@@ -289,7 +300,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 18,
               "Title": "Enums.cs",
               "DocumentMoniker": "C:\\MDS-DA-Projeto\\Projeto-DA-MDS_iTasks\\Models\\Enums.cs",
               "RelativeDocumentMoniker": "Models\\Enums.cs",
@@ -301,7 +312,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 14,
               "Title": "Gestor.cs",
               "DocumentMoniker": "C:\\MDS-DA-Projeto\\Projeto-DA-MDS_iTasks\\Models\\Gestor.cs",
               "RelativeDocumentMoniker": "Models\\Gestor.cs",
