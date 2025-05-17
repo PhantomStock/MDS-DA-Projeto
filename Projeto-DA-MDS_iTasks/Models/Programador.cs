@@ -5,14 +5,11 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static iTasks.Models.Enums;
 
 namespace iTasks
 {
-    public enum NivelExperiencia
-    {
-        Júnior = 0,
-        Sénior = 1
-    }
+    
     class Programador : Utilizador
     {
         public NivelExperiencia NivelExperiencia { get; set; }

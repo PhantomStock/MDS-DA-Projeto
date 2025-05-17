@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static iTasks.Models.Enums;
 
 namespace iTasks
 {
@@ -44,7 +45,6 @@ namespace iTasks
             bool gereUtilizadores = cbxGereUtilizadores.Checked;
 
             //Variavel Gestor
-
             Gestor Gestor = (Gestor)cbGestor.SelectedItem;
             
             using (var db = new BaseDeDados())

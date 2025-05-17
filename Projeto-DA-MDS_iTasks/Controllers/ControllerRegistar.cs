@@ -14,26 +14,26 @@ namespace iTasks.Controllers
     {
         public void SetupRegistar(ComboBox cbExperiencia, ComboBox cbDepartamento, ComboBox cbGestor)
         {
-            using (var db = new BaseDeDados())
-            {
-                var gestores = db.Gestores.ToList();
+            var gestores = ObterGestores();
 
-                foreach (var GestorNome in gestores)
-                {
-                    cbGestor.Items.Add(GestorNome);
-                }
+            foreach (var gestor in gestores)
+            {
+                cbGestor.Items.Add(gestor);
             }
 
-            //ComboBox Expericencia
-            cbExperiencia.Items.Add(NivelExperiencia.Júnior);
-            cbExperiencia.Items.Add(NivelExperiencia.Sénior);
+            // loop para percorrer os enums
+            //comboBox NivelExperiencia
+            foreach (NivelExperiencia nivel in Enum.GetValues(typeof(NivelExperiencia)))
+            {
+                cbExperiencia.Items.Add(nivel);
+            }
 
-            //ComboBox Departamento
-            cbDepartamento.Items.Add(Departamento.IT);
-            cbDepartamento.Items.Add(Departamento.Marketing);
-            cbDepartamento.Items.Add(Departamento.Administração);
+            // ComboBox Departamento
+            foreach (Departamento departamento in Enum.GetValues(typeof(Departamento)))
+            {
+                cbDepartamento.Items.Add(departamento);
+            }            
         }
-
 
         public void RegistarUtilizador(string nome, string username, string password)
         {
@@ -49,7 +49,6 @@ namespace iTasks.Controllers
                     db.SaveChanges();
 
                     MessageBox.Show("Utilizador registado com sucesso", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
                 }
             }
         }
@@ -63,15 +62,13 @@ namespace iTasks.Controllers
 
                 if (user == null)
                 {
-                    var programador = new Programador(nome, username, password,  experiencia, idGestor);
+                    var programador = new Programador(nome, username, password, experiencia, idGestor);
                     db.Utilizadores.Add(programador);
                     db.SaveChanges();
 
                     MessageBox.Show("Programador registado com sucesso", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
                 }
             }
-
         }
 
         public void RegistarGestor(string nome, string username, string password, Departamento departamento, bool gereUtilizadores)
@@ -88,18 +85,17 @@ namespace iTasks.Controllers
                     db.SaveChanges();
 
                     MessageBox.Show("Gestor registado com sucesso", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
                 }
             }
         }
-        //Query base de dados que atribui o nome de todos os gerentes
+
+        // Query base de dados que retorna todos os gestores
         public List<Gestor> ObterGestores()
         {
-            using (var db = new BaseDeDados()) 
+            using (var db = new BaseDeDados())
             {
                 return db.Gestores.ToList();
             }
-             
         }
     }
 }     

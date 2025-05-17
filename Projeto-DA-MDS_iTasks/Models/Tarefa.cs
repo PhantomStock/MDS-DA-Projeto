@@ -5,16 +5,11 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static iTasks.Models.Enums;
 
 namespace iTasks
 {
-    public enum EstadoAtual
-    {
-        ToDo = 0,
-        Doing = 1,
-        Done = 2
-    }
-    class Tarefa
+   class Tarefa
     {
         [Key] public int Id { get; set; }
         public Gestor idGestor { get; set; }
