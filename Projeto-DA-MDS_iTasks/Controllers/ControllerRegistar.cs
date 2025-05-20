@@ -12,28 +12,7 @@ namespace iTasks.Controllers
 {
     class ControllerRegistar
     {
-        public void SetupRegistar(ComboBox cbExperiencia, ComboBox cbDepartamento, ComboBox cbGestor)
-        {
-            var gestores = ObterGestores();
-
-            foreach (var gestor in gestores)
-            {
-                cbGestor.Items.Add(gestor);
-            }
-
-            // loop para percorrer os enums
-            //comboBox NivelExperiencia
-            foreach (NivelExperiencia nivel in Enum.GetValues(typeof(NivelExperiencia)))
-            {
-                cbExperiencia.Items.Add(nivel);
-            }
-
-            // ComboBox Departamento
-            foreach (Departamento departamento in Enum.GetValues(typeof(Departamento)))
-            {
-                cbDepartamento.Items.Add(departamento);
-            }            
-        }
+        BaseDeDados db;
 
         public void RegistarUtilizador(string nome, string username, string password)
         {

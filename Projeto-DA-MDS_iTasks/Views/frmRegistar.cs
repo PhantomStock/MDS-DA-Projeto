@@ -15,14 +15,33 @@ namespace iTasks
 {
     public partial class frmRegistar: Form
     {
+        BaseDeDados db;
         public frmRegistar()
         {
             InitializeComponent();
             //Intanciar o Controller
-            ControllerRegistar controller = new ControllerRegistar();
+            ControllerRegistar Controller = new ControllerRegistar();
 
             //Realiza o Setup das ComboBoxes
-            controller.SetupRegistar(cbExperiencia, cbDepartamento, cbGestor);
+            var gestores = Controller.ObterGestores();
+
+            foreach (var gestor in gestores)
+            {
+                cbGestor.Items.Add(gestor);
+            }
+
+            // loop para percorrer os enums
+            //comboBox NivelExperiencia
+            foreach (NivelExperiencia nivel in Enum.GetValues(typeof(NivelExperiencia)))
+            {
+                cbExperiencia.Items.Add(nivel);
+            }
+
+            // ComboBox Departamento
+            foreach (Departamento departamento in Enum.GetValues(typeof(Departamento)))
+            {
+                cbDepartamento.Items.Add(departamento);
+            }
 
         }
 

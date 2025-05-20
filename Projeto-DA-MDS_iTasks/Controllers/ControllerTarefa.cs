@@ -15,25 +15,22 @@ namespace iTasks.Controllers
 {
     class ControllerTarefa
     {
+        BaseDeDados db;
         public void CarregaOuCriaTarefa(int id)
         {
-            using (var db = new BaseDeDados())
+            var Tarefa = db.Tarefas
+                .Where(t => t.Id == id)
+                .FirstOrDefault();
+            if (Tarefa == null)
             {
-                var Tarefa = db.Tarefas
-                    .Where(t => t.Id == id)
-                    .FirstOrDefault();
-                if (Tarefa == null)
-                {
-                    //nova tarefa
-                    frmDetalhesTarefa frmDetalhesTarefa = new frmDetalhesTarefa(new Tarefa());
-                    frmDetalhesTarefa.Show();
-                } else
-                {
-                    //tarefa existente
-                    frmDetalhesTarefa frmDetalhesTarefa = new frmDetalhesTarefa(Tarefa);
-                    frmDetalhesTarefa.Show();
-                }
-                
+                //nova tarefa
+                frmDetalhesTarefa frmDetalhesTarefa = new frmDetalhesTarefa(new Tarefa());
+                frmDetalhesTarefa.Show();
+            } else
+            {
+                //tarefa existente
+                frmDetalhesTarefa frmDetalhesTarefa = new frmDetalhesTarefa(Tarefa);
+                frmDetalhesTarefa.Show();
             }
         }
     }
