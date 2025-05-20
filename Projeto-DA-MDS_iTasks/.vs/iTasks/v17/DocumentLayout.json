@@ -1,40 +1,7 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "F:\\UNI\\Segundo Semestre\\DA - Desenvolvimento Aplica\u00E7\u00F5es\\Pr\u00E1tico\\Projeto DA\\MDS-DA-Projeto_Wilson_Campos-2240115_Pedro_Pereira-2241606\\Projeto-DA-MDS_iTasks\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{40078359-763C-472D-9D7E-8C252267F6FC}|iTasks.csproj|f:\\uni\\segundo semestre\\da - desenvolvimento aplica\u00E7\u00F5es\\pr\u00E1tico\\projeto da\\mds-da-projeto_wilson_campos-2240115_pedro_pereira-2241606\\projeto-da-mds_itasks\\controllers\\controllerregistar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{40078359-763C-472D-9D7E-8C252267F6FC}|iTasks.csproj|solutionrelative:controllers\\controllerregistar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{40078359-763C-472D-9D7E-8C252267F6FC}|iTasks.csproj|F:\\UNI\\Segundo Semestre\\DA - Desenvolvimento Aplica\u00E7\u00F5es\\Pr\u00E1tico\\Projeto DA\\MDS-DA-Projeto_Wilson_Campos-2240115_Pedro_Pereira-2241606\\Projeto-DA-MDS_iTasks\\views\\frmdetalhestarefa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{40078359-763C-472D-9D7E-8C252267F6FC}|iTasks.csproj|solutionrelative:views\\frmdetalhestarefa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{40078359-763C-472D-9D7E-8C252267F6FC}|iTasks.csproj|F:\\UNI\\Segundo Semestre\\DA - Desenvolvimento Aplica\u00E7\u00F5es\\Pr\u00E1tico\\Projeto DA\\MDS-DA-Projeto_Wilson_Campos-2240115_Pedro_Pereira-2241606\\Projeto-DA-MDS_iTasks\\views\\frmdetalhestarefa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{40078359-763C-472D-9D7E-8C252267F6FC}|iTasks.csproj|solutionrelative:views\\frmdetalhestarefa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{40078359-763C-472D-9D7E-8C252267F6FC}|iTasks.csproj|F:\\UNI\\Segundo Semestre\\DA - Desenvolvimento Aplica\u00E7\u00F5es\\Pr\u00E1tico\\Projeto DA\\MDS-DA-Projeto_Wilson_Campos-2240115_Pedro_Pereira-2241606\\Projeto-DA-MDS_iTasks\\models\\utilizador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{40078359-763C-472D-9D7E-8C252267F6FC}|iTasks.csproj|solutionrelative:models\\utilizador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{40078359-763C-472D-9D7E-8C252267F6FC}|iTasks.csproj|F:\\UNI\\Segundo Semestre\\DA - Desenvolvimento Aplica\u00E7\u00F5es\\Pr\u00E1tico\\Projeto DA\\MDS-DA-Projeto_Wilson_Campos-2240115_Pedro_Pereira-2241606\\Projeto-DA-MDS_iTasks\\controllers\\controllertarefa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{40078359-763C-472D-9D7E-8C252267F6FC}|iTasks.csproj|solutionrelative:controllers\\controllertarefa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{40078359-763C-472D-9D7E-8C252267F6FC}|iTasks.csproj|F:\\UNI\\Segundo Semestre\\DA - Desenvolvimento Aplica\u00E7\u00F5es\\Pr\u00E1tico\\Projeto DA\\MDS-DA-Projeto_Wilson_Campos-2240115_Pedro_Pereira-2241606\\Projeto-DA-MDS_iTasks\\views\\frmkanban.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{40078359-763C-472D-9D7E-8C252267F6FC}|iTasks.csproj|solutionrelative:views\\frmkanban.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{40078359-763C-472D-9D7E-8C252267F6FC}|iTasks.csproj|F:\\UNI\\Segundo Semestre\\DA - Desenvolvimento Aplica\u00E7\u00F5es\\Pr\u00E1tico\\Projeto DA\\MDS-DA-Projeto_Wilson_Campos-2240115_Pedro_Pereira-2241606\\Projeto-DA-MDS_iTasks\\views\\frmkanban.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{40078359-763C-472D-9D7E-8C252267F6FC}|iTasks.csproj|solutionrelative:views\\frmkanban.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{40078359-763C-472D-9D7E-8C252267F6FC}|iTasks.csproj|F:\\UNI\\Segundo Semestre\\DA - Desenvolvimento Aplica\u00E7\u00F5es\\Pr\u00E1tico\\Projeto DA\\MDS-DA-Projeto_Wilson_Campos-2240115_Pedro_Pereira-2241606\\Projeto-DA-MDS_iTasks\\models\\tarefa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{40078359-763C-472D-9D7E-8C252267F6FC}|iTasks.csproj|solutionrelative:models\\tarefa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -42,7 +9,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": -1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -55,101 +22,6 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "frmKanban.cs [Design]",
-              "DocumentMoniker": "F:\\UNI\\Segundo Semestre\\DA - Desenvolvimento Aplica\u00E7\u00F5es\\Pr\u00E1tico\\Projeto DA\\MDS-DA-Projeto_Wilson_Campos-2240115_Pedro_Pereira-2241606\\Projeto-DA-MDS_iTasks\\Views\\frmKanban.cs",
-              "RelativeDocumentMoniker": "Views\\frmKanban.cs",
-              "ToolTip": "F:\\UNI\\Segundo Semestre\\DA - Desenvolvimento Aplica\u00E7\u00F5es\\Pr\u00E1tico\\Projeto DA\\MDS-DA-Projeto_Wilson_Campos-2240115_Pedro_Pereira-2241606\\Projeto-DA-MDS_iTasks\\Views\\frmKanban.cs [Design]",
-              "RelativeToolTip": "Views\\frmKanban.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-20T10:25:34.937Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ControllerRegistar.cs",
-              "DocumentMoniker": "F:\\UNI\\Segundo Semestre\\DA - Desenvolvimento Aplica\u00E7\u00F5es\\Pr\u00E1tico\\Projeto DA\\MDS-DA-Projeto_Wilson_Campos-2240115_Pedro_Pereira-2241606\\Projeto-DA-MDS_iTasks\\Controllers\\ControllerRegistar.cs",
-              "RelativeDocumentMoniker": "Controllers\\ControllerRegistar.cs",
-              "ToolTip": "F:\\UNI\\Segundo Semestre\\DA - Desenvolvimento Aplica\u00E7\u00F5es\\Pr\u00E1tico\\Projeto DA\\MDS-DA-Projeto_Wilson_Campos-2240115_Pedro_Pereira-2241606\\Projeto-DA-MDS_iTasks\\Controllers\\ControllerRegistar.cs",
-              "RelativeToolTip": "Controllers\\ControllerRegistar.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAABMAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-20T10:19:26.085Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "frmKanban.cs",
-              "DocumentMoniker": "F:\\UNI\\Segundo Semestre\\DA - Desenvolvimento Aplica\u00E7\u00F5es\\Pr\u00E1tico\\Projeto DA\\MDS-DA-Projeto_Wilson_Campos-2240115_Pedro_Pereira-2241606\\Projeto-DA-MDS_iTasks\\Views\\frmKanban.cs",
-              "RelativeDocumentMoniker": "Views\\frmKanban.cs",
-              "ToolTip": "F:\\UNI\\Segundo Semestre\\DA - Desenvolvimento Aplica\u00E7\u00F5es\\Pr\u00E1tico\\Projeto DA\\MDS-DA-Projeto_Wilson_Campos-2240115_Pedro_Pereira-2241606\\Projeto-DA-MDS_iTasks\\Views\\frmKanban.cs",
-              "RelativeToolTip": "Views\\frmKanban.cs",
-              "ViewState": "AgIAAE0AAAAAAAAAAAArwFsAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-20T10:17:28.758Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Tarefa.cs",
-              "DocumentMoniker": "F:\\UNI\\Segundo Semestre\\DA - Desenvolvimento Aplica\u00E7\u00F5es\\Pr\u00E1tico\\Projeto DA\\MDS-DA-Projeto_Wilson_Campos-2240115_Pedro_Pereira-2241606\\Projeto-DA-MDS_iTasks\\Models\\Tarefa.cs",
-              "RelativeDocumentMoniker": "Models\\Tarefa.cs",
-              "ToolTip": "F:\\UNI\\Segundo Semestre\\DA - Desenvolvimento Aplica\u00E7\u00F5es\\Pr\u00E1tico\\Projeto DA\\MDS-DA-Projeto_Wilson_Campos-2240115_Pedro_Pereira-2241606\\Projeto-DA-MDS_iTasks\\Models\\Tarefa.cs",
-              "RelativeToolTip": "Models\\Tarefa.cs",
-              "ViewState": "AgIAABgAAAAAAAAAAAA8wB0AAAAsAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-20T09:19:30.746Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Utilizador.cs",
-              "DocumentMoniker": "F:\\UNI\\Segundo Semestre\\DA - Desenvolvimento Aplica\u00E7\u00F5es\\Pr\u00E1tico\\Projeto DA\\MDS-DA-Projeto_Wilson_Campos-2240115_Pedro_Pereira-2241606\\Projeto-DA-MDS_iTasks\\Models\\Utilizador.cs",
-              "RelativeDocumentMoniker": "Models\\Utilizador.cs",
-              "ToolTip": "F:\\UNI\\Segundo Semestre\\DA - Desenvolvimento Aplica\u00E7\u00F5es\\Pr\u00E1tico\\Projeto DA\\MDS-DA-Projeto_Wilson_Campos-2240115_Pedro_Pereira-2241606\\Projeto-DA-MDS_iTasks\\Models\\Utilizador.cs",
-              "RelativeToolTip": "Models\\Utilizador.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-20T09:33:40.208Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "frmDetalhesTarefa.cs",
-              "DocumentMoniker": "F:\\UNI\\Segundo Semestre\\DA - Desenvolvimento Aplica\u00E7\u00F5es\\Pr\u00E1tico\\Projeto DA\\MDS-DA-Projeto_Wilson_Campos-2240115_Pedro_Pereira-2241606\\Projeto-DA-MDS_iTasks\\Views\\frmDetalhesTarefa.cs",
-              "RelativeDocumentMoniker": "Views\\frmDetalhesTarefa.cs",
-              "ToolTip": "F:\\UNI\\Segundo Semestre\\DA - Desenvolvimento Aplica\u00E7\u00F5es\\Pr\u00E1tico\\Projeto DA\\MDS-DA-Projeto_Wilson_Campos-2240115_Pedro_Pereira-2241606\\Projeto-DA-MDS_iTasks\\Views\\frmDetalhesTarefa.cs",
-              "RelativeToolTip": "Views\\frmDetalhesTarefa.cs",
-              "ViewState": "AgIAABcAAAAAAAAAAAA0wB4AAAAsAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-19T22:05:55.567Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "frmDetalhesTarefa.cs [Design]",
-              "DocumentMoniker": "F:\\UNI\\Segundo Semestre\\DA - Desenvolvimento Aplica\u00E7\u00F5es\\Pr\u00E1tico\\Projeto DA\\MDS-DA-Projeto_Wilson_Campos-2240115_Pedro_Pereira-2241606\\Projeto-DA-MDS_iTasks\\Views\\frmDetalhesTarefa.cs",
-              "RelativeDocumentMoniker": "Views\\frmDetalhesTarefa.cs",
-              "ToolTip": "F:\\UNI\\Segundo Semestre\\DA - Desenvolvimento Aplica\u00E7\u00F5es\\Pr\u00E1tico\\Projeto DA\\MDS-DA-Projeto_Wilson_Campos-2240115_Pedro_Pereira-2241606\\Projeto-DA-MDS_iTasks\\Views\\frmDetalhesTarefa.cs [Design]",
-              "RelativeToolTip": "Views\\frmDetalhesTarefa.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-19T22:05:52.286Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "ControllerTarefa.cs",
-              "DocumentMoniker": "F:\\UNI\\Segundo Semestre\\DA - Desenvolvimento Aplica\u00E7\u00F5es\\Pr\u00E1tico\\Projeto DA\\MDS-DA-Projeto_Wilson_Campos-2240115_Pedro_Pereira-2241606\\Projeto-DA-MDS_iTasks\\Controllers\\ControllerTarefa.cs",
-              "RelativeDocumentMoniker": "Controllers\\ControllerTarefa.cs",
-              "ToolTip": "F:\\UNI\\Segundo Semestre\\DA - Desenvolvimento Aplica\u00E7\u00F5es\\Pr\u00E1tico\\Projeto DA\\MDS-DA-Projeto_Wilson_Campos-2240115_Pedro_Pereira-2241606\\Projeto-DA-MDS_iTasks\\Controllers\\ControllerTarefa.cs",
-              "RelativeToolTip": "Controllers\\ControllerTarefa.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAAAawBMAAAATAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-19T18:34:17.978Z"
             }
           ]
         }
