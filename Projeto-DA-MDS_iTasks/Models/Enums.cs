@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace iTasks.Models
 {
-    class Enums
+    public class Enums
     {
         public enum Departamento
         {

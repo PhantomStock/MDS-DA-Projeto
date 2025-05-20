@@ -9,7 +9,7 @@ using static iTasks.Models.Enums;
 
 namespace iTasks
 {
-   class Tarefa
+    public class Tarefa
     {
         [Key] public int Id { get; set; }
         public Gestor idGestor { get; set; }
@@ -24,5 +24,28 @@ namespace iTasks
         public DateTime DataRealFim { get; set; }
         public DateTime DataCriacao { get; set; } = DateTime.Now;
         public EstadoAtual EstadoAtual { get; set; }
+
+        public Tarefa(){
+            this.EstadoAtual = EstadoAtual.ToDo;
+            this.DataCriacao = DateTime.Now;
+        }
+        public Tarefa(int id, Gestor idGestor, Programador idProgramador, int OrdemExecucao, string Descricao,
+            DateTime DataPrevistaInicio, DateTime DataPrevistaFim, TipoTarefa idTipoTarefa, int StoryPoints, DateTime DataRealInicio,
+            DateTime DataRealFim, DateTime DataCriacao, EstadoAtual EstadoAtual)
+        {
+            this.Id = id;
+            this.idGestor = idGestor;
+            this.IdProgramador = idProgramador;
+            this.OrdemExecucao = OrdemExecucao;
+            this.Descricao = Descricao;
+            this.DataPrevistaInicio = DataPrevistaInicio;
+            this.DataPrevistaFim = DataPrevistaFim;
+            this.IdTipoTarefa = idTipoTarefa;
+            this.StoryPoints = StoryPoints;
+            this.DataRealInicio = DataRealInicio;
+            this.DataRealFim = DataRealFim;
+            this.DataCriacao = DataCriacao;
+            this.EstadoAtual = EstadoAtual;
+        }
     }
 }

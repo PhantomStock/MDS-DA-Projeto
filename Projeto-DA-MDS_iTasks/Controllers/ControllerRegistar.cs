@@ -94,7 +94,7 @@ namespace iTasks.Controllers
         {
             using (var db = new BaseDeDados())
             {
-                return db.Gestores.ToList();
+                return db.Utilizadores.OfType<Gestor>().ToList();
             }
         }
     }

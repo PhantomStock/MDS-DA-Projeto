@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace iTasks
 {
-    class TipoTarefa
+    public class TipoTarefa
     {
         //Primary Key
         [Key] public int Id { get; set; }

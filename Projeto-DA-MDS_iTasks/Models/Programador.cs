@@ -10,7 +10,7 @@ using static iTasks.Models.Enums;
 namespace iTasks
 {
     
-    class Programador : Utilizador
+    public class Programador : Utilizador
     {
         public NivelExperiencia NivelExperiencia { get; set; }
         public int idGestor { get; set; }

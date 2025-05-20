@@ -64,3 +64,25 @@ C:\MDS-DA-Projeto\Projeto-DA-MDS_iTasks\obj\Debug\iTasks.csproj.CoreCompileInput
 C:\MDS-DA-Projeto\Projeto-DA-MDS_iTasks\obj\Debug\iTasks.csproj.Up2Date
 C:\MDS-DA-Projeto\Projeto-DA-MDS_iTasks\obj\Debug\iTasks.exe
 C:\MDS-DA-Projeto\Projeto-DA-MDS_iTasks\obj\Debug\iTasks.pdb
+F:\UNI\Segundo Semestre\DA - Desenvolvimento Aplicações\Prático\Projeto DA\MDS-DA-Projeto_Wilson_Campos-2240115_Pedro_Pereira-2241606\Projeto-DA-MDS_iTasks\obj\Debug\iTasks.csproj.AssemblyReference.cache
+F:\UNI\Segundo Semestre\DA - Desenvolvimento Aplicações\Prático\Projeto DA\MDS-DA-Projeto_Wilson_Campos-2240115_Pedro_Pereira-2241606\Projeto-DA-MDS_iTasks\obj\Debug\iTasks.frmConsultarTarefasConcluidas.resources
+F:\UNI\Segundo Semestre\DA - Desenvolvimento Aplicações\Prático\Projeto DA\MDS-DA-Projeto_Wilson_Campos-2240115_Pedro_Pereira-2241606\Projeto-DA-MDS_iTasks\obj\Debug\iTasks.frmConsultaTarefasEmCurso.resources
+F:\UNI\Segundo Semestre\DA - Desenvolvimento Aplicações\Prático\Projeto DA\MDS-DA-Projeto_Wilson_Campos-2240115_Pedro_Pereira-2241606\Projeto-DA-MDS_iTasks\obj\Debug\iTasks.frmDetalhesTarefa.resources
+F:\UNI\Segundo Semestre\DA - Desenvolvimento Aplicações\Prático\Projeto DA\MDS-DA-Projeto_Wilson_Campos-2240115_Pedro_Pereira-2241606\Projeto-DA-MDS_iTasks\obj\Debug\iTasks.frmGereTiposTarefas.resources
+F:\UNI\Segundo Semestre\DA - Desenvolvimento Aplicações\Prático\Projeto DA\MDS-DA-Projeto_Wilson_Campos-2240115_Pedro_Pereira-2241606\Projeto-DA-MDS_iTasks\obj\Debug\iTasks.frmGereUtilizadores.resources
+F:\UNI\Segundo Semestre\DA - Desenvolvimento Aplicações\Prático\Projeto DA\MDS-DA-Projeto_Wilson_Campos-2240115_Pedro_Pereira-2241606\Projeto-DA-MDS_iTasks\obj\Debug\iTasks.frmKanban.resources
+F:\UNI\Segundo Semestre\DA - Desenvolvimento Aplicações\Prático\Projeto DA\MDS-DA-Projeto_Wilson_Campos-2240115_Pedro_Pereira-2241606\Projeto-DA-MDS_iTasks\obj\Debug\iTasks.frmLogin.resources
+F:\UNI\Segundo Semestre\DA - Desenvolvimento Aplicações\Prático\Projeto DA\MDS-DA-Projeto_Wilson_Campos-2240115_Pedro_Pereira-2241606\Projeto-DA-MDS_iTasks\obj\Debug\iTasks.frmRegistar.resources
+F:\UNI\Segundo Semestre\DA - Desenvolvimento Aplicações\Prático\Projeto DA\MDS-DA-Projeto_Wilson_Campos-2240115_Pedro_Pereira-2241606\Projeto-DA-MDS_iTasks\obj\Debug\iTasks.Properties.Resources.resources
+F:\UNI\Segundo Semestre\DA - Desenvolvimento Aplicações\Prático\Projeto DA\MDS-DA-Projeto_Wilson_Campos-2240115_Pedro_Pereira-2241606\Projeto-DA-MDS_iTasks\obj\Debug\iTasks.csproj.GenerateResource.cache
+F:\UNI\Segundo Semestre\DA - Desenvolvimento Aplicações\Prático\Projeto DA\MDS-DA-Projeto_Wilson_Campos-2240115_Pedro_Pereira-2241606\Projeto-DA-MDS_iTasks\obj\Debug\iTasks.csproj.CoreCompileInputs.cache
+F:\UNI\Segundo Semestre\DA - Desenvolvimento Aplicações\Prático\Projeto DA\MDS-DA-Projeto_Wilson_Campos-2240115_Pedro_Pereira-2241606\Projeto-DA-MDS_iTasks\obj\Debug\iTasks.exe
+F:\UNI\Segundo Semestre\DA - Desenvolvimento Aplicações\Prático\Projeto DA\MDS-DA-Projeto_Wilson_Campos-2240115_Pedro_Pereira-2241606\Projeto-DA-MDS_iTasks\obj\Debug\iTasks.pdb
+F:\UNI\Segundo Semestre\DA - Desenvolvimento Aplicações\Prático\Projeto DA\MDS-DA-Projeto_Wilson_Campos-2240115_Pedro_Pereira-2241606\Projeto-DA-MDS_iTasks\bin\Debug\iTasks.exe.config
+F:\UNI\Segundo Semestre\DA - Desenvolvimento Aplicações\Prático\Projeto DA\MDS-DA-Projeto_Wilson_Campos-2240115_Pedro_Pereira-2241606\Projeto-DA-MDS_iTasks\bin\Debug\iTasks.exe
+F:\UNI\Segundo Semestre\DA - Desenvolvimento Aplicações\Prático\Projeto DA\MDS-DA-Projeto_Wilson_Campos-2240115_Pedro_Pereira-2241606\Projeto-DA-MDS_iTasks\bin\Debug\iTasks.pdb
+F:\UNI\Segundo Semestre\DA - Desenvolvimento Aplicações\Prático\Projeto DA\MDS-DA-Projeto_Wilson_Campos-2240115_Pedro_Pereira-2241606\Projeto-DA-MDS_iTasks\bin\Debug\EntityFramework.dll
+F:\UNI\Segundo Semestre\DA - Desenvolvimento Aplicações\Prático\Projeto DA\MDS-DA-Projeto_Wilson_Campos-2240115_Pedro_Pereira-2241606\Projeto-DA-MDS_iTasks\bin\Debug\EntityFramework.SqlServer.dll
+F:\UNI\Segundo Semestre\DA - Desenvolvimento Aplicações\Prático\Projeto DA\MDS-DA-Projeto_Wilson_Campos-2240115_Pedro_Pereira-2241606\Projeto-DA-MDS_iTasks\bin\Debug\EntityFramework.xml
+F:\UNI\Segundo Semestre\DA - Desenvolvimento Aplicações\Prático\Projeto DA\MDS-DA-Projeto_Wilson_Campos-2240115_Pedro_Pereira-2241606\Projeto-DA-MDS_iTasks\bin\Debug\EntityFramework.SqlServer.xml
+F:\UNI\Segundo Semestre\DA - Desenvolvimento Aplicações\Prático\Projeto DA\MDS-DA-Projeto_Wilson_Campos-2240115_Pedro_Pereira-2241606\Projeto-DA-MDS_iTasks\obj\Debug\iTasks.csproj.Up2Date

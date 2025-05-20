@@ -46,7 +46,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.txtDataRealini = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.txtdataRealFim = new System.Windows.Forms.TextBox();
+            this.txtDataRealFim = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.txtDataCriacao = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
@@ -207,22 +207,22 @@
             this.label9.TabIndex = 20;
             this.label9.Text = "Data Real de Início:";
             // 
-            // txtdataRealFim
+            // txtDataRealFim
             // 
-            this.txtdataRealFim.Location = new System.Drawing.Point(132, 68);
-            this.txtdataRealFim.Name = "txtdataRealFim";
-            this.txtdataRealFim.ReadOnly = true;
-            this.txtdataRealFim.Size = new System.Drawing.Size(135, 20);
-            this.txtdataRealFim.TabIndex = 23;
+            this.txtDataRealFim.Location = new System.Drawing.Point(132, 68);
+            this.txtDataRealFim.Name = "txtDataRealFim";
+            this.txtDataRealFim.ReadOnly = true;
+            this.txtDataRealFim.Size = new System.Drawing.Size(135, 20);
+            this.txtDataRealFim.TabIndex = 23;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(23, 71);
+            this.label10.Location = new System.Drawing.Point(33, 71);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(103, 13);
+            this.label10.Size = new System.Drawing.Size(92, 13);
             this.label10.TabIndex = 22;
-            this.label10.Text = "Data Real de Início:";
+            this.label10.Text = "Data Real de Fim:";
             // 
             // txtDataCriacao
             // 
@@ -304,7 +304,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.txtDataCriacao);
             this.Controls.Add(this.label11);
-            this.Controls.Add(this.txtdataRealFim);
+            this.Controls.Add(this.txtDataRealFim);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.txtDataRealini);
             this.Controls.Add(this.label9);
@@ -325,7 +325,8 @@
             this.Controls.Add(this.txtId);
             this.Controls.Add(this.label1);
             this.Name = "frmDetalhesTarefa";
-            this.Text = "frmDetalhesTarefa";
+            this.Text = "Tarefa";
+            this.Load += new System.EventHandler(this.frmDetalhesTarefa_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -351,7 +352,7 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtDataRealini;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox txtdataRealFim;
+        private System.Windows.Forms.TextBox txtDataRealFim;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox txtDataCriacao;
         private System.Windows.Forms.Label label11;

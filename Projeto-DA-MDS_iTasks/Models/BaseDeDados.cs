@@ -8,7 +8,7 @@ using System.Data.Entity;
 
 namespace iTasks.DataBase
 {
-    class BaseDeDados : DbContext
+    public class BaseDeDados : DbContext
     {
         public DbSet<Utilizador> Utilizadores { get; set; }
         public DbSet<Programador> Programadores { get; set; }
