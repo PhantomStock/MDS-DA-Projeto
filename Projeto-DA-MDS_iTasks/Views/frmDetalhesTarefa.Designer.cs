@@ -265,6 +265,7 @@
             this.btGravar.TabIndex = 28;
             this.btGravar.Text = "Gravar Dados";
             this.btGravar.UseVisualStyleBackColor = true;
+            this.btGravar.Click += new System.EventHandler(this.btGravar_Click);
             // 
             // btFechar
             // 
@@ -326,7 +327,6 @@
             this.Controls.Add(this.label1);
             this.Name = "frmDetalhesTarefa";
             this.Text = "Tarefa";
-            this.Load += new System.EventHandler(this.frmDetalhesTarefa_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

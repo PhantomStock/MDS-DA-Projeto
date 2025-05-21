@@ -20,10 +20,11 @@ namespace iTasks
         {
             InitializeComponent();
             //Intanciar o Controller
-            ControllerRegistar Controller = new ControllerRegistar();
+            ControllerDados Controller = new ControllerDados();
 
+            
             //Realiza o Setup das ComboBoxes
-            var gestores = Controller.ObterGestores();
+            var gestores = Controller.ObterTodosGestores();
 
             //Obter Gestores
             cbGestor.DataSource = null;

@@ -86,7 +86,31 @@ namespace iTasks
         private void btNova_Click(object sender, EventArgs e)
         {
             //chama o form para uma nova tarefa
-            new frmDetalhesTarefa().Show();
+            new frmDetalhesTarefa(-1).Show();
+        }
+
+        private void lstTodo_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            DoubleClickLst(lstTodo);
+        }
+
+        private void lstDoing_DoubleClick(object sender, EventArgs e)
+        {
+            DoubleClickLst(lstDoing);
+        }
+
+        private void lstDone_DoubleClick(object sender, EventArgs e)
+        {
+            DoubleClickLst(lstDone);
+        }
+
+        //evento para quando o utilizador seleciona uma tarefa para "abrir" com double click
+        private void DoubleClickLst(ListBox lb)
+        {
+            // Verifica se há um item selecionado
+            Tarefa tarefa = lb.SelectedItem as Tarefa;
+
+            new frmDetalhesTarefa(tarefa.Id).Show();
         }
 
 

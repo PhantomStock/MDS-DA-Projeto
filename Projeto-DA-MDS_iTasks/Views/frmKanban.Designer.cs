@@ -68,6 +68,7 @@
             this.lstTodo.Name = "lstTodo";
             this.lstTodo.Size = new System.Drawing.Size(395, 520);
             this.lstTodo.TabIndex = 0;
+            this.lstTodo.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.lstTodo_MouseDoubleClick);
             // 
             // groupBox1
             // 
@@ -103,6 +104,7 @@
             this.lstDoing.Name = "lstDoing";
             this.lstDoing.Size = new System.Drawing.Size(395, 520);
             this.lstDoing.TabIndex = 0;
+            this.lstDoing.DoubleClick += new System.EventHandler(this.lstDoing_DoubleClick);
             // 
             // groupBox3
             // 
@@ -126,6 +128,7 @@
             this.lstDone.Name = "lstDone";
             this.lstDone.Size = new System.Drawing.Size(395, 520);
             this.lstDone.TabIndex = 0;
+            this.lstDone.DoubleClick += new System.EventHandler(this.lstDone_DoubleClick);
             // 
             // menuStrip1
             // 

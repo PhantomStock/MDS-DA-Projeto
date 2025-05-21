@@ -15,30 +15,25 @@ namespace iTasks.Controllers
 {
     class ControllerTarefa
     {
-        public void criarTarefa(int id)
-        {
+
+        public void criarTarefa(int id) 
+        { 
             using (var db = new BaseDeDados())
             {
 
             }
         }
-        public void updateTarefa()
-        {
-
+        public void updateTarefa() 
+        { 
+        
         }
 
-        public void getTarefa()
+        public Tarefa loadTarefa(int id) 
         {
-
-        }
-
-        public Tarefa loadTarefa(int id)
-        {
-            using (var db = new BaseDeDados())
+            using (var db = new BaseDeDados()) 
             {
                 var tarefa = db.Tarefas
                     .FirstOrDefault(t => t.Id == id);
-
 
                 return tarefa;
             }

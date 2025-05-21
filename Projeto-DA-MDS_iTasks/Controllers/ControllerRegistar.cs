@@ -70,14 +70,7 @@ namespace iTasks.Controllers
 
         }
 
-        // Query base de dados que retorna todos os gestores
-        public List<Gestor> ObterGestores()
-        {
-            using (var db = new BaseDeDados())
-            {
-                return db.Utilizadores.OfType<Gestor>().ToList();
-            }
-        }
+        
     }
 }     
    
