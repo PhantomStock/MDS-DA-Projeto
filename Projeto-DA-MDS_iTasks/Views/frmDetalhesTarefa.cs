@@ -49,43 +49,36 @@ namespace iTasks
 
         public void CarregaDadosTarefa(int idTarefa)
         {
-            using(var db = new BaseDeDados())
+          
+            var tarefa = controllerDados.ObterTarefaPorId(idTarefa);
+
+            if (tarefa == null)
             {
-                var tarefa = db.Tarefas
-                    .FirstOrDefault(t => t.Id == idTarefa);
-
-                if (tarefa == null)
-                {
-                    MessageBox.Show("Tarefa não encontrada.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                } else {
-                    txtId.Text = tarefa.Id.ToString();
-                    txtEstado.Text = tarefa.EstadoAtual.ToString();
-                    txtDataCriacao.Text = tarefa.DataCriacao.ToString("dd/MM/yyyy");
-                    txtDataRealini.Text = tarefa.DataRealInicio.ToString("dd/MM/yyyy");
-                    txtDataRealFim.Text = tarefa.DataRealFim.ToString("dd/MM/yyyy");
-                    txtDesc.Text = tarefa.Descricao;
-
-
-                }
-
-
-                //cbTipoTarefa.SelectedItem = tarefa.IdTipoTarefa.ToString(); //?
-                //cbProgramador.SelectedItem = tarefa.idGestor.Nome;//?
-
-                txtOrdem.Text = tarefa.OrdemExecucao.ToString();
-                txtStoryPoints.Text = tarefa.StoryPoints.ToString();
-
-                if (tarefa.DataPrevistaInicio != null)
-                {
-                    dtInicio.Value = tarefa.DataPrevistaInicio;
-                }
-                if (tarefa.DataPrevistaFim != null)
-                {
-                    dtFim.Value = tarefa.DataPrevistaFim;
-                }
+                MessageBox.Show("Tarefa não encontrada.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            } else {
+                txtId.Text = tarefa.Id.ToString();
+                txtEstado.Text = tarefa.EstadoAtual.ToString();
+                txtDataCriacao.Text = tarefa.DataCriacao.ToString("dd/MM/yyyy");
+                txtDataRealini.Text = tarefa.DataRealInicio.ToString("dd/MM/yyyy");
+                txtDataRealFim.Text = tarefa.DataRealFim.ToString("dd/MM/yyyy");
+                txtDesc.Text = tarefa.Descricao;
             }
-            
+
+            //cbTipoTarefa.SelectedItem = tarefa.IdTipoTarefa.ToString(); //?
+            //cbProgramador.SelectedItem = tarefa.idGestor.Nome;//?
+
+            txtOrdem.Text = tarefa.OrdemExecucao.ToString();
+            txtStoryPoints.Text = tarefa.StoryPoints.ToString();
+
+            if (tarefa.DataPrevistaInicio != null)
+            {
+                dtInicio.Value = tarefa.DataPrevistaInicio;
+            }
+            if (tarefa.DataPrevistaFim != null)
+            {
+                dtFim.Value = tarefa.DataPrevistaFim;
+            }
         }
 
         public void NovaTarefa()
@@ -100,6 +93,14 @@ namespace iTasks
                 txtId.Text = ultimoId+1.ToString();
                 txtEstado.Text = Enums.EstadoAtual.ToDo.ToString();
                 txtDataCriacao.Text = DateTime.Now.ToString("dd/MM/yyyy");
+
+            }
+        }
+
+        private void btGravar_Click(object sender, EventArgs e)
+        {
+            if ()
+            {
 
             }
         }

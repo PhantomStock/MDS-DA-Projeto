@@ -98,5 +98,32 @@ namespace iTasks.Controllers
                 return db.TipoTarefas.FirstOrDefault(t => t.Id == id);
             }
         }
+
+        //obter gestor por username
+        public Gestor ObterGestorPorUsername(string Username)
+        {
+            using (var db = new BaseDeDados())
+            {
+                return db.Utilizadores.OfType<Gestor>().FirstOrDefault(u => u.Username == Username);
+            }
+        }
+
+        //obter programador por username
+        public Programador ObterProgramadorPorUsername(string Username)
+        {
+            using (var db = new BaseDeDados())
+            {
+                return db.Utilizadores.OfType<Programador>().FirstOrDefault(u => u.Username == Username);
+            }
+        }
+
+        //obter utilizador por username
+        public Utilizador ObterUtilizadorPorUsername(string Username)
+        {
+            using (var db = new BaseDeDados())
+            {
+                return db.Utilizadores.FirstOrDefault(u => u.Username == Username);
+            }
+        }
     }
 }

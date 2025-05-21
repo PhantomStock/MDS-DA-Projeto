@@ -35,7 +35,6 @@ namespace iTasks.Controllers
                 var tarefa = db.Tarefas
                     .FirstOrDefault(t => t.Id == id);
 
-
                 return tarefa;
             }
         }
