@@ -1,5 +1,6 @@
 ﻿using iTasks.Controllers;
 using iTasks.DataBase;
+using iTasks.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -24,23 +25,18 @@ namespace iTasks
             //Realiza o Setup das ComboBoxes
             var gestores = Controller.ObterGestores();
 
-            foreach (var gestor in gestores)
-            {
-                cbGestor.Items.Add(gestor);
-            }
+            //Obter Gestores
+            cbGestor.DataSource = null;
+            cbGestor.DataSource = gestores;
 
-            // loop para percorrer os enums
-            //comboBox NivelExperiencia
-            foreach (NivelExperiencia nivel in Enum.GetValues(typeof(NivelExperiencia)))
-            {
-                cbExperiencia.Items.Add(nivel);
-            }
+
+            //ComboBox NivelExperiencia
+            cbExperiencia.DataSource = null;
+            cbExperiencia.DataSource = Enum.GetValues(typeof(NivelExperiencia));
 
             // ComboBox Departamento
-            foreach (Departamento departamento in Enum.GetValues(typeof(Departamento)))
-            {
-                cbDepartamento.Items.Add(departamento);
-            }
+            cbDepartamento.DataSource = null;
+            cbDepartamento.DataSource = Enum.GetValues(typeof(Departamento));
 
         }
 
