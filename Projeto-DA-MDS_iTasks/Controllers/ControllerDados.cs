@@ -1,0 +1,102 @@
+﻿using iTasks.DataBase;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace iTasks.Controllers
+{
+    class ControllerDados
+    {
+        //obtem uma list com todos os gestores
+        public List<Gestor> ObterTodosGestores()
+        {
+            using (var db = new BaseDeDados())
+            {
+                return db.Utilizadores.OfType<Gestor>().ToList();
+            }
+        }
+
+        //obtem uma list com todos os programadores
+        public List<Programador> ObterTodosProgramdores()
+        {
+            using (var db = new BaseDeDados())
+            {
+                return db.Utilizadores.OfType<Programador>().ToList();
+            }
+        }
+
+        //obtem uma list com todos os utilizadores
+        public List<Utilizador> ObterTodosUtilizadores()
+        {
+            using (var db = new BaseDeDados())
+            {
+                return db.Utilizadores.ToList();
+            }
+        }
+
+        //obtem um list com todas as tarefas
+        public List<Tarefa> ObterTodasTarefas()
+        {
+            using (var db = new BaseDeDados())
+            {
+                return db.Tarefas.ToList();
+            }
+        }
+
+        //Obtem uma list com todos os tipos de tarefa
+        public List<TipoTarefa> ObterTodosTiposTarefas()
+        {
+            using (var db = new BaseDeDados())
+            {
+                return db.TipoTarefas.ToList();
+            }
+        }
+
+        //Obtem um utilizador pelo id
+        public Utilizador ObterUtilizadorPorId(int id)
+        {
+            using (var db = new BaseDeDados())
+            {
+                return db.Utilizadores.FirstOrDefault(u => u.Id == id);
+            }
+        }
+
+        //obtem um programdor pelo id
+        public Programador ObterProgramadorPorId(int id)
+        {
+            using (var db = new BaseDeDados())
+            {
+                return db.Utilizadores.OfType<Programador>().FirstOrDefault(u => u.Id == id);
+            }
+        }
+
+        //obtem um gestor pelo id
+        public Gestor ObterGestorPorId(int id)
+        {
+            using (var db = new BaseDeDados())
+            {
+                return db.Utilizadores.OfType<Gestor>().FirstOrDefault(u => u.Id == id);
+            }
+        }
+
+        //obtem uma tarefa pelo id
+        public Tarefa ObterTarefaPorId(int id)
+        {
+            using (var db = new BaseDeDados())
+            {
+                return db.Tarefas.FirstOrDefault(t => t.Id == id);
+            }
+        }
+
+        //obtem um tipo de tarefa pelo id
+        public TipoTarefa ObterTipoTarefaPorId(int id)
+        {
+            using (var db = new BaseDeDados())
+            {
+                return db.TipoTarefas.FirstOrDefault(t => t.Id == id);
+            }
+        }
+    }
+}

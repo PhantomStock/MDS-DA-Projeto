@@ -85,36 +85,32 @@ namespace iTasks
 
         private void btNova_Click(object sender, EventArgs e)
         {
-            
-            //verificar se current user pode alterar se puder ele pode se nao fds
-            ControllerTarefa TarefaController = new ControllerTarefa();
+            //chama o form para uma nova tarefa
+            new frmDetalhesTarefa(-1).Show();
+        }
 
-            if (lstTodo.SelectedItem != null) 
-            {
-                Tarefa tarefa = (Tarefa)lstTodo.SelectedItem;
+        private void lstTodo_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            DoubleClickLst(lstTodo);
+        }
 
-                TarefaController.CarregaOuCriaTarefa(tarefa.Id);
-                //enviar id da tarefa para o controllador das tarefas
-            } 
-            else if (lstDoing.SelectedItem != null) 
-            {
-                Tarefa tarefa = (Tarefa)lstDoing.SelectedItem;
+        private void lstDoing_DoubleClick(object sender, EventArgs e)
+        {
+            DoubleClickLst(lstDoing);
+        }
 
-                TarefaController.CarregaOuCriaTarefa(tarefa.Id);
-                //enviar id da tarefa para o controllador das tarefas
-            }
-            else if (lstDone.SelectedItem != null)
-            {
-                Tarefa tarefa = (Tarefa)lstDone.SelectedItem;
+        private void lstDone_DoubleClick(object sender, EventArgs e)
+        {
+            DoubleClickLst(lstDone);
+        }
 
-                TarefaController.CarregaOuCriaTarefa(tarefa.Id);
-                //enviar id da tarefa para o controllador das tarefas
-            } else
-            {
-                Tarefa tarefa = new Tarefa();
+        //evento para quando o utilizador seleciona uma tarefa para "abrir" com double click
+        private void DoubleClickLst(ListBox lb)
+        {
+            // Verifica se há um item selecionado
+            Tarefa tarefa = lb.SelectedItem as Tarefa;
 
-                TarefaController.CarregaOuCriaTarefa(tarefa.Id);
-            }
+            new frmDetalhesTarefa(tarefa.Id).Show();
         }
     }
             
