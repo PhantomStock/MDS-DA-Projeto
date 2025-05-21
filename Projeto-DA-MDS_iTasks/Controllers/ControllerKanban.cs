@@ -28,16 +28,14 @@ namespace iTasks.Controllers
             try
             {
                 List<Tarefa> tarefas = ObterTodasTarefas();
-
                 using (var writer = new StreamWriter(filePath, false, Encoding.UTF8))
                 {
-
                     //Vai checar se as tarefas estão concluidas e vai escrever os dados da tarefa(pode-se incrementar mais coisas)
                     foreach (var tarefa in tarefas)
                     {
                         if (tarefa.EstadoAtual == Enums.EstadoAtual.Done)
                         {
-                            writer.WriteLine(tarefa.ToString());
+                            writer.WriteLine(tarefa.ToStringCustom(1));
                         }
                     }
                 }
@@ -51,14 +49,10 @@ namespace iTasks.Controllers
         // Query base de dados que retorna todas as tarefas função usado no Exportar
         public List<Tarefa> ObterTodasTarefas()
         {
-            using(var db = new BaseDeDados())
+            using (var db = new BaseDeDados())
             {
                 return db.Tarefas.ToList();
             }
-            
-
         }
-
-
     }
 }

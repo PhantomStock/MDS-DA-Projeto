@@ -29,32 +29,40 @@ namespace iTasks
             this.EstadoAtual = EstadoAtual.ToDo;
             this.DataCriacao = DateTime.Now;
         }
-        public Tarefa(int id, Gestor idGestor, Programador idProgramador, int OrdemExecucao, string Descricao,
-            DateTime DataPrevistaInicio, DateTime DataPrevistaFim, TipoTarefa idTipoTarefa, int StoryPoints, DateTime DataRealInicio,
-            DateTime DataRealFim, DateTime DataCriacao, EstadoAtual EstadoAtual)
+        public Tarefa(Tarefa tarefa)
         {
-            this.Id = id;
-            this.idGestor = idGestor;
-            this.IdProgramador = idProgramador;
-            this.OrdemExecucao = OrdemExecucao;
-            this.Descricao = Descricao;
-            this.DataPrevistaInicio = DataPrevistaInicio;
-            this.DataPrevistaFim = DataPrevistaFim;
-            this.IdTipoTarefa = idTipoTarefa;
-            this.StoryPoints = StoryPoints;
-            this.DataRealInicio = DataRealInicio;
-            this.DataRealFim = DataRealFim;
-            this.DataCriacao = DataCriacao;
-            this.EstadoAtual = EstadoAtual;
+            this.Id = tarefa.Id;
+            this.idGestor = tarefa.idGestor;
+            this.IdProgramador = tarefa.IdProgramador;
+            this.OrdemExecucao = tarefa.OrdemExecucao;
+            this.Descricao = tarefa.Descricao;
+            this.DataPrevistaInicio = tarefa.DataPrevistaInicio;
+            this.DataPrevistaFim = tarefa.DataPrevistaFim;
+            this.IdTipoTarefa = tarefa.IdTipoTarefa;
+            this.StoryPoints = tarefa.StoryPoints;
+            this.DataRealInicio = tarefa.DataRealInicio;
+            this.DataRealFim = tarefa.DataRealFim;
+            this.DataCriacao = tarefa.DataCriacao;
+            this.EstadoAtual = tarefa.EstadoAtual;
         }
+        public string ToStringCustom(int tipo)
+        {
+            if (tipo == 1)
+            {
+                string ids = $"{this.Id},{this.idGestor},{this.IdProgramador},{this.IdTipoTarefa}";
+                string datas = $"{this.DataPrevistaInicio},{this.DataPrevistaFim},{this.DataRealInicio},{this.DataRealFim},{this.DataCriacao}";
 
+                return $"{ids},{this.Descricao},{this.OrdemExecucao},{this.OrdemExecucao},{datas},{this.EstadoAtual},{this.StoryPoints}";
+            }
+            else
+            {
+                return $"{this.Descricao}";
+            }
+        }
 
         public override string ToString()
         {
-            string ids = $"{this.Id },{ this.idGestor},{ this.IdProgramador},{ this.IdTipoTarefa}";
-            string datas = $"{this.DataPrevistaInicio},{this.DataPrevistaFim},{this.DataRealInicio},{this.DataRealFim},{this.DataCriacao}";
-
-            return $"{ids},{this.Descricao},{this.OrdemExecucao},{this.OrdemExecucao},{datas},{this.EstadoAtual},{this.StoryPoints}";     
+            return this.Descricao;
         }
     }
 }

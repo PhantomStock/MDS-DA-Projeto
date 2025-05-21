@@ -15,7 +15,7 @@ namespace iTasks
 {
     public partial class frmKanban : Form
     {
-
+        ControllerDados controllerDados = new ControllerDados();
         public frmKanban(int utilizadorId)
         {
             InitializeComponent();
@@ -27,6 +27,9 @@ namespace iTasks
             {
                 labelNomeUtilizador.Text = $"Bem vindo: {utilizador.Nome}";
             }
+
+            RefreshDadosListBoxes();
+            
         }
 
         //Não ta em MVC falta as tarefas para 
@@ -113,7 +116,24 @@ namespace iTasks
             new frmDetalhesTarefa(tarefa.Id).Show();
         }
 
+        private void RefreshDadosListBoxes()
+        {
+            //Carrega as tarefas
+            controllerDados = new ControllerDados();
+            List<Tarefa> tarefasTodo = controllerDados.ObterTarefasTodo();
+            List<Tarefa> tarefasDoing = controllerDados.ObterTarefasDoing();
+            List<Tarefa> tarefasDone = controllerDados.ObterTarefasDone();
 
+            //faz refresh as data source das listboxes
+            lstTodo.DataSource = null;
+            lstTodo.DataSource = tarefasTodo;
+           
+            lstDoing.DataSource = null;
+            lstDoing.DataSource = tarefasDoing;
+
+            lstDone.DataSource = null;
+            lstDone.DataSource = tarefasDone;
+        }
     }
             
 }

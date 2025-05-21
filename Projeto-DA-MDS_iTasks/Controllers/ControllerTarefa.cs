@@ -16,11 +16,14 @@ namespace iTasks.Controllers
     class ControllerTarefa
     {
 
-        public void criarTarefa(int id) 
+        public void CriarTarefa(Tarefa tarefa) 
         { 
             using (var db = new BaseDeDados())
             {
-
+                db.Tarefas.Add(tarefa);
+                db.SaveChanges();
+                MessageBox.Show("Tarefa criada com sucesso.", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
             }
         }
         public void updateTarefa() 

@@ -17,6 +17,8 @@ namespace iTasks
     public partial class frmDetalhesTarefa : Form
     {
         ControllerDados controllerDados = new ControllerDados();
+        ControllerDetalhesTarefa controllerDetalhesTarefa = new ControllerDetalhesTarefa();
+        ControllerTarefa controllerTarefa = new ControllerTarefa();
         public frmDetalhesTarefa(int id)
         {
             InitializeComponent();
@@ -28,12 +30,13 @@ namespace iTasks
                 cbTipoTarefa.DataSource = null;
                 cbTipoTarefa.DataSource = TiposTarefas;
 
-                //recebe e carrega na combo boxx todos os programadores
+                //recebe e carrega na combo box todos os programadores
                 List<Programador> Programadores = controllerDados.ObterTodosProgramdores();
                 
                 cbProgramador.DataSource = null;
                 cbProgramador.DataSource = Programadores;              
 
+                // ?
                 if (id == -1)
                 {
                     NovaTarefa();
@@ -46,7 +49,22 @@ namespace iTasks
             
 
         }
+        public void NovaTarefa()
+        {
+            var tarefas = controllerDados.ObterTodasTarefas();
+            int TarefaIdAnterior = 0;
 
+            foreach (Tarefa tipoTarefa in tarefas)
+            {
+                if (tipoTarefa.Id > TarefaIdAnterior)
+                {
+                    TarefaIdAnterior = tipoTarefa.Id;
+                }
+            }
+            txtId.Text = (TarefaIdAnterior + 1).ToString();
+            txtEstado.Text = Enums.EstadoAtual.ToDo.ToString();
+            txtDataCriacao.Text = DateTime.Now.ToString("dd/MM/yyyy");
+        }
         public void CarregaDadosTarefa(int idTarefa)
         {
           
@@ -81,27 +99,57 @@ namespace iTasks
             }
         }
 
-        public void NovaTarefa()
-        {
-            using (var db = new BaseDeDados())
-            {
-                var ultimoId = db.Tarefas
-                    .OrderByDescending(t => t.Id)
-                    .Select(t => t.Id)
-                    .FirstOrDefault();
-
-                txtId.Text = ultimoId+1.ToString();
-                txtEstado.Text = Enums.EstadoAtual.ToDo.ToString();
-                txtDataCriacao.Text = DateTime.Now.ToString("dd/MM/yyyy");
-
-            }
-        }
-
         private void btGravar_Click(object sender, EventArgs e)
         {
-            if ()
+            //verificar se textbox descricao é nula ou vazia
+            if (string.IsNullOrWhiteSpace(txtDesc.Text))
             {
+                MessageBox.Show("A descrição não pode ser vazia.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            } else
+            {
+                if (cbProgramador.SelectedItem != null)
+                {
+                    int id = ((Programador)cbProgramador.SelectedItem).Id;
+                    //verifica se nao existe tarefas atribuídas ao programador com ordem de execução igual a indicada
+                        
+                    var listaTarefas = controllerDados.ObterTarefasPorProgramador(id);
 
+
+                    if (listaTarefas != null)
+                    {
+                        int ordermExecucaoInput = Convert.ToInt32(txtOrdem.Text);
+                        foreach (var tarefa in listaTarefas)
+                        {
+                            if (tarefa.OrdemExecucao == ordermExecucaoInput)
+                            {
+                                MessageBox.Show("Já existe uma tarefa atribuída a este programador com a mesma ordem de execução.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                return;
+                            }
+                        }
+                    }
+                    //Criar nova tarefa
+                    Tarefa tarefaNova = new Tarefa();
+
+                    tarefaNova.Id = Convert.ToInt32(txtId.Text);
+                    tarefaNova.Descricao = txtDesc.Text;
+                    tarefaNova.DataCriacao = DateTime.Now;
+                    tarefaNova.DataPrevistaInicio = dtInicio.Value;
+                    tarefaNova.DataPrevistaFim = dtFim.Value;
+                    tarefaNova.DataRealInicio = DateTime.Now;
+                    tarefaNova.DataRealFim = DateTime.Now;
+                    tarefaNova.EstadoAtual = Enums.EstadoAtual.ToDo;
+                    tarefaNova.StoryPoints = Convert.ToInt32(txtStoryPoints.Text);
+                    tarefaNova.OrdemExecucao = Convert.ToInt32(txtOrdem.Text);
+                    tarefaNova.IdTipoTarefa = new TipoTarefa { Id = ((TipoTarefa)cbTipoTarefa.SelectedItem).Id };
+                    tarefaNova.idGestor = new Gestor { Id = ((Programador)cbProgramador.SelectedItem).idGestor };
+
+                    controllerTarefa.CriarTarefa(tarefaNova);
+                    //  this.Close();
+                }else{
+                    //verifica se o programador é nulo
+                    MessageBox.Show("O programador não pode ser nulo.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
     }

@@ -1,4 +1,5 @@
 ﻿using iTasks.DataBase;
+using iTasks.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -125,5 +126,42 @@ namespace iTasks.Controllers
                 return db.Utilizadores.FirstOrDefault(u => u.Username == Username);
             }
         }
+
+        //obter tarefas por programador
+        public List<Tarefa> ObterTarefasPorProgramador(int id)
+        {
+            using (var db = new BaseDeDados())
+            {
+                return db.Tarefas.Where(t => t.IdProgramador.Id == id).ToList();
+            }
+        }
+
+        //obter tarefas no estado Todo
+        public List<Tarefa> ObterTarefasTodo()
+        {
+            using (var db = new BaseDeDados())
+            {
+                return db.Tarefas.Where(t => t.EstadoAtual == Enums.EstadoAtual.ToDo).ToList();
+            }
+        }
+
+        //obter tarfas no estado Doing
+        public List<Tarefa> ObterTarefasDoing()
+        {
+            using (var db = new BaseDeDados())
+            {
+                return db.Tarefas.Where(t => t.EstadoAtual == Enums.EstadoAtual.Doing).ToList();
+            }
+        }
+
+        //obter tarefas no estado Done
+        public List<Tarefa> ObterTarefasDone()
+        {
+            using (var db = new BaseDeDados())
+            {
+                return db.Tarefas.Where(t => t.EstadoAtual == Enums.EstadoAtual.Done).ToList();
+            }
+        }
+
     }
 }

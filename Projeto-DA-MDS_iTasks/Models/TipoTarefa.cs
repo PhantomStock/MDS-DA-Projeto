@@ -14,5 +14,16 @@ namespace iTasks
         public string Nome { get; set; }
 
         public TipoTarefa() { }
+
+        public TipoTarefa(int id, string nome)
+        {
+            Id = id;
+            Nome = nome;
+        }
+
+        public override string ToString()
+        {
+            return this.Nome;
+        }
     }
 }
