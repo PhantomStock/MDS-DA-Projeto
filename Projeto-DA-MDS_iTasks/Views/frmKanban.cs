@@ -56,7 +56,7 @@ namespace iTasks
                 }
             }
         }
-
+        //ToolStripMenu
         private void gerirUtilizadoresToolStripMenuItem_Click(object sender, EventArgs e)
         {
             new frmGereUtilizadores().Show();
@@ -79,43 +79,17 @@ namespace iTasks
 
         private void sairToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Close();
             new frmLogin().Show();
+            this.Close();
         }
 
         private void btNova_Click(object sender, EventArgs e)
         {
-            
-            //verificar se current user pode alterar se puder ele pode se nao fds
-            ControllerTarefa TarefaController = new ControllerTarefa();
-
-            if (lstTodo.SelectedItem != null) 
-            {
-                Tarefa tarefa = (Tarefa)lstTodo.SelectedItem;
-
-                TarefaController.CarregaOuCriaTarefa(tarefa.Id);
-                //enviar id da tarefa para o controllador das tarefas
-            } 
-            else if (lstDoing.SelectedItem != null) 
-            {
-                Tarefa tarefa = (Tarefa)lstDoing.SelectedItem;
-
-                TarefaController.CarregaOuCriaTarefa(tarefa.Id);
-                //enviar id da tarefa para o controllador das tarefas
-            }
-            else if (lstDone.SelectedItem != null)
-            {
-                Tarefa tarefa = (Tarefa)lstDone.SelectedItem;
-
-                TarefaController.CarregaOuCriaTarefa(tarefa.Id);
-                //enviar id da tarefa para o controllador das tarefas
-            } else
-            {
-                Tarefa tarefa = new Tarefa();
-
-                TarefaController.CarregaOuCriaTarefa(tarefa.Id);
-            }
+            //chama o form para uma nova tarefa
+            new frmDetalhesTarefa().Show();
         }
+
+
     }
             
 }

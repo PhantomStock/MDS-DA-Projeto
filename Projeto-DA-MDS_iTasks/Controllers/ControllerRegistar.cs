@@ -16,10 +16,10 @@ namespace iTasks.Controllers
 
         public void RegistarUtilizador(string nome, string username, string password)
         {
-            using (var db = new BaseDeDados())
+            using(var db = new BaseDeDados())
             {
                 var user = db.Utilizadores
-                    .FirstOrDefault(u => u.Username == username);
+                .FirstOrDefault(u => u.Username == username);
 
                 if (user == null)
                 {
@@ -29,15 +29,15 @@ namespace iTasks.Controllers
 
                     MessageBox.Show("Utilizador registado com sucesso", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-            }
+            } 
         }
 
         public void RegistarProgramador(string nome, string username, string password, NivelExperiencia experiencia, int idGestor)
         {
-            using (var db = new BaseDeDados())
+            using(var db = new BaseDeDados())
             {
                 var user = db.Utilizadores
-                    .FirstOrDefault(u => u.Username == username);
+                .FirstOrDefault(u => u.Username == username);
 
                 if (user == null)
                 {
@@ -48,14 +48,15 @@ namespace iTasks.Controllers
                     MessageBox.Show("Programador registado com sucesso", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
+
         }
 
         public void RegistarGestor(string nome, string username, string password, Departamento departamento, bool gereUtilizadores)
         {
-            using (var db = new BaseDeDados())
+            using(var db = new BaseDeDados())
             {
                 var user = db.Utilizadores
-                    .FirstOrDefault(u => u.Username == username);
+                .FirstOrDefault(u => u.Username == username);
 
                 if (user == null)
                 {
@@ -66,6 +67,7 @@ namespace iTasks.Controllers
                     MessageBox.Show("Gestor registado com sucesso", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
+
         }
 
         // Query base de dados que retorna todos os gestores

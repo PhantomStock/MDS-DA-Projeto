@@ -15,7 +15,6 @@ namespace iTasks
 {
     public partial class frmRegistar: Form
     {
-        BaseDeDados db;
         public frmRegistar()
         {
             InitializeComponent();
@@ -56,16 +55,16 @@ namespace iTasks
 
             string confirmarPass = tbConfirmarPass.Text;
 
-            //Variaveis Base para o programador
+            //Variavel usado para o gestor
             NivelExperiencia experiencia = (NivelExperiencia)cbExperiencia.SelectedIndex;
 
-            //Variavel Base Programador
+            //Variaveis usados para o Programador
             Departamento departamento = (Departamento)cbDepartamento.SelectedIndex;
             bool gereUtilizadores = cbxGereUtilizadores.Checked;
 
             //Variavel Gestor
             Gestor Gestor = (Gestor)cbGestor.SelectedItem;
-            
+
             using (var db = new BaseDeDados())
             {
                 var user = db.Utilizadores
@@ -81,11 +80,12 @@ namespace iTasks
                         {
                             novoRegisto.RegistarUtilizador(nome, username, password);
 
-                        }else if (rbProgramador.Checked)
+                        }
+                        else if (rbProgramador.Checked)
                         {
                             novoRegisto.RegistarProgramador(nome, username, password, experiencia, Gestor.Id);
                         }
-                        else if(rbGestor.Checked)
+                        else if (rbGestor.Checked)
                         {
                             novoRegisto.RegistarGestor(nome, username, password, departamento, gereUtilizadores);
                         }
@@ -99,10 +99,9 @@ namespace iTasks
                 {
                     MessageBox.Show("Username já registado", "Registo Falhou", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-
             }
-
         }
+        
 
         private void btVoltar_Click(object sender, EventArgs e)
         {

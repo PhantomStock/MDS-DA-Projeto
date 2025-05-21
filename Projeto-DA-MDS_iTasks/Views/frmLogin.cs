@@ -49,6 +49,9 @@ namespace iTasks
 
         }
 
-
+        private void frmLogin_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            System.Windows.Forms.Application.Exit();
+        }
     }
 }

@@ -47,5 +47,14 @@ namespace iTasks
             this.DataCriacao = DataCriacao;
             this.EstadoAtual = EstadoAtual;
         }
+
+
+        public override string ToString()
+        {
+            string ids = $"{this.Id },{ this.idGestor},{ this.IdProgramador},{ this.IdTipoTarefa}";
+            string datas = $"{this.DataPrevistaInicio},{this.DataPrevistaFim},{this.DataRealInicio},{this.DataRealFim},{this.DataCriacao}";
+
+            return $"{ids},{this.Descricao},{this.OrdemExecucao},{this.OrdemExecucao},{datas},{this.EstadoAtual},{this.StoryPoints}";     
+        }
     }
 }
