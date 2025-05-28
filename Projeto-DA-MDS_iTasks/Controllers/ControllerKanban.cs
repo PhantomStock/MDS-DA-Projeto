@@ -33,7 +33,7 @@ namespace iTasks.Controllers
                     //Vai checar se as tarefas estão concluidas e vai escrever os dados da tarefa(pode-se incrementar mais coisas)
                     foreach (var tarefa in tarefas)
                     {
-                        if (tarefa.EstadoAtual == Enums.EstadoAtual.Done)
+                        if (tarefa.EstadoAtual == Enums.EstadoAtual.ToDo)
                         {
                             writer.WriteLine(tarefa.ToStringCustom(1));
                         }
