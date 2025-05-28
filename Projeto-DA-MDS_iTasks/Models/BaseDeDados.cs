@@ -8,6 +8,7 @@ using System.Data.Entity;
 
 namespace iTasks.DataBase
 {
+    // Classe que representa a base de dados, herda de DbContext do Entity Framework
     public class BaseDeDados : DbContext
     {
         public DbSet<Utilizador> Utilizadores { get; set; }

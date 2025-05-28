@@ -9,7 +9,7 @@ using static iTasks.Models.Enums;
 
 namespace iTasks
 {
-    
+    // Este ficheiro contém a definição da classe Programador, que herda a classe Utilizador.
     public class Programador : Utilizador
     {
         public NivelExperiencia NivelExperiencia { get; set; }
@@ -24,7 +24,7 @@ namespace iTasks
             this.idGestor = idGestor;
         }
 
-
+        // Override ao tostring para apresentar o nome de utilizador do programador
         public override string ToString()
         {
             return this.Username;

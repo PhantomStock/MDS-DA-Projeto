@@ -9,6 +9,8 @@ using static iTasks.Models.Enums;
 
 namespace iTasks
 {
+    // Este ficheiro contém a definição da classe Tarefa, que representa uma tarefa no sistema de gestão de tarefas.
+
     public class Tarefa
     {
         [Key] public int Id { get; set; }
@@ -25,10 +27,13 @@ namespace iTasks
         public DateTime DataCriacao { get; set; } = DateTime.Now;
         public EstadoAtual EstadoAtual { get; set; }
 
+        // Construtor padrão
         public Tarefa(){
             this.EstadoAtual = EstadoAtual.ToDo;
             this.DataCriacao = DateTime.Now;
         }
+
+        // Construtor que recebe uma tarefa existente ou pre formatada (par afazer update)
         public Tarefa(Tarefa tarefa)
         {
             this.Id = tarefa.Id;
@@ -45,7 +50,8 @@ namespace iTasks
             this.DataCriacao = tarefa.DataCriacao;
             this.EstadoAtual = tarefa.EstadoAtual;
         }
-        public string ToStringCustom(int tipo)
+        // contrutor utilizado para apresentar uma formatação em string customizada para exportação (separado do tostring normal)
+        public string ToStringCustom(int tipo) //o tipo indica que tipo de to string customizado vamos devolver ao user (permite modulação do to string)
         {
             if (tipo == 1)
             {
@@ -60,6 +66,7 @@ namespace iTasks
             }
         }
 
+        // Override ao toString para apresetnar informação da descricao da tarefa
         public override string ToString()
         {
             return this.Descricao;

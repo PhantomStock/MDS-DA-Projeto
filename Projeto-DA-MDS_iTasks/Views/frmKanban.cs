@@ -19,7 +19,7 @@ namespace iTasks
         public frmKanban(int utilizadorId)
         {
             InitializeComponent();
-
+            // inicializa o form kanbar e atribui a uma variavel o utilizador que está a iniciar sessão
             var controller = new ControllerKanban();
             var utilizador = controller.ObterUtilizadorId(utilizadorId);
 

@@ -34,9 +34,9 @@ namespace iTasks
                 List<Programador> Programadores = controllerDados.ObterTodosProgramdores();
                 
                 cbProgramador.DataSource = null;
-                cbProgramador.DataSource = Programadores;              
+                cbProgramador.DataSource = Programadores;
 
-                // ?
+                // quando o id for -1, significa que é uma nova tarefa, caso contrário, carrega os dados da tarefa
                 if (id == -1)
                 {
                     NovaTarefa();
@@ -46,9 +46,9 @@ namespace iTasks
                     CarregaDadosTarefa(id);
                 }
             }
-            
-
         }
+
+        // funcao para criar uma nova tarefa
         public void NovaTarefa()
         {
             var tarefas = controllerDados.ObterTodasTarefas();
@@ -65,6 +65,8 @@ namespace iTasks
             txtEstado.Text = Enums.EstadoAtual.ToDo.ToString();
             txtDataCriacao.Text = DateTime.Now.ToString("dd/MM/yyyy");
         }
+
+        // funcao para carregar os dados da tarefa
         public void CarregaDadosTarefa(int idTarefa)
         {
           
@@ -99,6 +101,7 @@ namespace iTasks
             }
         }
 
+        // funcao para iniciar o processo de gravar dados aqui sao feitas algumas verificações que vao no futuro ser transferidas para o controllador 
         private void btGravar_Click(object sender, EventArgs e)
         {
             //verificar se textbox descricao é nula ou vazia
@@ -147,7 +150,7 @@ namespace iTasks
                     controllerTarefa.CriarTarefa(tarefaNova);
                     //  this.Close();
                 }else{
-                    //verifica se o programador é nulo
+                    //apresenta mensagem de erro caos o programador seja nulo
                     MessageBox.Show("O programador não pode ser nulo.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }

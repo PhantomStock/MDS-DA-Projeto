@@ -10,6 +10,7 @@ namespace iTasks.Controllers
 {
     class ControllerTipoTarefa
     {
+        //adiciona um tipo tarefa novo atravez do id e da descricao do mesmo
         public void AdicionarTipoTarefa(int id, string desc)
         {
            using (var db = new BaseDeDados())

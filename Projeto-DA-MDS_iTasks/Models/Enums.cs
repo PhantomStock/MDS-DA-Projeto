@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace iTasks.Models
 {
+    // Este ficheiro contém as definições de enums utilizados ao longo do projeto.
     public class Enums
     {
         public enum Departamento

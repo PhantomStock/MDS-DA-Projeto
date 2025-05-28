@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace iTasks
 {
+    // este ficheiro contém a definição da classe Utilizador, que representa um utilizador no sistema de gestão de tarefas.
     public class Utilizador
     {
         [Key] public int Id { get; set; }
@@ -14,7 +15,10 @@ namespace iTasks
         public string Username { get; set; }
         public string Password { get; set; }
 
+        // construtor padrão vazio
         public Utilizador (){ }
+
+        //contrutor que recebe os parâmetros necessários para criar um Utilizador (vai desaparecer no futuro)
         public Utilizador (string nome, string username, string password)
         {
             this.Nome = nome;
@@ -22,12 +26,5 @@ namespace iTasks
             this.Password = password;
 
         }
-
-
-
-
-
     }
-
-
 }

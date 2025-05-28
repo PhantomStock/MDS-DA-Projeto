@@ -22,6 +22,7 @@ namespace iTasks
 
         }
 
+        // cria um novo tipo de tarefa
         private void btGravar_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(txtDesc.Text))
@@ -39,6 +40,7 @@ namespace iTasks
             }
         }
 
+        // recarrega o DataSource da lista de tipos de tarefa
         private void RefreshDataSourceTipoTarefa()
         {
             using (var db = new BaseDeDados())

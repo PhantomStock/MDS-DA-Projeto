@@ -13,7 +13,7 @@ namespace iTasks.Controllers
     class ControllerRegistar
     {
         BaseDeDados db;
-
+        //regista um utilizador padrão (vai sair daqui)
         public void RegistarUtilizador(string nome, string username, string password)
         {
             using(var db = new BaseDeDados())
@@ -32,6 +32,7 @@ namespace iTasks.Controllers
             } 
         }
 
+        //regista um programador
         public void RegistarProgramador(string nome, string username, string password, NivelExperiencia experiencia, int idGestor)
         {
             using(var db = new BaseDeDados())
@@ -51,6 +52,7 @@ namespace iTasks.Controllers
 
         }
 
+        //regista um gestor
         public void RegistarGestor(string nome, string username, string password, Departamento departamento, bool gereUtilizadores)
         {
             using(var db = new BaseDeDados())

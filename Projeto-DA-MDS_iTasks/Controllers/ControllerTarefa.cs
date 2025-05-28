@@ -15,7 +15,7 @@ namespace iTasks.Controllers
 {
     class ControllerTarefa
     {
-
+        //recebe um objeto tarefa e adiciona-o à base de dados
         public void CriarTarefa(Tarefa tarefa) 
         { 
             using (var db = new BaseDeDados())
@@ -26,11 +26,14 @@ namespace iTasks.Controllers
                 return;
             }
         }
+
+        //recebe um objeto tarefa e faz update da tarefa na base de dados
         public void updateTarefa() 
         { 
         
         }
 
+        //recebe um id e remove a tarefa correspondente da base de dados
         public Tarefa loadTarefa(int id) 
         {
             using (var db = new BaseDeDados()) 
