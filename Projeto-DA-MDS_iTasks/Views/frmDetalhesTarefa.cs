@@ -16,10 +16,11 @@ namespace iTasks
 {
     public partial class frmDetalhesTarefa : Form
     {
+        public int IdGestorAtual;
         ControllerDados controllerDados = new ControllerDados();
         ControllerDetalhesTarefa controllerDetalhesTarefa = new ControllerDetalhesTarefa();
         ControllerTarefa controllerTarefa = new ControllerTarefa();
-        public frmDetalhesTarefa(int id)
+        public frmDetalhesTarefa(int id, int idGestor)
         {
             InitializeComponent();
             //recebe e carrega na combo box todos os tipos de tarefa
@@ -34,7 +35,9 @@ namespace iTasks
             cbProgramador.DataSource = null;
             cbProgramador.DataSource = Programadores;
 
-            //// quando o id for -1, significa que é uma nova tarefa, caso contrário, carrega os dados da tarefa
+            IdGestorAtual = idGestor;
+
+            // quando o id for -1, significa que é uma nova tarefa, caso contrário, carrega os dados da tarefa
             if (id == -1)
             {
                 NovaTarefa();
@@ -119,16 +122,63 @@ namespace iTasks
 
                     if (listaTarefas != null)
                     {
-                        int ordermExecucaoInput = Convert.ToInt32(txtOrdem.Text);
-                        foreach (var tarefa in listaTarefas)
+                        
+                        if (controllerDados.ExisteTarefaComOrdem(Convert.ToInt32(txtOrdem.Text), id))
                         {
-                            if (tarefa.OrdemExecucao == ordermExecucaoInput)
+                            MessageBox.Show("Já existe uma tarefa atribuída a este programador com a mesma ordem de execução.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return;
+                        } else
+                        {
+                            //verifica se a ordem de execução é maior que 0
+                            if (Convert.ToInt32(txtOrdem.Text) <= 0)
                             {
-                                MessageBox.Show("Já existe uma tarefa atribuída a este programador com a mesma ordem de execução.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                MessageBox.Show("A ordem de execução deve ser um número maior que 0.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                 return;
+                            }
+                            else
+                            {
+                                //verifica se o numero de story points é maior que 0
+                                if (Convert.ToInt32(txtStoryPoints.Text) <= 0)
+                                {
+                                    MessageBox.Show("O número de story points deve ser um número maior que 0.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                    return;
+                                }
+                                else
+                                {
+                                    //verifica se a data prevista de inicio é maior que a data prevista de fim
+                                    if (dtInicio.Value > dtFim.Value)
+                                    {
+                                        MessageBox.Show("A data prevista de início não pode ser maior que a data prevista de fim.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                        return;
+                                    }
+                                    else
+                                    {
+                                        if (!string.IsNullOrWhiteSpace(txtDataRealFim.Text) && !string.IsNullOrWhiteSpace(txtDataRealini.Text))
+                                        {
+                                            if (Convert.ToDateTime(txtDataRealini.Text) > Convert.ToDateTime(txtDataRealFim.Text))
+                                            {
+                                                MessageBox.Show("A data real de início não pode ser maior que a data real de fim.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                                return;
+                                            }
+                                            else
+                                            {
+                                                //yooooo envia a dizer que é para atualizar a tarefa com os dados todos incluido as datas real de inicio e os caralhos
+                                            }
+                                        }
+                                        else
+                                        {
+                                            //cria uma tarefa nova sem as datas reais de inicio e fim (porque isso so é atualizado quando sao
+                                        }
+                                    }
+                                }
                             }
                         }
                     }
+                    //recebe o id do tipo de tarefa selecionado na combobox e do programador selecionado
+                    TipoTarefa TipoTarefaSelecionado = (TipoTarefa)cbTipoTarefa.SelectedItem;
+                    Programador programadorSelecionado = (Programador)cbProgramador.SelectedItem;
+                    Gestor gestor = controllerDados.ObterGestorPorId(IdGestorAtual);
+
                     //Criar nova tarefa
                     Tarefa tarefaNova = new Tarefa();
 
@@ -137,13 +187,14 @@ namespace iTasks
                     tarefaNova.DataCriacao = DateTime.Now;
                     tarefaNova.DataPrevistaInicio = dtInicio.Value;
                     tarefaNova.DataPrevistaFim = dtFim.Value;
-                    tarefaNova.DataRealInicio = DateTime.Now;
-                    tarefaNova.DataRealFim = DateTime.Now;
+                    //tarefaNova.DataRealInicio = ;
+                    //tarefaNova.DataRealFim = ;
                     tarefaNova.EstadoAtual = Enums.EstadoAtual.ToDo;
                     tarefaNova.StoryPoints = Convert.ToInt32(txtStoryPoints.Text);
                     tarefaNova.OrdemExecucao = Convert.ToInt32(txtOrdem.Text);
-                    tarefaNova.IdTipoTarefa = new TipoTarefa { Id = ((TipoTarefa)cbTipoTarefa.SelectedItem).Id };
-                    tarefaNova.idGestor = new Gestor { Id = ((Programador)cbProgramador.SelectedItem).idGestor };
+                    tarefaNova.IdTipoTarefa = TipoTarefaSelecionado;
+                    tarefaNova.IdProgramador = programadorSelecionado;
+                    tarefaNova.idGestor = gestor; //id do gestor que clicou no buton
 
                     controllerTarefa.CriarTarefa(tarefaNova);
                     //  this.Close();

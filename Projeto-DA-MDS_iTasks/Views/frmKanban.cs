@@ -15,13 +15,14 @@ namespace iTasks
 {
     public partial class frmKanban : Form
     {
+        public int IdUtilizadorAtual;
         ControllerDados controllerDados = new ControllerDados();
         public frmKanban(int utilizadorId)
         {
             InitializeComponent();
             // inicializa o form kanbar e atribui a uma variavel o utilizador que está a iniciar sessão
-            var controller = new ControllerKanban();
-            var utilizador = controller.ObterUtilizadorId(utilizadorId);
+            var utilizador = controllerDados.ObterUtilizadorPorId(utilizadorId);
+            IdUtilizadorAtual = utilizadorId;
 
             if (utilizador != null)
             {
@@ -89,7 +90,7 @@ namespace iTasks
         private void btNova_Click(object sender, EventArgs e)
         {
             //chama o form para uma nova tarefa
-            new frmDetalhesTarefa(-1).Show();
+            new frmDetalhesTarefa(-1, IdUtilizadorAtual).Show();
         }
 
         private void lstTodo_MouseDoubleClick(object sender, MouseEventArgs e)
@@ -113,7 +114,7 @@ namespace iTasks
             // Verifica se há um item selecionado
             Tarefa tarefa = lb.SelectedItem as Tarefa;
 
-            new frmDetalhesTarefa(tarefa.Id).Show();
+            new frmDetalhesTarefa(tarefa.Id, IdUtilizadorAtual).Show();
         }
 
         private void RefreshDadosListBoxes()
@@ -133,6 +134,11 @@ namespace iTasks
 
             lstDone.DataSource = null;
             lstDone.DataSource = tarefasDone;
+        }
+
+        private void lblRefreshbtnSim_Click(object sender, EventArgs e)
+        {
+            RefreshDadosListBoxes();
         }
     }
             

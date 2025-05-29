@@ -163,5 +163,13 @@ namespace iTasks.Controllers
             }
         }
 
+        //obter true or false se já existe uma tarefa com aquela ordem associada ao programador defenido por parametro
+        public bool ExisteTarefaComOrdem(int ordem, int idProgramador)
+        {
+            using (var db = new BaseDeDados())
+            {
+                return db.Tarefas.Any(t => t.OrdemExecucao == ordem && t.IdProgramador.Id == idProgramador);
+            }
+        }
     }
 }
