@@ -22,30 +22,28 @@ namespace iTasks
         public frmDetalhesTarefa(int id)
         {
             InitializeComponent();
-            using (var db = new BaseDeDados()) 
-            {
-                //recebe e carrega na combo box todos os tipos de tarefa
-                List<TipoTarefa> TiposTarefas = controllerDados.ObterTodosTiposTarefas();
+            //recebe e carrega na combo box todos os tipos de tarefa
+            List<TipoTarefa> TiposTarefas = controllerDados.ObterTodosTiposTarefas();
 
-                cbTipoTarefa.DataSource = null;
-                cbTipoTarefa.DataSource = TiposTarefas;
+            cbTipoTarefa.DataSource = null;
+            cbTipoTarefa.DataSource = TiposTarefas;
 
-                //recebe e carrega na combo box todos os programadores
-                List<Programador> Programadores = controllerDados.ObterTodosProgramdores();
+            //recebe e carrega na combo box todos os programadores
+            List<Programador> Programadores = controllerDados.ObterTodosProgramdores();
                 
-                cbProgramador.DataSource = null;
-                cbProgramador.DataSource = Programadores;
+            cbProgramador.DataSource = null;
+            cbProgramador.DataSource = Programadores;
 
-                // quando o id for -1, significa que é uma nova tarefa, caso contrário, carrega os dados da tarefa
-                if (id == -1)
-                {
-                    NovaTarefa();
-                }
-                else
-                {
-                    CarregaDadosTarefa(id);
-                }
+            //// quando o id for -1, significa que é uma nova tarefa, caso contrário, carrega os dados da tarefa
+            if (id == -1)
+            {
+                NovaTarefa();
             }
+            else
+            {
+                CarregaDadosTarefa(id);
+            }
+       
         }
 
         // funcao para criar uma nova tarefa

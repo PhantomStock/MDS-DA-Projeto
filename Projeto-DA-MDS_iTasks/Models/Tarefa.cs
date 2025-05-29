@@ -5,6 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using static iTasks.Models.Enums;
 
 namespace iTasks
@@ -55,10 +56,24 @@ namespace iTasks
         {
             if (tipo == 1)
             {
-                string ids = $"{this.Id},{this.idGestor},{this.IdProgramador},{this.IdTipoTarefa}";
-                string datas = $"{this.DataPrevistaInicio},{this.DataPrevistaFim},{this.DataRealInicio},{this.DataRealFim},{this.DataCriacao}";
+                string mensagem = 
+                    $"{this.Id}," +
+                    $"{this.idGestor}," +
+                    $"{this.IdProgramador}," +
+                    $"{this.IdTipoTarefa}," +
+                    $"{this.Descricao}," +
+                    $"{this.OrdemExecucao}," +
+                    $"{this.DataPrevistaInicio}," +
+                    $"{this.DataPrevistaFim}," +
+                    $"{this.DataRealInicio}," +
+                    $"{this.DataRealFim}," +
+                    $"{this.DataCriacao}," +
+                    $"{this.EstadoAtual}," +
+                    $"{this.StoryPoints}";
 
-                return $"{ids},{this.Descricao},{this.OrdemExecucao},{this.OrdemExecucao},{datas},{this.EstadoAtual},{this.StoryPoints}";
+                MessageBox.Show($"{mensagem}");
+
+                return $"{mensagem}";
             }
             else
             {
