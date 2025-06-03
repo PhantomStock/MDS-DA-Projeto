@@ -8,6 +8,7 @@ using System.IO;
 using System.Collections.ObjectModel;
 using iTasks.Models;
 using static iTasks.Models.Enums;
+using System.Windows.Forms;
 
 namespace iTasks.Controllers
 {
@@ -25,9 +26,25 @@ namespace iTasks.Controllers
                     //Vai checar se as tarefas estão concluidas e vai escrever os dados da tarefa(pode-se incrementar mais coisas)
                     foreach (var tarefa in tarefas)
                     {
-                        if (tarefa.EstadoAtual == Enums.EstadoAtual.ToDo)
-                        {
-                            writer.WriteLine(tarefa.ToStringCustom(1));
+                        if (tarefa.EstadoAtual == Enums.EstadoAtual.ToDo) //trocar de todo para DONE !!!!!
+                        { //corrigir esta mera
+                            string mensagem =
+                                $"{tarefa.Id}," +
+                                $"{tarefa.idGestor.Id}," +
+                                $"{tarefa.IdProgramador.Id}," +
+                                $"{tarefa.IdTipoTarefa.Id}," +
+                                $"{tarefa.Descricao}," +
+                                $"{tarefa.OrdemExecucao}," +
+                                $"{tarefa.DataPrevistaInicio}," +
+                                $"{tarefa.DataPrevistaFim}," +
+                                $"{tarefa.DataRealInicio}," +
+                                $"{tarefa.DataRealFim}," +
+                                $"{tarefa.DataCriacao}," +
+                                $"{tarefa.EstadoAtual}," +
+                                $"{tarefa.StoryPoints}";
+                            MessageBox.Show(mensagem);
+
+                            writer.WriteLine(mensagem);
                         }
                     }
                 }
