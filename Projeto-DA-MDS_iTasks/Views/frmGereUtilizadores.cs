@@ -20,27 +20,32 @@ namespace iTasks
         ControllerRegistar novoRegisto = new ControllerRegistar();
         public frmGereUtilizadores()
         {
-            InitializeComponent();
+                InitializeComponent();
 
-            //atualizar as listbox
-            Controller.AtualizarListBox(lstListaProgramadores, Controller.ObterTodosProgramdores());
-            Controller.AtualizarListBox(lstListaGestores, Controller.ObterTodosGestores());
+                //atualizar as listbox
+                Controller.AtualizarListBox(lstListaProgramadores, Controller.ObterTodosProgramdores());
+                Controller.AtualizarListBox(lstListaGestores, Controller.ObterTodosGestores());
 
-            //obter todos os gestores
-            var gestores = Controller.ObterTodosGestores();
+                //obter todos os gestores
+                var gestores = Controller.ObterTodosGestores();
 
-            //ComboBox Gestor
-            cbGestorProg.DataSource = null;
-            cbGestorProg.DataSource = gestores;
+                //ComboBox Gestor
+                cbGestorProg.DataSource = null;
+                cbGestorProg.DataSource = gestores;
 
 
-            //ComboBox NivelExperiencia
-            cbNivelProg.DataSource = null;
-            cbNivelProg.DataSource = Enum.GetValues(typeof(NivelExperiencia));
+                //ComboBox NivelExperiencia
+                cbNivelProg.DataSource = null;
+                cbNivelProg.DataSource = Enum.GetValues(typeof(NivelExperiencia));
 
-            // ComboBox Departamento
-            cbDepartamento.DataSource = null;
-            cbDepartamento.DataSource = Enum.GetValues(typeof(Departamento));
+                // ComboBox Departamento
+                cbDepartamento.DataSource = null;
+                cbDepartamento.DataSource = Enum.GetValues(typeof(Departamento));
+
+                Controller.AtualizarIdUtilizadores(txtIdGestor);
+                Controller.AtualizarIdUtilizadores(txtIdProg);
+            
+
         }
 
         private void btGravarGestor_Click(object sender, EventArgs e)
@@ -59,9 +64,12 @@ namespace iTasks
 
             //atualizar a listbox após inserir dados
             Controller.AtualizarListBox(lstListaGestores, Controller.ObterTodosGestores());
+            Controller.AtualizarGestorComboBox(cbGestorProg);
 
-           
+            Controller.AtualizarIdUtilizadores(txtIdGestor);
+            Controller.AtualizarIdUtilizadores(txtIdProg);
 
+            LimparCamposGestor();
         }
 
         private void btGravarProg_Click(object sender, EventArgs e)
@@ -83,7 +91,27 @@ namespace iTasks
             //atualizar a listbox após inserir dados
             Controller.AtualizarListBox(lstListaProgramadores, Controller.ObterTodosProgramdores());
 
+            Controller.AtualizarIdUtilizadores(txtIdGestor);
+            Controller.AtualizarIdUtilizadores(txtIdProg);
+
+            LimparCamposProgramador();
+
 
         }
+
+        private void LimparCamposGestor()
+        {
+            txtNomeGestor.Text = "";
+            txtUsernameGestor.Text = "";
+            txtPasswordGestor.Text = "";
+        }
+
+        private void LimparCamposProgramador()
+        {
+            txtNomeProg.Text = "";
+            txtUsernameProg.Text = "";
+            txtPasswordProg.Text = "";
+        }
+
     }
 }

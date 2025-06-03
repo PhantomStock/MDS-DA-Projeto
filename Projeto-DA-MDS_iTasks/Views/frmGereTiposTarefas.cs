@@ -50,17 +50,7 @@ namespace iTasks
             lstLista.DataSource = null;
             lstLista.DataSource = TiposTarefas;
 
-            int tipoTarefaIdAnterior = 0;
-            foreach (TipoTarefa tipoTarefa in TiposTarefas)
-            {
-                if (tipoTarefa.Id > tipoTarefaIdAnterior)
-                {
-                    tipoTarefaIdAnterior = tipoTarefa.Id;
-                }
-            }
-
-            txtId.Text = (tipoTarefaIdAnterior + 1).ToString();
-            
+            controllerDados.AtualizarIdTipoTarefa(txtId);
         }
     }
 }

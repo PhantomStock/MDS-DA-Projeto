@@ -52,17 +52,8 @@ namespace iTasks
         // funcao para criar uma nova tarefa
         public void NovaTarefa()
         {
-            var tarefas = controllerDados.ObterTodasTarefas();
-            int TarefaIdAnterior = 0;
+            controllerDados.AtualizarIdTarefa(txtId);
 
-            foreach (Tarefa tipoTarefa in tarefas)
-            {
-                if (tipoTarefa.Id > TarefaIdAnterior)
-                {
-                    TarefaIdAnterior = tipoTarefa.Id;
-                }
-            }
-            txtId.Text = (TarefaIdAnterior + 1).ToString();
             txtEstado.Text = Enums.EstadoAtual.ToDo.ToString();
             txtDataCriacao.Text = DateTime.Now.ToString("dd/MM/yyyy");
         }
@@ -196,6 +187,8 @@ namespace iTasks
                     tarefaNova.IdProgramador = programadorSelecionado.Id;
                     tarefaNova.IdGestor = gestor.Id; //id do gestor que clicou no buton
 
+
+                    NovaTarefa();
                     controllerTarefa.CriarTarefa(tarefaNova);
                     //  this.Close();
                 }else{

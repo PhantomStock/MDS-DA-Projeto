@@ -21,7 +21,7 @@ namespace iTasks
         //temporario para testes no futuro vai desaparecer esta opçao de registar
         private void btRegistar_Click(object sender, EventArgs e)
         {
-            frmRegistar registar = new frmRegistar();
+            frmGereUtilizadores registar = new frmGereUtilizadores();
             registar.Show();
             this.Hide();
         }

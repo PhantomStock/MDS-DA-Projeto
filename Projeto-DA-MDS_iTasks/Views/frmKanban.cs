@@ -20,17 +20,20 @@ namespace iTasks
         ControllerDados controllerDados = new ControllerDados();
         public frmKanban(int utilizadorId)
         {
-            InitializeComponent();
-            // inicializa o form kanbar e atribui a uma variavel o utilizador que está a iniciar sessão
-            var utilizador = controllerDados.ObterUtilizadorPorId(utilizadorId);
-            IdUtilizadorAtual = utilizadorId;
+            
+                InitializeComponent();
+                // inicializa o form kanbar e atribui a uma variavel o utilizador que está a iniciar sessão
+                var utilizador = controllerDados.ObterUtilizadorPorId(utilizadorId);
+                IdUtilizadorAtual = utilizadorId;
 
-            if (utilizador != null)
-            {
-                labelNomeUtilizador.Text = $"Bem vindo: {utilizador.Nome}";
-            }
+                if (utilizador != null)
+                {
+                    labelNomeUtilizador.Text = $"Bem vindo: {utilizador.Nome}";
+                }
 
-            RefreshDadosListBoxes();
+                RefreshDadosListBoxes();
+           
+  
             
         }
 
@@ -64,8 +67,15 @@ namespace iTasks
         //ToolStripMenu
         private void gerirUtilizadoresToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new frmGereUtilizadores().Show();
-        }
+            if (controllerDados.ObterGestorPorId(IdUtilizadorAtual).GereUtilizadores )
+            {
+                new frmGereUtilizadores().Show();
+            }
+            else
+            {
+                MessageBox.Show("Apenas um gestor pode gerir utilizadores.", "Acesso Negado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }   
 
         private void gerirTiposDeTarefasToolStripMenuItem_Click(object sender, EventArgs e)
         {

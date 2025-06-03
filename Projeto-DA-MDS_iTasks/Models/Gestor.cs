@@ -19,8 +19,8 @@ namespace iTasks
         : base (nome, username, password)
         {
 
-            this.Departamento = Departamento;
-            this.GereUtilizadores = GereUtilizadores;
+            this.Departamento = departamento;
+            this.GereUtilizadores = gereUtilizador;
         }
 
         // override ao tostring para apresentar o nome de utilizador do gestor
