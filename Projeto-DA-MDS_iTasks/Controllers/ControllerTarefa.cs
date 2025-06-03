@@ -32,7 +32,7 @@ namespace iTasks.Controllers
             //pegar na tarefa que vem e fazer update aos dados da base de dados com os novos valores
             using (var db = new BaseDeDados())
             {
-                var tarefaDb = db.Tarefas.FirstOrDefault(t => t.Id == tarefa.Id);
+                var tarefaDb = db.Tarefa.FirstOrDefault(t => t.Id == tarefa.Id);
                 if (tarefaDb != null)
                 {
                     tarefaDb.Descricao = tarefa.Descricao;
@@ -46,7 +46,7 @@ namespace iTasks.Controllers
                     tarefaDb.OrdemExecucao = tarefa.OrdemExecucao;
                     tarefaDb.IdTipoTarefa = tarefa.IdTipoTarefa;
                     tarefaDb.IdProgramador = tarefa.IdProgramador;
-                    tarefaDb.idGestor = tarefa.idGestor;
+                    tarefaDb.IdGestor = tarefa.IdGestor;
 
                     db.SaveChanges();
                     MessageBox.Show("Tarefa atualizada com sucesso.", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);

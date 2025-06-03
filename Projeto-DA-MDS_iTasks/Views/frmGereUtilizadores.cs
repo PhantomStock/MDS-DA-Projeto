@@ -23,7 +23,7 @@ namespace iTasks
                 InitializeComponent();
 
                 //atualizar as listbox
-                Controller.AtualizarListBox(lstListaProgramadores, Controller.ObterTodosProgramdores());
+                Controller.AtualizarListBox(lstListaProgramadores, Controller.ObterTodosProgramadores());
                 Controller.AtualizarListBox(lstListaGestores, Controller.ObterTodosGestores());
 
                 //obter todos os gestores
@@ -89,14 +89,12 @@ namespace iTasks
             novoRegisto.RegistarProgramador(nome, username, password, experiencia, gestor.Id);
 
             //atualizar a listbox após inserir dados
-            Controller.AtualizarListBox(lstListaProgramadores, Controller.ObterTodosProgramdores());
+            Controller.AtualizarListBox(lstListaProgramadores, Controller.ObterTodosProgramadores());
 
             Controller.AtualizarIdUtilizadores(txtIdGestor);
             Controller.AtualizarIdUtilizadores(txtIdProg);
 
             LimparCamposProgramador();
-
-
         }
 
         private void LimparCamposGestor()

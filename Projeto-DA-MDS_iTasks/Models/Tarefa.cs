@@ -68,7 +68,7 @@ namespace iTasks
         public List<Tarefa> GetTarefasWithIncludes()
         {
             return Tarefas
-                .Include(t => t.idGestor)
+                .Include(t => t.IdGestor)
                 .Include(t => t.IdProgramador)
                 .Include(t => t.IdTipoTarefa)
                 .ToList();

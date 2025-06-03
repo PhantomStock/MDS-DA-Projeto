@@ -114,44 +114,48 @@ namespace iTasks
 
                     if (listaTarefas != null)
                     {
-                        
                         if (controllerDados.ExisteTarefaComOrdem(Convert.ToInt16(txtOrdem.Text), idProgramador))
                         {
                             MessageBox.Show("Já existe uma tarefa atribuída a este programador com a mesma ordem de execução.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             return;
+                            
+                            //FIX FIX FIX MESMO BLOCO DO ANTERIOR
+
                         } else
                         {
-                            //verifica se a ordem de execução é maior que 0
-                            if (Convert.ToInt32(txtOrdem.Text) <= 0)
+
+                            //verifica se o numero de story points é maior que 0
+                            if (Convert.ToInt32(txtStoryPoints.Text) <= 0)
                             {
-                                MessageBox.Show("A ordem de execução deve ser um número maior que 0.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                MessageBox.Show("O número de story points deve ser um número maior que 0.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                 return;
                             }
                             else
                             {
-                                //verifica se o numero de story points é maior que 0
-                                if (Convert.ToInt32(txtStoryPoints.Text) <= 0)
+                                //verifica se a data prevista de inicio é maior que a data prevista de fim
+                                if (dtInicio.Value > dtFim.Value)
                                 {
-                                    MessageBox.Show("O número de story points deve ser um número maior que 0.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                    MessageBox.Show("A data prevista de início não pode ser maior que a data prevista de fim.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                     return;
                                 }
                                 else
                                 {
-                                    //verifica se a data prevista de inicio é maior que a data prevista de fim
-                                    if (dtInicio.Value > dtFim.Value)
-                                    {
-                                        MessageBox.Show("A data prevista de início não pode ser maior que a data prevista de fim.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                                        return;
-                                    }
-                                    else
-                                    {
-                                        //recebe o id do tipo de tarefa selecionado na combobox e do programador selecionado
-                                        TipoTarefa TipoTarefaSelecionado = (TipoTarefa)cbTipoTarefa.SelectedItem;
-                                        Programador programadorSelecionado = (Programador)cbProgramador.SelectedItem;
-                                        Gestor gestor = controllerDados.ObterGestorPorId(IdGestorAtual);
+                                    //recebe o id do tipo de tarefa selecionado na combobox e do programador selecionado
+                                    TipoTarefa TipoTarefaSelecionado = (TipoTarefa)cbTipoTarefa.SelectedItem;
+                                    Programador programadorSelecionado = (Programador)cbProgramador.SelectedItem;
+                                    Gestor gestor = controllerDados.ObterGestorPorId(IdGestorAtual);
 
-                                        //verifica se as datas reais de inicio e fim foram preenchidas automaticamente (basicamente define se esta a atualizar ou nao)
-                                        if (idTarefaAtualUpdate > 0)
+                                    //verifica se as datas reais de inicio e fim foram preenchidas automaticamente (basicamente define se esta a atualizar ou nao)
+                                    if (idTarefaAtualUpdate > 0)
+                                    {
+
+                                        //verifica se a ordem de execução é maior que 0
+                                        if (Convert.ToInt32(txtOrdem.Text) <= 0) ///RESOLVER URGENTE CARALHO tem de verificar se a verção alterada é igual a antiga e se for igual a antiga deixa estar mas se for diferente verifica se ja existe algum com essa ordem
+                                        {
+                                            MessageBox.Show("A ordem de execução deve ser um número maior que 0.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                            return;
+                                        }
+                                        else
                                         {
                                             //Criar nova tarefa para depois atualizar
                                             Tarefa tarefaUpdate = controllerDados.ObterTarefaPorId(idTarefaAtualUpdate);
@@ -163,24 +167,37 @@ namespace iTasks
                                             if (string.IsNullOrEmpty(txtDataRealini.Text))
                                             {
                                                 tarefaUpdate.DataRealInicio = null;
-                                            } else
+                                            }
+                                            else
                                             {
                                                 tarefaUpdate.DataRealInicio = Convert.ToDateTime(txtDataRealini.Text);
                                             }
                                             if (string.IsNullOrEmpty(txtDataRealFim.Text))
                                             {
                                                 tarefaUpdate.DataRealFim = null;
-                                            } else
+                                            }
+                                            else
                                             {
                                                 tarefaUpdate.DataRealFim = Convert.ToDateTime(txtDataRealFim.Text);
                                             }
                                             tarefaUpdate.EstadoAtual = Enums.EstadoAtual.ToDo;
                                             tarefaUpdate.StoryPoints = Convert.ToInt32(txtStoryPoints.Text);
                                             tarefaUpdate.OrdemExecucao = Convert.ToInt32(txtOrdem.Text);
-                                            tarefaUpdate.IdTipoTarefa = TipoTarefaSelecionado; //ta a duplicar ?????
-                                            tarefaUpdate.IdProgramador = programadorSelecionado; //ta a duplicar ?????
+                                            tarefaUpdate.IdTipoTarefa = TipoTarefaSelecionado.Id; //ta a duplicar ?????
+                                            tarefaUpdate.IdProgramador = programadorSelecionado.Id; //ta a duplicar ?????
 
                                             controllerTarefa.updateTarefa(tarefaUpdate);
+                                        }
+                                    }
+                                    else
+                                    {
+                                        //verifica se a ordem de execução é maior que 0
+                                        if (Convert.ToInt32(txtOrdem.Text) <= 0)
+                                        {
+                                            MessageBox.Show("A ordem de execução deve ser um número maior que 0.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                            return;
+
+                                            //erro de validação entre criar e editar -- cirar interdependecia 
                                         }
                                         else
                                         {
@@ -197,12 +214,12 @@ namespace iTasks
                                             tarefaNova.EstadoAtual = Enums.EstadoAtual.ToDo;
                                             tarefaNova.StoryPoints = Convert.ToInt32(txtStoryPoints.Text);
                                             tarefaNova.OrdemExecucao = Convert.ToInt32(txtOrdem.Text);
-                                            tarefaNova.IdTipoTarefa = TipoTarefaSelecionado;
-                                            tarefaNova.IdProgramador = programadorSelecionado;
-                                            tarefaNova.idGestor = gestor; //id do gestor que clicou no buton (por alterara)
+                                            tarefaNova.IdTipoTarefa = TipoTarefaSelecionado.Id;
+                                            tarefaNova.IdProgramador = programadorSelecionado.Id;
+                                            tarefaNova.IdGestor = gestor.Id; //id do gestor que clicou no buton (por alterara)
 
                                             controllerTarefa.CriarTarefa(tarefaNova);
-                                        }
+                                        } 
                                     }
                                 }
                             }
