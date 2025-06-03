@@ -13,7 +13,7 @@ namespace iTasks
     public class Programador : Utilizador
     {
         public NivelExperiencia NivelExperiencia { get; set; }
-        public int idGestor { get; set; }
+        public int IdGestor { get; set; }
 
         public Programador() { }
 
@@ -21,7 +21,7 @@ namespace iTasks
         : base(nome, username, password)
         {
             this.NivelExperiencia = experiencia;
-            this.idGestor = idGestor;
+            this.IdGestor = idGestor;
         }
 
         // Override ao tostring para apresentar o nome de utilizador do programador

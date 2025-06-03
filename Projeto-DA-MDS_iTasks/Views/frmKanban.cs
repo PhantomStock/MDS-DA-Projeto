@@ -15,6 +15,7 @@ namespace iTasks
 {
     public partial class frmKanban : Form
     {
+        BaseDeDados db => BaseDeDados.Instance;
         public int IdUtilizadorAtual;
         ControllerDados controllerDados = new ControllerDados();
         public frmKanban(int utilizadorId)
@@ -140,6 +141,8 @@ namespace iTasks
         {
             RefreshDadosListBoxes();
         }
+
+
     }
             
 }

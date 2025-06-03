@@ -10,40 +10,32 @@ namespace iTasks.Controllers
 {
     class ControllerDados
     {
+        BaseDeDados db => BaseDeDados.Instance;
         //obtem uma list com todos os gestores
         public List<Gestor> ObterTodosGestores()
         {
-            using (var db = new BaseDeDados())
-            {
-                return db.Utilizadores.OfType<Gestor>().ToList();
-            }
+            return db.Utilizador.OfType<Gestor>().ToList();
+    
         }
 
         //obtem uma list com todos os programadores
         public List<Programador> ObterTodosProgramdores()
         {
-            using (var db = new BaseDeDados())
-            {
-                return db.Utilizadores.OfType<Programador>().ToList();
-            }
+            return db.Utilizador.OfType<Programador>().ToList();
         }
 
         //obtem uma list com todos os utilizadores
         public List<Utilizador> ObterTodosUtilizadores()
         {
-            using (var db = new BaseDeDados())
-            {
-                return db.Utilizadores.ToList();
-            }
+           return db.Utilizador.ToList();
         }
 
         //obtem um list com todas as tarefas
         public List<Tarefa> ObterTodasTarefas()
         {
-            using (var db = new BaseDeDados())
-            {
-                return db.Tarefas.ToList();
-            }
+
+              return db.Tarefa.ToList();
+
         }
 
         //Obtem uma list com todos os tipos de tarefa
@@ -51,7 +43,7 @@ namespace iTasks.Controllers
         {
             using (var db = new BaseDeDados())
             {
-                return db.TipoTarefas.ToList();
+                return db.TipoTarefa.ToList();
             }
         }
 
@@ -60,7 +52,7 @@ namespace iTasks.Controllers
         {
             using (var db = new BaseDeDados())
             {
-                return db.Utilizadores.FirstOrDefault(u => u.Id == id);
+                return db.Utilizador.FirstOrDefault(u => u.Id == id);
             }
         }
 
@@ -69,7 +61,7 @@ namespace iTasks.Controllers
         {
             using (var db = new BaseDeDados())
             {
-                return db.Utilizadores.OfType<Programador>().FirstOrDefault(u => u.Id == id);
+                return db.Utilizador.OfType<Programador>().FirstOrDefault(u => u.Id == id);
             }
         }
 
@@ -78,7 +70,7 @@ namespace iTasks.Controllers
         {
             using (var db = new BaseDeDados())
             {
-                return db.Utilizadores.OfType<Gestor>().FirstOrDefault(u => u.Id == id);
+                return db.Utilizador.OfType<Gestor>().FirstOrDefault(u => u.Id == id);
             }
         }
 
@@ -87,7 +79,7 @@ namespace iTasks.Controllers
         {
             using (var db = new BaseDeDados())
             {
-                return db.Tarefas.FirstOrDefault(t => t.Id == id);
+                return db.Tarefa.FirstOrDefault(t => t.Id == id);
             }
         }
 
@@ -96,7 +88,7 @@ namespace iTasks.Controllers
         {
             using (var db = new BaseDeDados())
             {
-                return db.TipoTarefas.FirstOrDefault(t => t.Id == id);
+                return db.TipoTarefa.FirstOrDefault(t => t.Id == id);
             }
         }
 
@@ -105,7 +97,7 @@ namespace iTasks.Controllers
         {
             using (var db = new BaseDeDados())
             {
-                return db.Utilizadores.OfType<Gestor>().FirstOrDefault(u => u.Username == Username);
+                return db.Utilizador.OfType<Gestor>().FirstOrDefault(u => u.Username == Username);
             }
         }
 
@@ -114,7 +106,7 @@ namespace iTasks.Controllers
         {
             using (var db = new BaseDeDados())
             {
-                return db.Utilizadores.OfType<Programador>().FirstOrDefault(u => u.Username == Username);
+                return db.Utilizador.OfType<Programador>().FirstOrDefault(u => u.Username == Username);
             }
         }
 
@@ -123,7 +115,7 @@ namespace iTasks.Controllers
         {
             using (var db = new BaseDeDados())
             {
-                return db.Utilizadores.FirstOrDefault(u => u.Username == Username);
+                return db.Utilizador.FirstOrDefault(u => u.Username == Username);
             }
         }
 
@@ -132,7 +124,7 @@ namespace iTasks.Controllers
         {
             using (var db = new BaseDeDados())
             {
-                return db.Tarefas.Where(t => t.IdProgramador.Id == id).ToList();
+                return db.Tarefa.Where(t => t.IdProgramador == id).ToList();
             }
         }
 
@@ -141,7 +133,7 @@ namespace iTasks.Controllers
         {
             using (var db = new BaseDeDados())
             {
-                return db.Tarefas.Where(t => t.EstadoAtual == Enums.EstadoAtual.ToDo).ToList();
+                return db.Tarefa.Where(t => t.EstadoAtual == Enums.EstadoAtual.ToDo).ToList();
             }
         }
 
@@ -150,7 +142,7 @@ namespace iTasks.Controllers
         {
             using (var db = new BaseDeDados())
             {
-                return db.Tarefas.Where(t => t.EstadoAtual == Enums.EstadoAtual.Doing).ToList();
+                return db.Tarefa.Where(t => t.EstadoAtual == Enums.EstadoAtual.Doing).ToList();
             }
         }
 
@@ -159,7 +151,7 @@ namespace iTasks.Controllers
         {
             using (var db = new BaseDeDados())
             {
-                return db.Tarefas.Where(t => t.EstadoAtual == Enums.EstadoAtual.Done).ToList();
+                return db.Tarefa.Where(t => t.EstadoAtual == Enums.EstadoAtual.Done).ToList();
             }
         }
 
@@ -168,7 +160,7 @@ namespace iTasks.Controllers
         {
             using (var db = new BaseDeDados())
             {
-                return db.Tarefas.Any(t => t.OrdemExecucao == ordem && t.IdProgramador.Id == idProgramador);
+                return db.Tarefa.Any(t => t.OrdemExecucao == ordem && t.IdProgramador == idProgramador);
             }
         }
     }

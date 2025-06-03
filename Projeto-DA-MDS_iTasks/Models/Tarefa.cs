@@ -15,17 +15,17 @@ namespace iTasks
     public class Tarefa
     {
         [Key] public int Id { get; set; }
-        public Gestor idGestor { get; set; }
-        public Programador IdProgramador { get; set; }
+        public int IdGestor { get; set; }
+        public int IdProgramador { get; set; }
         public int OrdemExecucao { get; set; }
         public string Descricao { get; set; }
-        public DateTime DataPrevistaInicio { get; set; }
-        public DateTime DataPrevistaFim { get; set; }
-        public TipoTarefa IdTipoTarefa { get; set; }
+        public DateTime? DataPrevistaInicio { get; set; }
+        public DateTime? DataPrevistaFim { get; set; }
+        public int IdTipoTarefa { get; set; }
         public int StoryPoints { get; set; }
-        public DateTime DataRealInicio { get; set; }
-        public DateTime DataRealFim { get; set; }
-        public DateTime DataCriacao { get; set; } = DateTime.Now;
+        public DateTime? DataRealInicio { get; set; }
+        public DateTime? DataRealFim { get; set; }
+        public DateTime? DataCriacao { get; set; } = DateTime.Now;
         public EstadoAtual EstadoAtual { get; set; }
 
         // Construtor padrão
@@ -38,7 +38,7 @@ namespace iTasks
         public Tarefa(Tarefa tarefa)
         {
             this.Id = tarefa.Id;
-            this.idGestor = tarefa.idGestor;
+            this.IdGestor = tarefa.IdGestor;
             this.IdProgramador = tarefa.IdProgramador;
             this.OrdemExecucao = tarefa.OrdemExecucao;
             this.Descricao = tarefa.Descricao;
@@ -51,35 +51,7 @@ namespace iTasks
             this.DataCriacao = tarefa.DataCriacao;
             this.EstadoAtual = tarefa.EstadoAtual;
         }
-        // contrutor utilizado para apresentar uma formatação em string customizada para exportação (separado do tostring normal)
-        public string ToStringCustom(int tipo) //o tipo indica que tipo de to string customizado vamos devolver ao user (permite modulação do to string)
-        {
-            if (tipo == 1)
-            {
-                string mensagem = 
-                    $"{this.Id}," +
-                    $"{this.idGestor}," +
-                    $"{this.IdProgramador}," +
-                    $"{this.IdTipoTarefa}," +
-                    $"{this.Descricao}," +
-                    $"{this.OrdemExecucao}," +
-                    $"{this.DataPrevistaInicio}," +
-                    $"{this.DataPrevistaFim}," +
-                    $"{this.DataRealInicio}," +
-                    $"{this.DataRealFim}," +
-                    $"{this.DataCriacao}," +
-                    $"{this.EstadoAtual}," +
-                    $"{this.StoryPoints}";
-
-                MessageBox.Show($"{mensagem}");
-
-                return $"{mensagem}";
-            }
-            else
-            {
-                return $"{this.Descricao}";
-            }
-        }
+       
 
         // Override ao toString para apresetnar informação da descricao da tarefa
         public override string ToString()

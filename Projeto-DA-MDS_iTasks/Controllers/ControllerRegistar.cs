@@ -12,63 +12,54 @@ namespace iTasks.Controllers
 {
     class ControllerRegistar
     {
-        BaseDeDados db;
+        BaseDeDados db => BaseDeDados.Instance;
         //regista um utilizador padrão (vai sair daqui)
         public void RegistarUtilizador(string nome, string username, string password)
         {
-            using(var db = new BaseDeDados())
+            var user = db.Utilizador
+            .FirstOrDefault(u => u.Username == username);
+
+            if (user == null)
             {
-                var user = db.Utilizadores
-                .FirstOrDefault(u => u.Username == username);
+                var utilizador = new Utilizador(nome, username, password);
+                db.Utilizador.Add(utilizador);
+                db.SaveChanges();
 
-                if (user == null)
-                {
-                    var utilizador = new Utilizador(nome, username, password);
-                    db.Utilizadores.Add(utilizador);
-                    db.SaveChanges();
-
-                    MessageBox.Show("Utilizador registado com sucesso", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-            } 
+                MessageBox.Show("Utilizador registado com sucesso", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
         //regista um programador
         public void RegistarProgramador(string nome, string username, string password, NivelExperiencia experiencia, int idGestor)
         {
-            using(var db = new BaseDeDados())
+            var user = db.Utilizador
+            .FirstOrDefault(u => u.Username == username);
+
+            if (user == null)
             {
-                var user = db.Utilizadores
-                .FirstOrDefault(u => u.Username == username);
+                var programador = new Programador(nome, username, password, experiencia, idGestor);
+                db.Utilizador.Add(programador);
+                db.SaveChanges();
 
-                if (user == null)
-                {
-                    var programador = new Programador(nome, username, password, experiencia, idGestor);
-                    db.Utilizadores.Add(programador);
-                    db.SaveChanges();
-
-                    MessageBox.Show("Programador registado com sucesso", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
+                MessageBox.Show("Programador registado com sucesso", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-
         }
 
         //regista um gestor
         public void RegistarGestor(string nome, string username, string password, Departamento departamento, bool gereUtilizadores)
         {
-            using(var db = new BaseDeDados())
+            var user = db.Utilizador
+            .FirstOrDefault(u => u.Username == username);
+
+            if (user == null)
             {
-                var user = db.Utilizadores
-                .FirstOrDefault(u => u.Username == username);
+                var gestor = new Gestor(nome, username, password, departamento, gereUtilizadores);
+                db.Utilizador.Add(gestor);
+                db.SaveChanges();
 
-                if (user == null)
-                {
-                    var gestor = new Gestor(nome, username, password, departamento, gereUtilizadores);
-                    db.Utilizadores.Add(gestor);
-                    db.SaveChanges();
-
-                    MessageBox.Show("Gestor registado com sucesso", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
+                MessageBox.Show("Gestor registado com sucesso", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+            
 
         }
 

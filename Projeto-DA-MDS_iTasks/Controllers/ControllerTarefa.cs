@@ -15,16 +15,15 @@ namespace iTasks.Controllers
 {
     class ControllerTarefa
     {
+        BaseDeDados db => BaseDeDados.Instance;
         //recebe um objeto tarefa e adiciona-o à base de dados
         public void CriarTarefa(Tarefa tarefa) 
         { 
-            using (var db = new BaseDeDados())
-            {
-                db.Tarefas.Add(tarefa);
-                db.SaveChanges();
-                MessageBox.Show("Tarefa criada com sucesso.", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
-            }
+
+            db.Tarefa.Add(tarefa);
+            db.SaveChanges();
+            MessageBox.Show("Tarefa criada com sucesso.", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            return;
         }
 
         //recebe um objeto tarefa e faz update da tarefa na base de dados
@@ -36,13 +35,11 @@ namespace iTasks.Controllers
         //recebe um id e remove a tarefa correspondente da base de dados
         public Tarefa loadTarefa(int id) 
         {
-            using (var db = new BaseDeDados()) 
-            {
-                var tarefa = db.Tarefas
-                    .FirstOrDefault(t => t.Id == id);
 
-                return tarefa;
-            }
+            var tarefa = db.Tarefa
+                .FirstOrDefault(t => t.Id == id);
+
+            return tarefa;
         }
 
     }

@@ -13,6 +13,7 @@ namespace iTasks
 {
     public partial class frmLogin : Form
     {
+        BaseDeDados db => BaseDeDados.Instance;
         public frmLogin()
         {
             InitializeComponent();
@@ -31,24 +32,20 @@ namespace iTasks
             string username = txtUsername.Text;
             string password = txtPassword.Text;
 
-            using (var db = new BaseDeDados())
+            var utilizador = db.Utilizador
+                .FirstOrDefault(u => u.Username == username && u.Password == password);
+
+            if (utilizador != null)
             {
-                var utilizador = db.Utilizadores
-                    .FirstOrDefault(u => u.Username == username && u.Password == password);
-
-                if (utilizador != null)
-                {
                     
-                    MessageBox.Show("Login successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    new frmKanban(utilizador.Id).Show();
-                    this.Hide();
-                }
-                else
-                {
-                    MessageBox.Show("Invalid username or password.", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                MessageBox.Show("Login successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                new frmKanban(utilizador.Id).Show();
+                this.Hide();
             }
-
+            else
+            {
+                MessageBox.Show("Invalid username or password.", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         // caso o form seja fechado ele encera o programa

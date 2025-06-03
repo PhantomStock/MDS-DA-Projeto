@@ -18,7 +18,7 @@ namespace iTasks
     {
         public int IdGestorAtual;
         ControllerDados controllerDados = new ControllerDados();
-        ControllerDetalhesTarefa controllerDetalhesTarefa = new ControllerDetalhesTarefa();
+        ControllerDetalhesTarefa ControllerDetalhesTarefa = new ControllerDetalhesTarefa();
         ControllerTarefa controllerTarefa = new ControllerTarefa();
         public frmDetalhesTarefa(int id, int idGestor)
         {
@@ -80,9 +80,9 @@ namespace iTasks
             } else {
                 txtId.Text = tarefa.Id.ToString();
                 txtEstado.Text = tarefa.EstadoAtual.ToString();
-                txtDataCriacao.Text = tarefa.DataCriacao.ToString("dd/MM/yyyy");
-                txtDataRealini.Text = tarefa.DataRealInicio.ToString("dd/MM/yyyy");
-                txtDataRealFim.Text = tarefa.DataRealFim.ToString("dd/MM/yyyy");
+                txtDataCriacao.Text = tarefa.DataCriacao?.ToString("dd/MM/yyyy") ?? string.Empty;
+                txtDataRealini.Text = tarefa.DataRealInicio?.ToString("dd/MM/yyyy") ?? string.Empty;
+                txtDataRealFim.Text = tarefa.DataRealFim?.ToString("dd/MM/yyyy") ?? string.Empty;
                 txtDesc.Text = tarefa.Descricao;
             }
 
@@ -94,11 +94,11 @@ namespace iTasks
 
             if (tarefa.DataPrevistaInicio != null)
             {
-                dtInicio.Value = tarefa.DataPrevistaInicio;
+                dtInicio.Value = (DateTime)tarefa.DataPrevistaInicio;
             }
             if (tarefa.DataPrevistaFim != null)
             {
-                dtFim.Value = tarefa.DataPrevistaFim;
+                dtFim.Value = (DateTime)tarefa.DataPrevistaFim;
             }
         }
 
@@ -192,9 +192,9 @@ namespace iTasks
                     tarefaNova.EstadoAtual = Enums.EstadoAtual.ToDo;
                     tarefaNova.StoryPoints = Convert.ToInt32(txtStoryPoints.Text);
                     tarefaNova.OrdemExecucao = Convert.ToInt32(txtOrdem.Text);
-                    tarefaNova.IdTipoTarefa = TipoTarefaSelecionado;
-                    tarefaNova.IdProgramador = programadorSelecionado;
-                    tarefaNova.idGestor = gestor; //id do gestor que clicou no buton
+                    tarefaNova.IdTipoTarefa = TipoTarefaSelecionado.Id;
+                    tarefaNova.IdProgramador = programadorSelecionado.Id;
+                    tarefaNova.IdGestor = gestor.Id; //id do gestor que clicou no buton
 
                     controllerTarefa.CriarTarefa(tarefaNova);
                     //  this.Close();

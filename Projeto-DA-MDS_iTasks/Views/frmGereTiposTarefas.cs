@@ -14,6 +14,7 @@ namespace iTasks
 {
     public partial class frmGereTiposTarefas : Form
     {
+        BaseDeDados db => BaseDeDados.Instance;
         ControllerDados controllerDados = new ControllerDados();
         public frmGereTiposTarefas()
         {
@@ -43,25 +44,23 @@ namespace iTasks
         // recarrega o DataSource da lista de tipos de tarefa
         private void RefreshDataSourceTipoTarefa()
         {
-            using (var db = new BaseDeDados())
+            //recebe e carrega na combo box todos os tipos de tarefa
+            List<TipoTarefa> TiposTarefas = controllerDados.ObterTodosTiposTarefas();
+
+            lstLista.DataSource = null;
+            lstLista.DataSource = TiposTarefas;
+
+            int tipoTarefaIdAnterior = 0;
+            foreach (TipoTarefa tipoTarefa in TiposTarefas)
             {
-                //recebe e carrega na combo box todos os tipos de tarefa
-                List<TipoTarefa> TiposTarefas = controllerDados.ObterTodosTiposTarefas();
-
-                lstLista.DataSource = null;
-                lstLista.DataSource = TiposTarefas;
-
-                int tipoTarefaIdAnterior = 0;
-                foreach (TipoTarefa tipoTarefa in TiposTarefas)
+                if (tipoTarefa.Id > tipoTarefaIdAnterior)
                 {
-                    if (tipoTarefa.Id > tipoTarefaIdAnterior)
-                    {
-                        tipoTarefaIdAnterior = tipoTarefa.Id;
-                    }
+                    tipoTarefaIdAnterior = tipoTarefa.Id;
                 }
-
-                txtId.Text = (tipoTarefaIdAnterior + 1).ToString();
             }
+
+            txtId.Text = (tipoTarefaIdAnterior + 1).ToString();
+            
         }
     }
 }

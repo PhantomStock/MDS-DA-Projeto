@@ -17,6 +17,7 @@ namespace iTasks
     // Formulário para registar novos utilizadores, programadores ou gestores (vai ser alterado e este sera eleminado, foi para testes)
     public partial class frmRegistar: Form
     {
+        BaseDeDados db => BaseDeDados.Instance;
         public frmRegistar()
         {
             InitializeComponent();
@@ -63,9 +64,8 @@ namespace iTasks
             //Variavel Gestor
             Gestor Gestor = (Gestor)cbGestor.SelectedItem;
 
-            using (var db = new BaseDeDados())
-            {
-                var user = db.Utilizadores
+
+                var user = db.Utilizador
                     .FirstOrDefault(u => u.Username == username);
 
                 if (user == null)
@@ -98,7 +98,7 @@ namespace iTasks
                     MessageBox.Show("Username já registado", "Registo Falhou", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-        }
+       
         
 
         private void btVoltar_Click(object sender, EventArgs e)
