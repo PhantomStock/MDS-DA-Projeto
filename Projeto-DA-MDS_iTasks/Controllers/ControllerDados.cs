@@ -20,7 +20,7 @@ namespace iTasks.Controllers
         }
 
         //obtem uma list com todos os programadores
-        public List<Programador> ObterTodosProgramdores()
+        public List<Programador> ObterTodosProgramadores()
         {
             return db.Utilizador.OfType<Programador>().ToList();
         }

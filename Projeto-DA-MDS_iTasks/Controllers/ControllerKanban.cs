@@ -9,7 +9,6 @@ using System.Collections.ObjectModel;
 using iTasks.Models;
 using static iTasks.Models.Enums;
 using System.Windows.Forms;
-using static System.Windows.Forms.LinkLabel;
 
 namespace iTasks.Controllers
 {
@@ -46,6 +45,7 @@ namespace iTasks.Controllers
                                 tarefa.StoryPoints.ToString() ?? "N/A"
                             );
                             writer.WriteLine(linha);
+
                         }
                     }
                 }

@@ -152,7 +152,10 @@ namespace iTasks
             RefreshDadosListBoxes();
         }
 
+        private void lstTodo_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
+        }
     }
             
 }

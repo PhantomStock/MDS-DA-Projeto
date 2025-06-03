@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Data.Entity; // teste
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -57,6 +58,20 @@ namespace iTasks
         public override string ToString()
         {
             return this.Descricao;
+        }
+    }
+
+    public class TarefaDbContext : DbContext //teste
+    {
+        public DbSet<Tarefa> Tarefas { get; set; }
+
+        public List<Tarefa> GetTarefasWithIncludes()
+        {
+            return Tarefas
+                .Include(t => t.idGestor)
+                .Include(t => t.IdProgramador)
+                .Include(t => t.IdTipoTarefa)
+                .ToList();
         }
     }
 }
