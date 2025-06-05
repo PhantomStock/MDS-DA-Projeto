@@ -38,6 +38,15 @@
             this.ficheiroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exportarParaCSVToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exportarTodasAsTarefasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exportarTarefaPorFazerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exportarTarefaEmExecuçãoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exportarTarefaConcluidaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.importarTarefasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.importarTodasAsTarefasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.importarTarefasToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.importarTarefasEmExecuçãoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.importarTarefasConcluidasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.utilizadoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gerirUtilizadoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gerirTiposDeTarefasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -60,16 +69,10 @@
             // 
             // lstTodo
             // 
-<<<<<<< Updated upstream
-            this.lstTodo.Dock = System.Windows.Forms.DockStyle.Fill;
-=======
-            this.lstTodo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
->>>>>>> Stashed changes
             this.lstTodo.FormattingEnabled = true;
             this.lstTodo.ItemHeight = 16;
-            this.lstTodo.Location = new System.Drawing.Point(4, 19);
-            this.lstTodo.Margin = new System.Windows.Forms.Padding(4);
+            this.lstTodo.Location = new System.Drawing.Point(4, 22);
+            this.lstTodo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.lstTodo.Name = "lstTodo";
 <<<<<<< Updated upstream
             this.lstTodo.Size = new System.Drawing.Size(395, 520);
@@ -81,60 +84,36 @@
             // 
             // groupBox1
             // 
-<<<<<<< Updated upstream
-=======
-            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
->>>>>>> Stashed changes
             this.groupBox1.Controls.Add(this.lstTodo);
             this.groupBox1.Location = new System.Drawing.Point(16, 68);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-<<<<<<< Updated upstream
-            this.groupBox1.Size = new System.Drawing.Size(403, 543);
-=======
-            this.groupBox1.Size = new System.Drawing.Size(403, 542);
->>>>>>> Stashed changes
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Size = new System.Drawing.Size(403, 561);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "ToDo";
             // 
             // groupBox2
             // 
-<<<<<<< Updated upstream
-=======
-            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
->>>>>>> Stashed changes
+            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.groupBox2.Controls.Add(this.lstDoing);
             this.groupBox2.Location = new System.Drawing.Point(427, 68);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
-<<<<<<< Updated upstream
-            this.groupBox2.Size = new System.Drawing.Size(403, 543);
-=======
-            this.groupBox2.Size = new System.Drawing.Size(403, 542);
->>>>>>> Stashed changes
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Size = new System.Drawing.Size(403, 561);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Doing";
             // 
             // lstDoing
             // 
-<<<<<<< Updated upstream
-            this.lstDoing.Dock = System.Windows.Forms.DockStyle.Fill;
-=======
-            this.lstDoing.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
->>>>>>> Stashed changes
+            this.lstDoing.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.lstDoing.FormattingEnabled = true;
             this.lstDoing.ItemHeight = 16;
-            this.lstDoing.Location = new System.Drawing.Point(4, 19);
-            this.lstDoing.Margin = new System.Windows.Forms.Padding(4);
+            this.lstDoing.Location = new System.Drawing.Point(4, 22);
+            this.lstDoing.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.lstDoing.Name = "lstDoing";
 <<<<<<< Updated upstream
             this.lstDoing.Size = new System.Drawing.Size(395, 520);
@@ -146,37 +125,28 @@
             // 
             // groupBox3
             // 
-<<<<<<< Updated upstream
-=======
             this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
 >>>>>>> Stashed changes
             this.groupBox3.Controls.Add(this.lstDone);
             this.groupBox3.Location = new System.Drawing.Point(837, 68);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(4);
-<<<<<<< Updated upstream
-            this.groupBox3.Size = new System.Drawing.Size(403, 543);
-=======
-            this.groupBox3.Size = new System.Drawing.Size(403, 542);
->>>>>>> Stashed changes
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox3.Size = new System.Drawing.Size(403, 561);
             this.groupBox3.TabIndex = 3;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Done";
             // 
             // lstDone
             // 
-<<<<<<< Updated upstream
-            this.lstDone.Dock = System.Windows.Forms.DockStyle.Fill;
-=======
             this.lstDone.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
 >>>>>>> Stashed changes
             this.lstDone.FormattingEnabled = true;
             this.lstDone.ItemHeight = 16;
-            this.lstDone.Location = new System.Drawing.Point(4, 19);
-            this.lstDone.Margin = new System.Windows.Forms.Padding(4);
+            this.lstDone.Location = new System.Drawing.Point(4, 22);
+            this.lstDone.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.lstDone.Name = "lstDone";
 <<<<<<< Updated upstream
             this.lstDone.Size = new System.Drawing.Size(395, 520);
@@ -197,11 +167,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-<<<<<<< Updated upstream
-            this.menuStrip1.Size = new System.Drawing.Size(1257, 28);
-=======
-            this.menuStrip1.Size = new System.Drawing.Size(326, 30);
->>>>>>> Stashed changes
+            this.menuStrip1.Size = new System.Drawing.Size(1257, 30);
             this.menuStrip1.TabIndex = 4;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -209,7 +175,8 @@
             // 
             this.ficheiroToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.sairToolStripMenuItem,
-            this.exportarParaCSVToolStripMenuItem});
+            this.exportarParaCSVToolStripMenuItem,
+            this.importarTarefasToolStripMenuItem});
             this.ficheiroToolStripMenuItem.Name = "ficheiroToolStripMenuItem";
             this.ficheiroToolStripMenuItem.Size = new System.Drawing.Size(75, 24);
             this.ficheiroToolStripMenuItem.Text = "Ficheiro";
@@ -217,20 +184,20 @@
             // sairToolStripMenuItem
             // 
             this.sairToolStripMenuItem.Name = "sairToolStripMenuItem";
-<<<<<<< Updated upstream
-            this.sairToolStripMenuItem.Size = new System.Drawing.Size(338, 26);
-=======
             this.sairToolStripMenuItem.Size = new System.Drawing.Size(200, 26);
->>>>>>> Stashed changes
             this.sairToolStripMenuItem.Text = "Sair";
             this.sairToolStripMenuItem.Click += new System.EventHandler(this.sairToolStripMenuItem_Click);
             // 
             // exportarParaCSVToolStripMenuItem
             // 
+            this.exportarParaCSVToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.exportarTodasAsTarefasToolStripMenuItem,
+            this.exportarTarefaPorFazerToolStripMenuItem,
+            this.exportarTarefaEmExecuçãoToolStripMenuItem,
+            this.exportarTarefaConcluidaToolStripMenuItem1});
             this.exportarParaCSVToolStripMenuItem.Name = "exportarParaCSVToolStripMenuItem";
-<<<<<<< Updated upstream
-            this.exportarParaCSVToolStripMenuItem.Size = new System.Drawing.Size(338, 26);
-            this.exportarParaCSVToolStripMenuItem.Text = "Exportar Tarefas Concluídas para CSV";
+            this.exportarParaCSVToolStripMenuItem.Size = new System.Drawing.Size(200, 26);
+            this.exportarParaCSVToolStripMenuItem.Text = "Exportar Tarefas";
             this.exportarParaCSVToolStripMenuItem.Click += new System.EventHandler(this.exportarParaCSVToolStripMenuItem_Click);
             // 
 =======
@@ -305,7 +272,6 @@
             this.importarTarefasConcluidasToolStripMenuItem.Text = "Importar Tarefas Concluidas";
             this.importarTarefasConcluidasToolStripMenuItem.Click += new System.EventHandler(this.importarTarefasConcluidasToolStripMenuItem_Click);
             // 
->>>>>>> Stashed changes
             // utilizadoresToolStripMenuItem
             // 
             this.utilizadoresToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -359,7 +325,7 @@
             this.btSetDoing.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
 >>>>>>> Stashed changes
             this.btSetDoing.Location = new System.Drawing.Point(220, 618);
-            this.btSetDoing.Margin = new System.Windows.Forms.Padding(4);
+            this.btSetDoing.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btSetDoing.Name = "btSetDoing";
             this.btSetDoing.Size = new System.Drawing.Size(195, 28);
             this.btSetDoing.TabIndex = 5;
@@ -373,7 +339,7 @@
             this.btSetDone.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
 >>>>>>> Stashed changes
             this.btSetDone.Location = new System.Drawing.Point(633, 618);
-            this.btSetDone.Margin = new System.Windows.Forms.Padding(4);
+            this.btSetDone.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btSetDone.Name = "btSetDone";
             this.btSetDone.Size = new System.Drawing.Size(192, 28);
             this.btSetDone.TabIndex = 6;
@@ -387,7 +353,7 @@
             this.btSetTodo.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
 >>>>>>> Stashed changes
             this.btSetTodo.Location = new System.Drawing.Point(431, 618);
-            this.btSetTodo.Margin = new System.Windows.Forms.Padding(4);
+            this.btSetTodo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btSetTodo.Name = "btSetTodo";
             this.btSetTodo.Size = new System.Drawing.Size(192, 28);
             this.btSetTodo.TabIndex = 7;
@@ -401,7 +367,7 @@
             this.btNova.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
 >>>>>>> Stashed changes
             this.btNova.Location = new System.Drawing.Point(20, 618);
-            this.btNova.Margin = new System.Windows.Forms.Padding(4);
+            this.btNova.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btNova.Name = "btNova";
             this.btNova.Size = new System.Drawing.Size(139, 28);
             this.btNova.TabIndex = 8;
@@ -423,7 +389,7 @@
             // btPrevisao
             // 
             this.btPrevisao.Location = new System.Drawing.Point(16, 36);
-            this.btPrevisao.Margin = new System.Windows.Forms.Padding(4);
+            this.btPrevisao.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btPrevisao.Name = "btPrevisao";
             this.btPrevisao.Size = new System.Drawing.Size(223, 28);
             this.btPrevisao.TabIndex = 10;
@@ -474,7 +440,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmKanban";
             this.Text = "frmKanban";
             this.groupBox1.ResumeLayout(false);
@@ -513,5 +479,15 @@
         private System.Windows.Forms.Button btPrevisao;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.Label lblRefreshbtnSim;
+        private System.Windows.Forms.ToolStripMenuItem importarTarefasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem exportarTodasAsTarefasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem exportarTarefaPorFazerToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem exportarTarefaEmExecuçãoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem exportarTarefaConcluidaToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem importarTodasAsTarefasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem importarTarefasToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem importarTarefasEmExecuçãoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem importarTarefasConcluidasToolStripMenuItem;
     }
 }

@@ -40,29 +40,7 @@ namespace iTasks
         //Não ta em MVC falta as tarefas para 
         private void exportarParaCSVToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //Não sei como passar os filtros pro Controller ;-;
-            SaveFileDialog saveFileDialog = new SaveFileDialog();
-            saveFileDialog.Filter = "Ficheiro CSV (*.CSV)|*.CSV";
-            saveFileDialog.DefaultExt = "csv";
-            saveFileDialog.FileName = "dadosCSV.CSV";
-
-            if (saveFileDialog.ShowDialog() == DialogResult.OK)
-            {
-                var controller = new ControllerKanban();
-                // Assume ControllerKanban has a method ExportarTarefasParaCSV that returns true/false
-                bool sucesso = controller.ExportarTarefasCSV(saveFileDialog.FileName);
-
-                if (sucesso)
-                {
-                    //Sucesso
-                    MessageBox.Show("Tarefas exportadas com sucesso!", "Exportação", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                else
-                {
-                    //Erro
-                    MessageBox.Show("Falha ao exportar tarefas.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
+            
         }
         //ToolStripMenu
         private void gerirUtilizadoresToolStripMenuItem_Click(object sender, EventArgs e)
@@ -152,10 +130,6 @@ namespace iTasks
             RefreshDadosListBoxes();
         }
 
-        private void lstTodo_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
 
 
         private void exportarTarefaPorFazerToolStripMenuItem_Click(object sender, EventArgs e)
@@ -286,6 +260,5 @@ namespace iTasks
                 }
             }
         }
-    }
-} 
-
+    }           
+}

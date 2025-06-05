@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace iTasks
 {
@@ -12,14 +14,15 @@ namespace iTasks
     {
         [Key] public int Id { get; set; }
         public string Nome { get; set; }
-        public string Username { get; set; }
+
+        [MaxLength(100)][Index(IsUnique = true)] public string Username { get; set; }
         public string Password { get; set; }
 
         // construtor padrão vazio
-        public Utilizador (){ }
+        public Utilizador() { }
 
         //contrutor que recebe os parâmetros necessários para criar um Utilizador (vai desaparecer no futuro)
-        public Utilizador (string nome, string username, string password)
+        public Utilizador(string nome, string username, string password)
         {
             this.Nome = nome;
             this.Username = username;

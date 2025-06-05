@@ -11,7 +11,7 @@ namespace iTasks.Controllers
     class ControllerLogin
     {
         BaseDeDados db => BaseDeDados.Instance;
-        public Utilizador Login(string username , string password)
+        public Utilizador Login(string username, string password)
         {
             // verifica as credenciais inseridas e compara com as da base de dados
             var utilizador = db.Utilizador

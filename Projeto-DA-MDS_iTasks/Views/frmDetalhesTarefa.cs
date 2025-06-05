@@ -11,6 +11,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static iTasks.Models.Enums;
 
 namespace iTasks
 {
@@ -114,18 +115,17 @@ namespace iTasks
 
                     if (listaTarefas != null)
                     {
-                        if (controllerDados.ExisteTarefaComOrdem(Convert.ToInt16(txtOrdem.Text), idProgramador))
+                        if (Convert.ToInt32(txtStoryPoints.Text) <= 0)
                         {
-                            MessageBox.Show("Já existe uma tarefa atribuída a este programador com a mesma ordem de execução.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show("A ordem de execução deve ser um número maior que 0.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             return;
-                            
                             //FIX FIX FIX MESMO BLOCO DO ANTERIOR
 
                         } else
                         {
 
                             //verifica se o numero de story points é maior que 0
-                            if (Convert.ToInt32(txtStoryPoints.Text) <= 0)
+                            if (Convert.ToInt32(txtOrdem.Text) <= 0)
                             {
                                 MessageBox.Show("O número de story points deve ser um número maior que 0.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                 return;
@@ -148,56 +148,57 @@ namespace iTasks
                                     //verifica se as datas reais de inicio e fim foram preenchidas automaticamente (basicamente define se esta a atualizar ou nao)
                                     if (idTarefaAtualUpdate > 0)
                                     {
-
-                                        //verifica se a ordem de execução é maior que 0
-                                        if (Convert.ToInt32(txtOrdem.Text) <= 0) ///RESOLVER URGENTE CARALHO tem de verificar se a verção alterada é igual a antiga e se for igual a antiga deixa estar mas se for diferente verifica se ja existe algum com essa ordem
+                                        //verifica se a ordem na textbox é igual a que veida da tarefa que está a ser atualizada se for deixa, se nao for verifica se já existe alguma tarefa atribuída ao programador com a mesma ordem de execução
+                                        if (Convert.ToInt32(txtOrdem.Text) != controllerDados.ObterTarefaPorId(idTarefaAtualUpdate).OrdemExecucao && controllerDados.ExisteTarefaComOrdem(Convert.ToInt16(txtOrdem.Text), idProgramador))
                                         {
-                                            MessageBox.Show("A ordem de execução deve ser um número maior que 0.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                            MessageBox.Show("Já existe uma tarefa atribuída a este programador com a mesma ordem de execução.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                             return;
                                         }
                                         else
                                         {
-                                            //Criar nova tarefa para depois atualizar
-                                            Tarefa tarefaUpdate = controllerDados.ObterTarefaPorId(idTarefaAtualUpdate);
+                                            if (Enum.TryParse(txtEstado.Text, out EstadoAtual tipoEnum)) {
+                                                //Criar nova tarefa para depois atualizar
+                                                Tarefa tarefaUpdate = controllerDados.ObterTarefaPorId(idTarefaAtualUpdate);
 
-                                            tarefaUpdate.Descricao = txtDesc.Text;
-                                            tarefaUpdate.DataCriacao = DateTime.Now;
-                                            tarefaUpdate.DataPrevistaInicio = dtInicio.Value;
-                                            tarefaUpdate.DataPrevistaFim = dtFim.Value;
-                                            if (string.IsNullOrEmpty(txtDataRealini.Text))
-                                            {
-                                                tarefaUpdate.DataRealInicio = null;
-                                            }
-                                            else
-                                            {
-                                                tarefaUpdate.DataRealInicio = Convert.ToDateTime(txtDataRealini.Text);
-                                            }
-                                            if (string.IsNullOrEmpty(txtDataRealFim.Text))
-                                            {
-                                                tarefaUpdate.DataRealFim = null;
-                                            }
-                                            else
-                                            {
-                                                tarefaUpdate.DataRealFim = Convert.ToDateTime(txtDataRealFim.Text);
-                                            }
-                                            tarefaUpdate.EstadoAtual = Enums.EstadoAtual.ToDo;
-                                            tarefaUpdate.StoryPoints = Convert.ToInt32(txtStoryPoints.Text);
-                                            tarefaUpdate.OrdemExecucao = Convert.ToInt32(txtOrdem.Text);
-                                            tarefaUpdate.IdTipoTarefa = TipoTarefaSelecionado.Id; //ta a duplicar ?????
-                                            tarefaUpdate.IdProgramador = programadorSelecionado.Id; //ta a duplicar ?????
+                                                tarefaUpdate.Descricao = txtDesc.Text;
+                                                tarefaUpdate.DataCriacao = DateTime.Now;
+                                                tarefaUpdate.DataPrevistaInicio = dtInicio.Value;
+                                                tarefaUpdate.DataPrevistaFim = dtFim.Value;
+                                                if (string.IsNullOrEmpty(txtDataRealini.Text))
+                                                {
+                                                    tarefaUpdate.DataRealInicio = null;
+                                                }
+                                                else
+                                                {
+                                                    tarefaUpdate.DataRealInicio = Convert.ToDateTime(txtDataRealini.Text);
+                                                }
+                                                if (string.IsNullOrEmpty(txtDataRealFim.Text))
+                                                {
+                                                    tarefaUpdate.DataRealFim = null;
+                                                }
+                                                else
+                                                {
+                                                    tarefaUpdate.DataRealFim = Convert.ToDateTime(txtDataRealFim.Text);
+                                                }
+                                                tarefaUpdate.EstadoAtual = tipoEnum;
+                                                tarefaUpdate.StoryPoints = Convert.ToInt32(txtStoryPoints.Text);
+                                                tarefaUpdate.OrdemExecucao = Convert.ToInt32(txtOrdem.Text);
+                                                tarefaUpdate.IdTipoTarefa = TipoTarefaSelecionado.Id;
+                                                tarefaUpdate.IdProgramador = programadorSelecionado.Id;
 
-                                            controllerTarefa.updateTarefa(tarefaUpdate);
+                                                controllerTarefa.updateTarefa(tarefaUpdate);
+                                            } else
+                                            {
+                                                MessageBox.Show("Não encontrei este tipo de tarefa" + tipoEnum, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                            }
                                         }
                                     }
                                     else
                                     {
-                                        //verifica se a ordem de execução é maior que 0
-                                        if (Convert.ToInt32(txtOrdem.Text) <= 0)
+                                        if (controllerDados.ExisteTarefaComOrdem(Convert.ToInt16(txtOrdem.Text), idProgramador))
                                         {
-                                            MessageBox.Show("A ordem de execução deve ser um número maior que 0.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                            MessageBox.Show("Já existe uma tarefa atribuída a este programador com a mesma ordem de execução.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                             return;
-
-                                            //erro de validação entre criar e editar -- cirar interdependecia 
                                         }
                                         else
                                         {
@@ -216,10 +217,10 @@ namespace iTasks
                                             tarefaNova.OrdemExecucao = Convert.ToInt32(txtOrdem.Text);
                                             tarefaNova.IdTipoTarefa = TipoTarefaSelecionado.Id;
                                             tarefaNova.IdProgramador = programadorSelecionado.Id;
-                                            tarefaNova.IdGestor = gestor.Id; //id do gestor que clicou no buton (por alterara)
+                                            tarefaNova.IdGestor = gestor.Id;
 
                                             controllerTarefa.CriarTarefa(tarefaNova);
-                                        } 
+                                        }
                                     }
                                 }
                             }

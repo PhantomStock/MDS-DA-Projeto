@@ -49,7 +49,7 @@
             // txtUsername
             // 
             this.txtUsername.Location = new System.Drawing.Point(179, 48);
-            this.txtUsername.Margin = new System.Windows.Forms.Padding(4);
+            this.txtUsername.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(183, 22);
             this.txtUsername.TabIndex = 1;
@@ -57,15 +57,11 @@
             // txtPassword
             // 
             this.txtPassword.Location = new System.Drawing.Point(179, 91);
-            this.txtPassword.Margin = new System.Windows.Forms.Padding(4);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(183, 22);
-<<<<<<< Updated upstream
-            this.txtPassword.TabIndex = 3;
-=======
             this.txtPassword.TabIndex = 2;
             this.txtPassword.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPassword_KeyDown);
->>>>>>> Stashed changes
             // 
             // label2
             // 
@@ -74,24 +70,14 @@
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(70, 16);
-<<<<<<< Updated upstream
-            this.label2.TabIndex = 2;
-=======
             this.label2.TabIndex = 0;
 >>>>>>> Stashed changes
             this.label2.Text = "Password:";
             // 
             // btLogin
             // 
-<<<<<<< Updated upstream
-            this.btLogin.Location = new System.Drawing.Point(263, 137);
-            this.btLogin.Margin = new System.Windows.Forms.Padding(4);
-            this.btLogin.Name = "btLogin";
-            this.btLogin.Size = new System.Drawing.Size(100, 28);
-            this.btLogin.TabIndex = 4;
-=======
             this.btLogin.Location = new System.Drawing.Point(263, 132);
-            this.btLogin.Margin = new System.Windows.Forms.Padding(4);
+            this.btLogin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btLogin.Name = "btLogin";
             this.btLogin.Size = new System.Drawing.Size(100, 28);
             this.btLogin.TabIndex = 3;
@@ -104,11 +90,6 @@
             // btRegistar
             // 
             this.btRegistar.Location = new System.Drawing.Point(96, 137);
-<<<<<<< Updated upstream
-            this.btRegistar.Name = "btRegistar";
-            this.btRegistar.Size = new System.Drawing.Size(121, 28);
-            this.btRegistar.TabIndex = 5;
-=======
             this.btRegistar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btRegistar.Name = "btRegistar";
             this.btRegistar.Size = new System.Drawing.Size(121, 28);
@@ -129,7 +110,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtUsername);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmLogin";

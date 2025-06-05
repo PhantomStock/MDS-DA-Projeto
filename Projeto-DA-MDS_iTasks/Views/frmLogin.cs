@@ -14,11 +14,8 @@ namespace iTasks
 {
     public partial class frmLogin : Form
     {
-<<<<<<< Updated upstream
-=======
         BaseDeDados db => BaseDeDados.Instance;
-        Controllers.ControllerLogin controllerLogin = new Controllers.ControllerLogin();
->>>>>>> Stashed changes
+        ControllerLogin controllerLogin = new ControllerLogin();
         public frmLogin()
         {
             InitializeComponent();
@@ -35,11 +32,7 @@ namespace iTasks
             string username = txtUsername.Text;
             string password = txtPassword.Text;
 
-<<<<<<< Updated upstream
-            using (var db = new BaseDeDados())
-            {
-                var utilizador = db.Utilizadores
-                    .FirstOrDefault(u => u.Username == username && u.Password == password);
+            var utilizador = controllerLogin.Login(username, password);
 
                 if (utilizador != null)
                 {
@@ -52,7 +45,7 @@ namespace iTasks
                 {
                     MessageBox.Show("Invalid username or password.", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-=======
+
             var utilizador = controllerLogin.Login(username, password);
 
             if (utilizador != null)
@@ -60,7 +53,7 @@ namespace iTasks
                 MessageBox.Show("Login successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 new frmKanban(utilizador.Id).Show();
                 this.Hide();
->>>>>>> Stashed changes
+
             }
 
         }
@@ -76,7 +69,7 @@ namespace iTasks
             {
                 btLogin_Click(sender, e);
             }
-   
+
         }
-}
+    }
 }
