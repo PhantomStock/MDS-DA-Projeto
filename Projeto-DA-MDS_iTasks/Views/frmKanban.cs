@@ -40,29 +40,7 @@ namespace iTasks
         //Não ta em MVC falta as tarefas para 
         private void exportarParaCSVToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //Não sei como passar os filtros pro Controller ;-;
-            SaveFileDialog saveFileDialog = new SaveFileDialog();
-            saveFileDialog.Filter = "Ficheiro CSV (*.CSV)|*.CSV";
-            saveFileDialog.DefaultExt = "csv";
-            saveFileDialog.FileName = "dadosCSV.CSV";
-
-            if (saveFileDialog.ShowDialog() == DialogResult.OK)
-            {
-                var controller = new ControllerKanban();
-                // Assume ControllerKanban has a method ExportarTarefasParaCSV that returns true/false
-                bool sucesso = controller.ExportarTarefasCSV(saveFileDialog.FileName);
-
-                if (sucesso)
-                {
-                    //Sucesso
-                    MessageBox.Show("Tarefas exportadas com sucesso!", "Exportação", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                else
-                {
-                    //Erro
-                    MessageBox.Show("Falha ao exportar tarefas.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
+            
         }
         //ToolStripMenu
         private void gerirUtilizadoresToolStripMenuItem_Click(object sender, EventArgs e)
@@ -152,9 +130,126 @@ namespace iTasks
             RefreshDadosListBoxes();
         }
 
-        private void lstTodo_SelectedIndexChanged(object sender, EventArgs e)
-        {
 
+        private void importarTarefasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //importa as tarefas de um ficheiro CSV
+        }
+        private void exportarTarefaPorFazerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            exportarParaCSV(1); //exporta para csv as tarefas por fazer
+        }
+        private void exportarTarefaEmExecuçãoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            exportarParaCSV(2); //exporta para csv as em execução
+        }
+        private void exportarTarefaConcluidaToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            exportarParaCSV(3); //exporta para csv as tarefas concluidas
+        }
+        private void exportarTodasAsTarefasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            exportarParaCSV(4); //exporta para csv todas as tarefas
+        }
+
+        private void exportarParaCSV(int tipo)
+        {
+            //switch case para fazer defenir qual o tipo de tarefa a exportar para texto para apresentar no filename
+            string tipoString = "ToDo";
+            switch (tipo)
+            {
+                case 1:
+                    tipoString = "ToDo";
+                    break;
+                case 2:
+                    tipoString = "Doing";
+                    break;
+                case 3:
+                    tipoString = "Done";
+                    break;
+                case 4:
+                    tipoString = "Todas";
+                    break;
+                default:
+                    tipo = -1;
+                    break;
+            }
+
+
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "Ficheiro CSV (*.CSV)|*.CSV";
+            saveFileDialog.DefaultExt = "csv";
+            saveFileDialog.FileName = "Tarefas" + tipoString + ".CSV";
+
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                var controller = new ControllerKanban();
+                // Assume ControllerKanban has a method ExportarTarefasParaCSV that returns true/false
+                bool sucesso = controller.ExportarTarefasCSV(saveFileDialog.FileName, tipoString);
+
+                if (sucesso)
+                {
+                    //Sucesso
+                    MessageBox.Show("Tarefas exportadas com sucesso!", "Exportação", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    //Erro
+                    MessageBox.Show("Falha ao exportar tarefas.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void importarTodasAsTarefasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            importarDeSVC(4); //importa todas as tarefas
+        }
+
+        private void importarDeSVC(int tipo)
+        {
+            //switch case para fazer defenir qual o tipo de tarefa a exportar para texto para apresentar no filename
+            string tipoString = "ToDo";
+            switch (tipo)
+            {
+                case 1:
+                    tipoString = "ToDo";
+                    break;
+                case 2:
+                    tipoString = "Doing";
+                    break;
+                case 3:
+                    tipoString = "Done";
+                    break;
+                case 4:
+                    tipoString = "Todas";
+                    break;
+                default:
+                    tipo = -1;
+                    break;
+            }
+
+
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Ficheiro CSV (*.CSV)|*.CSV";
+            openFileDialog.DefaultExt = "csv";
+
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                var controller = new ControllerKanban();
+                // Assume ControllerKanban has a method ExportarTarefasParaCSV that returns true/false
+                bool sucesso = controller.ImportarTarefasCSV(openFileDialog.FileName, tipoString);
+
+                if (sucesso)
+                {
+                    //Sucesso
+                    MessageBox.Show("Tarefas importadas com sucesso!", "Exportação", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    //Erro
+                    MessageBox.Show("Falha ao importar tarefas.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
     }
             

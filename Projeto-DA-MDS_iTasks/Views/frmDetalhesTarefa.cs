@@ -11,6 +11,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static iTasks.Models.Enums;
 
 namespace iTasks
 {
@@ -155,36 +156,41 @@ namespace iTasks
                                         }
                                         else
                                         {
-                                            //Criar nova tarefa para depois atualizar
-                                            Tarefa tarefaUpdate = controllerDados.ObterTarefaPorId(idTarefaAtualUpdate);
+                                            if (Enum.TryParse(txtEstado.Text, out EstadoAtual tipoEnum)) {
+                                                //Criar nova tarefa para depois atualizar
+                                                Tarefa tarefaUpdate = controllerDados.ObterTarefaPorId(idTarefaAtualUpdate);
 
-                                            tarefaUpdate.Descricao = txtDesc.Text;
-                                            tarefaUpdate.DataCriacao = DateTime.Now;
-                                            tarefaUpdate.DataPrevistaInicio = dtInicio.Value;
-                                            tarefaUpdate.DataPrevistaFim = dtFim.Value;
-                                            if (string.IsNullOrEmpty(txtDataRealini.Text))
-                                            {
-                                                tarefaUpdate.DataRealInicio = null;
-                                            }
-                                            else
-                                            {
-                                                tarefaUpdate.DataRealInicio = Convert.ToDateTime(txtDataRealini.Text);
-                                            }
-                                            if (string.IsNullOrEmpty(txtDataRealFim.Text))
-                                            {
-                                                tarefaUpdate.DataRealFim = null;
-                                            }
-                                            else
-                                            {
-                                                tarefaUpdate.DataRealFim = Convert.ToDateTime(txtDataRealFim.Text);
-                                            }
-                                            tarefaUpdate.EstadoAtual = Enums.EstadoAtual.ToDo;
-                                            tarefaUpdate.StoryPoints = Convert.ToInt32(txtStoryPoints.Text);
-                                            tarefaUpdate.OrdemExecucao = Convert.ToInt32(txtOrdem.Text);
-                                            tarefaUpdate.IdTipoTarefa = TipoTarefaSelecionado.Id;
-                                            tarefaUpdate.IdProgramador = programadorSelecionado.Id;
+                                                tarefaUpdate.Descricao = txtDesc.Text;
+                                                tarefaUpdate.DataCriacao = DateTime.Now;
+                                                tarefaUpdate.DataPrevistaInicio = dtInicio.Value;
+                                                tarefaUpdate.DataPrevistaFim = dtFim.Value;
+                                                if (string.IsNullOrEmpty(txtDataRealini.Text))
+                                                {
+                                                    tarefaUpdate.DataRealInicio = null;
+                                                }
+                                                else
+                                                {
+                                                    tarefaUpdate.DataRealInicio = Convert.ToDateTime(txtDataRealini.Text);
+                                                }
+                                                if (string.IsNullOrEmpty(txtDataRealFim.Text))
+                                                {
+                                                    tarefaUpdate.DataRealFim = null;
+                                                }
+                                                else
+                                                {
+                                                    tarefaUpdate.DataRealFim = Convert.ToDateTime(txtDataRealFim.Text);
+                                                }
+                                                tarefaUpdate.EstadoAtual = tipoEnum;
+                                                tarefaUpdate.StoryPoints = Convert.ToInt32(txtStoryPoints.Text);
+                                                tarefaUpdate.OrdemExecucao = Convert.ToInt32(txtOrdem.Text);
+                                                tarefaUpdate.IdTipoTarefa = TipoTarefaSelecionado.Id;
+                                                tarefaUpdate.IdProgramador = programadorSelecionado.Id;
 
-                                            controllerTarefa.updateTarefa(tarefaUpdate);
+                                                controllerTarefa.updateTarefa(tarefaUpdate);
+                                            } else
+                                            {
+                                                MessageBox.Show("Não encontrei este tipo de tarefa" + tipoEnum, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                            }
                                         }
                                     }
                                     else
