@@ -58,6 +58,7 @@
   <ItemGroup>
     <Compile Include="Controllers\ControllerDados.cs" />
     <Compile Include="Controllers\ControllerDetalhesTarefa.cs" />
+    <Compile Include="Controllers\ControllerLogin.cs" />
     <Compile Include="Controllers\ControllerTarefa.cs" />
     <Compile Include="Controllers\ControllerKanban.cs" />
     <Compile Include="Controllers\ControllerRegistar.cs" />
