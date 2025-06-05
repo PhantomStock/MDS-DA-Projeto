@@ -71,7 +71,6 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(70, 16);
             this.label2.TabIndex = 0;
->>>>>>> Stashed changes
             this.label2.Text = "Password:";
             // 
             // btLogin
@@ -81,7 +80,6 @@
             this.btLogin.Name = "btLogin";
             this.btLogin.Size = new System.Drawing.Size(100, 28);
             this.btLogin.TabIndex = 3;
->>>>>>> Stashed changes
             this.btLogin.Text = "Login";
             this.btLogin.UseVisualStyleBackColor = true;
             this.btLogin.Click += new System.EventHandler(this.btLogin_Click);
@@ -94,7 +92,6 @@
             this.btRegistar.Name = "btRegistar";
             this.btRegistar.Size = new System.Drawing.Size(121, 28);
             this.btRegistar.TabIndex = 4;
->>>>>>> Stashed changes
             this.btRegistar.Text = "Registar";
             this.btRegistar.UseVisualStyleBackColor = true;
             this.btRegistar.Click += new System.EventHandler(this.btRegistar_Click);

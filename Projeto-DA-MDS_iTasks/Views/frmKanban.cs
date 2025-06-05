@@ -125,12 +125,6 @@ namespace iTasks
             lstDone.DataSource = tarefasDone;
         }
 
-        private void lblRefreshbtnSim_Click(object sender, EventArgs e)
-        {
-            RefreshDadosListBoxes();
-        }
-
-
 
         private void exportarTarefaPorFazerToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -259,6 +253,11 @@ namespace iTasks
                     MessageBox.Show("Falha ao importar tarefas.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            RefreshDadosListBoxes();
         }
     }           
 }

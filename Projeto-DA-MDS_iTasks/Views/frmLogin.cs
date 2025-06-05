@@ -34,28 +34,17 @@ namespace iTasks
 
             var utilizador = controllerLogin.Login(username, password);
 
-                if (utilizador != null)
-                {
-                    
-                    MessageBox.Show("Login successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    new frmKanban(utilizador.Id).Show();
-                    this.Hide();
-                }
-                else
-                {
-                    MessageBox.Show("Invalid username or password.", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-
-            var utilizador = controllerLogin.Login(username, password);
-
             if (utilizador != null)
-            {                  
+            {
+                    
                 MessageBox.Show("Login successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 new frmKanban(utilizador.Id).Show();
                 this.Hide();
-
             }
-
+            else
+            {
+                MessageBox.Show("Invalid username or password.", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void frmLogin_FormClosed(object sender, FormClosedEventArgs e)
