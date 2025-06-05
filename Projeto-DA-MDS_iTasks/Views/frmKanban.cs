@@ -131,10 +131,7 @@ namespace iTasks
         }
 
 
-        private void importarTarefasToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            //importa as tarefas de um ficheiro CSV
-        }
+
         private void exportarTarefaPorFazerToolStripMenuItem_Click(object sender, EventArgs e)
         {
             exportarParaCSV(1); //exporta para csv as tarefas por fazer
@@ -205,6 +202,20 @@ namespace iTasks
             importarDeSVC(4); //importa todas as tarefas
         }
 
+        private void importarTarefasToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            importarDeSVC(1); //importa as tarefas por fazer
+        }
+
+        private void importarTarefasEmExecuçãoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            importarDeSVC(2); //importa as tarefas em execução
+        }
+
+        private void importarTarefasConcluidasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            importarDeSVC(3); //importa as tarefas concluidas
+        }
         private void importarDeSVC(int tipo)
         {
             //switch case para fazer defenir qual o tipo de tarefa a exportar para texto para apresentar no filename
@@ -227,8 +238,6 @@ namespace iTasks
                     tipo = -1;
                     break;
             }
-
-
             OpenFileDialog openFileDialog = new OpenFileDialog();
             openFileDialog.Filter = "Ficheiro CSV (*.CSV)|*.CSV";
             openFileDialog.DefaultExt = "csv";
@@ -251,6 +260,5 @@ namespace iTasks
                 }
             }
         }
-    }
-            
+    }           
 }

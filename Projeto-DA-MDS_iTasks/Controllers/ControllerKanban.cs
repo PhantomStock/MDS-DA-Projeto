@@ -107,30 +107,64 @@ namespace iTasks.Controllers
                     {
                         var values = line.Split(';');
                         if (values.Length < 13) continue; // Verifica se a linha tem o número correto de colunas
-                        Tarefa tarefa = new Tarefa
+                        if (tipo == "Todos")
                         {
-                            Id = int.Parse(values[0]),
-                            IdGestor = int.Parse(values[1]),
-                            IdProgramador = int.Parse(values[2]),
-                            IdTipoTarefa = int.Parse(values[3]),
-                            Descricao = values[4],
-                            OrdemExecucao = int.Parse(values[5]),
-                            DataPrevistaInicio = DateTime.TryParse(values[6], out DateTime dataPrevistaInicio) ? dataPrevistaInicio : (DateTime?)null,
-                            DataPrevistaFim = DateTime.TryParse(values[7], out DateTime dataPrevistaFim) ? dataPrevistaFim : (DateTime?)null,
-                            DataRealInicio = DateTime.TryParse(values[8], out DateTime dataRealInicio) ? dataRealInicio : (DateTime?)null,
-                            DataRealFim = DateTime.TryParse(values[9], out DateTime dataRealFim) ? dataRealFim : (DateTime?)null,
-                            DataCriacao = DateTime.TryParse(values[10], out DateTime dataCriacao) ? dataCriacao : DateTime.Now,
-                            EstadoAtual = Enum.TryParse<EstadoAtual>(values[11], out EstadoAtual estadoAtual) ? estadoAtual : EstadoAtual.ToDo,
-                            StoryPoints = int.Parse(values[12])
-                        };
-                        // Adiciona a tarefa ao banco de dados ou atualiza se já existir
-                        if (controllerDados.ObterTarefaPorId(tarefa.Id) == null)
+                            Tarefa tarefa = new Tarefa
+                            {
+                                Id = int.Parse(values[0]),
+                                IdGestor = int.Parse(values[1]),
+                                IdProgramador = int.Parse(values[2]),
+                                IdTipoTarefa = int.Parse(values[3]),
+                                Descricao = values[4],
+                                OrdemExecucao = int.Parse(values[5]),
+                                DataPrevistaInicio = DateTime.TryParse(values[6], out DateTime dataPrevistaInicio) ? dataPrevistaInicio : (DateTime?)null,
+                                DataPrevistaFim = DateTime.TryParse(values[7], out DateTime dataPrevistaFim) ? dataPrevistaFim : (DateTime?)null,
+                                DataRealInicio = DateTime.TryParse(values[8], out DateTime dataRealInicio) ? dataRealInicio : (DateTime?)null,
+                                DataRealFim = DateTime.TryParse(values[9], out DateTime dataRealFim) ? dataRealFim : (DateTime?)null,
+                                DataCriacao = DateTime.TryParse(values[10], out DateTime dataCriacao) ? dataCriacao : DateTime.Now,
+                                EstadoAtual = Enum.TryParse<EstadoAtual>(values[11], out EstadoAtual estadoAtual) ? estadoAtual : EstadoAtual.ToDo,
+                                StoryPoints = int.Parse(values[12])
+                            };
+                            // Adiciona a tarefa ao banco de dados ou atualiza se já existir
+                            if (controllerDados.ObterTarefaPorId(tarefa.Id) == null)
+                            {
+                                controllerTarefa.CriarTarefa(tarefa);
+                            }
+                            else
+                            {
+                                controllerTarefa.updateTarefa(tarefa);
+                            }
+                        } else
                         {
-                            controllerTarefa.CriarTarefa(tarefa);
-                        }
-                        else
-                        {
-                            controllerTarefa.updateTarefa(tarefa);
+                            //guarda so do tipo de  estado atual que foi definido
+                            //verifica se o estado atual da tarefa é igual ao tipo definido para importar 
+                            if (values[11] == tipo)
+                            {
+                                Tarefa tarefa = new Tarefa
+                                {
+                                    Id = int.Parse(values[0]),
+                                    IdGestor = int.Parse(values[1]),
+                                    IdProgramador = int.Parse(values[2]),
+                                    IdTipoTarefa = int.Parse(values[3]),
+                                    Descricao = values[4],
+                                    OrdemExecucao = int.Parse(values[5]),
+                                    DataPrevistaInicio = DateTime.TryParse(values[6], out DateTime dataPrevistaInicio) ? dataPrevistaInicio : (DateTime?)null,
+                                    DataPrevistaFim = DateTime.TryParse(values[7], out DateTime dataPrevistaFim) ? dataPrevistaFim : (DateTime?)null,
+                                    DataRealInicio = DateTime.TryParse(values[8], out DateTime dataRealInicio) ? dataRealInicio : (DateTime?)null,
+                                    DataRealFim = DateTime.TryParse(values[9], out DateTime dataRealFim) ? dataRealFim : (DateTime?)null,
+                                    DataCriacao = DateTime.TryParse(values[10], out DateTime dataCriacao) ? dataCriacao : DateTime.Now,
+                                    EstadoAtual = Enum.TryParse<EstadoAtual>(values[11], out EstadoAtual estadoAtual) ? estadoAtual : EstadoAtual.ToDo,
+                                    StoryPoints = int.Parse(values[12])
+                                };
+                                if (controllerDados.ObterTarefaPorId(tarefa.Id) == null)
+                                {
+                                    controllerTarefa.CriarTarefa(tarefa);
+                                }
+                                else
+                                {
+                                    controllerTarefa.updateTarefa(tarefa);
+                                }
+                            } 
                         }
                     }
                     return true;

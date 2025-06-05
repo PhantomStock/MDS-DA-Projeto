@@ -43,6 +43,10 @@
             this.exportarTarefaEmExecuçãoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exportarTarefaConcluidaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.importarTarefasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.importarTodasAsTarefasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.importarTarefasToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.importarTarefasEmExecuçãoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.importarTarefasConcluidasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.utilizadoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gerirUtilizadoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gerirTiposDeTarefasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -58,10 +62,6 @@
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.lblRefreshbtnSim = new System.Windows.Forms.Label();
-            this.importarTodasAsTarefasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.importarTarefasToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.importarTarefasEmExecuçãoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.importarTarefasConcluidasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -218,7 +218,34 @@
             this.importarTarefasToolStripMenuItem.Name = "importarTarefasToolStripMenuItem";
             this.importarTarefasToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
             this.importarTarefasToolStripMenuItem.Text = "Importar Tarefas";
-            this.importarTarefasToolStripMenuItem.Click += new System.EventHandler(this.importarTarefasToolStripMenuItem_Click);
+            // 
+            // importarTodasAsTarefasToolStripMenuItem
+            // 
+            this.importarTodasAsTarefasToolStripMenuItem.Name = "importarTodasAsTarefasToolStripMenuItem";
+            this.importarTodasAsTarefasToolStripMenuItem.Size = new System.Drawing.Size(259, 24);
+            this.importarTodasAsTarefasToolStripMenuItem.Text = "Importar Todas as Tarefas";
+            this.importarTodasAsTarefasToolStripMenuItem.Click += new System.EventHandler(this.importarTodasAsTarefasToolStripMenuItem_Click);
+            // 
+            // importarTarefasToolStripMenuItem1
+            // 
+            this.importarTarefasToolStripMenuItem1.Name = "importarTarefasToolStripMenuItem1";
+            this.importarTarefasToolStripMenuItem1.Size = new System.Drawing.Size(259, 24);
+            this.importarTarefasToolStripMenuItem1.Text = "Importar Tarefas Por Concluir";
+            this.importarTarefasToolStripMenuItem1.Click += new System.EventHandler(this.importarTarefasToolStripMenuItem1_Click);
+            // 
+            // importarTarefasEmExecuçãoToolStripMenuItem
+            // 
+            this.importarTarefasEmExecuçãoToolStripMenuItem.Name = "importarTarefasEmExecuçãoToolStripMenuItem";
+            this.importarTarefasEmExecuçãoToolStripMenuItem.Size = new System.Drawing.Size(259, 24);
+            this.importarTarefasEmExecuçãoToolStripMenuItem.Text = "Importar Tarefas em execução";
+            this.importarTarefasEmExecuçãoToolStripMenuItem.Click += new System.EventHandler(this.importarTarefasEmExecuçãoToolStripMenuItem_Click);
+            // 
+            // importarTarefasConcluidasToolStripMenuItem
+            // 
+            this.importarTarefasConcluidasToolStripMenuItem.Name = "importarTarefasConcluidasToolStripMenuItem";
+            this.importarTarefasConcluidasToolStripMenuItem.Size = new System.Drawing.Size(259, 24);
+            this.importarTarefasConcluidasToolStripMenuItem.Text = "Importar Tarefas Concluidas";
+            this.importarTarefasConcluidasToolStripMenuItem.Click += new System.EventHandler(this.importarTarefasConcluidasToolStripMenuItem_Click);
             // 
             // utilizadoresToolStripMenuItem
             // 
@@ -335,31 +362,6 @@
             this.lblRefreshbtnSim.TabIndex = 11;
             this.lblRefreshbtnSim.Text = "⟳";
             this.lblRefreshbtnSim.Click += new System.EventHandler(this.lblRefreshbtnSim_Click);
-            // 
-            // importarTodasAsTarefasToolStripMenuItem
-            // 
-            this.importarTodasAsTarefasToolStripMenuItem.Name = "importarTodasAsTarefasToolStripMenuItem";
-            this.importarTodasAsTarefasToolStripMenuItem.Size = new System.Drawing.Size(259, 24);
-            this.importarTodasAsTarefasToolStripMenuItem.Text = "Importar Todas as Tarefas";
-            this.importarTodasAsTarefasToolStripMenuItem.Click += new System.EventHandler(this.importarTodasAsTarefasToolStripMenuItem_Click);
-            // 
-            // importarTarefasToolStripMenuItem1
-            // 
-            this.importarTarefasToolStripMenuItem1.Name = "importarTarefasToolStripMenuItem1";
-            this.importarTarefasToolStripMenuItem1.Size = new System.Drawing.Size(259, 24);
-            this.importarTarefasToolStripMenuItem1.Text = "Importar Tarefas Por Concluir";
-            // 
-            // importarTarefasEmExecuçãoToolStripMenuItem
-            // 
-            this.importarTarefasEmExecuçãoToolStripMenuItem.Name = "importarTarefasEmExecuçãoToolStripMenuItem";
-            this.importarTarefasEmExecuçãoToolStripMenuItem.Size = new System.Drawing.Size(259, 24);
-            this.importarTarefasEmExecuçãoToolStripMenuItem.Text = "Importar Tarefas em execução";
-            // 
-            // importarTarefasConcluidasToolStripMenuItem
-            // 
-            this.importarTarefasConcluidasToolStripMenuItem.Name = "importarTarefasConcluidasToolStripMenuItem";
-            this.importarTarefasConcluidasToolStripMenuItem.Size = new System.Drawing.Size(259, 24);
-            this.importarTarefasConcluidasToolStripMenuItem.Text = "Importar Tarefas Concluidas";
             // 
             // frmKanban
             // 
