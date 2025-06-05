@@ -8,11 +8,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using iTasks.Controllers;
 
 namespace iTasks
 {
     public partial class frmLogin : Form
     {
+<<<<<<< Updated upstream
+=======
+        BaseDeDados db => BaseDeDados.Instance;
+        Controllers.ControllerLogin controllerLogin = new Controllers.ControllerLogin();
+>>>>>>> Stashed changes
         public frmLogin()
         {
             InitializeComponent();
@@ -29,6 +35,7 @@ namespace iTasks
             string username = txtUsername.Text;
             string password = txtPassword.Text;
 
+<<<<<<< Updated upstream
             using (var db = new BaseDeDados())
             {
                 var utilizador = db.Utilizadores
@@ -45,6 +52,15 @@ namespace iTasks
                 {
                     MessageBox.Show("Invalid username or password.", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+=======
+            var utilizador = controllerLogin.Login(username, password);
+
+            if (utilizador != null)
+            {                  
+                MessageBox.Show("Login successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                new frmKanban(utilizador.Id).Show();
+                this.Hide();
+>>>>>>> Stashed changes
             }
 
         }
@@ -53,5 +69,14 @@ namespace iTasks
         {
             System.Windows.Forms.Application.Exit();
         }
-    }
+
+        private void txtPassword_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btLogin_Click(sender, e);
+            }
+   
+        }
+}
 }

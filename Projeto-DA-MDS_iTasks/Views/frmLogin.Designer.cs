@@ -60,7 +60,12 @@
             this.txtPassword.Margin = new System.Windows.Forms.Padding(4);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(183, 22);
+<<<<<<< Updated upstream
             this.txtPassword.TabIndex = 3;
+=======
+            this.txtPassword.TabIndex = 2;
+            this.txtPassword.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPassword_KeyDown);
+>>>>>>> Stashed changes
             // 
             // label2
             // 
@@ -69,26 +74,46 @@
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(70, 16);
+<<<<<<< Updated upstream
             this.label2.TabIndex = 2;
+=======
+            this.label2.TabIndex = 0;
+>>>>>>> Stashed changes
             this.label2.Text = "Password:";
             // 
             // btLogin
             // 
+<<<<<<< Updated upstream
             this.btLogin.Location = new System.Drawing.Point(263, 137);
             this.btLogin.Margin = new System.Windows.Forms.Padding(4);
             this.btLogin.Name = "btLogin";
             this.btLogin.Size = new System.Drawing.Size(100, 28);
             this.btLogin.TabIndex = 4;
+=======
+            this.btLogin.Location = new System.Drawing.Point(263, 132);
+            this.btLogin.Margin = new System.Windows.Forms.Padding(4);
+            this.btLogin.Name = "btLogin";
+            this.btLogin.Size = new System.Drawing.Size(100, 28);
+            this.btLogin.TabIndex = 3;
+>>>>>>> Stashed changes
             this.btLogin.Text = "Login";
             this.btLogin.UseVisualStyleBackColor = true;
             this.btLogin.Click += new System.EventHandler(this.btLogin_Click);
+            this.btLogin.Enter += new System.EventHandler(this.btLogin_Click);
             // 
             // btRegistar
             // 
             this.btRegistar.Location = new System.Drawing.Point(96, 137);
+<<<<<<< Updated upstream
             this.btRegistar.Name = "btRegistar";
             this.btRegistar.Size = new System.Drawing.Size(121, 28);
             this.btRegistar.TabIndex = 5;
+=======
+            this.btRegistar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btRegistar.Name = "btRegistar";
+            this.btRegistar.Size = new System.Drawing.Size(121, 28);
+            this.btRegistar.TabIndex = 4;
+>>>>>>> Stashed changes
             this.btRegistar.Text = "Registar";
             this.btRegistar.UseVisualStyleBackColor = true;
             this.btRegistar.Click += new System.EventHandler(this.btRegistar_Click);
