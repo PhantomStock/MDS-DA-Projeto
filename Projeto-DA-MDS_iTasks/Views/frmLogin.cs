@@ -8,51 +8,75 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using iTasks.Controllers;
 
 namespace iTasks
 {
     public partial class frmLogin : Form
     {
+<<<<<<< Updated upstream
+=======
         BaseDeDados db => BaseDeDados.Instance;
+        Controllers.ControllerLogin controllerLogin = new Controllers.ControllerLogin();
+>>>>>>> Stashed changes
         public frmLogin()
         {
             InitializeComponent();
         }
-        //temporario para testes no futuro vai desaparecer esta opçao de registar
+
         private void btRegistar_Click(object sender, EventArgs e)
         {
-            frmGereUtilizadores registar = new frmGereUtilizadores();
+            frmRegistar registar = new frmRegistar();
             registar.Show();
             this.Hide();
         }
-
-        // verifica as credenciais inseridas e compara com as da base de dados
         private void btLogin_Click(object sender, EventArgs e)
         {
             string username = txtUsername.Text;
             string password = txtPassword.Text;
 
-            var utilizador = db.Utilizador
-                .FirstOrDefault(u => u.Username == username && u.Password == password);
+<<<<<<< Updated upstream
+            using (var db = new BaseDeDados())
+            {
+                var utilizador = db.Utilizadores
+                    .FirstOrDefault(u => u.Username == username && u.Password == password);
+
+                if (utilizador != null)
+                {
+                    
+                    MessageBox.Show("Login successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    new frmKanban(utilizador.Id).Show();
+                    this.Hide();
+                }
+                else
+                {
+                    MessageBox.Show("Invalid username or password.", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+=======
+            var utilizador = controllerLogin.Login(username, password);
 
             if (utilizador != null)
-            {
-                    
+            {                  
                 MessageBox.Show("Login successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 new frmKanban(utilizador.Id).Show();
                 this.Hide();
+>>>>>>> Stashed changes
             }
-            else
-            {
-                MessageBox.Show("Invalid username or password.", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
 
-        // caso o form seja fechado ele encera o programa
+        }
 
         private void frmLogin_FormClosed(object sender, FormClosedEventArgs e)
         {
             System.Windows.Forms.Application.Exit();
         }
-    }
+
+        private void txtPassword_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btLogin_Click(sender, e);
+            }
+   
+        }
+}
 }

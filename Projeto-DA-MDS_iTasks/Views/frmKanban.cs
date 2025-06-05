@@ -20,21 +20,21 @@ namespace iTasks
         ControllerDados controllerDados = new ControllerDados();
         public frmKanban(int utilizadorId)
         {
-            
-                InitializeComponent();
-                // inicializa o form kanbar e atribui a uma variavel o utilizador que está a iniciar sessão
-                var utilizador = controllerDados.ObterUtilizadorPorId(utilizadorId);
-                IdUtilizadorAtual = utilizadorId;
 
-                if (utilizador != null)
-                {
-                    labelNomeUtilizador.Text = $"Bem vindo: {utilizador.Nome}";
-                }
+            InitializeComponent();
+            // inicializa o form kanbar e atribui a uma variavel o utilizador que está a iniciar sessão
+            var utilizador = controllerDados.ObterUtilizadorPorId(utilizadorId);
+            IdUtilizadorAtual = utilizadorId;
 
-                RefreshDadosListBoxes();
-           
-  
-            
+            if (utilizador != null)
+            {
+                labelNomeUtilizador.Text = $"Bem vindo: {utilizador.Nome}";
+            }
+
+            RefreshDadosListBoxes();
+
+
+
         }
 
         //Não ta em MVC falta as tarefas para 
@@ -67,7 +67,7 @@ namespace iTasks
         //ToolStripMenu
         private void gerirUtilizadoresToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (controllerDados.ObterGestorPorId(IdUtilizadorAtual).GereUtilizadores )
+            if (controllerDados.ObterGestorPorId(IdUtilizadorAtual).GereUtilizadores)
             {
                 new frmGereUtilizadores().Show();
             }
@@ -75,7 +75,7 @@ namespace iTasks
             {
                 MessageBox.Show("Apenas um gestor pode gerir utilizadores.", "Acesso Negado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-        }   
+        }
 
         private void gerirTiposDeTarefasToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -139,7 +139,7 @@ namespace iTasks
             //faz refresh as data source das listboxes
             lstTodo.DataSource = null;
             lstTodo.DataSource = tarefasTodo;
-           
+
             lstDoing.DataSource = null;
             lstDoing.DataSource = tarefasDoing;
 
@@ -156,6 +156,136 @@ namespace iTasks
         {
 
         }
+
+
+        private void exportarTarefaPorFazerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            exportarParaCSV(1); //exporta para csv as tarefas por fazer
+        }
+        private void exportarTarefaEmExecuçãoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            exportarParaCSV(2); //exporta para csv as em execução
+        }
+        private void exportarTarefaConcluidaToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            exportarParaCSV(3); //exporta para csv as tarefas concluidas
+        }
+        private void exportarTodasAsTarefasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            exportarParaCSV(4); //exporta para csv todas as tarefas
+        }
+
+        private void exportarParaCSV(int tipo)
+        {
+            //switch case para fazer defenir qual o tipo de tarefa a exportar para texto para apresentar no filename
+            string tipoString = "ToDo";
+            switch (tipo)
+            {
+                case 1:
+                    tipoString = "ToDo";
+                    break;
+                case 2:
+                    tipoString = "Doing";
+                    break;
+                case 3:
+                    tipoString = "Done";
+                    break;
+                case 4:
+                    tipoString = "Todas";
+                    break;
+                default:
+                    tipo = -1;
+                    break;
+            }
+
+
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "Ficheiro CSV (*.CSV)|*.CSV";
+            saveFileDialog.DefaultExt = "csv";
+            saveFileDialog.FileName = "Tarefas" + tipoString + ".CSV";
+
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                var controller = new ControllerKanban();
+                // Assume ControllerKanban has a method ExportarTarefasParaCSV that returns true/false
+                bool sucesso = controller.ExportarTarefasCSV(saveFileDialog.FileName, tipoString);
+
+                if (sucesso)
+                {
+                    //Sucesso
+                    MessageBox.Show("Tarefas exportadas com sucesso!", "Exportação", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    //Erro
+                    MessageBox.Show("Falha ao exportar tarefas.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void importarTodasAsTarefasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            importarDeSVC(4); //importa todas as tarefas
+        }
+
+        private void importarTarefasToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            importarDeSVC(1); //importa as tarefas por fazer
+        }
+
+        private void importarTarefasEmExecuçãoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            importarDeSVC(2); //importa as tarefas em execução
+        }
+
+        private void importarTarefasConcluidasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            importarDeSVC(3); //importa as tarefas concluidas
+        }
+        private void importarDeSVC(int tipo)
+        {
+            //switch case para fazer defenir qual o tipo de tarefa a exportar para texto para apresentar no filename
+            string tipoString = "ToDo";
+            switch (tipo)
+            {
+                case 1:
+                    tipoString = "ToDo";
+                    break;
+                case 2:
+                    tipoString = "Doing";
+                    break;
+                case 3:
+                    tipoString = "Done";
+                    break;
+                case 4:
+                    tipoString = "Todas";
+                    break;
+                default:
+                    tipo = -1;
+                    break;
+            }
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Ficheiro CSV (*.CSV)|*.CSV";
+            openFileDialog.DefaultExt = "csv";
+
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                var controller = new ControllerKanban();
+                // Assume ControllerKanban has a method ExportarTarefasParaCSV that returns true/false
+                bool sucesso = controller.ImportarTarefasCSV(openFileDialog.FileName, tipoString);
+
+                if (sucesso)
+                {
+                    //Sucesso
+                    MessageBox.Show("Tarefas importadas com sucesso!", "Exportação", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    //Erro
+                    MessageBox.Show("Falha ao importar tarefas.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
     }
-            
-}
+} 
+
