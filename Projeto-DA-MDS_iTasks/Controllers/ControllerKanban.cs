@@ -101,44 +101,27 @@ namespace iTasks.Controllers
                 using (var reader = new StreamReader(filePath, Encoding.UTF8))
                 {
                     string line;
-                    // Ignora o cabeçalho do CSV
-                    reader.ReadLine();
-                    while ((line = reader.ReadLine()) != null)
+                    int cont = 0;
+                    string line_0 = reader.ReadLine(); //le a primeira linha do ficheiro CSV para verificar o separador
+                    char sep = ';'; //character separador padrão
+                    if (line_0.StartsWith("sep =")) //verifica se a primeira linha começa com s de src vai buscar o separador indicado pelo file, senão usa default ';'
                     {
-                        var values = line.Split(';');
-                        if (values.Length < 13) continue; // Verifica se a linha tem o número correto de colunas
-                        if (tipo == "Todos")
+                        char[] linha_0_array = line_0.ToCharArray(); //desmonta a primieria linha do ficheiro em um array de caracteres
+                        sep = linha_0_array[5]; //guarda o separador indicado na primeira linha do ficheiro 
+                    }
+                    while ((line = reader.ReadLine()) != null) //le a linha do ficheiro CSV enquanto houver linhas para ler
+                    {
+                        var values = line.Split(sep); // separa cada elemento da linha em diferentes valores usando o sep defenido acima como separado (o sep é obtido atravez da verificação da linha do topo do csv
+
+                        if (values.Length < 13) continue; // Verifica se a linha tem o número correto de 
+
+                        //verifica se o primeiro "elemento" da linha é um numero (id), se nao for, ele passa a frente  (pq é um cabecalho ou indicador de separador vindo do csv)
+                        if (!char.IsNumber(line, 0))
                         {
-                            Tarefa tarefa = new Tarefa
-                            {
-                                Id = int.Parse(values[0]),
-                                IdGestor = int.Parse(values[1]),
-                                IdProgramador = int.Parse(values[2]),
-                                IdTipoTarefa = int.Parse(values[3]),
-                                Descricao = values[4],
-                                OrdemExecucao = int.Parse(values[5]),
-                                DataPrevistaInicio = DateTime.TryParse(values[6], out DateTime dataPrevistaInicio) ? dataPrevistaInicio : (DateTime?)null,
-                                DataPrevistaFim = DateTime.TryParse(values[7], out DateTime dataPrevistaFim) ? dataPrevistaFim : (DateTime?)null,
-                                DataRealInicio = DateTime.TryParse(values[8], out DateTime dataRealInicio) ? dataRealInicio : (DateTime?)null,
-                                DataRealFim = DateTime.TryParse(values[9], out DateTime dataRealFim) ? dataRealFim : (DateTime?)null,
-                                DataCriacao = DateTime.TryParse(values[10], out DateTime dataCriacao) ? dataCriacao : DateTime.Now,
-                                EstadoAtual = Enum.TryParse<EstadoAtual>(values[11], out EstadoAtual estadoAtual) ? estadoAtual : EstadoAtual.ToDo,
-                                StoryPoints = int.Parse(values[12])
-                            };
-                            // Adiciona a tarefa ao banco de dados ou atualiza se já existir
-                            if (controllerDados.ObterTarefaPorId(tarefa.Id) == null)
-                            {
-                                controllerTarefa.CriarTarefa(tarefa);
-                            }
-                            else
-                            {
-                                controllerTarefa.updateTarefa(tarefa);
-                            }
+                            continue; // Pula linhas que não começam com um número
                         } else
                         {
-                            //guarda so do tipo de  estado atual que foi definido
-                            //verifica se o estado atual da tarefa é igual ao tipo definido para importar 
-                            if (values[11] == tipo)
+                            if (tipo == "Todas")
                             {
                                 Tarefa tarefa = new Tarefa
                                 {
@@ -156,17 +139,55 @@ namespace iTasks.Controllers
                                     EstadoAtual = Enum.TryParse<EstadoAtual>(values[11], out EstadoAtual estadoAtual) ? estadoAtual : EstadoAtual.ToDo,
                                     StoryPoints = int.Parse(values[12])
                                 };
+                                // Adiciona a tarefa a base de dados ou atualiza se já existir
                                 if (controllerDados.ObterTarefaPorId(tarefa.Id) == null)
                                 {
                                     controllerTarefa.CriarTarefa(tarefa);
+                                    cont = cont + 1; // Incrementa o contador de tarefas importadas
                                 }
                                 else
                                 {
                                     controllerTarefa.updateTarefa(tarefa);
+                                    cont = cont + 1; // Incrementa o contador de tarefas importadas
                                 }
-                            } 
+                            }
+                            else
+                            {
+                                //guarda so do tipo de  estado atual que foi definido
+                                //verifica se o estado atual da tarefa é igual ao tipo definido para importar 
+                                if (values[11] == tipo)
+                                {
+                                    Tarefa tarefa = new Tarefa
+                                    {
+                                        Id = int.Parse(values[0]),
+                                        IdGestor = int.Parse(values[1]),
+                                        IdProgramador = int.Parse(values[2]),
+                                        IdTipoTarefa = int.Parse(values[3]),
+                                        Descricao = values[4],
+                                        OrdemExecucao = int.Parse(values[5]),
+                                        DataPrevistaInicio = DateTime.TryParse(values[6], out DateTime dataPrevistaInicio) ? dataPrevistaInicio : (DateTime?)null,
+                                        DataPrevistaFim = DateTime.TryParse(values[7], out DateTime dataPrevistaFim) ? dataPrevistaFim : (DateTime?)null,
+                                        DataRealInicio = DateTime.TryParse(values[8], out DateTime dataRealInicio) ? dataRealInicio : (DateTime?)null,
+                                        DataRealFim = DateTime.TryParse(values[9], out DateTime dataRealFim) ? dataRealFim : (DateTime?)null,
+                                        DataCriacao = DateTime.TryParse(values[10], out DateTime dataCriacao) ? dataCriacao : DateTime.Now,
+                                        EstadoAtual = Enum.TryParse<EstadoAtual>(values[11], out EstadoAtual estadoAtual) ? estadoAtual : EstadoAtual.ToDo,
+                                        StoryPoints = int.Parse(values[12])
+                                    };
+                                    if (controllerDados.ObterTarefaPorId(tarefa.Id) == null)
+                                    {
+                                        controllerTarefa.CriarTarefa(tarefa);
+                                        cont = cont + 1; // Incrementa o contador de tarefas importadas
+                                    }
+                                    else
+                                    {
+                                        controllerTarefa.updateTarefa(tarefa);
+                                        cont = cont + 1; // Incrementa o contador de tarefas importadas
+                                    }
+                                }
+                            }
                         }
                     }
+                    MessageBox.Show(cont.ToString() + " Tarefas Importadas", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     return true;
                 }
             }
