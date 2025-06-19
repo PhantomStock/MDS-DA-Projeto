@@ -10,7 +10,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using iTasks.Controllers;
 using iTasks.DataBase;
-using iTasks.Models;
 using static iTasks.Models.Enums;
 
 namespace iTasks
@@ -18,23 +17,25 @@ namespace iTasks
     public partial class frmKanban : Form
     {
         BaseDeDados db => BaseDeDados.Instance;
+        public int IdUtilizadorAtual;
         ControllerDados controllerDados = new ControllerDados();
-        Utilizador utilizadorAtual = null;
-        public frmKanban()
+        public frmKanban(int utilizadorId)
         {
-            InitializeComponent();
-            // Carrega o utilizador atual da sessão
-            var utilizador = SessaoAtual.Utilizador;
 
-            // Verifica se o utilizador está logado
-            utilizadorAtual = utilizador;
+            InitializeComponent();
+            // inicializa o form kanbar e atribui a uma variavel o utilizador que está a iniciar sessão
+            var utilizador = controllerDados.ObterUtilizadorPorId(utilizadorId);
+            IdUtilizadorAtual = utilizadorId;
 
             if (utilizador != null)
             {
-                labelNomeUtilizador.Text = $"Bem vindo: {utilizadorAtual.Nome}";
+                labelNomeUtilizador.Text = $"Bem vindo: {utilizador.Nome}";
             }
 
             RefreshDadosListBoxes();
+
+
+
         }
 
         //Não ta em MVC falta as tarefas para 
@@ -45,29 +46,21 @@ namespace iTasks
         //ToolStripMenu
         private void gerirUtilizadoresToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            // Verifica se o utilizador atual é um gestor
-            var utilizadorId = controllerDados.ObterGestorPorId(utilizadorAtual.Id);
-            if (utilizadorId != null && utilizadorId.GereUtilizadores)
+            if (controllerDados.ObterGestorPorId(IdUtilizadorAtual).GereUtilizadores)
             {
                 new frmGereUtilizadores().Show();
-            }else 
+            }
+            else
             {
                 MessageBox.Show("Apenas um gestor pode gerir utilizadores.", "Acesso Negado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
+
         private void gerirTiposDeTarefasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            // Verifica se o utilizador atual é um gestor
-            var utilizadorId = controllerDados.ObterGestorPorId(utilizadorAtual.Id);
-            if (utilizadorId != null && utilizadorId.GereUtilizadores)
-            {
-                new frmGereTiposTarefas().Show();
-            }
-            else
-            {
-                MessageBox.Show("Apenas um gestor pode gerir tipos de tarefas.", "Acesso Negado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
+            new frmGereTiposTarefas().Show();
         }
+
         private void tarefasTerminadasToolStripMenuItem_Click(object sender, EventArgs e)
         {
             new frmConsultarTarefasConcluidas().Show();
@@ -75,16 +68,7 @@ namespace iTasks
 
         private void tarefasEmCursoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            // Verifica se o utilizador atual é um gestor ou programador
-            var utilizadorId = controllerDados.ObterGestorPorId(utilizadorAtual.Id);
-            if (utilizadorId != null && (utilizadorId.GereUtilizadores))
-            {
-                new frmConsultaTarefasEmCurso().Show();
-            }
-            else
-            {
-                MessageBox.Show("Apenas um gestor pode consultar tarefas em curso.", "Acesso Negado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
+            new frmConsultaTarefasEmCurso().Show();
         }
 
         private void sairToolStripMenuItem_Click(object sender, EventArgs e)
@@ -96,7 +80,7 @@ namespace iTasks
         private void btNova_Click(object sender, EventArgs e)
         {
             //chama o form para uma nova tarefa
-            new frmDetalhesTarefa(-1).Show();
+            new frmDetalhesTarefa(-1, IdUtilizadorAtual).Show();
         }
 
         private void lstTodo_MouseDoubleClick(object sender, MouseEventArgs e)
@@ -129,7 +113,7 @@ namespace iTasks
             // Verifica se há um item selecionado
             Tarefa tarefa = lb.SelectedItem as Tarefa;
 
-            new frmDetalhesTarefa(tarefa.Id).Show();
+            new frmDetalhesTarefa(tarefa.Id, IdUtilizadorAtual).Show();
         }
 
         private void RefreshDadosListBoxes()
@@ -139,7 +123,6 @@ namespace iTasks
             List<Tarefa> tarefasTodo = controllerDados.ObterTarefasTodo();
             List<Tarefa> tarefasDoing = controllerDados.ObterTarefasDoing();
             List<Tarefa> tarefasDone = controllerDados.ObterTarefasDone();
-
 
             //faz refresh as data source das listboxes
             lstTodo.DataSource = null;
@@ -372,8 +355,6 @@ namespace iTasks
                 lstDone.ClearSelected(); // Limpa a seleção da lista Done
             }
         }
-
-
     }
             
 }

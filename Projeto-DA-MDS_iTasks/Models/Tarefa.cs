@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using iTasks.Controllers;
 using static iTasks.Models.Enums;
 
 namespace iTasks
@@ -58,10 +57,7 @@ namespace iTasks
         // Override ao toString para apresetnar informação da descricao da tarefa
         public override string ToString()
         {
-            ControllerDados controllerDados = new ControllerDados();
-
-            string nome = controllerDados.ObterUtilizadorPorId(this.IdProgramador).Username;
-            return this.Descricao + " ("+ nome +")";
+            return this.Descricao;
         }
     }
 

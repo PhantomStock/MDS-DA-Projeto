@@ -22,7 +22,7 @@ namespace iTasks
         ControllerDados controllerDados = new ControllerDados();
         ControllerDetalhesTarefa ControllerDetalhesTarefa = new ControllerDetalhesTarefa();
         ControllerTarefa controllerTarefa = new ControllerTarefa();
-        public frmDetalhesTarefa(int id)
+        public frmDetalhesTarefa(int id, int idGestor)
         {
             InitializeComponent();
             //recebe e carrega na combo box todos os tipos de tarefa
@@ -37,7 +37,7 @@ namespace iTasks
             cbProgramador.DataSource = null;
             cbProgramador.DataSource = Programadores;
 
-            IdGestorAtual = SessaoAtual.Utilizador.Id;
+            IdGestorAtual = idGestor;
             idTarefaAtualUpdate = id;
 
             // quando o id for -1, significa que é uma nova tarefa, caso contrário, carrega os dados da tarefa

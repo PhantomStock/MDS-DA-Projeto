@@ -64,7 +64,6 @@
     <Compile Include="Controllers\ControllerRegistar.cs" />
     <Compile Include="Controllers\ControllerTipoTarefa.cs" />
     <Compile Include="Models\Enums.cs" />
-    <Compile Include="Models\SessaoAtual.cs" />
     <Compile Include="Views\frmConsultarTarefasConcluidas.cs">
       <SubType>Form</SubType>
     </Compile>
