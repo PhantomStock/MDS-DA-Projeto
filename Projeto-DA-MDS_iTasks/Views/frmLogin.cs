@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using iTasks.Controllers;
+using iTasks.Models;
 
 namespace iTasks
 {
@@ -36,9 +37,10 @@ namespace iTasks
 
             if (utilizador != null)
             {
-                    
+                SessaoAtual.Utilizador = utilizador; // Guarda o utilizador na sessão atual
+
                 MessageBox.Show("Login successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                new frmKanban(utilizador.Id).Show();
+                new frmKanban().Show();
                 this.Hide();
             }
             else

@@ -1,4 +1,6 @@
-﻿using iTasks.DataBase;
+﻿using iTasks.Controllers;
+using iTasks.DataBase;
+using iTasks.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,6 +16,7 @@ namespace iTasks
     public partial class frmConsultaTarefasEmCurso : Form
     {
         BaseDeDados db => BaseDeDados.Instance;
+        ControllerDados controllerDados = new ControllerDados();
         public frmConsultaTarefasEmCurso()
         {
             InitializeComponent();
@@ -21,31 +24,73 @@ namespace iTasks
         }
         private void frmConsultarTarefasEmCurso_Load(object sender, EventArgs e)
         {
+            Utilizador utilizadorAtual = SessaoAtual.Utilizador;
+            // Verifica se o utilizador atual é um gestor ou programador
+            int tipo = controllerDados.GestorOuProgramador(utilizadorAtual.Id);
+            if (tipo == 1)
+            {
+                // Se for gestor, carrega as tarefas concluídas
+                var tarefasConcluidas = db.Tarefa
+                    .Where(t => t.EstadoAtual == iTasks.Models.Enums.EstadoAtual.Doing&& t.EstadoAtual == Enums.EstadoAtual.ToDo && t.IdGestor == utilizadorAtual.Id)
+                    .ToList()//pra não dar erro de null
+                    .Select(t => new
+                    {
+                        //usamos o if inline para verificar se o IdTipoTarefa,idGestor,IdProgramador e se for nulo
+                        //atribuímos uma string "Tarefa Null"
+                        Id = t.Id,
+                        TipoTarefa = controllerDados.ObterTipoTarefaPorId(t.IdTipoTarefa)?.Nome ?? "Gestor Null",
+                        NomeDoGestor = controllerDados.ObterGestorPorId(t.IdGestor)?.Nome ?? "Gestor Null",
+                        NomeDoProgramdor = controllerDados.ObterProgramadorPorId(t.IdProgramador)?.Nome ?? "Programador Null",
+                        Descricao = t.Descricao,
+                        OrdemExecucao = t.OrdemExecucao,
+                        DataPrevistaInicio = t.DataPrevistaInicio,
+                        DataPrevistaFim = t.DataPrevistaFim,
+                        DataRealInicio = t.DataRealInicio,
+                        DataRealFim = t.DataRealFim,
+                        DuraçãoReal = t.DataRealFim.Value.Day - t.DataRealInicio.Value.Day,
+                        DuraçãoEstimada = t.DataPrevistaFim.Value.Day - t.DataPrevistaInicio.Value.Day,
+                        StoryPointsInicio = t.StoryPoints != 0 ? t.StoryPoints.ToString() : "0",
 
-            // Specifies the state of the task as 'Done'
-            var tarefasConcluidas = db.Tarefa
-                .Where(t => t.EstadoAtual == iTasks.Models.Enums.EstadoAtual.Doing)
-                .Select(t => new
-                {
-                    //usamos o if inline para verificar se o IdTipoTarefa,idGestor,IdProgramador e se for nulo
-                    //atribuímos uma string "Tarefa Null"
-                    Id = t.Id,
-                    IdTipoTarefa = t.IdTipoTarefa != null ? t.IdTipoTarefa.ToString() : "Tarefa Null",
-                    IdGestor = t.IdGestor != null ? t.IdGestor.ToString() : "Gestor Null",
-                    IdProgramador = t.IdProgramador != null ? t.IdProgramador.ToString() : "Programador Null",
-                    Descricao = t.Descricao,
-                    OrdemExecucao = t.OrdemExecucao,
-                    DataPrevistaInicio = t.DataPrevistaInicio,
-                    DataPrevistaFim = t.DataPrevistaFim,
-                    DataRealInicio = t.DataRealInicio,
-                    DataRealFim = t.DataRealFim,
-                    StoryPointsInicio = t.StoryPoints != 0 ? t.StoryPoints.ToString() : "0",
+                    })
+                    .ToList();
 
-                })
-                .ToList();
+                gvTarefasEmCurso.DataSource = tarefasConcluidas;
+            }
+            else if (tipo == 2)
+            {
+                //Programador
+                var tarefasConcluidas = db.Tarefa
+                    .Where(t => t.EstadoAtual == iTasks.Models.Enums.EstadoAtual.Doing && t.EstadoAtual == Enums.EstadoAtual.ToDo && t.IdProgramador == utilizadorAtual.Id)
+                    .ToList()//pra não dar erro de null
+                    .Select(t => new
+                    {
+                        //usamos o if inline para verificar se o IdTipoTarefa,idGestor,IdProgramador e se for nulo
+                        //atribuímos uma string "Tarefa Null"
+                        Id = t.Id,
+                        TipoTarefa = controllerDados.ObterTipoTarefaPorId(t.IdTipoTarefa)?.Nome ?? "Gestor Null",
+                        NomeDoGestor = controllerDados.ObterGestorPorId(t.IdGestor)?.Nome ?? "Gestor Null",
+                        NomeDoProgramdor = controllerDados.ObterProgramadorPorId(t.IdProgramador)?.Nome ?? "Programador Null",
+                        Descricao = t.Descricao,
+                        OrdemExecucao = t.OrdemExecucao,
+                        DataPrevistaInicio = t.DataPrevistaInicio,
+                        DataPrevistaFim = t.DataPrevistaFim,
+                        DataRealInicio = t.DataRealInicio,
+                        DataRealFim = t.DataRealFim,
+                        DuraçãoReal = t.DataRealFim.Value.Day - t.DataRealInicio.Value.Day,
+                        DuraçãoEstimada = t.DataPrevistaFim.Value.Day - t.DataPrevistaInicio.Value.Day,
+                        StoryPointsInicio = t.StoryPoints != 0 ? t.StoryPoints.ToString() : "0",
 
-            // Loads the data into the gridView
-            gvTarefasEmCurso.DataSource = tarefasConcluidas;
+                    })
+                    .ToList();
+
+                gvTarefasEmCurso.DataSource = tarefasConcluidas;
+            }
+            else
+            {
+                //Tipo de utilizador não é nem gestor nem programador
+                MessageBox.Show("Apenas gestores e programadores podem consultar tarefas concluídas.", "Acesso Negado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            
         }
 
         private void btFechar_Click(object sender, EventArgs e)

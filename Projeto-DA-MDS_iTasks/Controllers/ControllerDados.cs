@@ -206,7 +206,26 @@ namespace iTasks.Controllers
             }
         }
 
+        public int GestorOuProgramador(int id)
+        {
+            var utilizador = db.Utilizador.Find(id);
 
+            if (utilizador is Gestor)
+            {
+                return 1; // Gestor
+            }
+            else if (utilizador is Programador)
+            {
+                return 2; // Programador
+            }
+            else
+            {
+                return 0; // Utilizador não encontrado ou outro tipo
+
+
+            }
+
+        }
 
     }
 }
