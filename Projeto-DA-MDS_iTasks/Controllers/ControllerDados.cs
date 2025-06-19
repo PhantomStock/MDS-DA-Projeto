@@ -57,6 +57,7 @@ namespace iTasks.Controllers
             return db.Utilizador.OfType<Programador>().FirstOrDefault(u => u.Id == id);
         }
 
+
         //obtem um gestor pelo id
         public Gestor ObterGestorPorId(int id)
         {
@@ -105,6 +106,11 @@ namespace iTasks.Controllers
         {
             return db.Tarefa.Where(t => t.EstadoAtual == Enums.EstadoAtual.ToDo).ToList();
         }
+        //obter tarefas no estado Todo do programador atual
+        public List<Tarefa> ObterTarefasToDoPorUtilizador(int  id)
+        {
+            return db.Tarefa.Where(t => t.EstadoAtual == Enums.EstadoAtual.ToDo && t.IdProgramador == id).ToList();
+        }
 
         //obter tarfas no estado Doing
         public List<Tarefa> ObterTarefasDoing()
@@ -112,10 +118,22 @@ namespace iTasks.Controllers
             return db.Tarefa.Where(t => t.EstadoAtual == Enums.EstadoAtual.Doing).ToList();
         }
 
+        //obter tarefas no estado Doing do programador atual
+        public List<Tarefa> ObterTarefasDoingPorUtilizador(int id)
+        {
+            return db.Tarefa.Where(t => t.EstadoAtual == Enums.EstadoAtual.Doing && t.IdProgramador == id).ToList();
+        }
+
         //obter tarefas no estado Done
         public List<Tarefa> ObterTarefasDone()
         {
             return db.Tarefa.Where(t => t.EstadoAtual == Enums.EstadoAtual.Done).ToList();
+        }
+
+        //obter tarefas no estado Done do programador atual
+        public List<Tarefa> ObterTarefasDonePorUtilizador(int id)
+        {
+            return db.Tarefa.Where(t => t.EstadoAtual == Enums.EstadoAtual.Done && t.IdProgramador == id).ToList();
         }
 
         //obter true or false se já existe uma tarefa com aquela ordem associada ao programador defenido por parametro
@@ -206,7 +224,26 @@ namespace iTasks.Controllers
             }
         }
 
+        public int GestorOuProgramdor(int id)
+        {
+            var utilizador = db.Utilizador.Find(id);
+            if (utilizador is Gestor)
+            {
+                // é gestor
+                return 1;
+            }
+            else if(utilizador is Programador)
+            {
+                // é programador
+                return 2;
+            }
+            else
+            {
+                // não é nem gestor nem programador
+                return -1;
+            }
 
+        }
 
     }
 }
