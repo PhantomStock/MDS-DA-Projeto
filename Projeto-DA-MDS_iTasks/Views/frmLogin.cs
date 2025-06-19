@@ -23,7 +23,7 @@ namespace iTasks
 
         private void btRegistar_Click(object sender, EventArgs e)
         {
-            frmRegistar registar = new frmRegistar();
+            frmGereUtilizadores registar = new frmGereUtilizadores();
             registar.Show();
             this.Hide();
         }

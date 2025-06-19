@@ -158,6 +158,54 @@ namespace iTasks.Controllers
             comboBox.DataSource = ObterTodosGestores();
         }
 
+        public void EliminarGestor(int idGestor)
+        {
+            var gestor = db.Gestor.Find(idGestor);
+            if (gestor != null)
+            {
+                db.Gestor.Remove(gestor);
+                db.SaveChanges();
+            }
+        }
+
+        public void EliminarProgramador(int idProgramador)
+        {
+            var programador = db.Programador.Find(idProgramador);
+            if (programador != null)
+            {
+                db.Programador.Remove(programador);
+                db.SaveChanges();
+            }
+        }
+
+        public void AtualizarGestor(Gestor gestor)
+        {
+            var g = db.Gestor.Find(gestor.Id);
+            if (g != null)
+            {
+                g.Nome = gestor.Nome;
+                g.Username = gestor.Username;
+                g.Password = gestor.Password;
+                g.Departamento = gestor.Departamento;
+                g.GereUtilizadores = gestor.GereUtilizadores;
+                db.SaveChanges();
+            }
+        }
+
+        public void AtualizarProgramador(Programador programador)
+        {
+            var p = db.Programador.Find(programador.Id);
+            if (p != null)
+            {
+                p.Nome = programador.Nome;
+                p.Username = programador.Username;
+                p.Password = programador.Password;
+                p.NivelExperiencia = programador.NivelExperiencia;
+                p.IdGestor = programador.IdGestor;
+                db.SaveChanges();
+            }
+        }
+
 
 
     }
