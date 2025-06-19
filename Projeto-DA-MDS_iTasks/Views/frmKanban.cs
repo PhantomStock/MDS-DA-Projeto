@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using iTasks.Controllers;
 using iTasks.DataBase;
+using static iTasks.Models.Enums;
 
 namespace iTasks
 {
@@ -84,17 +85,26 @@ namespace iTasks
 
         private void lstTodo_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            DoubleClickLst(lstTodo);
+            if (lstTodo.SelectedIndex > -1)
+            {
+                DoubleClickLst(lstTodo);
+            }
         }
 
         private void lstDoing_DoubleClick(object sender, EventArgs e)
         {
-            DoubleClickLst(lstDoing);
+            if (lstDoing.SelectedIndex > -1)
+            {
+                DoubleClickLst(lstDoing);
+            }
         }
 
         private void lstDone_DoubleClick(object sender, EventArgs e)
         {
-            DoubleClickLst(lstDone);
+            if (lstDone.SelectedIndex > -1)
+            {
+                DoubleClickLst(lstDone);
+            }
         }
 
         //evento para quando o utilizador seleciona uma tarefa para "abrir" com double click
@@ -259,5 +269,92 @@ namespace iTasks
         {
             RefreshDadosListBoxes();
         }
-    }           
+
+        private void btSetDoing_Click(object sender, EventArgs e)
+        {
+            if (lstTodo.SelectedItem is Tarefa tarefa)
+            {
+                tarefa.EstadoAtual = EstadoAtual.Doing;
+
+                var doingList = (List<Tarefa>)lstDoing.DataSource;
+
+                doingList.Add(tarefa);
+
+                tarefa.DataRealInicio = DateTime.Now;
+
+                db.SaveChanges();
+
+                RefreshDadosListBoxes();
+            }
+        }
+
+        private void btSetTodo_Click(object sender, EventArgs e)
+        {
+            if (lstDone.SelectedItem is Tarefa tarefaDone)
+            {
+                MessageBox.Show("Não é possível reiniciar uma tarefa já concluída.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            if (lstDoing.SelectedItem is Tarefa tarefaDoing)
+            {
+                tarefaDoing.EstadoAtual = EstadoAtual.ToDo;
+
+                var toDoList = (List<Tarefa>)lstTodo.DataSource;
+
+                toDoList.Add(tarefaDoing);
+
+                tarefaDoing.DataRealInicio = null;
+
+                db.SaveChanges();
+                RefreshDadosListBoxes();
+            }
+
+        }
+
+        private void btSetDone_Click(object sender, EventArgs e)
+        {
+            if (lstDoing.SelectedItem is Tarefa tarefa)
+            {
+                tarefa.EstadoAtual = EstadoAtual.Done;
+
+                var doneList = (List<Tarefa>)lstDone.DataSource;
+
+                doneList.Add(tarefa);
+
+                tarefa.DataRealFim = DateTime.Now;
+
+                db.SaveChanges();
+                RefreshDadosListBoxes();
+            }
+            
+        }
+
+        private void lstDone_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (lstDone.SelectedIndex > -1)
+            {
+                lstDoing.ClearSelected(); // Limpa a seleção da lista Doing
+                lstTodo.ClearSelected(); // Limpa a seleção da lista Todo
+            }
+        }
+
+        private void lstDoing_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (lstDoing.SelectedIndex > -1)
+            {
+                lstDone.ClearSelected(); // Limpa a seleção da lista Done
+                lstTodo.ClearSelected(); // Limpa a seleção da lista Todo
+            }
+        }
+
+        private void lstTodo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (lstTodo.SelectedIndex > -1)
+            {
+                lstDoing.ClearSelected(); // Limpa a seleção da lista Doing
+                lstDone.ClearSelected(); // Limpa a seleção da lista Done
+            }
+        }
+    }
+            
 }

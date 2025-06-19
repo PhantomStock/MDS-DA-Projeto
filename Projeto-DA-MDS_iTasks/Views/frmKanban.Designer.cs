@@ -114,6 +114,7 @@
             this.lstDoing.Name = "lstDoing";
             this.lstDoing.Size = new System.Drawing.Size(395, 516);
             this.lstDoing.TabIndex = 0;
+            this.lstDoing.SelectedIndexChanged += new System.EventHandler(this.lstDoing_SelectedIndexChanged);
             this.lstDoing.DoubleClick += new System.EventHandler(this.lstDoing_DoubleClick);
             // 
             // groupBox3
@@ -141,6 +142,7 @@
             this.lstDone.Name = "lstDone";
             this.lstDone.Size = new System.Drawing.Size(395, 516);
             this.lstDone.TabIndex = 0;
+            this.lstDone.SelectedIndexChanged += new System.EventHandler(this.lstDone_SelectedIndexChanged);
             this.lstDone.DoubleClick += new System.EventHandler(this.lstDone_DoubleClick);
             // 
             // menuStrip1
@@ -310,6 +312,7 @@
             this.btSetDoing.TabIndex = 5;
             this.btSetDoing.Text = "Executar Tarefa >>";
             this.btSetDoing.UseVisualStyleBackColor = true;
+            this.btSetDoing.Click += new System.EventHandler(this.btSetDoing_Click);
             // 
             // btSetDone
             // 
@@ -321,6 +324,7 @@
             this.btSetDone.TabIndex = 6;
             this.btSetDone.Text = "Terminar Tarefa >>";
             this.btSetDone.UseVisualStyleBackColor = true;
+            this.btSetDone.Click += new System.EventHandler(this.btSetDone_Click);
             // 
             // btSetTodo
             // 
@@ -332,6 +336,7 @@
             this.btSetTodo.TabIndex = 7;
             this.btSetTodo.Text = "<< Reiniciar Tarefa";
             this.btSetTodo.UseVisualStyleBackColor = true;
+            this.btSetTodo.Click += new System.EventHandler(this.btSetTodo_Click);
             // 
             // btNova
             // 
