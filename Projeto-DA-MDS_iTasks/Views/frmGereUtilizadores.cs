@@ -48,11 +48,17 @@ namespace iTasks
 
         }
 
-
         //===========================================================================================================
         //CRUD GESTOR
         private void btGravarGestor_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(txtNomeGestor.Text) ||
+                string.IsNullOrWhiteSpace(txtUsernameGestor.Text) ||
+                string.IsNullOrWhiteSpace(txtPasswordGestor.Text))
+            {
+                MessageBox.Show("Preencha todos os campos do Gestor.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             // Obtém os dados do gestor a partir dos campos de texto e checkbox
             string nome = txtNomeGestor.Text;
             string username = txtUsernameGestor.Text;
@@ -125,6 +131,14 @@ namespace iTasks
         //CRUD PROGRAMADOR
         private void btGravarProg_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(txtNomeProg.Text) ||
+                string.IsNullOrWhiteSpace(txtUsernameProg.Text) ||
+                string.IsNullOrWhiteSpace(txtPasswordProg.Text))
+            {
+                MessageBox.Show("Preencha todos os campos do Programador.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             // Obtém os dados do programador a partir dos campos de texto e combobox
             string nome = txtNomeProg.Text;
             string username = txtUsernameProg.Text;
