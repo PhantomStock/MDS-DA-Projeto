@@ -32,10 +32,10 @@ namespace iTasks
             cbTipoTarefa.DataSource = TiposTarefas;
 
             //recebe e carrega na combo box todos os programadores
-            List<Programador> Programadores = controllerDados.ObterTodosProgramadores();
+            List<Programador> ProgramadoresDoGestor = controllerDados.ObterProgramadoresDoGestorAtual();
                 
             cbProgramador.DataSource = null;
-            cbProgramador.DataSource = Programadores;
+            cbProgramador.DataSource = ProgramadoresDoGestor;
 
             //recebe o utilizador atual
             Utilizador utilizadorAtual = SessaoAtual.Utilizador;

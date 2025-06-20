@@ -11,6 +11,5 @@ namespace iTasks.Models
         public static Utilizador Utilizador { get; set; }
 
 
-
     }
 }

@@ -26,7 +26,6 @@ namespace iTasks
         // override ao tostring para apresentar o nome de utilizador do gestor
         public override string ToString()
         {
-
             return this.Username;
         }
 

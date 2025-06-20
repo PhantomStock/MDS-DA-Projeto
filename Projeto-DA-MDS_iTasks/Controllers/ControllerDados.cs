@@ -118,6 +118,14 @@ namespace iTasks.Controllers
             return db.Tarefa.Where(t => t.EstadoAtual == Enums.EstadoAtual.Done).ToList();
         }
 
+        public List<Programador> ObterProgramadoresDoGestorAtual()
+        {
+            int idGestor = SessaoAtual.Utilizador.Id;
+            return ObterTodosProgramadores()
+                .Where(p => p.IdGestor == idGestor)
+                .ToList();
+        }
+
         //obter true or false se já existe uma tarefa com aquela ordem associada ao programador defenido por parametro
         public bool ExisteTarefaComOrdem(int ordem, int idProgramador)
         {

@@ -80,6 +80,11 @@ namespace iTasks
 
         private void btNova_Click(object sender, EventArgs e)
         {
+            if (SessaoAtual.Utilizador is Programador)
+            {
+                MessageBox.Show("Apenas gestores podem criar novas tarefas.", "Acesso negado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             //chama o form para uma nova tarefa
             new frmDetalhesTarefa(-1).Show();
         }
