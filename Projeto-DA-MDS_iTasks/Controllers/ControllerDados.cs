@@ -118,12 +118,21 @@ namespace iTasks.Controllers
             return db.Tarefa.Where(t => t.EstadoAtual == Enums.EstadoAtual.Done).ToList();
         }
 
+        //obter programadores do utilizador atual se for gestor 
         public List<Programador> ObterProgramadoresDoGestorAtual()
         {
             int idGestor = SessaoAtual.Utilizador.Id;
             return ObterTodosProgramadores()
                 .Where(p => p.IdGestor == idGestor)
                 .ToList();
+        }
+
+        //funcao para verificar se o programador pode ter mais uma tarefa no estado doing
+        public bool PodeAdicionarTarefaDoing(int idProgramador)
+        {
+            // conta quantas tarefas estão no estado Doing para o programador
+            int doing = db.Tarefa.Count(t => t.IdProgramador == idProgramador && t.EstadoAtual == Enums.EstadoAtual.Doing);
+            return doing < 2; 
         }
 
         //obter true or false se já existe uma tarefa com aquela ordem associada ao programador defenido por parametro

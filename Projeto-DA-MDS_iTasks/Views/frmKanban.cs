@@ -278,19 +278,29 @@ namespace iTasks
 
         private void btSetDoing_Click(object sender, EventArgs e)
         {
+           
+
             if (lstTodo.SelectedItem is Tarefa tarefa)
             {
-                tarefa.EstadoAtual = EstadoAtual.Doing;
+                if (!controllerDados.PodeAdicionarTarefaDoing(tarefa.IdProgramador))
+                {
+                    MessageBox.Show("Este programador já tem 2 tarefas em execução (Doing).", "Limite atingido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                else
+                {
+                    tarefa.EstadoAtual = EstadoAtual.Doing;
 
-                var doingList = (List<Tarefa>)lstDoing.DataSource;
+                    var doingList = (List<Tarefa>)lstDoing.DataSource;
 
-                doingList.Add(tarefa);
+                    doingList.Add(tarefa);
 
-                tarefa.DataRealInicio = DateTime.Now;
+                    tarefa.DataRealInicio = DateTime.Now;
 
-                db.SaveChanges();
+                    db.SaveChanges();
 
-                RefreshDadosListBoxes();
+                    RefreshDadosListBoxes();
+                }
             }
         }
 

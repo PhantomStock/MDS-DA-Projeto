@@ -16,9 +16,11 @@ namespace iTasks.Controllers
     class ControllerTarefa
     {
         BaseDeDados db => BaseDeDados.Instance;
+        ControllerDados controllerDados = new ControllerDados();
         //recebe um objeto tarefa e adiciona-o à base de dados
         public void CriarTarefa(Tarefa tarefa) 
-        { 
+        {
+            
 
             db.Tarefa.Add(tarefa);
             db.SaveChanges();
