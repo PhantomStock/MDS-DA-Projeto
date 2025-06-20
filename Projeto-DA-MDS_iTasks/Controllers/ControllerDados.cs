@@ -128,11 +128,48 @@ namespace iTasks.Controllers
         }
 
         //funcao para verificar se o programador pode ter mais uma tarefa no estado doing
-        public bool PodeAdicionarTarefaDoing(int idProgramador)
+        public bool PodePassarTarefaDoing(int idProgramador)
         {
             // conta quantas tarefas estão no estado Doing para o programador
             int doing = db.Tarefa.Count(t => t.IdProgramador == idProgramador && t.EstadoAtual == Enums.EstadoAtual.Doing);
             return doing < 2; 
+        }
+
+        // Verifica se pode passar para Doing
+        public bool PodePassarParaDoingOrdem(Tarefa tarefa)
+        {
+            // todas as tarefas "ToDo" do programador
+            var tarefasToDo = db.Tarefa
+                .Where(t => t.IdProgramador == tarefa.IdProgramador && t.EstadoAtual == Enums.EstadoAtual.ToDo)
+                .ToList();
+
+            //verifica se não há tarefas ToDo
+            if (tarefasToDo.Count == 0)
+                return true; 
+
+            // menor ordem das tarefas ToDo
+            int menorOrdem = tarefasToDo.Min(t => t.OrdemExecucao);
+
+            // Só pode passar para Doing se a ordem de execucao for igual à menor ordem
+            return tarefa.OrdemExecucao == menorOrdem;
+        }
+
+        // Verifica se pode passar para Done
+        public bool PodePassarParaDoneOrdem(Tarefa tarefa)
+        {
+            //todas as tarefas "Doing" do programador
+            var tarefasDoing = db.Tarefa
+                .Where(t => t.IdProgramador == tarefa.IdProgramador && t.EstadoAtual == Enums.EstadoAtual.Doing)
+                .ToList();
+
+            if (tarefasDoing.Count == 0)
+                return true; // Não há outras tarefas Doing
+
+            // menor ordem das tarefas Doing
+            int menorOrdem = tarefasDoing.Min(t => t.OrdemExecucao);
+
+            // Só pode passar para Doing se a ordem de execucao for igual à menor ordem
+            return tarefa.OrdemExecucao == menorOrdem;
         }
 
         //obter true or false se já existe uma tarefa com aquela ordem associada ao programador defenido por parametro

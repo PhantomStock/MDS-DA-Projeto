@@ -278,11 +278,15 @@ namespace iTasks
 
         private void btSetDoing_Click(object sender, EventArgs e)
         {
-           
-
             if (lstTodo.SelectedItem is Tarefa tarefa)
             {
-                if (!controllerDados.PodeAdicionarTarefaDoing(tarefa.IdProgramador))
+                // Validação: só pode passar para Doing se for a de menor ordem
+                if (!controllerDados.PodePassarParaDoingOrdem(tarefa))
+                {
+                    MessageBox.Show("Só pode iniciar a tarefa de menor ordem que ainda está por fazer.", "Ordem obrigatória", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                if (!controllerDados.PodePassarTarefaDoing(tarefa.IdProgramador))
                 {
                     MessageBox.Show("Este programador já tem 2 tarefas em execução (Doing).", "Limite atingido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
@@ -331,6 +335,13 @@ namespace iTasks
         {
             if (lstDoing.SelectedItem is Tarefa tarefa)
             {
+                // Validação: só pode passar para Done se for a de menor ordem em Doing
+                if (!controllerDados.PodePassarParaDoneOrdem(tarefa))
+                {
+                    MessageBox.Show("Só pode concluir a tarefa de menor ordem que está em execução.", "Ordem obrigatória", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
                 tarefa.EstadoAtual = EstadoAtual.Done;
 
                 var doneList = (List<Tarefa>)lstDone.DataSource;
