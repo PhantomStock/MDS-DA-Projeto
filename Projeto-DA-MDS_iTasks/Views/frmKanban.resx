@@ -126,6 +126,16 @@
   <metadata name="openFileDialog1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>318, 17</value>
   </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="EliminarTarefa.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAN
+        RAAADUQBg7YmTAAAAMlJREFUOE/t0ssqxXEUxfHPkTI5RohHcIvEgwgDl3J5ASmXJ8EbSBwjL4ARnQmP
+        pK1N2985OTMT31q1Wnv/Vv1+/fjJEG7xiIdU+Bu0msuVYYxiAVfpq64xnz52v7GELu4HVOwu1oIzbNbg
+        F7ZxUoMpvOC13Luf3vCMyVoQHGE1/UQ+ZjsVPrJgDYfl3Be14ALT2McuZnGes4EKLjGDA+xh7r/gDwo2
+        MIYVLGMc6znrW7CD42bYg1NsNcNgBHd46vF9PxWzTu5+8A4SeEHPG0PQogAAAABJRU5ErkJggg==
+</value>
+  </data>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>25</value>
   </metadata>

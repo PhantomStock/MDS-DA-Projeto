@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmKanban));
             this.lstTodo = new System.Windows.Forms.ListBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -62,6 +63,7 @@
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.btnRefresh = new System.Windows.Forms.Button();
+            this.EliminarTarefa = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -75,8 +77,9 @@
             this.lstTodo.Location = new System.Drawing.Point(4, 22);
             this.lstTodo.Margin = new System.Windows.Forms.Padding(4);
             this.lstTodo.Name = "lstTodo";
-            this.lstTodo.Size = new System.Drawing.Size(395, 516);
+            this.lstTodo.Size = new System.Drawing.Size(395, 500);
             this.lstTodo.TabIndex = 0;
+            this.lstTodo.SelectedIndexChanged += new System.EventHandler(this.lstTodo_SelectedIndexChanged);
             this.lstTodo.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.lstTodo_MouseDoubleClick);
             // 
             // groupBox1
@@ -112,7 +115,7 @@
             this.lstDoing.Location = new System.Drawing.Point(4, 22);
             this.lstDoing.Margin = new System.Windows.Forms.Padding(4);
             this.lstDoing.Name = "lstDoing";
-            this.lstDoing.Size = new System.Drawing.Size(395, 516);
+            this.lstDoing.Size = new System.Drawing.Size(395, 500);
             this.lstDoing.TabIndex = 0;
             this.lstDoing.SelectedIndexChanged += new System.EventHandler(this.lstDoing_SelectedIndexChanged);
             this.lstDoing.DoubleClick += new System.EventHandler(this.lstDoing_DoubleClick);
@@ -140,7 +143,7 @@
             this.lstDone.Location = new System.Drawing.Point(4, 22);
             this.lstDone.Margin = new System.Windows.Forms.Padding(4);
             this.lstDone.Name = "lstDone";
-            this.lstDone.Size = new System.Drawing.Size(395, 516);
+            this.lstDone.Size = new System.Drawing.Size(395, 500);
             this.lstDone.TabIndex = 0;
             this.lstDone.SelectedIndexChanged += new System.EventHandler(this.lstDone_SelectedIndexChanged);
             this.lstDone.DoubleClick += new System.EventHandler(this.lstDone_DoubleClick);
@@ -386,6 +389,20 @@
             this.btnRefresh.UseVisualStyleBackColor = true;
             this.btnRefresh.Click += new System.EventHandler(this.button1_Click);
             // 
+            // EliminarTarefa
+            // 
+            this.EliminarTarefa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.EliminarTarefa.Image = ((System.Drawing.Image)(resources.GetObject("EliminarTarefa.Image")));
+            this.EliminarTarefa.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.EliminarTarefa.Location = new System.Drawing.Point(982, 618);
+            this.EliminarTarefa.Margin = new System.Windows.Forms.Padding(4);
+            this.EliminarTarefa.Name = "EliminarTarefa";
+            this.EliminarTarefa.Size = new System.Drawing.Size(192, 28);
+            this.EliminarTarefa.TabIndex = 12;
+            this.EliminarTarefa.Text = "Eliminar tarefa";
+            this.EliminarTarefa.UseVisualStyleBackColor = true;
+            this.EliminarTarefa.Click += new System.EventHandler(this.EliminarTarefa_Click);
+            // 
             // frmKanban
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
@@ -393,6 +410,7 @@
             this.AutoSize = true;
             this.CausesValidation = false;
             this.ClientSize = new System.Drawing.Size(1257, 661);
+            this.Controls.Add(this.EliminarTarefa);
             this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.btPrevisao);
             this.Controls.Add(this.labelNomeUtilizador);
@@ -455,5 +473,6 @@
         private System.Windows.Forms.ToolStripMenuItem importarTarefasEmExecuçãoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem importarTarefasConcluidasToolStripMenuItem;
         private System.Windows.Forms.Button btnRefresh;
+        private System.Windows.Forms.Button EliminarTarefa;
     }
 }

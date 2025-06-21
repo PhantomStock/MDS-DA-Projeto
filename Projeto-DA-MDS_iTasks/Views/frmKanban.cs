@@ -20,6 +20,7 @@ namespace iTasks
         BaseDeDados db => BaseDeDados.Instance;
         public Utilizador utilizadorAtual;
         ControllerDados controllerDados = new ControllerDados();
+        private bool _isClearingSelection = false;
         public frmKanban()
         {
 
@@ -362,6 +363,22 @@ namespace iTasks
             }
             
         }
+        private void lstTodo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (lstTodo.SelectedIndex > -1)
+            {
+                lstDone.ClearSelected(); // Limpa a seleção da lista Done
+                lstDoing.ClearSelected(); // Limpa a seleção da lista Doing
+            }
+        }
+        private void lstDoing_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (lstDoing.SelectedIndex > -1)
+            {
+                lstDone.ClearSelected(); // Limpa a seleção da lista Done
+                lstTodo.ClearSelected(); // Limpa a seleção da lista Todo
+            }
+        }
 
         private void lstDone_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -372,23 +389,43 @@ namespace iTasks
             }
         }
 
-        private void lstDoing_SelectedIndexChanged(object sender, EventArgs e)
+        private void EliminarTarefa_Click(object sender, EventArgs e)
         {
-            if (lstDoing.SelectedIndex > -1)
+            if (SessaoAtual.Utilizador is Programador)
             {
-                lstDone.ClearSelected(); // Limpa a seleção da lista Done
-                lstTodo.ClearSelected(); // Limpa a seleção da lista Todo
+                MessageBox.Show("Apenas gestores podem eliminar tarefas", "Acesso negado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+
+            // Verifica se alguma tarefa está selecionada em alguma das listas
+            Tarefa tarefaSelecionada = null;
+            if (lstTodo.SelectedItem is Tarefa t1)
+                tarefaSelecionada = t1;
+            else if (lstDoing.SelectedItem is Tarefa t2)
+                tarefaSelecionada = t2;
+            else if (lstDone.SelectedItem is Tarefa t3)
+                tarefaSelecionada = t3;
+
+            //verifica se a tarefa selecionada é nula
+            if (tarefaSelecionada == null)
+            {
+                MessageBox.Show("Selecione uma tarefa para eliminar.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            if (tarefaSelecionada.EstadoAtual != EstadoAtual.ToDo)
+            {
+                MessageBox.Show("Só é possível eliminar tarefas que estão por fazer (ToDo).", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+
+            db.Tarefa.Remove(tarefaSelecionada);
+            db.SaveChanges();
+            RefreshDadosListBoxes();
+            MessageBox.Show("Tarefa eliminada com sucesso.", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-        private void lstTodo_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (lstTodo.SelectedIndex > -1)
-            {
-                lstDoing.ClearSelected(); // Limpa a seleção da lista Doing
-                lstDone.ClearSelected(); // Limpa a seleção da lista Done
-            }
-        }
+       
     }
             
 }
