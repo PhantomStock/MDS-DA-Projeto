@@ -25,6 +25,12 @@ namespace iTasks
         public frmDetalhesTarefa(int id)
         {
             InitializeComponent();
+
+            if (SessaoAtual.Utilizador is  Programador)
+            {
+                SetReadOnly();
+            }
+
             //recebe e carrega na combo box todos os tipos de tarefa
             List<TipoTarefa> TiposTarefas = controllerDados.ObterTodosTiposTarefas();
 
@@ -40,8 +46,18 @@ namespace iTasks
             //recebe o utilizador atual
             Utilizador utilizadorAtual = SessaoAtual.Utilizador;
 
-            IdGestorAtual = controllerDados.ObterGestorPorId(utilizadorAtual.Id).Id;
             idTarefaAtualUpdate = id;
+
+            //verifica se é um gestor ou programador a aceder aos detalhes da tarefa
+            if (utilizadorAtual is Gestor gestorAtual)
+            {
+                IdGestorAtual = gestorAtual.Id;
+            }
+            else if (utilizadorAtual is Programador programadorAtual)
+            {
+                IdGestorAtual = programadorAtual.IdGestor; 
+            }
+            
 
             // quando o id for -1, significa que é uma nova tarefa, caso contrário, carrega os dados da tarefa
             if (id == -1)
@@ -53,6 +69,21 @@ namespace iTasks
                 CarregaDadosTarefa(id);
             }
        
+        }
+
+        private void SetReadOnly()
+        {
+            txtDesc.ReadOnly = true;
+            cbTipoTarefa.Enabled = false;
+            cbProgramador.Enabled = false;
+            txtOrdem.ReadOnly = true;
+            txtStoryPoints.ReadOnly = true;
+
+            dtInicio.Enabled = false;
+            dtFim.Enabled = false;
+
+            btGravar.Enabled = false;
+            btFechar.Enabled = true;
         }
 
         // funcao para criar uma nova tarefa

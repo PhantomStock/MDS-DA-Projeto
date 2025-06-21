@@ -28,15 +28,18 @@ namespace iTasks
             var utilizador = SessaoAtual.Utilizador;
             utilizadorAtual = utilizador;
 
+            //se o utilizador for um programador o strip menu de gerir aplicacao deixa de ficar visivel
+            if (utilizador is Programador)
+            {
+                utilizadoresToolStripMenuItem.Visible = false;
+            }
+
             if (utilizador != null)
             {
                 labelNomeUtilizador.Text = $"Bem vindo: {utilizadorAtual.Nome}";
             }
 
             RefreshDadosListBoxes();
-
-
-
         }
 
         //Não ta em MVC falta as tarefas para 
@@ -117,6 +120,10 @@ namespace iTasks
         private void DoubleClickLst(ListBox lb)
         {
             // Verifica se há um item selecionado
+            if (SessaoAtual.Utilizador is Programador)
+            {
+                
+            }
             Tarefa tarefa = lb.SelectedItem as Tarefa;
 
             new frmDetalhesTarefa(tarefa.Id).Show();
