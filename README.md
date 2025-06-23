@@ -1,11 +1,48 @@
-# MDS-DA-Projeto_Wilson_Campos-2240115_Pedro_Pereira-2241606_Leonardo_Pereira_2240103
+# iTask
+---
+### Elementos do Grupo
+* Wilson Campos 2240115@my.ipleiria.pt
+* Pedro Pereira 2241606@my.ipleiria.pt
+* Leonardo Pereira 224103@my.ipleiria.pt
 
- Projeto de DA e MDS
-## Metricas de SP (Story Points)
-Seguindo a regra de que cada StoryPoint Representa 1 a 2 horas de Trabalho e usando a sequencia de fibonacci podemos atribuir SP ás tasks baseado na estimativa de tempo que completar a mesma deve demorar
+---
 
-## Métrica de Cores
-Roxo - Epics <br>
-Azul - Tasks <br>
-Verde - User Stories <br>
-Vermelho - Bugs
+## Descrição
+
+Esta aplicação permite a gestão e categorização de tarefas, atribuição de progrmadores e gestores as mesmas, recorrendo a métricas de Story Points (SP). O projeto é simples e visa demonstrar a aplicação prática de conceitos ágeis no contexto de programação e organização de equipas.
+
+---
+
+## Instalação
+
+1. **Clone o repositório**
+``git clone https://github.com/PhantomStock/MDS-DA-Projeto.git``
+2. **Aceda a pasta do projeto**
+``cd MDS-DA-Projeto``
+
+
+---
+
+## Configuração
+
+- É necessario ter o visual studio 2022 comunity para poder vizualizar o codigo da melhor maneira possivel.
+  
+---
+
+## Execução
+
+- Abra os ficheiros do projeto no Visual Studio 2022 Comunity.
+- Faça login com o administrado "admin".
+    - As credenciais são:
+        - Username: `` Admin ``
+        - Password: `` Admin `` 
+- Depois do login deve proceder a criação de resistos para tipos de tarefa, programadores e outros gestores se necessario.
+- É de extrema importancia referir que não deve ter menos de 1 gestor com a caixa "gere utilizadores" selecionada, pois apenas gestores com essa propriadade podem criar programadores e outros gestores.
+- Depois de ter criados os seguintes gestores, programadores e tipos de tarefa pode proceder a criação das tarefas. 
+
+---
+
+## Contacto
+
+Para dúvidas ou sugestões, contactar qualquer elemento do grupo.
+
