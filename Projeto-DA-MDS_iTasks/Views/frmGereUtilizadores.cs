@@ -1,5 +1,6 @@
 ﻿using iTasks.Controllers;
 using iTasks.DataBase;
+using iTasks.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -119,7 +120,16 @@ namespace iTasks
                     MessageBox.Show("Não é possível eliminar este gestor porque existem programadores associados.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
-
+                if (SessaoAtual.Utilizador.Id == gestor.Id) {
+                    MessageBox.Show("Um gestor não se pode eleminar a ele mesmo!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                var gestoresComPermissao = Controller.ObterTodosGestores().Where(g => g.GereUtilizadores).ToList();
+                if (gestoresComPermissao.Count == 1 && gestoresComPermissao[0].Id == gestor.Id)
+                {
+                    MessageBox.Show("Não pode existir menos de 1 gestor com a capacidade de gerir utilizadores!!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
                 // Elimina o gestor selecionado
                 Controller.EliminarGestor(gestor.Id);
 

@@ -22,7 +22,6 @@ namespace iTasks.Controllers
         {
             db.Tarefa.Add(tarefa);
             db.SaveChanges();
-            MessageBox.Show("Tarefa criada com sucesso.", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
             return;
         }
 
@@ -49,11 +48,7 @@ namespace iTasks.Controllers
                     tarefaDb.IdGestor = tarefa.IdGestor;
 
                     db.SaveChanges();
-                    MessageBox.Show("Tarefa atualizada com sucesso.", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                else
-                {
-                    MessageBox.Show("Tarefa não encontrada para atualização.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    
                 }
             }
 

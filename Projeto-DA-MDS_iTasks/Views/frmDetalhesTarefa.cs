@@ -225,9 +225,10 @@ namespace iTasks
                                                 tarefaUpdate.IdProgramador = programadorSelecionado.Id;
 
                                                 controllerTarefa.updateTarefa(tarefaUpdate);
+                                                MessageBox.Show("Tarefa atualizada com sucesso.", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                             } else
                                             {
-                                                MessageBox.Show("Não encontrei este tipo de tarefa" + tipoEnum, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                                MessageBox.Show("Tipo de tarefa não encontrado!" + tipoEnum, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                             }
                                         }
                                     }
@@ -260,7 +261,7 @@ namespace iTasks
                                             controllerTarefa.CriarTarefa(tarefaNova);
 
                                             kanban.RefreshDadosListBoxes();
-
+                                            MessageBox.Show("Tarefa criada com sucesso.", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                             LimparCampos();
                                         }
                                     }

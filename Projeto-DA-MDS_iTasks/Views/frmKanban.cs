@@ -63,7 +63,7 @@ namespace iTasks
                 }
                 else
                 {
-                    MessageBox.Show("Apenas um gestor pode gerir utilizadores.", "Acesso Negado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Apenas um gestor que tem a opção gere utilizadores pode gerir utilizadores.", "Acesso Negado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             } else
             {
@@ -261,6 +261,7 @@ namespace iTasks
                     //Erro
                     MessageBox.Show("Falha ao exportar tarefas.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+                RefreshDadosListBoxes();
             }
         }
 
@@ -325,6 +326,7 @@ namespace iTasks
                     //Erro
                     MessageBox.Show("Falha ao importar tarefas.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+                RefreshDadosListBoxes();
             }
         }
 
