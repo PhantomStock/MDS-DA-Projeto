@@ -1,4 +1,6 @@
-﻿using System;
+﻿using iTasks.Controllers;
+using iTasks.DataBase;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,9 +9,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using iTasks.Controllers;
-using iTasks.DataBase;
 using static iTasks.Models.Enums;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace iTasks
 {
@@ -20,30 +21,33 @@ namespace iTasks
         ControllerRegistar novoRegisto = new ControllerRegistar();
         public frmGereUtilizadores()
         {
-                InitializeComponent();
+            InitializeComponent();
 
-                //atualizar as listbox
-                Controller.AtualizarListBox(lstListaProgramadores, Controller.ObterTodosProgramadores());
-                Controller.AtualizarListBox(lstListaGestores, Controller.ObterTodosGestores());
+            //atualiza as textboxes dos id com o valor do proximo novo id
+            AtualizarIdUtilizadores(0);
 
-                //obter todos os gestores
-                var gestores = Controller.ObterTodosGestores();
+            //atualizar as listbox
+            lstListaProgramadores.DataSource = null;
+            lstListaProgramadores.DataSource = Controller.ObterTodosProgramadores();
 
-                //ComboBox Gestor
-                cbGestorProg.DataSource = null;
-                cbGestorProg.DataSource = gestores;
+            lstListaGestores.DataSource = null;
+            lstListaGestores.DataSource = Controller.ObterTodosGestores();
 
+            //obter todos os gestores
+            var gestores = Controller.ObterTodosGestores();
 
-                //ComboBox NivelExperiencia
-                cbNivelProg.DataSource = null;
-                cbNivelProg.DataSource = Enum.GetValues(typeof(NivelExperiencia));
+            //ComboBox Gestor
+            cbGestorProg.DataSource = null;
+            cbGestorProg.DataSource = gestores;
 
-                // ComboBox Departamento
-                cbDepartamento.DataSource = null;
-                cbDepartamento.DataSource = Enum.GetValues(typeof(Departamento));
+            //ComboBox NivelExperiencia
+            cbNivelProg.DataSource = null;
+            cbNivelProg.DataSource = Enum.GetValues(typeof(NivelExperiencia));
 
-                Controller.AtualizarIdUtilizadores(txtIdGestor);
-                Controller.AtualizarIdUtilizadores(txtIdProg);
+            // ComboBox Departamento
+            cbDepartamento.DataSource = null;
+            cbDepartamento.DataSource = Enum.GetValues(typeof(Departamento));
+
             
 
         }
@@ -90,10 +94,10 @@ namespace iTasks
                 novoRegisto.RegistarGestor(nome, username, password, departamento, gereUtilizadores);
             }
             // Atualiza as listas e limpa os campos
-            Controller.AtualizarListBox(lstListaGestores, Controller.ObterTodosGestores());
-            Controller.AtualizarGestorComboBox(cbGestorProg);
-            Controller.AtualizarIdUtilizadores(txtIdGestor);
-            Controller.AtualizarIdUtilizadores(txtIdProg);
+            AtualizarListBox(lstListaGestores, Controller.ObterTodosGestores());
+            AtualizarGestorComboBox();
+    
+            AtualizarIdUtilizadores(0);
             LimparCamposGestor();
         }
 
@@ -101,7 +105,7 @@ namespace iTasks
         {
             // Limpar os campos do gestor e atualiza o ID
             LimparCamposGestor();
-            Controller.AtualizarIdUtilizadores(txtIdGestor);
+            AtualizarIdUtilizadores(1);
         }
 
         private void btnDeleteGestor_Click(object sender, EventArgs e)
@@ -120,10 +124,10 @@ namespace iTasks
                 Controller.EliminarGestor(gestor.Id);
 
                 // Atualizar lista e limpar campos
-                Controller.AtualizarListBox(lstListaGestores, Controller.ObterTodosGestores());
-                Controller.AtualizarGestorComboBox(cbGestorProg);
+                AtualizarListBox(lstListaGestores, Controller.ObterTodosGestores());
+                AtualizarGestorComboBox();
                 LimparCamposGestor();
-                Controller.AtualizarIdUtilizadores(txtIdGestor);
+                AtualizarIdUtilizadores(1);
             }
         }
 
@@ -171,9 +175,8 @@ namespace iTasks
             }
 
             // Atualiza as listas e limpa os campos
-            Controller.AtualizarListBox(lstListaProgramadores, Controller.ObterTodosProgramadores());
-            Controller.AtualizarIdUtilizadores(txtIdGestor);
-            Controller.AtualizarIdUtilizadores(txtIdProg);
+            AtualizarListBox(lstListaProgramadores, Controller.ObterTodosProgramadores());
+            AtualizarIdUtilizadores(0);
             LimparCamposProgramador();
         }
 
@@ -181,7 +184,7 @@ namespace iTasks
         {
             // Limpar os campos do programador e atualiza o ID
             LimparCamposProgramador();
-            Controller.AtualizarIdUtilizadores(txtIdProg);
+            AtualizarIdUtilizadores(2);
         }
 
         private void btnDeleteProg_Click(object sender, EventArgs e)
@@ -199,9 +202,9 @@ namespace iTasks
                 Controller.EliminarProgramador(programador.Id);
 
                 // Atualiza lista e limpa os campos
-                Controller.AtualizarListBox(lstListaProgramadores, Controller.ObterTodosProgramadores());
-                LimparCamposProgramador();
-                Controller.AtualizarIdUtilizadores(txtIdProg);
+                AtualizarListBox(lstListaProgramadores, Controller.ObterTodosProgramadores());
+                LimparCamposProgramador(); 
+                AtualizarIdUtilizadores(2);
             }
         }
 
@@ -266,9 +269,45 @@ namespace iTasks
         //btn de voltar para o form kanban
         private void btVoltar_Click(object sender, EventArgs e)
         {
-            frmLogin login = new frmLogin();
-            login.Show();
-            this.Hide();
+            this.Close();
+        }
+
+        //funcoes de atualização
+        public void AtualizarIdUtilizadores(int tipo)
+        {
+            int proximoId = Controller.ObterProximoIdUtilizador();
+            
+            if (tipo == 0) //0 atualiza os 2
+            {
+                txtIdGestor.Text = proximoId.ToString();
+                txtIdProg.Text = proximoId.ToString();
+            } 
+            else if (tipo == 1) //1 atualiza so o gestor
+            {
+                txtIdGestor.Text = proximoId.ToString();
+            } else if (tipo == 2) //atualiza so o programador
+            {
+                txtIdProg.Text = proximoId.ToString();
+            }
+            
+        }
+
+
+        public void AtualizarListBox<T>(ListBox listBox, List<T> dataSource)
+        {
+            listBox.DataSource = null;
+            listBox.DataSource = dataSource;
+        }
+
+        public void AtualizarGestorComboBox()
+        {
+            cbGestorProg.DataSource = null;
+            cbGestorProg.DataSource = Controller.ObterTodosGestores();
+        }
+
+        private void frmGereUtilizadores_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

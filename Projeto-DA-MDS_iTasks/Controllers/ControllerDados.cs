@@ -178,26 +178,25 @@ namespace iTasks.Controllers
             return db.Tarefa.Any(t => t.OrdemExecucao == ordem && t.IdProgramador == idProgramador);
         }
 
-        public void AtualizarListBox<T>(ListBox listBox, List<T> dataSource)
-        {
-            listBox.DataSource = null;
-            listBox.DataSource = dataSource;
-
-        }
 
         //precisamos criar esta query para ir buscar o proximo id, O EF nao vai garantir o proximo id na base de dados
         public int ObterProximoIdUtilizador()
         {
+            //verifica se tem user se nao houver retorna 1
+            if (!db.Utilizador.Any())
+                return 1;
+
+            // devolve o proximo id disponivel
             var result = db.Database.SqlQuery<decimal>(
                 "SELECT IDENT_CURRENT('Utilizadors') + IDENT_INCR('Utilizadors')"
             ).FirstOrDefault();
-            return Convert.ToInt32(result);
-        }
 
-        public void AtualizarIdUtilizadores(TextBox textBox)
-        {
-            int proximoId = ObterProximoIdUtilizador();
-            textBox.Text = proximoId.ToString();
+            // a rasao pela qual separamos é para dar a volta a um pequeno problema da utilização de linq com SQL, o que acontece é:
+            //      1. o LINQ as vezes persiste certos valores mesmo a base de dados ter sido resetada o que leva a que se previamente existia um utilizador ele ia confiar nesse dado 
+            //  e nao refazer a contagem para verificar assim fazendo com o primeiro input aparecece incorreto (mas dps era feito corretamente, lembramdo que o ID apresentado é 
+            //  meramente demonstrativo e nao impacta a inserção de dados por isso era apenas um erro visual)
+
+            return Convert.ToInt32(result);
         }
 
         public void AtualizarIdTarefa(TextBox textBox)
@@ -207,11 +206,7 @@ namespace iTasks.Controllers
             textBox.Text = proximoId.ToString();
         }
 
-        public void AtualizarGestorComboBox(ComboBox comboBox)
-        {
-            comboBox.DataSource = null;
-            comboBox.DataSource = ObterTodosGestores();
-        }
+        
 
         public void EliminarGestor(int idGestor)
         {

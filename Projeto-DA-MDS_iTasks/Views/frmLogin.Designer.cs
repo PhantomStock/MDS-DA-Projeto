@@ -89,7 +89,7 @@
             // 
             this.btRegistar.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btRegistar.Location = new System.Drawing.Point(134, 135);
-            this.btRegistar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btRegistar.Margin = new System.Windows.Forms.Padding(2);
             this.btRegistar.Name = "btRegistar";
             this.btRegistar.Size = new System.Drawing.Size(91, 23);
             this.btRegistar.TabIndex = 4;

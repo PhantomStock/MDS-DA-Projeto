@@ -26,7 +26,6 @@ namespace iTasks
         {
             frmGereUtilizadores registar = new frmGereUtilizadores();
             registar.Show();
-            this.Hide();
         }
         private void btLogin_Click(object sender, EventArgs e)
         {
