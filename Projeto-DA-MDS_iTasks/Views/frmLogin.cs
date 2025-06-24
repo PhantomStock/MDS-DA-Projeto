@@ -20,6 +20,7 @@ namespace iTasks
         public frmLogin()
         {
             InitializeComponent();
+            controllerLogin.SetupBaseDeDados(); // Configura a base de dados com utilizadores iniciais
         }
 
         private void btRegistar_Click(object sender, EventArgs e)
