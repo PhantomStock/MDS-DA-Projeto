@@ -136,7 +136,7 @@ namespace iTasks
                 } else
                 {
                     //chama o form para uma nova tarefa
-                    new frmDetalhesTarefa(-1).Show();
+                    new frmDetalhesTarefa(-1, this).Show();
                 }
             }
             else
@@ -174,11 +174,11 @@ namespace iTasks
         {
             // Verifica se há um item selecionado
             Tarefa tarefa = lb.SelectedItem as Tarefa;
-            new frmDetalhesTarefa(tarefa.Id).Show();
+            new frmDetalhesTarefa(tarefa.Id, this).Show();
 
         }
 
-        private void RefreshDadosListBoxes()
+        public void RefreshDadosListBoxes()
         {
             //Carrega as tarefas
             controllerDados = new ControllerDados();

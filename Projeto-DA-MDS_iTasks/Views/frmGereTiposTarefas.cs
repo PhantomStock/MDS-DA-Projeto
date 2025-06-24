@@ -16,6 +16,7 @@ namespace iTasks
     {
         BaseDeDados db => BaseDeDados.Instance;
         ControllerDados controllerDados = new ControllerDados();
+        ControllerTipoTarefa controllerTipoTarefa = new ControllerTipoTarefa();
         public frmGereTiposTarefas()
         {
             InitializeComponent();
@@ -28,17 +29,29 @@ namespace iTasks
         {
             if (string.IsNullOrWhiteSpace(txtDesc.Text))
             {
-                MessageBox.Show("A Descrição do tipo de tarefa não pode estar vazia.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Preencha a descrição do tipo de tarefa.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
-            } else
-            {
-                ControllerTipoTarefa controllerTarefa = new ControllerTipoTarefa();
-
-                controllerTarefa.AdicionarTipoTarefa(Convert.ToInt32(txtId.Text), txtDesc.Text);
-
-                //refresh ao DataSource
-                RefreshDataSourceTipoTarefa();
             }
+
+            int idTipoTarefa;
+            bool isUpdate = int.TryParse(txtId.Text, out idTipoTarefa) && controllerDados.ObterTipoTarefaPorId(idTipoTarefa) != null;
+
+            if (isUpdate)
+            {
+                // Atualizar tipo de tarefa existente
+                var tipoTarefa = controllerDados.ObterTipoTarefaPorId(idTipoTarefa);
+                tipoTarefa.Nome = txtDesc.Text;
+                db.SaveChanges();
+                MessageBox.Show("Tipo de tarefa atualizado com sucesso.", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                // Criar novo tipo de tarefa
+                controllerTipoTarefa.AdicionarTipoTarefa(idTipoTarefa, txtDesc.Text);
+            }
+
+            RefreshDataSourceTipoTarefa();
+            LimparCamposTipoTarefa();
         }
 
         // recarrega o DataSource da lista de tipos de tarefa
@@ -51,6 +64,37 @@ namespace iTasks
             lstLista.DataSource = TiposTarefas;
 
             controllerDados.AtualizarIdTipoTarefa(txtId);
+        }
+
+        private void btnCriarTipoTarefa_Click(object sender, EventArgs e)
+        {
+            LimparCamposTipoTarefa();
+        }
+
+        private void btnEliminarTipoTarefa_Click(object sender, EventArgs e)
+        {
+            if (lstLista.SelectedItem is TipoTarefa tipoSelecionado)
+            {
+                controllerTipoTarefa.EliminarTipoTarefa(tipoSelecionado.Id);
+            }
+
+            LimparCamposTipoTarefa();
+            RefreshDataSourceTipoTarefa();
+        }
+
+        private void lstLista_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (lstLista.SelectedItem is TipoTarefa tipo)
+            {
+                txtId.Text = tipo.Id.ToString();
+                txtDesc.Text = tipo.Nome;
+            }
+        }
+
+
+        private void LimparCamposTipoTarefa() {
+            controllerTipoTarefa.AtualizarIdTipoTarefa(txtId);
+            txtDesc.Clear();
         }
     }
 }

@@ -20,11 +20,14 @@ namespace iTasks
         public int IdGestorAtual;
         public int idTarefaAtualUpdate;
         ControllerDados controllerDados = new ControllerDados();
+        private frmKanban kanban;
         ControllerDetalhesTarefa ControllerDetalhesTarefa = new ControllerDetalhesTarefa();
         ControllerTarefa controllerTarefa = new ControllerTarefa();
-        public frmDetalhesTarefa(int id)
+        public frmDetalhesTarefa(int id, frmKanban kanbanfrm)
         {
             InitializeComponent();
+
+            kanban = kanbanfrm;
 
             if (SessaoAtual.Utilizador is  Programador)
             {
@@ -255,6 +258,10 @@ namespace iTasks
                                             tarefaNova.IdGestor = gestor.Id;
 
                                             controllerTarefa.CriarTarefa(tarefaNova);
+
+                                            kanban.RefreshDadosListBoxes();
+
+                                            LimparCampos();
                                         }
                                     }
                                 }
@@ -273,6 +280,22 @@ namespace iTasks
         private void btFechar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void LimparCampos()
+        {
+            txtId.Text = "";
+            txtDesc.Text = "";
+            txtDataCriacao.Text = "";
+            txtDataRealini.Text = "";
+            txtDataRealFim.Text = "";
+            txtOrdem.Value = 1;
+            txtStoryPoints.Value = 1;
+            cbTipoTarefa.SelectedIndex = -1;
+            cbProgramador.SelectedIndex = -1;
+            dtInicio.Value = DateTime.Now;
+            dtFim.Value = DateTime.Now;
+            txtEstado.Text = "";
         }
     }
 }

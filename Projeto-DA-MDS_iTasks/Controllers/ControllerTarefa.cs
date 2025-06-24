@@ -20,8 +20,6 @@ namespace iTasks.Controllers
         //recebe um objeto tarefa e adiciona-o à base de dados
         public void CriarTarefa(Tarefa tarefa) 
         {
-            
-
             db.Tarefa.Add(tarefa);
             db.SaveChanges();
             MessageBox.Show("Tarefa criada com sucesso.", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
