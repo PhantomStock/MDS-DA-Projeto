@@ -93,7 +93,7 @@ namespace iTasks
         // funcao para criar uma nova tarefa
         public void NovaTarefa()
         {
-            controllerDados.AtualizarIdTarefa(txtId);
+            AtualizarIdTarefa(txtId);
 
             txtEstado.Text = Enums.EstadoAtual.ToDo.ToString();
             txtDataCriacao.Text = DateTime.Now.ToString("dd/MM/yyyy");
@@ -297,5 +297,16 @@ namespace iTasks
             dtFim.Value = DateTime.Now;
             txtEstado.Text = "";
         }
+
+        //instancia uma nova tarefa
+        public void AtualizarIdTarefa(TextBox textBox)
+        {
+            var Tarefa = controllerDados.ObterTodasTarefas();
+            int proximoId = (Tarefa.Count == 0) ? 1 : Tarefa.Max(u => u.Id) + 1;
+            textBox.Text = proximoId.ToString();
+        }
+
+
+
     }
 }

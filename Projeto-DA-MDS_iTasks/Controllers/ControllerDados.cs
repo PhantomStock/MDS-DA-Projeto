@@ -199,14 +199,6 @@ namespace iTasks.Controllers
             return Convert.ToInt32(result);
         }
 
-        public void AtualizarIdTarefa(TextBox textBox)
-        {
-            var Tarefa = ObterTodasTarefas();
-            int proximoId = (Tarefa.Count == 0) ? 1 : Tarefa.Max(u => u.Id) + 1;
-            textBox.Text = proximoId.ToString();
-        }
-
-        
 
         public void EliminarGestor(int idGestor)
         {

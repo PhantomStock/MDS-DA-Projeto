@@ -63,7 +63,7 @@ namespace iTasks
             lstLista.DataSource = null;
             lstLista.DataSource = TiposTarefas;
 
-            controllerTipoTarefa.AtualizarIdTipoTarefa(txtId);
+            AtualizarIdTipoTarefa(txtId);
         }
 
         private void btnCriarTipoTarefa_Click(object sender, EventArgs e)
@@ -93,8 +93,14 @@ namespace iTasks
 
 
         private void LimparCamposTipoTarefa() {
-            controllerTipoTarefa.AtualizarIdTipoTarefa(txtId);
+            AtualizarIdTipoTarefa(txtId);
             txtDesc.Clear();
+        }
+
+        public void AtualizarIdTipoTarefa(TextBox textBox)
+        {
+            int proximoId = controllerTipoTarefa.ObterProximoIdTipoTarefa();
+            textBox.Text = proximoId.ToString();
         }
     }
 }
