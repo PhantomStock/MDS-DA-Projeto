@@ -12,6 +12,7 @@ using System.Windows.Forms;
 using iTasks.Controllers;
 using iTasks.DataBase;
 using iTasks.Models;
+using iTasks.Views;
 using static iTasks.Models.Enums;
 
 namespace iTasks
@@ -475,7 +476,25 @@ namespace iTasks
 
         private void btnPrevisao_Click(object sender, EventArgs e)
         {
+            if (!Application.OpenForms.OfType<frmPrevisaoDeConclusao>().Any()) //se o form frmPrevisaoDeConclusao tiver aberto ele nao executa o codigo (a funao Open Forms procura por um form daquele tipo e se nao encontrar retorna false, se encontrar retorna true) 
+            {
+                if (controllerDados.ObterGestorPorId(utilizadorAtual.Id).GereUtilizadores)
+                {
+                    new frmPrevisaoDeConclusao().Show();
 
+                }
+                else
+                {
+                    MessageBox.Show("Apenas um gestor pode ver a previsao de termino.", "Acesso Negado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            else
+            {
+                //nhaaaa fam
+            }
+
+
+            
         }
 
         private void frmKanban_FormClosed(object sender, FormClosedEventArgs e)

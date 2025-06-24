@@ -23,11 +23,12 @@ namespace iTasks.Controllers
             {
                 // Gestor
                 return db.Tarefa
-                    .Where(t => t.EstadoAtual != iTasks.Models.Enums.EstadoAtual.Done && t.IdGestor == utilizadorAtual.Id)
+                    .Where(t => t.EstadoAtual == iTasks.Models.Enums.EstadoAtual.Doing && t.IdGestor == utilizadorAtual.Id)
                     .ToList()
                     .Select(t => new
                     {
                         Id = t.Id,
+                        EstadoAtual = t.EstadoAtual.ToString(),
                         TipoTarefa = controllerDados.ObterTipoTarefaPorId(t.IdTipoTarefa)?.Nome ?? "Gestor Null",
                         NomeDoGestor = controllerDados.ObterGestorPorId(t.IdGestor)?.Nome ?? "Gestor Null",
                         NomeDoProgramdor = controllerDados.ObterProgramadorPorId(t.IdProgramador)?.Nome ?? "Programador Null",
@@ -48,20 +49,21 @@ namespace iTasks.Controllers
             {
                 // Programador
                 return db.Tarefa
-                    .Where(t => t.EstadoAtual != iTasks.Models.Enums.EstadoAtual.Done && t.IdProgramador == utilizadorAtual.Id)
+                    .Where(t => t.EstadoAtual == iTasks.Models.Enums.EstadoAtual.Doing && t.IdProgramador == utilizadorAtual.Id)
                     .ToList()
                     .Select(t => new
                     {
                         Id = t.Id,
+                        EstadoAtual = t.EstadoAtual.ToString(),
                         TipoTarefa = controllerDados.ObterTipoTarefaPorId(t.IdTipoTarefa)?.Nome ?? "Gestor Null",
                         NomeDoGestor = controllerDados.ObterGestorPorId(t.IdGestor)?.Nome ?? "Gestor Null",
                         NomeDoProgramdor = controllerDados.ObterProgramadorPorId(t.IdProgramador)?.Nome ?? "Programador Null",
                         Descricao = t.Descricao,
                         OrdemExecucao = t.OrdemExecucao,
-                        DataPrevistaInicio = t.DataPrevistaInicio,
-                        DataPrevistaFim = t.DataPrevistaFim,
-                        DataRealInicio = t.DataRealInicio,
-                        DataRealFim = t.DataRealFim,
+                        DataPrevistaInicio = t.DataPrevistaInicio.HasValue ? (object)t.DataPrevistaInicio : "Null",
+                        DataPrevistaFim = t.DataPrevistaFim.HasValue ? (object)t.DataPrevistaFim : "Null",
+                        DataRealInicio = t.DataRealInicio.HasValue ? (object)t.DataRealInicio : "Null",
+                        DataRealFim = t.DataRealFim.HasValue ? (object)t.DataRealInicio : "Null",
                         DuraçãoReal = (t.DataRealFim.HasValue && t.DataRealInicio.HasValue) ? (t.DataRealFim.Value - t.DataRealInicio.Value).Days : 0,
                         DuraçãoEstimada = (t.DataPrevistaFim.HasValue && t.DataPrevistaInicio.HasValue) ? (t.DataPrevistaFim.Value - t.DataPrevistaInicio.Value).Days : 0,
                         StoryPointsInicio = t.StoryPoints != 0 ? t.StoryPoints.ToString() : "0",
@@ -86,6 +88,7 @@ namespace iTasks.Controllers
                     .Select(t => new
                     {
                         Id = t.Id,
+                        EstadoAtual = t.EstadoAtual.ToString(),
                         TipoTarefa = controllerDados.ObterTipoTarefaPorId(t.IdTipoTarefa)?.Nome ?? "Gestor Null",
                         NomeDoGestor = controllerDados.ObterGestorPorId(t.IdGestor)?.Nome ?? "Gestor Null",
                         NomeDoProgramdor = controllerDados.ObterProgramadorPorId(t.IdProgramador)?.Nome ?? "Programador Null",
@@ -111,6 +114,7 @@ namespace iTasks.Controllers
                     .Select(t => new
                     {
                         Id = t.Id,
+                        EstadoAtual = t.EstadoAtual.ToString(),
                         TipoTarefa = controllerDados.ObterTipoTarefaPorId(t.IdTipoTarefa)?.Nome ?? "Gestor Null",
                         NomeDoGestor = controllerDados.ObterGestorPorId(t.IdGestor)?.Nome ?? "Gestor Null",
                         NomeDoProgramdor = controllerDados.ObterProgramadorPorId(t.IdProgramador)?.Nome ?? "Programador Null",
