@@ -185,17 +185,18 @@ namespace iTasks.Controllers
 
         }
 
-        public void AtualizarIdUtilizadores(TextBox textBox)
+        //precisamos criar esta query para ir buscar o proximo id, O EF nao vai garantir o proximo id na base de dados
+        public int ObterProximoIdUtilizador()
         {
-            var utilizadores = ObterTodosUtilizadores();
-            int proximoId = (utilizadores.Count == 0) ? 1 : utilizadores.Max(u => u.Id) + 1;
-            textBox.Text = proximoId.ToString();
+            var result = db.Database.SqlQuery<decimal>(
+                "SELECT IDENT_CURRENT('Utilizadors') + IDENT_INCR('Utilizadors')"
+            ).FirstOrDefault();
+            return Convert.ToInt32(result);
         }
 
-        public void AtualizarIdTipoTarefa(TextBox textBox)
+        public void AtualizarIdUtilizadores(TextBox textBox)
         {
-            var tipoTarefa = ObterTodosTiposTarefas();
-            int proximoId = (tipoTarefa.Count == 0) ? 1 : tipoTarefa.Max(u => u.Id) + 1;
+            int proximoId = ObterProximoIdUtilizador();
             textBox.Text = proximoId.ToString();
         }
 
