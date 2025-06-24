@@ -17,6 +17,7 @@ namespace iTasks
     {
         BaseDeDados db => BaseDeDados.Instance;
         private ControllerDados controllerDados = new ControllerDados();
+        private ControllerConsultarTarefas controllerConsultarTarefas = new ControllerConsultarTarefas();
         public frmConsultarTarefasConcluidas()
         {
             InitializeComponent();
@@ -29,57 +30,16 @@ namespace iTasks
             int tipo = controllerDados.GestorOuProgramador(utilizadorAtual.Id);
             if (tipo == 1)
             {
-                // Se for gestor, carrega as tarefas concluídas
-                var tarefasConcluidas = db.Tarefa
-                    .Where(t => t.EstadoAtual == iTasks.Models.Enums.EstadoAtual.Done && t.IdGestor == utilizadorAtual.Id)
-                    .ToList()//pra não dar erro de null
-                    .Select(t => new
-                    {
-                        //usamos o if inline para verificar se o IdTipoTarefa,idGestor,IdProgramador e se for nulo
-                        //atribuímos uma string "Tarefa Null"
-                        Id = t.Id,
-                        TipoTarefa = controllerDados.ObterTipoTarefaPorId(t.IdTipoTarefa)?.Nome ?? "Gestor Null",
-                        NomeDoGestor = controllerDados.ObterGestorPorId(t.IdGestor)?.Nome ?? "Gestor Null",
-                        NomeDoProgramdor = controllerDados.ObterProgramadorPorId(t.IdProgramador)?.Nome ?? "Programador Null",
-                        Descricao = t.Descricao,
-                        OrdemExecucao = t.OrdemExecucao,
-                        DataPrevistaInicio = t.DataPrevistaInicio,
-                        DataPrevistaFim = t.DataPrevistaFim,
-                        DataRealInicio = t.DataRealInicio,
-                        DataRealFim = t.DataRealFim,
-                        DuraçãoReal = t.DataRealFim.Value.Day - t.DataRealInicio.Value.Day + " dias",
-                        DuraçãoEstimada = t.DataPrevistaFim.Value.Day - t.DataPrevistaInicio.Value.Day + " dias",
-                        StoryPointsInicio = t.StoryPoints != 0 ? t.StoryPoints.ToString() + " points" : "0",
-
-                    })
-                    .ToList();
+                // Gestor
+                var tarefasConcluidas = controllerConsultarTarefas.ConsultarTarefasConcluidas(utilizadorAtual, tipo);
 
                 gvTarefasConcluidas.DataSource = tarefasConcluidas;
             }
             else if(tipo == 2)
             {
                 //Programador
-                var tarefasConcluidas = db.Tarefa
-                    .Where(t => t.EstadoAtual == iTasks.Models.Enums.EstadoAtual.Done && t.IdProgramador == utilizadorAtual.Id)
-                    .ToList()//pra não dar erro de null
-                    .Select(t => new
-                    {
-                        //usamos o if inline para verificar se o IdTipoTarefa,idGestor,IdProgramador e se for nulo
-                        //atribuímos uma string "Tarefa Null"
-                        Id = t.Id,
-                        TipoTarefa = controllerDados.ObterTipoTarefaPorId(t.IdTipoTarefa)?.Nome ?? "Gestor Null",
-                        NomeDoGestor = controllerDados.ObterGestorPorId(t.IdGestor)?.Nome ?? "Gestor Null",
-                        NomeDoProgramdor = controllerDados.ObterProgramadorPorId(t.IdProgramador)?.Nome ?? "Programador Null",
-                        Descricao = t.Descricao,
-                        OrdemExecucao = t.OrdemExecucao,
-                        DataPrevistaInicio = t.DataPrevistaInicio,
-                        DataPrevistaFim = t.DataPrevistaFim,
-                        DataRealInicio = t.DataRealInicio,
-                        DataRealFim = t.DataRealFim,
-                        StoryPointsInicio = t.StoryPoints != 0 ? t.StoryPoints.ToString() : "0",
+                var tarefasConcluidas = controllerConsultarTarefas.ConsultarTarefasConcluidas(utilizadorAtual, tipo);
 
-                    })
-                    .ToList();
 
                 gvTarefasConcluidas.DataSource = tarefasConcluidas;
             }

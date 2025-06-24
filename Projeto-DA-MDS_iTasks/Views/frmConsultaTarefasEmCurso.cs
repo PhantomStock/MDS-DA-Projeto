@@ -17,6 +17,7 @@ namespace iTasks
     {
         BaseDeDados db => BaseDeDados.Instance;
         ControllerDados controllerDados = new ControllerDados();
+        ControllerConsultarTarefas controllerConsultarTarefas = new ControllerConsultarTarefas();
         public frmConsultaTarefasEmCurso()
         {
             InitializeComponent();
@@ -27,63 +28,20 @@ namespace iTasks
             Utilizador utilizadorAtual = SessaoAtual.Utilizador;
             // Verifica se o utilizador atual é um gestor ou programador
             int tipo = controllerDados.GestorOuProgramador(utilizadorAtual.Id);
+
             if (tipo == 1)
             {
-                // Se for gestor, carrega as tarefas concluídas
-                var tarefasConcluidas = db.Tarefa
-                    .Where(t => t.EstadoAtual == iTasks.Models.Enums.EstadoAtual.Doing&& t.EstadoAtual == Enums.EstadoAtual.ToDo && t.IdGestor == utilizadorAtual.Id)
-                    .ToList()//pra não dar erro de null
-                    .Select(t => new
-                    {
-                        //usamos o if inline para verificar se o IdTipoTarefa,idGestor,IdProgramador e se for nulo
-                        //atribuímos uma string "Tarefa Null"
-                        Id = t.Id,
-                        TipoTarefa = controllerDados.ObterTipoTarefaPorId(t.IdTipoTarefa)?.Nome ?? "Gestor Null",
-                        NomeDoGestor = controllerDados.ObterGestorPorId(t.IdGestor)?.Nome ?? "Gestor Null",
-                        NomeDoProgramdor = controllerDados.ObterProgramadorPorId(t.IdProgramador)?.Nome ?? "Programador Null",
-                        Descricao = t.Descricao,
-                        OrdemExecucao = t.OrdemExecucao,
-                        DataPrevistaInicio = t.DataPrevistaInicio,
-                        DataPrevistaFim = t.DataPrevistaFim,
-                        DataRealInicio = t.DataRealInicio,
-                        DataRealFim = t.DataRealFim,
-                        DuraçãoReal = t.DataRealFim.Value.Day - t.DataRealInicio.Value.Day,
-                        DuraçãoEstimada = t.DataPrevistaFim.Value.Day - t.DataPrevistaInicio.Value.Day,
-                        StoryPointsInicio = t.StoryPoints != 0 ? t.StoryPoints.ToString() : "0",
+                //Gestor
+                var tarefasEmCurso= controllerConsultarTarefas.ConsultarTarefasEmCurso(utilizadorAtual, tipo);
 
-                    })
-                    .ToList();
-
-                gvTarefasEmCurso.DataSource = tarefasConcluidas;
+                gvTarefasEmCurso.DataSource = tarefasEmCurso;
             }
             else if (tipo == 2)
             {
                 //Programador
-                var tarefasConcluidas = db.Tarefa
-                    .Where(t => t.EstadoAtual == iTasks.Models.Enums.EstadoAtual.Doing && t.EstadoAtual == Enums.EstadoAtual.ToDo && t.IdProgramador == utilizadorAtual.Id)
-                    .ToList()//pra não dar erro de null
-                    .Select(t => new
-                    {
-                        //usamos o if inline para verificar se o IdTipoTarefa,idGestor,IdProgramador e se for nulo
-                        //atribuímos uma string "Tarefa Null"
-                        Id = t.Id,
-                        TipoTarefa = controllerDados.ObterTipoTarefaPorId(t.IdTipoTarefa)?.Nome ?? "Gestor Null",
-                        NomeDoGestor = controllerDados.ObterGestorPorId(t.IdGestor)?.Nome ?? "Gestor Null",
-                        NomeDoProgramdor = controllerDados.ObterProgramadorPorId(t.IdProgramador)?.Nome ?? "Programador Null",
-                        Descricao = t.Descricao,
-                        OrdemExecucao = t.OrdemExecucao,
-                        DataPrevistaInicio = t.DataPrevistaInicio,
-                        DataPrevistaFim = t.DataPrevistaFim,
-                        DataRealInicio = t.DataRealInicio,
-                        DataRealFim = t.DataRealFim,
-                        DuraçãoReal = t.DataRealFim.Value.Day - t.DataRealInicio.Value.Day,
-                        DuraçãoEstimada = t.DataPrevistaFim.Value.Day - t.DataPrevistaInicio.Value.Day,
-                        StoryPointsInicio = t.StoryPoints != 0 ? t.StoryPoints.ToString() : "0",
+                var tarefasEmCurso = controllerConsultarTarefas.ConsultarTarefasEmCurso(utilizadorAtual, tipo);
 
-                    })
-                    .ToList();
-
-                gvTarefasEmCurso.DataSource = tarefasConcluidas;
+                gvTarefasEmCurso.DataSource = tarefasEmCurso;
             }
             else
             {
