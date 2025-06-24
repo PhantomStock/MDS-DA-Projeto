@@ -63,7 +63,7 @@ namespace iTasks
             lstLista.DataSource = null;
             lstLista.DataSource = TiposTarefas;
 
-            controllerDados.AtualizarIdTipoTarefa(txtId);
+            controllerTipoTarefa.AtualizarIdTipoTarefa(txtId);
         }
 
         private void btnCriarTipoTarefa_Click(object sender, EventArgs e)

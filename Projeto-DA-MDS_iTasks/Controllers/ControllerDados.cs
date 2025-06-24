@@ -200,14 +200,6 @@ namespace iTasks.Controllers
             textBox.Text = proximoId.ToString();
         }
 
-
-        public void AtualizarIdTipoTarefa(TextBox textBox)
-        {
-            var tipoTarefa = ObterTodosTiposTarefas();
-            int proximoId = (tipoTarefa.Count == 0) ? 1 : tipoTarefa.Max(u => u.Id) + 1;
-            textBox.Text = proximoId.ToString();
-        }
-
         public void AtualizarIdTarefa(TextBox textBox)
         {
             var Tarefa = ObterTodasTarefas();
