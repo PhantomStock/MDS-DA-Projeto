@@ -379,7 +379,7 @@
             this.btnRefresh.TabIndex = 11;
             this.btnRefresh.Text = "⟳";
             this.btnRefresh.UseVisualStyleBackColor = true;
-            this.btnRefresh.Click += new System.EventHandler(this.button1_Click);
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // btnEliminarTarefa
             // 

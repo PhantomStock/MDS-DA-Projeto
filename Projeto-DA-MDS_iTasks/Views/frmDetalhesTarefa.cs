@@ -74,6 +74,8 @@ namespace iTasks
        
         }
 
+        // funcao para definir os campos como read only
+        //
         private void SetReadOnly()
         {
             txtDesc.ReadOnly = true;

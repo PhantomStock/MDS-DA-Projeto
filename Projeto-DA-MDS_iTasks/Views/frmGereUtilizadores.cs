@@ -17,9 +17,10 @@ namespace iTasks
 {
     public partial class frmGereUtilizadores : Form
     {
-        //Intanciar o Controller
-        ControllerDados Controller = new ControllerDados();
-        ControllerRegistar novoRegisto = new ControllerRegistar();
+        //Intanciar o controllerDados
+        ControllerDados controllerDados = new ControllerDados();
+        //Intanciar o controllerRegistar
+        ControllerRegistar controllerRegistar = new ControllerRegistar();
         public frmGereUtilizadores()
         {
             InitializeComponent();
@@ -27,30 +28,28 @@ namespace iTasks
             //atualiza as textboxes dos id com o valor do proximo novo id
             AtualizarIdUtilizadores(0);
 
-            //atualizar as listbox
+            //atualizar as listbox dos programadores
             lstListaProgramadores.DataSource = null;
-            lstListaProgramadores.DataSource = Controller.ObterTodosProgramadores();
+            lstListaProgramadores.DataSource = controllerDados.ObterTodosProgramadores();
 
+            //atualizar as listbox dos gestores
             lstListaGestores.DataSource = null;
-            lstListaGestores.DataSource = Controller.ObterTodosGestores();
+            lstListaGestores.DataSource = controllerDados.ObterTodosGestores();
 
             //obter todos os gestores
-            var gestores = Controller.ObterTodosGestores();
+            var gestores = controllerDados.ObterTodosGestores();
 
-            //ComboBox Gestor
+            //ComboBox Gestor carregar os gestores
             cbGestorProg.DataSource = null;
             cbGestorProg.DataSource = gestores;
 
-            //ComboBox NivelExperiencia
+            //ComboBox NivelExperiencia carregar os niveis de experiencia
             cbNivelProg.DataSource = null;
             cbNivelProg.DataSource = Enum.GetValues(typeof(NivelExperiencia));
 
-            // ComboBox Departamento
+            // ComboBox Departamento carregar os departamentos
             cbDepartamento.DataSource = null;
             cbDepartamento.DataSource = Enum.GetValues(typeof(Departamento));
-
-            
-
         }
 
         //===========================================================================================================
@@ -71,13 +70,20 @@ namespace iTasks
             bool gereUtilizadores = chkGereUtilizadores.Checked;
             Departamento departamento = (Departamento)cbDepartamento.SelectedIndex;
 
-            // Verifica se é um update ou um novo registo. Vai buscar o id da textbox se o isUpdate for true significa que é um update, se for false é um novo registo.
-            int idGestor;
-            bool isUpdate = int.TryParse(txtIdGestor.Text, out idGestor) && Controller.ObterGestorPorId(idGestor) != null;
+            // Verifica se é um update ou um novo registo.
+            // Vai buscar o id da textbox se o isUpdate for true significa que é um update, se for false é um novo registo.
 
+            // Obtém o ID do gestor a partir da textbox txtIdGestor
+            int idGestor = (int)txtIdGestor.Value;
+
+            // Verifica se o gestor já existe na base de dados
+            bool isUpdate = controllerDados.ObterGestorPorId(idGestor) != null;
+
+            //Se não existir ele cria um novo se não ele atualiza o gestor existente
             // Se for um update, atualiza o gestor existente, caso contrário, cria um novo gestor.
             if (isUpdate)
             {
+                // Atualiza o gestor existente
                 var gestor = new Gestor
                 {
                     Id = idGestor,
@@ -87,18 +93,23 @@ namespace iTasks
                     Departamento = departamento,
                     GereUtilizadores = gereUtilizadores
                 };
-                Controller.AtualizarGestor(gestor);
+                controllerDados.atualizarDadosGestor(gestor);
             }
             else
             {
                 // Regista um novo gestor
-                novoRegisto.RegistarGestor(nome, username, password, departamento, gereUtilizadores);
+                controllerRegistar.RegistarGestor(nome, username, password, departamento, gereUtilizadores);
             }
             // Atualiza as listas e limpa os campos
-            AtualizarListBox(lstListaGestores, Controller.ObterTodosGestores());
+            AtualizarListBox(lstListaGestores, controllerDados.ObterTodosGestores());
+
+            // Atualiza o ComboBox de gestores para programadores poderem selecionar
             AtualizarGestorComboBox();
-    
+
+            // Atualiza o ID dos utilizadores
             AtualizarIdUtilizadores(0);
+
+            // Limpa os campos do gestor
             LimparCamposGestor();
         }
 
@@ -114,7 +125,7 @@ namespace iTasks
             if (lstListaGestores.SelectedItem is Gestor gestor)
             {
                 // Verifica se existe algum programador associado a este gestor
-                var programadores = Controller.ObterTodosProgramadores().Where(p => p.IdGestor == gestor.Id).ToList();
+                var programadores = controllerDados.ObterTodosProgramadores().Where(p => p.IdGestor == gestor.Id).ToList();
                 if (programadores.Count > 0)
                 {
                     MessageBox.Show("Não é possível eliminar este gestor porque existem programadores associados.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -124,17 +135,17 @@ namespace iTasks
                     MessageBox.Show("Um gestor não se pode eleminar a ele mesmo!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
-                var gestoresComPermissao = Controller.ObterTodosGestores().Where(g => g.GereUtilizadores).ToList();
+                var gestoresComPermissao = controllerDados.ObterTodosGestores().Where(g => g.GereUtilizadores).ToList();
                 if (gestoresComPermissao.Count == 1 && gestoresComPermissao[0].Id == gestor.Id)
                 {
                     MessageBox.Show("Não pode existir menos de 1 gestor com a capacidade de gerir utilizadores!!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
                 // Elimina o gestor selecionado
-                Controller.EliminarGestor(gestor.Id);
+                controllerDados.EliminarGestor(gestor.Id);
 
                 // Atualizar lista e limpar campos
-                AtualizarListBox(lstListaGestores, Controller.ObterTodosGestores());
+                AtualizarListBox(lstListaGestores, controllerDados.ObterTodosGestores());
                 AtualizarGestorComboBox();
                 LimparCamposGestor();
                 AtualizarIdUtilizadores(1);
@@ -161,12 +172,18 @@ namespace iTasks
             NivelExperiencia experiencia = (NivelExperiencia)cbNivelProg.SelectedIndex;
 
             // Verifica se é um update ou um novo registo. Vai buscar o id da textbox se o isUpdate for true significa que é um update, se for false é um novo registo
-            int idProg;
-            bool isUpdate = int.TryParse(txtIdProg.Text, out idProg) && Controller.ObterProgramadorPorId(idProg) != null;
 
+            // Obtém o ID do programador a partir da textbox txtIdProg
+            int idProg = (int)txtIdProg.Value;
+
+            // Verifica se o programador já existe na base de dados
+            bool isUpdate = controllerDados.ObterProgramadorPorId(idProg) != null;
+
+            //Se não existir ele cria um novo se não ele atualiza o programador existente
             // Se for um update, atualiza o programador existente, caso contrário, cria um novo programador.
             if (isUpdate)
             {
+                // Atualiza o programador existente
                 var programador = new Programador
                 {
                     Id = idProg,
@@ -176,43 +193,45 @@ namespace iTasks
                     NivelExperiencia = experiencia,
                     IdGestor = gestor.Id
                 };
-                Controller.AtualizarProgramador(programador);
+                controllerDados.AtualizarDadosProgramador(programador);
             }
             else
             {
                 // Regista um novo programador
-                novoRegisto.RegistarProgramador(nome, username, password, experiencia, gestor.Id);
+                controllerRegistar.RegistarProgramador(nome, username, password, experiencia, gestor.Id);
             }
 
             // Atualiza as listas e limpa os campos
-            AtualizarListBox(lstListaProgramadores, Controller.ObterTodosProgramadores());
+            AtualizarListBox(lstListaProgramadores, controllerDados.ObterTodosProgramadores());
             AtualizarIdUtilizadores(0);
             LimparCamposProgramador();
         }
-
+        //boto para criar um novo programador
+        //==========================================================================================================================
         private void btnCreateProg_Click(object sender, EventArgs e)
         {
             // Limpar os campos do programador e atualiza o ID
             LimparCamposProgramador();
             AtualizarIdUtilizadores(2);
         }
-
+        //boto para deletar um programador
+        //===========================================================================================================================
         private void btnDeleteProg_Click(object sender, EventArgs e)
         {
             if (lstListaProgramadores.SelectedItem is Programador programador)
             {
                 // Verifica se existe alguma tarefa associada a este programador
-                var tarefas = Controller.ObterTarefasPorProgramador(programador.Id);
+                var tarefas = controllerDados.ObterTarefasPorProgramador(programador.Id);
                 if (tarefas.Count > 0)
                 {
                     MessageBox.Show("Não é possível eliminar este programador porque existem tarefas associadas.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
 
-                Controller.EliminarProgramador(programador.Id);
+                controllerDados.EliminarProgramador(programador.Id);
 
                 // Atualiza lista e limpa os campos
-                AtualizarListBox(lstListaProgramadores, Controller.ObterTodosProgramadores());
+                AtualizarListBox(lstListaProgramadores, controllerDados.ObterTodosProgramadores());
                 LimparCamposProgramador(); 
                 AtualizarIdUtilizadores(2);
             }
@@ -243,7 +262,7 @@ namespace iTasks
             if (lstListaProgramadores.SelectedItem is Programador programador)
             {
                 // Preencher as text boxes com os dados do programador
-                txtIdProg.Text = programador.Id.ToString();
+                txtIdProg.Value = programador.Id;
                 txtNomeProg.Text = programador.Nome;
                 txtUsernameProg.Text = programador.Username;
                 txtPasswordProg.Text = programador.Password;
@@ -260,13 +279,13 @@ namespace iTasks
                 }
             }
         }
-
+        // Evento para preencher os campos de texto com os dados do gestor quando um item é selecionado
         private void lstListaGestores_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (lstListaGestores.SelectedItem is Gestor gestor)
             {
                 // Preencher as text boxes com os dados do gestor
-                txtIdGestor.Text = gestor.Id.ToString();
+                txtIdGestor.Value = gestor.Id;
                 txtNomeGestor.Text = gestor.Nome;
                 txtUsernameGestor.Text = gestor.Username;
                 txtPasswordGestor.Text = gestor.Password;
@@ -282,27 +301,28 @@ namespace iTasks
             this.Close();
         }
 
-        //funcoes de atualização
+        //funcoes de atualizações
         public void AtualizarIdUtilizadores(int tipo)
         {
-            int proximoId = Controller.ObterProximoIdUtilizador();
+            int proximoId = controllerDados.ObterProximoIdUtilizador();
             
             if (tipo == 0) //0 atualiza os 2
             {
-                txtIdGestor.Text = proximoId.ToString();
-                txtIdProg.Text = proximoId.ToString();
+                txtIdGestor.Value = proximoId;
+                txtIdProg.Value = proximoId;
             } 
             else if (tipo == 1) //1 atualiza so o gestor
             {
-                txtIdGestor.Text = proximoId.ToString();
+                txtIdGestor.Value = proximoId;
             } else if (tipo == 2) //atualiza so o programador
             {
-                txtIdProg.Text = proximoId.ToString();
+                txtIdProg.Value = proximoId;
             }
             
         }
 
-
+        //?????
+        //======================================================================
         public void AtualizarListBox<T>(ListBox listBox, List<T> dataSource)
         {
             listBox.DataSource = null;
@@ -312,12 +332,8 @@ namespace iTasks
         public void AtualizarGestorComboBox()
         {
             cbGestorProg.DataSource = null;
-            cbGestorProg.DataSource = Controller.ObterTodosGestores();
+            cbGestorProg.DataSource = controllerDados.ObterTodosGestores();
         }
 
-        private void frmGereUtilizadores_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

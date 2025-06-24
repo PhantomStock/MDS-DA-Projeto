@@ -32,10 +32,13 @@ namespace iTasks
                 MessageBox.Show("Preencha a descrição do tipo de tarefa.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
+            // Verifica se o ID é válido e se o tipo de tarefa já existe
+            int idTipoTarefa = (int)txtId.Value;
 
-            int idTipoTarefa;
-            bool isUpdate = int.TryParse(txtId.Text, out idTipoTarefa) && controllerDados.ObterTipoTarefaPorId(idTipoTarefa) != null;
+            // Verifica se o tipo de tarefa já existe
+            bool isUpdate = controllerDados.ObterTipoTarefaPorId(idTipoTarefa) != null;
 
+            // Se o tipo de tarefa já existe, atualiza-o; caso contrário, cria um novo
             if (isUpdate)
             {
                 // Atualizar tipo de tarefa existente
@@ -50,6 +53,7 @@ namespace iTasks
                 controllerTipoTarefa.AdicionarTipoTarefa(idTipoTarefa, txtDesc.Text);
             }
 
+            // Recarrega a lista de tipos de tarefa
             RefreshDataSourceTipoTarefa();
             LimparCamposTipoTarefa();
         }
@@ -63,7 +67,7 @@ namespace iTasks
             lstLista.DataSource = null;
             lstLista.DataSource = TiposTarefas;
 
-            AtualizarIdTipoTarefa(txtId);
+            txtId.Value = ObterProximoIdTipoTarefa();
         }
 
         private void btnCriarTipoTarefa_Click(object sender, EventArgs e)
@@ -92,15 +96,23 @@ namespace iTasks
         }
 
 
-        private void LimparCamposTipoTarefa() {
-            AtualizarIdTipoTarefa(txtId);
+        private void LimparCamposTipoTarefa()
+        {
             txtDesc.Clear();
         }
 
-        public void AtualizarIdTipoTarefa(TextBox textBox)
+        //Concertado
+        public int ObterProximoIdTipoTarefa()
         {
-            int proximoId = controllerTipoTarefa.ObterProximoIdTipoTarefa();
-            textBox.Text = proximoId.ToString();
+            return controllerTipoTarefa.ObterProximoIdTipoTarefa();
         }
+
+
+        ///???????
+        //public void AtualizarIdTipoTarefa(TextBox textBox)
+        //{
+        //    int proximoId = controllerTipoTarefa.ObterProximoIdTipoTarefa();
+        //    textBox.Text = proximoId.ToString();
+        //}
     }
 }

@@ -19,19 +19,23 @@ namespace iTasks
 {
     public partial class frmKanban : Form
     {
+        // Propriedade para acessar a instância da base de dados
         BaseDeDados db => BaseDeDados.Instance;
+
+        // Variável para armazenar o utilizador atual
         public Utilizador utilizadorAtual;
+
+        // Instancia do controller de dados
         ControllerDados controllerDados = new ControllerDados();
-        private bool _isClearingSelection = false;
         public frmKanban()
         {
-
             InitializeComponent();
             // Carrega o utilizador atual da sessão
             var utilizador = SessaoAtual.Utilizador;
+
             utilizadorAtual = utilizador;
 
-            //se o utilizador for um programador o strip menu de gerir aplicacao deixa de ficar visivel
+            //se o utilizador for um programador o strip menu de gerir da aplicacao deixa de ficar visivel
             if (utilizador is Programador)
             {
                 utilizadoresToolStripMenuItem.Enabled = false;
@@ -40,26 +44,30 @@ namespace iTasks
                 btnPrevisao.Enabled = false;
             } else
             {
+                //se o utilizador for um gestor o strip menu de gerir da aplicacao fica visivel e aparece como Detalhes Tarefas em Curso
                 tarefasEmCursoToolStripMenuItem.Text = "Detalhes Tarefas em Curso";
             }
 
+            // Verifica se o utilizador não é nulo antes de acessar suas propriedades para colocar o nome no label
             if (utilizador != null)
             {
                 labelNomeUtilizador.Text = $"Bem vindo: {utilizadorAtual.Nome}";
             }
 
+            // Carrega as tarefas iniciais
             RefreshDadosListBoxes();
         }
 
         //ToolStripMenu
         private void gerirUtilizadoresToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (!Application.OpenForms.OfType<frmGereUtilizadores>().Any()) //se o form frmGereUtilizadores tiver aberto ele nao executa o codigo (a funao Open Forms procura por um form daquele tipo e se nao encontrar retorna false, se encontrar retorna true) 
+            //se o form frmGereUtilizadores tiver aberto ele nao executa o codigo
+            //(a funao Open Forms procura por um form daquele tipo e se nao encontrar retorna false, se encontrar retorna true)
+            if (!Application.OpenForms.OfType<frmGereUtilizadores>().Any())  
             {
                 if (controllerDados.ObterGestorPorId(utilizadorAtual.Id).GereUtilizadores)
                 {
                     new frmGereUtilizadores().Show();
-
                 }
                 else
                 {
@@ -67,19 +75,24 @@ namespace iTasks
                 }
             } else
             {
-                //nhaaaa fam
+                // Traz o formulário já aberto para frente e dá foco
+                var frmAberto = Application.OpenForms.OfType<frmGereUtilizadores>().FirstOrDefault();
+                if (frmAberto != null)
+                {
+                    frmAberto.BringToFront();
+                    frmAberto.Activate();
+                }
             }
         }
-
         private void gerirTiposDeTarefasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
-            if (!Application.OpenForms.OfType<frmGereTiposTarefas>().Any()) //se o form frmGereTiposTarefas tiver aberto ele nao executa o codigo (a funao Open Forms procura por um form daquele tipo e se nao encontrar retorna false, se encontrar retorna true) 
+            //se o form frmGereTiposTarefas tiver aberto ele nao executa o codigo
+            //(a funao Open Forms procura por um form daquele tipo e se nao encontrar retorna false, se encontrar retorna true)
+            if (!Application.OpenForms.OfType<frmGereTiposTarefas>().Any())  
             {
                 if (controllerDados.ObterGestorPorId(utilizadorAtual.Id).GereUtilizadores)
                 {
                     new frmGereTiposTarefas().Show();
-
                 }
                 else
                 {
@@ -88,44 +101,61 @@ namespace iTasks
             }
             else
             {
-                //nhaaaa fam
+                // Traz o formulário já aberto para frente e dá foco
+                var frmAberto = Application.OpenForms.OfType<frmGereTiposTarefas>().FirstOrDefault();
+                if (frmAberto != null)
+                {
+                    frmAberto.BringToFront();
+                    frmAberto.Activate();
+                }
             }
-
-            
         }
-
         private void tarefasTerminadasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (!Application.OpenForms.OfType<frmConsultarTarefasConcluidas>().Any()) //se o form frmConsultarTarefasConcluidas tiver aberto ele nao executa o codigo (a funao Open Forms procura por um form daquele tipo e se nao encontrar retorna false, se encontrar retorna true) 
+            //se o form frmConsultarTarefasConcluidas tiver aberto ele nao executa o codigo
+            //(a funao Open Forms procura por um form daquele tipo e se nao encontrar retorna false, se encontrar retorna true)
+            if (!Application.OpenForms.OfType<frmConsultarTarefasConcluidas>().Any())  
             {
                 new frmConsultarTarefasConcluidas().Show();
             }
             else
             {
-                //nhaaaa fam
+                // Traz o formulário já aberto para frente e dá foco
+                var frmAberto = Application.OpenForms.OfType<frmConsultarTarefasConcluidas>().FirstOrDefault();
+                if (frmAberto != null)
+                {
+                    frmAberto.BringToFront();
+                    frmAberto.Activate();
+                }
             }
             
         }
-
         private void tarefasEmCursoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (!Application.OpenForms.OfType<frmConsultaTarefasEmCurso>().Any()) //se o form frmConsultaTarefasEmCurso tiver aberto ele nao executa o codigo (a funao Open Forms procura por um form daquele tipo e se nao encontrar retorna false, se encontrar retorna true) 
+            //se o form frmConsultaTarefasEmCurso tiver aberto ele nao executa o codigo
+            //(a funao Open Forms procura por um form daquele tipo e se nao encontrar retorna false, se encontrar retorna true)
+            if (!Application.OpenForms.OfType<frmConsultaTarefasEmCurso>().Any())  
             {
                 new frmConsultaTarefasEmCurso().Show();
             }
             else
             {
-                //nhaaaa fam
+                // Traz o formulário já aberto para frente e dá foco
+                var frmAberto = Application.OpenForms.OfType<frmConsultaTarefasEmCurso>().FirstOrDefault();
+                if (frmAberto != null)
+                {
+                    frmAberto.BringToFront();
+                    frmAberto.Activate();
+                }
             }
             
         }
-
         private void sairToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new frmLogin().Show();
             this.Close();
         }
-
+        //Botão para criar uma nova tarefa
+        //================================================================================================
         private void btNova_Click(object sender, EventArgs e)
         {
             if (!Application.OpenForms.OfType<frmDetalhesTarefa>().Any()) //se o form frmGereUtilizadores tiver aberto ele nao executa o codigo (a funao Open Forms procura por um form daquele tipo e se nao encontrar retorna false, se encontrar retorna true) 
@@ -142,10 +172,18 @@ namespace iTasks
             }
             else
             {
-                //nhaaaa fam
+                // Traz o formulário já aberto para frente e dá foco
+                var frmAberto = Application.OpenForms.OfType<frmDetalhesTarefa>().FirstOrDefault();
+                if (frmAberto != null)
+                {
+                    frmAberto.BringToFront();
+                    frmAberto.Activate();
+                }
             }
         }
 
+        //Evento para quando o utilizador dá double click numa tarefa para ver os detalhes
+        //================================================================================================
         private void lstTodo_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             if (lstTodo.SelectedIndex > -1)
@@ -170,7 +208,6 @@ namespace iTasks
             }
         }
 
-        //evento para quando o utilizador seleciona uma tarefa para "abrir" com double click
         private void DoubleClickLst(ListBox lb)
         {
             // Verifica se há um item selecionado
@@ -178,7 +215,8 @@ namespace iTasks
             new frmDetalhesTarefa(tarefa.Id, this).Show();
 
         }
-
+        // Método para atualizar as ListBoxes com as tarefas
+        //================================================================================================
         public void RefreshDadosListBoxes()
         {
             //Carrega as tarefas
@@ -197,8 +235,8 @@ namespace iTasks
             lstDone.DataSource = null;
             lstDone.DataSource = tarefasDone;
         }
-
-
+        //EXPORTAR TAREFAS PARA CSV
+        //================================================================================================
         private void exportarTarefaPorFazerToolStripMenuItem_Click(object sender, EventArgs e)
         {
             exportarParaCSV(1); //exporta para csv as tarefas por fazer
@@ -215,7 +253,6 @@ namespace iTasks
         {
             exportarParaCSV(4); //exporta para csv todas as tarefas
         }
-
         private void exportarParaCSV(int tipo)
         {
             //switch case para fazer defenir qual o tipo de tarefa a exportar para texto para apresentar no filename
@@ -264,7 +301,8 @@ namespace iTasks
                 RefreshDadosListBoxes();
             }
         }
-
+        //IMPORTAR TAREFAS PARA CSV
+        //================================================================================================
         private void importarTodasAsTarefasToolStripMenuItem_Click(object sender, EventArgs e)
         {
             importarDeSVC(4); //importa todas as tarefas
@@ -284,6 +322,7 @@ namespace iTasks
         {
             importarDeSVC(3); //importa as tarefas concluidas
         }
+
         private void importarDeSVC(int tipo)
         {
             //switch case para fazer defenir qual o tipo de tarefa a exportar para texto para apresentar no filename
@@ -330,11 +369,16 @@ namespace iTasks
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        //Botão para Refresh das ListBoxes
+        //================================================================================================
+        private void btnRefresh_Click(object sender, EventArgs e)
         {
             RefreshDadosListBoxes();
         }
 
+
+        //Botões para mudar o estado de uma tarefa
+        //================================================================================================
         private void btSetDoing_Click(object sender, EventArgs e)
         {
             if (lstTodo.SelectedItem is Tarefa tarefa)
@@ -414,16 +458,22 @@ namespace iTasks
             }
             
         }
+
+        //Eventos para limpar a seleção de outras listas quando uma lista é selecionada
+        //================================================================================================
         private void lstTodo_SelectedIndexChanged(object sender, EventArgs e)
         {
+            // Verifica se o índice selecionado é válido
             if (lstTodo.SelectedIndex > -1)
             {
                 lstDone.ClearSelected(); // Limpa a seleção da lista Done
                 lstDoing.ClearSelected(); // Limpa a seleção da lista Doing
             }
         }
+
         private void lstDoing_SelectedIndexChanged(object sender, EventArgs e)
         {
+            // Verifica se o índice selecionado é válido
             if (lstDoing.SelectedIndex > -1)
             {
                 lstDone.ClearSelected(); // Limpa a seleção da lista Done
@@ -433,6 +483,7 @@ namespace iTasks
 
         private void lstDone_SelectedIndexChanged(object sender, EventArgs e)
         {
+            // Verifica se o índice selecionado é válido
             if (lstDone.SelectedIndex > -1)
             {
                 lstDoing.ClearSelected(); // Limpa a seleção da lista Doing
@@ -440,8 +491,11 @@ namespace iTasks
             }
         }
 
+        //Botão para eliminar uma tarefa
+        //================================================================================================
         private void EliminarTarefa_Click(object sender, EventArgs e)
         {
+            // Verifica se o utilizador é um programador
             if (SessaoAtual.Utilizador is Programador)
             {
                 MessageBox.Show("Apenas gestores podem eliminar tarefas", "Acesso negado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -450,12 +504,17 @@ namespace iTasks
             // Verifica se alguma tarefa está selecionada em alguma das listas
             Tarefa tarefaSelecionada = null;
             if (lstTodo.SelectedItem is Tarefa t1)
+            {
                 tarefaSelecionada = t1;
+            }
             else if (lstDoing.SelectedItem is Tarefa t2)
+            {
                 tarefaSelecionada = t2;
+            }
             else if (lstDone.SelectedItem is Tarefa t3)
+            {
                 tarefaSelecionada = t3;
-
+            }
             //verifica se a tarefa selecionada é nula
             if (tarefaSelecionada == null)
             {
@@ -469,13 +528,13 @@ namespace iTasks
                 return;
             }
 
-
             db.Tarefa.Remove(tarefaSelecionada);
             db.SaveChanges();
             RefreshDadosListBoxes();
             MessageBox.Show("Tarefa eliminada com sucesso.", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
-
+        //Botão para Ver Previsão de Conclusão(Somente Gestor)
+        //================================================================================================
         private void btnPrevisao_Click(object sender, EventArgs e)
         {
             if (!Application.OpenForms.OfType<frmPrevisaoDeConclusao>().Any()) //se o form frmPrevisaoDeConclusao tiver aberto ele nao executa o codigo (a funao Open Forms procura por um form daquele tipo e se nao encontrar retorna false, se encontrar retorna true) 
@@ -483,7 +542,6 @@ namespace iTasks
                 if (controllerDados.ObterGestorPorId(utilizadorAtual.Id).GereUtilizadores)
                 {
                     new frmPrevisaoDeConclusao().Show();
-
                 }
                 else
                 {
@@ -492,18 +550,35 @@ namespace iTasks
             }
             else
             {
-                //nhaaaa fam
+                // Traz o formulário já aberto para frente e dá foco
+                var frmAberto = Application.OpenForms.OfType<frmPrevisaoDeConclusao>().FirstOrDefault();
+                if (frmAberto != null)
+                {
+                    frmAberto.BringToFront();
+                    frmAberto.Activate();
+                }
             }
-
-
-            
         }
-
+        //Evento para fechar o form Kanban e abrir o form Login
+        //================================================================================================
         private void frmKanban_FormClosed(object sender, FormClosedEventArgs e)
         {
+            Sair();
+        }
+        // Método para fechar o formulário atual e abrir o formulário de login
+        private void Sair()
+        {
+            //Fecha todos os forms abertos, exceto o frmLogin que é reaberto
+            foreach (Form form in Application.OpenForms.Cast<Form>().ToList())
+            {
+                if (!(form is frmLogin))
+                {
+                    form.Close();
+                }
+            }
+            //Reabre o frmLogin
             new frmLogin().Show();
         }
-
 
     }
             

@@ -220,7 +220,7 @@ namespace iTasks.Controllers
             }
         }
 
-        public void AtualizarGestor(Gestor gestor)
+        public void atualizarDadosGestor(Gestor gestor)
         {
             var g = db.Gestor.Find(gestor.Id);
             if (g != null)
@@ -234,7 +234,7 @@ namespace iTasks.Controllers
             }
         }
 
-        public void AtualizarProgramador(Programador programador)
+        public void AtualizarDadosProgramador(Programador programador)
         {
             var p = db.Programador.Find(programador.Id);
             if (p != null)
