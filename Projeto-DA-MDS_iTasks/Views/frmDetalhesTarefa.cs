@@ -76,8 +76,9 @@ namespace iTasks
             txtDesc.ReadOnly = true;
             cbTipoTarefa.Enabled = false;
             cbProgramador.Enabled = false;
-            txtOrdem.ReadOnly = true;
-            txtStoryPoints.ReadOnly = true;
+
+            txtOrdem.Enabled = false;
+            txtStoryPoints.Enabled = false;
 
             dtInicio.Enabled = false;
             dtFim.Enabled = false;
@@ -117,8 +118,8 @@ namespace iTasks
             //cbTipoTarefa.SelectedItem = tarefa.IdTipoTarefa.ToString(); //?
             //cbProgramador.SelectedItem = tarefa.idGestor.Nome;//?
 
-            txtOrdem.Text = tarefa.OrdemExecucao.ToString();
-            txtStoryPoints.Text = tarefa.StoryPoints.ToString();
+            txtOrdem.Value = tarefa.OrdemExecucao;
+            txtStoryPoints.Value = tarefa.StoryPoints;
 
             if (tarefa.DataPrevistaInicio != null)
             {
@@ -149,7 +150,7 @@ namespace iTasks
 
                     if (listaTarefas != null)
                     {
-                        if (Convert.ToInt32(txtStoryPoints.Text) <= 0)
+                        if (txtStoryPoints.Value <= 0)
                         {
                             MessageBox.Show("A ordem de execução deve ser um número maior que 0.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             return;
@@ -159,7 +160,7 @@ namespace iTasks
                         {
 
                             //verifica se o numero de story points é maior que 0
-                            if (Convert.ToInt32(txtOrdem.Text) <= 0)
+                            if (txtOrdem.Value <= 0)
                             {
                                 MessageBox.Show("O número de story points deve ser um número maior que 0.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                 return;
@@ -183,7 +184,7 @@ namespace iTasks
                                     if (idTarefaAtualUpdate > 0)
                                     {
                                         //verifica se a ordem na textbox é igual a que veida da tarefa que está a ser atualizada se for deixa, se nao for verifica se já existe alguma tarefa atribuída ao programador com a mesma ordem de execução
-                                        if (Convert.ToInt32(txtOrdem.Text) != controllerDados.ObterTarefaPorId(idTarefaAtualUpdate).OrdemExecucao && controllerDados.ExisteTarefaComOrdem(Convert.ToInt16(txtOrdem.Text), idProgramador))
+                                        if (Convert.ToInt32(txtOrdem.Value) != controllerDados.ObterTarefaPorId(idTarefaAtualUpdate).OrdemExecucao && controllerDados.ExisteTarefaComOrdem(Convert.ToInt16(txtOrdem.Value), idProgramador))
                                         {
                                             MessageBox.Show("Já existe uma tarefa atribuída a este programador com a mesma ordem de execução.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                             return;
@@ -215,8 +216,8 @@ namespace iTasks
                                                     tarefaUpdate.DataRealFim = Convert.ToDateTime(txtDataRealFim.Text);
                                                 }
                                                 tarefaUpdate.EstadoAtual = tipoEnum;
-                                                tarefaUpdate.StoryPoints = Convert.ToInt32(txtStoryPoints.Text);
-                                                tarefaUpdate.OrdemExecucao = Convert.ToInt32(txtOrdem.Text);
+                                                tarefaUpdate.StoryPoints = (int)txtStoryPoints.Value;
+                                                tarefaUpdate.OrdemExecucao = (int)txtOrdem.Value;
                                                 tarefaUpdate.IdTipoTarefa = TipoTarefaSelecionado.Id;
                                                 tarefaUpdate.IdProgramador = programadorSelecionado.Id;
 
@@ -229,7 +230,7 @@ namespace iTasks
                                     }
                                     else
                                     {
-                                        if (controllerDados.ExisteTarefaComOrdem(Convert.ToInt16(txtOrdem.Text), idProgramador))
+                                        if (controllerDados.ExisteTarefaComOrdem((int)txtOrdem.Value, idProgramador))
                                         {
                                             MessageBox.Show("Já existe uma tarefa atribuída a este programador com a mesma ordem de execução.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                             return;
@@ -247,8 +248,8 @@ namespace iTasks
                                             tarefaNova.DataRealInicio = null;
                                             tarefaNova.DataRealFim = null;
                                             tarefaNova.EstadoAtual = Enums.EstadoAtual.ToDo;
-                                            tarefaNova.StoryPoints = Convert.ToInt32(txtStoryPoints.Text);
-                                            tarefaNova.OrdemExecucao = Convert.ToInt32(txtOrdem.Text);
+                                            tarefaNova.StoryPoints = (int)txtStoryPoints.Value;
+                                            tarefaNova.OrdemExecucao = (int)txtOrdem.Value;
                                             tarefaNova.IdTipoTarefa = TipoTarefaSelecionado.Id;
                                             tarefaNova.IdProgramador = programadorSelecionado.Id;
                                             tarefaNova.IdGestor = gestor.Id;

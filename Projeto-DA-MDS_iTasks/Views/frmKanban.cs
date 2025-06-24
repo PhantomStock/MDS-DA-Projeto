@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
+using System.Drawing.Text;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -32,7 +33,13 @@ namespace iTasks
             //se o utilizador for um programador o strip menu de gerir aplicacao deixa de ficar visivel
             if (utilizador is Programador)
             {
-                utilizadoresToolStripMenuItem.Visible = false;
+                utilizadoresToolStripMenuItem.Enabled = false;
+                btNova.Enabled = false;
+                btnEliminarTarefa.Enabled = false;
+                btnPrevisao.Enabled = false;
+            } else
+            {
+                tarefasEmCursoToolStripMenuItem.Text = "Detalhes Tarefas em Curso";
             }
 
             if (utilizador != null)
@@ -43,37 +50,73 @@ namespace iTasks
             RefreshDadosListBoxes();
         }
 
-        //Não ta em MVC falta as tarefas para 
-        private void exportarParaCSVToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            
-        }
         //ToolStripMenu
         private void gerirUtilizadoresToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (controllerDados.ObterGestorPorId(utilizadorAtual.Id).GereUtilizadores)
+            if (!Application.OpenForms.OfType<frmGereUtilizadores>().Any()) //se o form frmGereUtilizadores tiver aberto ele nao executa o codigo (a funao Open Forms procura por um form daquele tipo e se nao encontrar retorna false, se encontrar retorna true) 
             {
-                new frmGereUtilizadores().Show();
-            }
-            else
+                if (controllerDados.ObterGestorPorId(utilizadorAtual.Id).GereUtilizadores)
+                {
+                    new frmGereUtilizadores().Show();
+
+                }
+                else
+                {
+                    MessageBox.Show("Apenas um gestor pode gerir utilizadores.", "Acesso Negado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            } else
             {
-                MessageBox.Show("Apenas um gestor pode gerir utilizadores.", "Acesso Negado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                //nhaaaa fam
             }
         }
 
         private void gerirTiposDeTarefasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new frmGereTiposTarefas().Show();
+
+            if (!Application.OpenForms.OfType<frmGereTiposTarefas>().Any()) //se o form frmGereTiposTarefas tiver aberto ele nao executa o codigo (a funao Open Forms procura por um form daquele tipo e se nao encontrar retorna false, se encontrar retorna true) 
+            {
+                if (controllerDados.ObterGestorPorId(utilizadorAtual.Id).GereUtilizadores)
+                {
+                    new frmGereTiposTarefas().Show();
+
+                }
+                else
+                {
+                    MessageBox.Show("Apenas um gestor pode gerir Tipos de Tarefa.", "Acesso Negado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            else
+            {
+                //nhaaaa fam
+            }
+
+            
         }
 
         private void tarefasTerminadasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new frmConsultarTarefasConcluidas().Show();
+            if (!Application.OpenForms.OfType<frmConsultarTarefasConcluidas>().Any()) //se o form frmConsultarTarefasConcluidas tiver aberto ele nao executa o codigo (a funao Open Forms procura por um form daquele tipo e se nao encontrar retorna false, se encontrar retorna true) 
+            {
+                new frmConsultarTarefasConcluidas().Show();
+            }
+            else
+            {
+                //nhaaaa fam
+            }
+            
         }
 
         private void tarefasEmCursoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new frmConsultaTarefasEmCurso().Show();
+            if (!Application.OpenForms.OfType<frmConsultaTarefasEmCurso>().Any()) //se o form frmConsultaTarefasEmCurso tiver aberto ele nao executa o codigo (a funao Open Forms procura por um form daquele tipo e se nao encontrar retorna false, se encontrar retorna true) 
+            {
+                new frmConsultaTarefasEmCurso().Show();
+            }
+            else
+            {
+                //nhaaaa fam
+            }
+            
         }
 
         private void sairToolStripMenuItem_Click(object sender, EventArgs e)
@@ -84,13 +127,22 @@ namespace iTasks
 
         private void btNova_Click(object sender, EventArgs e)
         {
-            if (SessaoAtual.Utilizador is Programador)
+            if (!Application.OpenForms.OfType<frmDetalhesTarefa>().Any()) //se o form frmGereUtilizadores tiver aberto ele nao executa o codigo (a funao Open Forms procura por um form daquele tipo e se nao encontrar retorna false, se encontrar retorna true) 
             {
-                MessageBox.Show("Apenas gestores podem criar novas tarefas.", "Acesso negado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
+                if (SessaoAtual.Utilizador is Programador)
+                {
+                    MessageBox.Show("Apenas gestores podem criar novas tarefas.", "Acesso negado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                } else
+                {
+                    //chama o form para uma nova tarefa
+                    new frmDetalhesTarefa(-1).Show();
+                }
             }
-            //chama o form para uma nova tarefa
-            new frmDetalhesTarefa(-1).Show();
+            else
+            {
+                //nhaaaa fam
+            }
         }
 
         private void lstTodo_MouseDoubleClick(object sender, MouseEventArgs e)
@@ -121,13 +173,9 @@ namespace iTasks
         private void DoubleClickLst(ListBox lb)
         {
             // Verifica se há um item selecionado
-            if (SessaoAtual.Utilizador is Programador)
-            {
-                
-            }
             Tarefa tarefa = lb.SelectedItem as Tarefa;
-
             new frmDetalhesTarefa(tarefa.Id).Show();
+
         }
 
         private void RefreshDadosListBoxes()
@@ -425,7 +473,15 @@ namespace iTasks
             MessageBox.Show("Tarefa eliminada com sucesso.", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-       
+        private void btnPrevisao_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void frmKanban_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            new frmLogin().Show();
+        }
     }
             
 }
