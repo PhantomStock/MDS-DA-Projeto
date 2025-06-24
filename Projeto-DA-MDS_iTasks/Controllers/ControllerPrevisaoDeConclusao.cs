@@ -18,7 +18,7 @@ namespace iTasks.Controllers
             int totalMinutos = (int)Math.Round(tempoPrevisto * 60);
             int horas = totalMinutos / 60;
             int minutos = totalMinutos % 60;
-            return $"Tempo previsto para concluir todas as tarefas ToDo: {horas}h {minutos}min";
+            return horas+";"+minutos;
         }
 
         public double CalcularTempoPrevistoTodasTarefasTodo()

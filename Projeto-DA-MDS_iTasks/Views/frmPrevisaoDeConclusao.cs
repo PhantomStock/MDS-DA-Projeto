@@ -17,14 +17,25 @@ namespace iTasks.Views
         public frmPrevisaoDeConclusao()
         {
             InitializeComponent();
-            lbTempoPrevisto.Text = controllerPrevisaoDeConclusao.ExibirPrevisao();
+            string tempoPrevistoCompleto = controllerPrevisaoDeConclusao.ExibirPrevisao();
+            string[] partes = tempoPrevistoCompleto.Split(';');
+            txbHoras.Text = partes[0];
+            txbMinutos.Text = partes[1];
         }
 
         private void btnRefreshTempoPrevisto_Click(object sender, EventArgs e)
         {
 
             ControllerPrevisaoDeConclusao controller = new ControllerPrevisaoDeConclusao();
-            lbTempoPrevisto.Text = controller.ExibirPrevisao();
+            string tempoPrevistoCompleto = controllerPrevisaoDeConclusao.ExibirPrevisao();
+            string[] partes = tempoPrevistoCompleto.Split(';');
+            txbHoras.Text = partes[0];
+            txbMinutos.Text = partes[1];
+        }
+
+        private void btnVoltar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

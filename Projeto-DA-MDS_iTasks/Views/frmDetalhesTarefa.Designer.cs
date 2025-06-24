@@ -62,6 +62,7 @@
             // 
             // txtId
             // 
+            this.txtId.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtId.Location = new System.Drawing.Point(132, 12);
             this.txtId.Name = "txtId";
             this.txtId.ReadOnly = true;
@@ -70,6 +71,7 @@
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(107, 15);
             this.label1.Name = "label1";
@@ -79,6 +81,7 @@
             // 
             // label3
             // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(56, 168);
             this.label3.Name = "label3";
@@ -88,6 +91,7 @@
             // 
             // cbProgramador
             // 
+            this.cbProgramador.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cbProgramador.FormattingEnabled = true;
             this.cbProgramador.Location = new System.Drawing.Point(132, 165);
             this.cbProgramador.Name = "cbProgramador";
@@ -96,6 +100,7 @@
             // 
             // label2
             // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(85, 195);
             this.label2.Name = "label2";
@@ -105,6 +110,7 @@
             // 
             // txtDesc
             // 
+            this.txtDesc.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtDesc.Location = new System.Drawing.Point(132, 112);
             this.txtDesc.Name = "txtDesc";
             this.txtDesc.Size = new System.Drawing.Size(425, 20);
@@ -112,6 +118,7 @@
             // 
             // label4
             // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(68, 115);
             this.label4.Name = "label4";
@@ -121,6 +128,7 @@
             // 
             // label5
             // 
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(46, 141);
             this.label5.Name = "label5";
@@ -130,6 +138,7 @@
             // 
             // cbTipoTarefa
             // 
+            this.cbTipoTarefa.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cbTipoTarefa.FormattingEnabled = true;
             this.cbTipoTarefa.Location = new System.Drawing.Point(132, 138);
             this.cbTipoTarefa.Name = "cbTipoTarefa";
@@ -138,6 +147,7 @@
             // 
             // dtInicio
             // 
+            this.dtInicio.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dtInicio.Location = new System.Drawing.Point(132, 248);
             this.dtInicio.Name = "dtInicio";
             this.dtInicio.Size = new System.Drawing.Size(200, 20);
@@ -145,6 +155,7 @@
             // 
             // label6
             // 
+            this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(7, 251);
             this.label6.Name = "label6";
@@ -154,6 +165,7 @@
             // 
             // label7
             // 
+            this.label7.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(18, 278);
             this.label7.Name = "label7";
@@ -163,6 +175,7 @@
             // 
             // dtFim
             // 
+            this.dtFim.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dtFim.Location = new System.Drawing.Point(132, 274);
             this.dtFim.Name = "dtFim";
             this.dtFim.Size = new System.Drawing.Size(200, 20);
@@ -170,6 +183,7 @@
             // 
             // txtEstado
             // 
+            this.txtEstado.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtEstado.Location = new System.Drawing.Point(426, 12);
             this.txtEstado.Name = "txtEstado";
             this.txtEstado.ReadOnly = true;
@@ -178,6 +192,7 @@
             // 
             // label8
             // 
+            this.label8.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(350, 15);
             this.label8.Name = "label8";
@@ -187,6 +202,7 @@
             // 
             // txtDataRealini
             // 
+            this.txtDataRealini.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtDataRealini.Location = new System.Drawing.Point(132, 42);
             this.txtDataRealini.Name = "txtDataRealini";
             this.txtDataRealini.ReadOnly = true;
@@ -195,6 +211,7 @@
             // 
             // label9
             // 
+            this.label9.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(23, 45);
             this.label9.Name = "label9";
@@ -204,6 +221,7 @@
             // 
             // txtDataRealFim
             // 
+            this.txtDataRealFim.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtDataRealFim.Location = new System.Drawing.Point(132, 68);
             this.txtDataRealFim.Name = "txtDataRealFim";
             this.txtDataRealFim.ReadOnly = true;
@@ -212,6 +230,7 @@
             // 
             // label10
             // 
+            this.label10.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label10.AutoSize = true;
             this.label10.Location = new System.Drawing.Point(33, 71);
             this.label10.Name = "label10";
@@ -221,6 +240,7 @@
             // 
             // txtDataCriacao
             // 
+            this.txtDataCriacao.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtDataCriacao.Location = new System.Drawing.Point(426, 42);
             this.txtDataCriacao.Name = "txtDataCriacao";
             this.txtDataCriacao.ReadOnly = true;
@@ -229,6 +249,7 @@
             // 
             // label11
             // 
+            this.label11.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label11.AutoSize = true;
             this.label11.Location = new System.Drawing.Point(348, 45);
             this.label11.Name = "label11";
@@ -238,6 +259,7 @@
             // 
             // panel1
             // 
+            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel1.BackColor = System.Drawing.Color.DimGray;
             this.panel1.Location = new System.Drawing.Point(8, 101);
             this.panel1.Name = "panel1";
@@ -246,6 +268,7 @@
             // 
             // panel2
             // 
+            this.panel2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel2.BackColor = System.Drawing.Color.DimGray;
             this.panel2.Location = new System.Drawing.Point(8, 303);
             this.panel2.Name = "panel2";
@@ -254,6 +277,7 @@
             // 
             // btGravar
             // 
+            this.btGravar.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btGravar.Location = new System.Drawing.Point(316, 317);
             this.btGravar.Name = "btGravar";
             this.btGravar.Size = new System.Drawing.Size(141, 23);
@@ -264,6 +288,7 @@
             // 
             // btFechar
             // 
+            this.btFechar.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btFechar.Location = new System.Drawing.Point(463, 317);
             this.btFechar.Name = "btFechar";
             this.btFechar.Size = new System.Drawing.Size(104, 23);
@@ -274,6 +299,7 @@
             // 
             // label12
             // 
+            this.label12.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label12.AutoSize = true;
             this.label12.Location = new System.Drawing.Point(63, 221);
             this.label12.Name = "label12";
@@ -283,6 +309,7 @@
             // 
             // txtStoryPoints
             // 
+            this.txtStoryPoints.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtStoryPoints.Location = new System.Drawing.Point(132, 219);
             this.txtStoryPoints.Minimum = new decimal(new int[] {
             1,
@@ -300,6 +327,7 @@
             // 
             // txtOrdem
             // 
+            this.txtOrdem.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtOrdem.Location = new System.Drawing.Point(132, 193);
             this.txtOrdem.Minimum = new decimal(new int[] {
             1,

@@ -1,6 +1,6 @@
 ﻿namespace iTasks
 {
-    partial class frmRegistar
+    partial class frmRegistarOld_Ttestes
     {
         /// <summary>
         /// Required designer variable.

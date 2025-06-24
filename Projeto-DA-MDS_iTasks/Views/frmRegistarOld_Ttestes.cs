@@ -15,10 +15,10 @@ using static iTasks.Models.Enums;
 namespace iTasks
 {
     // Formulário para registar novos utilizadores, programadores ou gestores (vai ser alterado e este sera eleminado, foi para testes)
-    public partial class frmRegistar: Form
+    public partial class frmRegistarOld_Ttestes: Form
     {
         BaseDeDados db => BaseDeDados.Instance;
-        public frmRegistar()
+        public frmRegistarOld_Ttestes()
         {
             InitializeComponent();
             //Intanciar o Controller

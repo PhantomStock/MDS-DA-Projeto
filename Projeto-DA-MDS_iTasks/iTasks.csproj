@@ -115,11 +115,11 @@
     <Compile Include="Views\frmPrevisaoDeConclusao.Designer.cs">
       <DependentUpon>frmPrevisaoDeConclusao.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\frmRegistar.cs">
+    <Compile Include="Views\frmRegistarOld_Ttestes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\frmRegistar.Designer.cs">
-      <DependentUpon>frmRegistar.cs</DependentUpon>
+    <Compile Include="Views\frmRegistarOld_Ttestes.Designer.cs">
+      <DependentUpon>frmRegistarOld_Ttestes.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\BaseDeDados.cs" />
     <Compile Include="Models\Gestor.cs" />
@@ -153,8 +153,8 @@
     <EmbeddedResource Include="Views\frmPrevisaoDeConclusao.resx">
       <DependentUpon>frmPrevisaoDeConclusao.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\frmRegistar.resx">
-      <DependentUpon>frmRegistar.cs</DependentUpon>
+    <EmbeddedResource Include="Views\frmRegistarOld_Ttestes.resx">
+      <DependentUpon>frmRegistarOld_Ttestes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

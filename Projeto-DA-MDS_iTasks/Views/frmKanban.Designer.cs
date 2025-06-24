@@ -72,20 +72,24 @@
             // 
             // lstTodo
             // 
+            this.lstTodo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lstTodo.FormattingEnabled = true;
             this.lstTodo.Location = new System.Drawing.Point(3, 18);
             this.lstTodo.Name = "lstTodo";
-            this.lstTodo.Size = new System.Drawing.Size(317, 394);
+            this.lstTodo.Size = new System.Drawing.Size(317, 407);
             this.lstTodo.TabIndex = 0;
             this.lstTodo.SelectedIndexChanged += new System.EventHandler(this.lstTodo_SelectedIndexChanged);
             this.lstTodo.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.lstTodo_MouseDoubleClick);
             // 
             // groupBox1
             // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.groupBox1.Controls.Add(this.lstTodo);
             this.groupBox1.Location = new System.Drawing.Point(13, 54);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(322, 449);
+            this.groupBox1.Size = new System.Drawing.Size(322, 434);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "ToDo";
@@ -96,48 +100,51 @@
             this.groupBox2.Controls.Add(this.lstDoing);
             this.groupBox2.Location = new System.Drawing.Point(342, 54);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(322, 449);
+            this.groupBox2.Size = new System.Drawing.Size(322, 434);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Doing";
             // 
             // lstDoing
             // 
-            this.lstDoing.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.lstDoing.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lstDoing.FormattingEnabled = true;
             this.lstDoing.Location = new System.Drawing.Point(3, 18);
             this.lstDoing.Name = "lstDoing";
-            this.lstDoing.Size = new System.Drawing.Size(317, 394);
+            this.lstDoing.Size = new System.Drawing.Size(317, 407);
             this.lstDoing.TabIndex = 0;
             this.lstDoing.SelectedIndexChanged += new System.EventHandler(this.lstDoing_SelectedIndexChanged);
             this.lstDoing.DoubleClick += new System.EventHandler(this.lstDoing_DoubleClick);
             // 
             // groupBox3
             // 
-            this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.groupBox3.Controls.Add(this.lstDone);
             this.groupBox3.Location = new System.Drawing.Point(670, 54);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(322, 449);
+            this.groupBox3.Size = new System.Drawing.Size(322, 434);
             this.groupBox3.TabIndex = 3;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Done";
             // 
             // lstDone
             // 
-            this.lstDone.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.lstDone.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lstDone.FormattingEnabled = true;
             this.lstDone.Location = new System.Drawing.Point(3, 18);
             this.lstDone.Name = "lstDone";
-            this.lstDone.Size = new System.Drawing.Size(317, 394);
+            this.lstDone.Size = new System.Drawing.Size(317, 407);
             this.lstDone.TabIndex = 0;
             this.lstDone.SelectedIndexChanged += new System.EventHandler(this.lstDone_SelectedIndexChanged);
             this.lstDone.DoubleClick += new System.EventHandler(this.lstDone_DoubleClick);
             // 
             // menuStrip1
             // 
+            this.menuStrip1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.menuStrip1.Dock = System.Windows.Forms.DockStyle.None;
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -305,7 +312,7 @@
             // 
             // btSetDone
             // 
-            this.btSetDone.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btSetDone.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btSetDone.Location = new System.Drawing.Point(506, 494);
             this.btSetDone.Name = "btSetDone";
             this.btSetDone.Size = new System.Drawing.Size(154, 22);
@@ -327,7 +334,7 @@
             // 
             // btNova
             // 
-            this.btNova.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btNova.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btNova.Location = new System.Drawing.Point(16, 494);
             this.btNova.Name = "btNova";
             this.btNova.Size = new System.Drawing.Size(111, 22);
@@ -338,7 +345,7 @@
             // 
             // labelNomeUtilizador
             // 
-            this.labelNomeUtilizador.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelNomeUtilizador.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labelNomeUtilizador.AutoSize = true;
             this.labelNomeUtilizador.Location = new System.Drawing.Point(830, 34);
             this.labelNomeUtilizador.Name = "labelNomeUtilizador";
@@ -348,6 +355,7 @@
             // 
             // btnPrevisao
             // 
+            this.btnPrevisao.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnPrevisao.Location = new System.Drawing.Point(13, 29);
             this.btnPrevisao.Name = "btnPrevisao";
             this.btnPrevisao.Size = new System.Drawing.Size(178, 22);
@@ -362,6 +370,7 @@
             // 
             // btnRefresh
             // 
+            this.btnRefresh.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnRefresh.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRefresh.Location = new System.Drawing.Point(955, 488);
             this.btnRefresh.Margin = new System.Windows.Forms.Padding(2);
@@ -374,7 +383,7 @@
             // 
             // btnEliminarTarefa
             // 
-            this.btnEliminarTarefa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnEliminarTarefa.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnEliminarTarefa.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminarTarefa.Image")));
             this.btnEliminarTarefa.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnEliminarTarefa.Location = new System.Drawing.Point(786, 494);
