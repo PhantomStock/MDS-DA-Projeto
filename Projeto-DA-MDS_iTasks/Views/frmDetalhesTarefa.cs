@@ -21,7 +21,6 @@ namespace iTasks
         public int idTarefaAtualUpdate;
         ControllerDados controllerDados = new ControllerDados();
         private frmKanban kanban;
-        ControllerDetalhesTarefa ControllerDetalhesTarefa = new ControllerDetalhesTarefa();
         ControllerTarefa controllerTarefa = new ControllerTarefa();
         public frmDetalhesTarefa(int id, frmKanban kanbanfrm)
         {

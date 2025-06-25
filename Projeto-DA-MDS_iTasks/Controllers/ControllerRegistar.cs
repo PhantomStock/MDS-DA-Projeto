@@ -14,6 +14,8 @@ namespace iTasks.Controllers
     {
         BaseDeDados db => BaseDeDados.Instance;
         //regista um utilizador padrão (vai sair daqui)
+
+        //Não da pra registar utilizadores(Isto fazia parte do FormRegistarAntigo que não foi utilizado!!)
         public void RegistarUtilizador(string nome, string username, string password)
         {
             var user = db.Utilizador

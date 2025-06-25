@@ -41,7 +41,6 @@
             this.gpUtilizador = new System.Windows.Forms.GroupBox();
             this.rbGestor = new System.Windows.Forms.RadioButton();
             this.rbProgramador = new System.Windows.Forms.RadioButton();
-            this.rbUtilizadorComum = new System.Windows.Forms.RadioButton();
             this.gbProgramador = new System.Windows.Forms.GroupBox();
             this.cbGestor = new System.Windows.Forms.ComboBox();
             this.cbExperiencia = new System.Windows.Forms.ComboBox();
@@ -169,7 +168,7 @@
             // rbGestor
             // 
             this.rbGestor.AutoSize = true;
-            this.rbGestor.Location = new System.Drawing.Point(465, 12);
+            this.rbGestor.Location = new System.Drawing.Point(403, 12);
             this.rbGestor.Name = "rbGestor";
             this.rbGestor.Size = new System.Drawing.Size(68, 20);
             this.rbGestor.TabIndex = 17;
@@ -181,26 +180,13 @@
             // rbProgramador
             // 
             this.rbProgramador.AutoSize = true;
-            this.rbProgramador.Location = new System.Drawing.Point(348, 12);
+            this.rbProgramador.Location = new System.Drawing.Point(273, 12);
             this.rbProgramador.Name = "rbProgramador";
             this.rbProgramador.Size = new System.Drawing.Size(108, 20);
             this.rbProgramador.TabIndex = 18;
             this.rbProgramador.Text = "Programador";
             this.rbProgramador.UseVisualStyleBackColor = true;
             this.rbProgramador.CheckedChanged += new System.EventHandler(this.rbProgramador_CheckedChanged);
-            // 
-            // rbUtilizadorComum
-            // 
-            this.rbUtilizadorComum.AutoSize = true;
-            this.rbUtilizadorComum.Checked = true;
-            this.rbUtilizadorComum.Location = new System.Drawing.Point(250, 12);
-            this.rbUtilizadorComum.Name = "rbUtilizadorComum";
-            this.rbUtilizadorComum.Size = new System.Drawing.Size(84, 20);
-            this.rbUtilizadorComum.TabIndex = 19;
-            this.rbUtilizadorComum.TabStop = true;
-            this.rbUtilizadorComum.Text = "Utilizador";
-            this.rbUtilizadorComum.UseVisualStyleBackColor = true;
-            this.rbUtilizadorComum.CheckedChanged += new System.EventHandler(this.rbUtilizadorComum_CheckedChanged);
             // 
             // gbProgramador
             // 
@@ -297,7 +283,7 @@
             this.label7.TabIndex = 12;
             this.label7.Text = "Departamento:";
             // 
-            // frmRegistar
+            // frmRegistarOld_Ttestes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -305,12 +291,11 @@
             this.Controls.Add(this.gbGestor);
             this.Controls.Add(this.gbProgramador);
             this.Controls.Add(this.rbGestor);
-            this.Controls.Add(this.rbUtilizadorComum);
             this.Controls.Add(this.rbProgramador);
             this.Controls.Add(this.gpUtilizador);
             this.Controls.Add(this.btVoltar);
             this.Controls.Add(this.btRegistar);
-            this.Name = "frmRegistar";
+            this.Name = "frmRegistarOld_Ttestes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmRegistar";
             this.gpUtilizador.ResumeLayout(false);
@@ -339,7 +324,6 @@
         private System.Windows.Forms.GroupBox gpUtilizador;
         private System.Windows.Forms.RadioButton rbGestor;
         private System.Windows.Forms.RadioButton rbProgramador;
-        private System.Windows.Forms.RadioButton rbUtilizadorComum;
         private System.Windows.Forms.GroupBox gbProgramador;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;

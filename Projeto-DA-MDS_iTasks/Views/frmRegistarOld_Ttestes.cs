@@ -22,16 +22,14 @@ namespace iTasks
         {
             InitializeComponent();
             //Intanciar o Controller
-            ControllerDados Controller = new ControllerDados();
+            ControllerDados ControllerDados = new ControllerDados();
 
-            
             //Realiza o Setup das ComboBoxes
-            var gestores = Controller.ObterTodosGestores();
+            var gestores = ControllerDados.ObterTodosGestores();
 
             //Obter Gestores
             cbGestor.DataSource = null;
             cbGestor.DataSource = gestores;
-
 
             //ComboBox NivelExperiencia
             cbExperiencia.DataSource = null;
@@ -64,9 +62,9 @@ namespace iTasks
             //Variavel Gestor
             Gestor Gestor = (Gestor)cbGestor.SelectedItem;
 
-
-                var user = db.Utilizador
-                    .FirstOrDefault(u => u.Username == username);
+            // Verifica se o nome de utilizador já existe
+            var user = db.Utilizador
+                .FirstOrDefault(u => u.Username == username);
 
                 if (user == null)
                 {
@@ -74,12 +72,7 @@ namespace iTasks
                     {
                         ControllerRegistar novoRegisto = new ControllerRegistar();
 
-                        if (rbUtilizadorComum.Checked)
-                        {
-                            novoRegisto.RegistarUtilizador(nome, username, password);
-
-                        }
-                        else if (rbProgramador.Checked)
+                        if (rbProgramador.Checked)
                         {
                             novoRegisto.RegistarProgramador(nome, username, password, experiencia, Gestor.Id);
                         }
@@ -98,9 +91,7 @@ namespace iTasks
                     MessageBox.Show("Username já registado", "Registo Falhou", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-       
         
-
         private void btVoltar_Click(object sender, EventArgs e)
         {
             frmLogin login = new frmLogin();
@@ -122,10 +113,6 @@ namespace iTasks
             gbGestor.Enabled = true;
         }
 
-        private void rbUtilizadorComum_CheckedChanged(object sender, EventArgs e)
-        {
-            gbProgramador.Enabled = false;
-            gbGestor.Enabled = false;
-        }
+
     }
 }

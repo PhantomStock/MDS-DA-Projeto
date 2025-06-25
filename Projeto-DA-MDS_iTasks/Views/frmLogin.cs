@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using iTasks.Controllers;
 using iTasks.Models;
+using iTasks.Properties;
 
 namespace iTasks
 {
@@ -64,7 +65,24 @@ namespace iTasks
             {
                 btLogin_Click(sender, e);
             }
+        }
 
+        //Ocultar o botão de ocultar senha
+        private void btnOcultarSenha_Click(object sender, EventArgs e)
+        {
+            // Verifica se o botão já está ocultando a senha
+            if (txtPassword.PasswordChar == '\0')
+            {
+                //se nao ta censurado censura
+                txtPassword.PasswordChar = '*';
+                btnOcultarSenha.Image = Resources.EyeOpen;
+            }
+            else
+            {
+                //se ta censurado descensura
+                txtPassword.PasswordChar = '\0';
+                btnOcultarSenha.Image = Resources.eyeClose;
+            }
         }
     }
 }
