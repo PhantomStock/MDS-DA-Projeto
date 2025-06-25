@@ -106,13 +106,5 @@ namespace iTasks
         {
             return controllerTipoTarefa.ObterProximoIdTipoTarefa();
         }
-
-
-        ///???????
-        //public void AtualizarIdTipoTarefa(TextBox textBox)
-        //{
-        //    int proximoId = controllerTipoTarefa.ObterProximoIdTipoTarefa();
-        //    textBox.Text = proximoId.ToString();
-        //}
     }
 }

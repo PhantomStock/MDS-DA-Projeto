@@ -54,10 +54,9 @@ namespace iTasks.Controllers
 
         }
 
-        //recebe um id e remove a tarefa correspondente da base de dados
+        //recebe um id e remove a tarefa correspondente da base de dados(Não está sendo usado)
         public Tarefa loadTarefa(int id) 
         {
-
             var tarefa = db.Tarefa
                 .FirstOrDefault(t => t.Id == id);
 

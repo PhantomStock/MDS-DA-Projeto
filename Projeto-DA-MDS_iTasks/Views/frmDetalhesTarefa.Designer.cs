@@ -86,6 +86,7 @@
             // cbProgramador
             // 
             this.cbProgramador.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cbProgramador.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbProgramador.FormattingEnabled = true;
             this.cbProgramador.Location = new System.Drawing.Point(176, 203);
             this.cbProgramador.Margin = new System.Windows.Forms.Padding(4);
@@ -138,6 +139,7 @@
             // cbTipoTarefa
             // 
             this.cbTipoTarefa.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cbTipoTarefa.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbTipoTarefa.FormattingEnabled = true;
             this.cbTipoTarefa.Location = new System.Drawing.Point(176, 170);
             this.cbTipoTarefa.Margin = new System.Windows.Forms.Padding(4);

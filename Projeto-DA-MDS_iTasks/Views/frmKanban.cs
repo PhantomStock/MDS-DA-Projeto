@@ -291,7 +291,7 @@ namespace iTasks
                 if (sucesso)
                 {
                     //Sucesso
-                    MessageBox.Show("Tarefas exportadas com sucesso!", "Exportação", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Tarefas exportadas com sucesso!", "Exportação bem sucessida", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
@@ -358,7 +358,7 @@ namespace iTasks
                 if (sucesso)
                 {
                     //Sucesso
-                    MessageBox.Show("Tarefas importadas com sucesso!", "Exportação", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Tarefas importadas com sucesso!", "Exportação bem sucessida", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {

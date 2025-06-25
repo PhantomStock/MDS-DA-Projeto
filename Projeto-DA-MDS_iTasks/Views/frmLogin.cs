@@ -42,7 +42,7 @@ namespace iTasks
                 SessaoAtual.Utilizador = utilizador;
 
                 // Exibe uma mensagem de sucesso e abre o formulário principal
-                MessageBox.Show("Login successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Login efetuado com Sucesso", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 // Abre o formulário principal (Kanban)
                 new frmKanban().Show();
@@ -50,7 +50,7 @@ namespace iTasks
             }
             else
             {
-                MessageBox.Show("Invalid username or password.", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Password ou Usuario inválido.", "Login Falhou", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

@@ -33,6 +33,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.lstListaGestores = new System.Windows.Forms.ListBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.txtIdGestor = new System.Windows.Forms.NumericUpDown();
             this.btnCreateGestor = new System.Windows.Forms.Button();
             this.btnDeleteGestor = new System.Windows.Forms.Button();
             this.chkGereUtilizadores = new System.Windows.Forms.CheckBox();
@@ -45,6 +46,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtNomeGestor = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.txtIdProg = new System.Windows.Forms.NumericUpDown();
             this.btnCreateProg = new System.Windows.Forms.Button();
             this.btnDeleteProg = new System.Windows.Forms.Button();
             this.btVoltar = new System.Windows.Forms.Button();
@@ -62,14 +64,12 @@
             this.label9 = new System.Windows.Forms.Label();
             this.txtNomeProg = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.txtIdGestor = new System.Windows.Forms.NumericUpDown();
-            this.txtIdProg = new System.Windows.Forms.NumericUpDown();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            this.groupBox3.SuspendLayout();
-            this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtIdGestor)).BeginInit();
+            this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtIdProg)).BeginInit();
+            this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
             // label4
@@ -99,9 +99,9 @@
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.groupBox1.Controls.Add(this.lstListaGestores);
             this.groupBox1.Location = new System.Drawing.Point(8, 23);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox1.Size = new System.Drawing.Size(365, 560);
             this.groupBox1.TabIndex = 32;
             this.groupBox1.TabStop = false;
@@ -113,7 +113,7 @@
             this.lstListaGestores.FormattingEnabled = true;
             this.lstListaGestores.ItemHeight = 16;
             this.lstListaGestores.Location = new System.Drawing.Point(4, 19);
-            this.lstListaGestores.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lstListaGestores.Margin = new System.Windows.Forms.Padding(4);
             this.lstListaGestores.Name = "lstListaGestores";
             this.lstListaGestores.Size = new System.Drawing.Size(357, 537);
             this.lstListaGestores.TabIndex = 0;
@@ -138,19 +138,28 @@
             this.groupBox2.Controls.Add(this.txtNomeGestor);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Location = new System.Drawing.Point(16, 15);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox2.Size = new System.Drawing.Size(681, 591);
             this.groupBox2.TabIndex = 38;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Gestores";
             // 
+            // txtIdGestor
+            // 
+            this.txtIdGestor.Enabled = false;
+            this.txtIdGestor.Location = new System.Drawing.Point(392, 42);
+            this.txtIdGestor.Name = "txtIdGestor";
+            this.txtIdGestor.ReadOnly = true;
+            this.txtIdGestor.Size = new System.Drawing.Size(120, 22);
+            this.txtIdGestor.TabIndex = 43;
+            // 
             // btnCreateGestor
             // 
             this.btnCreateGestor.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnCreateGestor.Location = new System.Drawing.Point(392, 384);
-            this.btnCreateGestor.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCreateGestor.Margin = new System.Windows.Forms.Padding(4);
             this.btnCreateGestor.Name = "btnCreateGestor";
             this.btnCreateGestor.Size = new System.Drawing.Size(268, 28);
             this.btnCreateGestor.TabIndex = 6;
@@ -162,7 +171,7 @@
             // 
             this.btnDeleteGestor.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnDeleteGestor.Location = new System.Drawing.Point(392, 420);
-            this.btnDeleteGestor.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDeleteGestor.Margin = new System.Windows.Forms.Padding(4);
             this.btnDeleteGestor.Name = "btnDeleteGestor";
             this.btnDeleteGestor.Size = new System.Drawing.Size(268, 28);
             this.btnDeleteGestor.TabIndex = 7;
@@ -175,7 +184,7 @@
             this.chkGereUtilizadores.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.chkGereUtilizadores.AutoSize = true;
             this.chkGereUtilizadores.Location = new System.Drawing.Point(392, 295);
-            this.chkGereUtilizadores.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.chkGereUtilizadores.Margin = new System.Windows.Forms.Padding(4);
             this.chkGereUtilizadores.Name = "chkGereUtilizadores";
             this.chkGereUtilizadores.Size = new System.Drawing.Size(133, 20);
             this.chkGereUtilizadores.TabIndex = 4;
@@ -197,7 +206,7 @@
             // 
             this.btGravarGestor.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btGravarGestor.Location = new System.Drawing.Point(392, 348);
-            this.btGravarGestor.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btGravarGestor.Margin = new System.Windows.Forms.Padding(4);
             this.btGravarGestor.Name = "btGravarGestor";
             this.btGravarGestor.Size = new System.Drawing.Size(268, 28);
             this.btGravarGestor.TabIndex = 5;
@@ -209,7 +218,7 @@
             // 
             this.txtPasswordGestor.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.txtPasswordGestor.Location = new System.Drawing.Point(392, 196);
-            this.txtPasswordGestor.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPasswordGestor.Margin = new System.Windows.Forms.Padding(4);
             this.txtPasswordGestor.Name = "txtPasswordGestor";
             this.txtPasswordGestor.Size = new System.Drawing.Size(267, 22);
             this.txtPasswordGestor.TabIndex = 2;
@@ -217,9 +226,10 @@
             // cbDepartamento
             // 
             this.cbDepartamento.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.cbDepartamento.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbDepartamento.FormattingEnabled = true;
             this.cbDepartamento.Location = new System.Drawing.Point(392, 250);
-            this.cbDepartamento.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbDepartamento.Margin = new System.Windows.Forms.Padding(4);
             this.cbDepartamento.Name = "cbDepartamento";
             this.cbDepartamento.Size = new System.Drawing.Size(267, 24);
             this.cbDepartamento.TabIndex = 3;
@@ -239,7 +249,7 @@
             // 
             this.txtUsernameGestor.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.txtUsernameGestor.Location = new System.Drawing.Point(392, 146);
-            this.txtUsernameGestor.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtUsernameGestor.Margin = new System.Windows.Forms.Padding(4);
             this.txtUsernameGestor.Name = "txtUsernameGestor";
             this.txtUsernameGestor.Size = new System.Drawing.Size(267, 22);
             this.txtUsernameGestor.TabIndex = 1;
@@ -259,7 +269,7 @@
             // 
             this.txtNomeGestor.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.txtNomeGestor.Location = new System.Drawing.Point(392, 98);
-            this.txtNomeGestor.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtNomeGestor.Margin = new System.Windows.Forms.Padding(4);
             this.txtNomeGestor.Name = "txtNomeGestor";
             this.txtNomeGestor.Size = new System.Drawing.Size(267, 22);
             this.txtNomeGestor.TabIndex = 0;
@@ -285,19 +295,28 @@
             this.groupBox3.Controls.Add(this.txtNomeProg);
             this.groupBox3.Controls.Add(this.label10);
             this.groupBox3.Location = new System.Drawing.Point(705, 15);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox3.Size = new System.Drawing.Size(681, 591);
             this.groupBox3.TabIndex = 39;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Programadores";
             // 
+            // txtIdProg
+            // 
+            this.txtIdProg.Enabled = false;
+            this.txtIdProg.Location = new System.Drawing.Point(392, 42);
+            this.txtIdProg.Name = "txtIdProg";
+            this.txtIdProg.ReadOnly = true;
+            this.txtIdProg.Size = new System.Drawing.Size(120, 22);
+            this.txtIdProg.TabIndex = 44;
+            // 
             // btnCreateProg
             // 
             this.btnCreateProg.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnCreateProg.Location = new System.Drawing.Point(392, 384);
-            this.btnCreateProg.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCreateProg.Margin = new System.Windows.Forms.Padding(4);
             this.btnCreateProg.Name = "btnCreateProg";
             this.btnCreateProg.Size = new System.Drawing.Size(268, 28);
             this.btnCreateProg.TabIndex = 14;
@@ -309,7 +328,7 @@
             // 
             this.btnDeleteProg.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnDeleteProg.Location = new System.Drawing.Point(392, 420);
-            this.btnDeleteProg.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDeleteProg.Margin = new System.Windows.Forms.Padding(4);
             this.btnDeleteProg.Name = "btnDeleteProg";
             this.btnDeleteProg.Size = new System.Drawing.Size(268, 28);
             this.btnDeleteProg.TabIndex = 15;
@@ -321,7 +340,7 @@
             // 
             this.btVoltar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btVoltar.Location = new System.Drawing.Point(544, 555);
-            this.btVoltar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btVoltar.Margin = new System.Windows.Forms.Padding(4);
             this.btVoltar.Name = "btVoltar";
             this.btVoltar.Size = new System.Drawing.Size(129, 28);
             this.btVoltar.TabIndex = 16;
@@ -343,9 +362,10 @@
             // cbGestorProg
             // 
             this.cbGestorProg.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.cbGestorProg.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbGestorProg.FormattingEnabled = true;
             this.cbGestorProg.Location = new System.Drawing.Point(392, 303);
-            this.cbGestorProg.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbGestorProg.Margin = new System.Windows.Forms.Padding(4);
             this.cbGestorProg.Name = "cbGestorProg";
             this.cbGestorProg.Size = new System.Drawing.Size(267, 24);
             this.cbGestorProg.TabIndex = 12;
@@ -365,7 +385,7 @@
             // 
             this.btGravarProg.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btGravarProg.Location = new System.Drawing.Point(392, 348);
-            this.btGravarProg.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btGravarProg.Margin = new System.Windows.Forms.Padding(4);
             this.btGravarProg.Name = "btGravarProg";
             this.btGravarProg.Size = new System.Drawing.Size(268, 28);
             this.btGravarProg.TabIndex = 13;
@@ -377,7 +397,7 @@
             // 
             this.txtPasswordProg.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.txtPasswordProg.Location = new System.Drawing.Point(392, 196);
-            this.txtPasswordProg.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPasswordProg.Margin = new System.Windows.Forms.Padding(4);
             this.txtPasswordProg.Name = "txtPasswordProg";
             this.txtPasswordProg.Size = new System.Drawing.Size(267, 22);
             this.txtPasswordProg.TabIndex = 10;
@@ -385,9 +405,10 @@
             // cbNivelProg
             // 
             this.cbNivelProg.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.cbNivelProg.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbNivelProg.FormattingEnabled = true;
             this.cbNivelProg.Location = new System.Drawing.Point(392, 250);
-            this.cbNivelProg.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbNivelProg.Margin = new System.Windows.Forms.Padding(4);
             this.cbNivelProg.Name = "cbNivelProg";
             this.cbNivelProg.Size = new System.Drawing.Size(267, 24);
             this.cbNivelProg.TabIndex = 11;
@@ -407,7 +428,7 @@
             // 
             this.txtUsernameProg.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.txtUsernameProg.Location = new System.Drawing.Point(392, 146);
-            this.txtUsernameProg.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtUsernameProg.Margin = new System.Windows.Forms.Padding(4);
             this.txtUsernameProg.Name = "txtUsernameProg";
             this.txtUsernameProg.Size = new System.Drawing.Size(267, 22);
             this.txtUsernameProg.TabIndex = 9;
@@ -428,9 +449,9 @@
             this.groupBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.groupBox4.Controls.Add(this.lstListaProgramadores);
             this.groupBox4.Location = new System.Drawing.Point(8, 23);
-            this.groupBox4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox4.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox4.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox4.Size = new System.Drawing.Size(365, 560);
             this.groupBox4.TabIndex = 32;
             this.groupBox4.TabStop = false;
@@ -442,7 +463,7 @@
             this.lstListaProgramadores.FormattingEnabled = true;
             this.lstListaProgramadores.ItemHeight = 16;
             this.lstListaProgramadores.Location = new System.Drawing.Point(4, 19);
-            this.lstListaProgramadores.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lstListaProgramadores.Margin = new System.Windows.Forms.Padding(4);
             this.lstListaProgramadores.Name = "lstListaProgramadores";
             this.lstListaProgramadores.Size = new System.Drawing.Size(357, 537);
             this.lstListaProgramadores.TabIndex = 0;
@@ -463,7 +484,7 @@
             // 
             this.txtNomeProg.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.txtNomeProg.Location = new System.Drawing.Point(392, 98);
-            this.txtNomeProg.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtNomeProg.Margin = new System.Windows.Forms.Padding(4);
             this.txtNomeProg.Name = "txtNomeProg";
             this.txtNomeProg.Size = new System.Drawing.Size(267, 22);
             this.txtNomeProg.TabIndex = 8;
@@ -479,24 +500,6 @@
             this.label10.TabIndex = 35;
             this.label10.Text = "Nome:";
             // 
-            // txtIdGestor
-            // 
-            this.txtIdGestor.Enabled = false;
-            this.txtIdGestor.Location = new System.Drawing.Point(392, 42);
-            this.txtIdGestor.Name = "txtIdGestor";
-            this.txtIdGestor.ReadOnly = true;
-            this.txtIdGestor.Size = new System.Drawing.Size(120, 22);
-            this.txtIdGestor.TabIndex = 43;
-            // 
-            // txtIdProg
-            // 
-            this.txtIdProg.Enabled = false;
-            this.txtIdProg.Location = new System.Drawing.Point(392, 42);
-            this.txtIdProg.Name = "txtIdProg";
-            this.txtIdProg.ReadOnly = true;
-            this.txtIdProg.Size = new System.Drawing.Size(120, 22);
-            this.txtIdProg.TabIndex = 44;
-            // 
             // frmGereUtilizadores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -504,17 +507,17 @@
             this.ClientSize = new System.Drawing.Size(1401, 620);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmGereUtilizadores";
             this.Text = "frmListaUtilizadores";
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtIdGestor)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
-            this.groupBox4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.txtIdGestor)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtIdProg)).EndInit();
+            this.groupBox4.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

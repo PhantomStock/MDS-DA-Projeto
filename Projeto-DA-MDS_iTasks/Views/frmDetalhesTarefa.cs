@@ -244,28 +244,43 @@ namespace iTasks
                                         }
                                         else
                                         {
-                                            //Criar nova tarefa
-                                            Tarefa tarefaNova = new Tarefa();
+                                            if (cbTipoTarefa.SelectedItem == null)
+                                            {
+                                                MessageBox.Show("Falta selecionar um tipo de tarefa", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                                return;
+                                            }
+                                            else
+                                            {
+                                                //Criar nova tarefa
+                                                Tarefa tarefaNova = new Tarefa();
 
-                                            tarefaNova.Id = (int)txtId.Value;
-                                            tarefaNova.Descricao = txtDesc.Text;
-                                            tarefaNova.DataCriacao = DateTime.Now;
-                                            tarefaNova.DataPrevistaInicio = dtInicio.Value;
-                                            tarefaNova.DataPrevistaFim = dtFim.Value;
-                                            tarefaNova.DataRealInicio = null;
-                                            tarefaNova.DataRealFim = null;
-                                            tarefaNova.EstadoAtual = Enums.EstadoAtual.ToDo;
-                                            tarefaNova.StoryPoints = (int)txtStoryPoints.Value;
-                                            tarefaNova.OrdemExecucao = (int)txtOrdem.Value;
-                                            tarefaNova.IdTipoTarefa = TipoTarefaSelecionado.Id;
-                                            tarefaNova.IdProgramador = programadorSelecionado.Id;
-                                            tarefaNova.IdGestor = gestor.Id;
+                                                tarefaNova.Id = (int)txtId.Value;
+                                                tarefaNova.Descricao = txtDesc.Text;
+                                                tarefaNova.DataCriacao = DateTime.Now;
+                                                tarefaNova.DataPrevistaInicio = dtInicio.Value;
+                                                tarefaNova.DataPrevistaFim = dtFim.Value;
+                                                tarefaNova.DataRealInicio = null;
+                                                tarefaNova.DataRealFim = null;
+                                                tarefaNova.EstadoAtual = Enums.EstadoAtual.ToDo;
+                                                tarefaNova.StoryPoints = (int)txtStoryPoints.Value;
+                                                tarefaNova.OrdemExecucao = (int)txtOrdem.Value;
+                                                tarefaNova.IdTipoTarefa = TipoTarefaSelecionado.Id;
+                                                tarefaNova.IdProgramador = programadorSelecionado.Id;
+                                                tarefaNova.IdGestor = gestor.Id;
 
-                                            controllerTarefa.CriarTarefa(tarefaNova);
+                                                controllerTarefa.CriarTarefa(tarefaNova);
 
-                                            kanban.RefreshDadosListBoxes();
-                                            MessageBox.Show("Tarefa criada com sucesso.", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                            LimparCampos();
+                                                //campo Id é atualizado para o mesmo que o id da tarefa que está a ser atualizada
+                                                int Id = (int)txtId.Value;
+
+                                                //atualiza o id da tarefa para o mesmo que o id da tarefa que está a ser atualizada
+                                                AtualizarIdTarefa(Id);
+
+                                                kanban.RefreshDadosListBoxes();
+                                                MessageBox.Show("Tarefa criada com sucesso.", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                                LimparCampos();
+                                            }
+
                                         }
                                     }
                                 }
@@ -275,7 +290,7 @@ namespace iTasks
                     //  this.Close();
                 }else{
                     //apresenta mensagem de erro caos o programador seja nulo
-                    MessageBox.Show("O programador não pode ser nulo.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Programador selecionado é inválido ou está vazio.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
@@ -287,18 +302,15 @@ namespace iTasks
 
         private void LimparCampos()
         {
-            txtId.Value = 0;
             txtDesc.Text = "";
-            txtDataCriacao.Text = "";
             txtDataRealini.Text = "";
             txtDataRealFim.Text = "";
             txtOrdem.Value = 1;
             txtStoryPoints.Value = 1;
-            cbTipoTarefa.SelectedIndex = -1;
-            cbProgramador.SelectedIndex = -1;
+            cbTipoTarefa.SelectedIndex = 0;
+            cbProgramador.SelectedIndex = 0;
             dtInicio.Value = DateTime.Now;
             dtFim.Value = DateTime.Now;
-            txtEstado.Text = "";
         }
 
         //instancia uma nova tarefa
