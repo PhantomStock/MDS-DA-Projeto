@@ -18,12 +18,10 @@ namespace iTasks.Controllers
             var utilizador = db.Utilizador
                 .FirstOrDefault(u => u.Username == username && u.Password == password);
 
-            SessaoAtual.Utilizador = utilizador; // Guarda o utilizador na sessão atual
-
             return utilizador;
-
         }
 
+        //carrega a base de dados com utilizadores iniciais
         public void SetupBaseDeDados()
         {
             // Configura a base de dados com alguns utilizadores iniciais

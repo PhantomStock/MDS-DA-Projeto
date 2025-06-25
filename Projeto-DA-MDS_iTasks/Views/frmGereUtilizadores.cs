@@ -93,7 +93,7 @@ namespace iTasks
                     Departamento = departamento,
                     GereUtilizadores = gereUtilizadores
                 };
-                controllerDados.atualizarDadosGestor(gestor);
+                controllerDados.AtualizarDadosGestor(gestor);
             }
             else
             {
@@ -279,6 +279,7 @@ namespace iTasks
                 }
             }
         }
+        //===========================================================================================================
         // Evento para preencher os campos de texto com os dados do gestor quando um item é selecionado
         private void lstListaGestores_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -300,7 +301,7 @@ namespace iTasks
         {
             this.Close();
         }
-
+        //===========================================================================================================
         //funcoes de atualizações
         public void AtualizarIdUtilizadores(int tipo)
         {
@@ -321,14 +322,17 @@ namespace iTasks
             
         }
 
-        //?????
+
         //======================================================================
+        // Método genérico para atualizar o DataSource de uma ListBox
         public void AtualizarListBox<T>(ListBox listBox, List<T> dataSource)
         {
             listBox.DataSource = null;
             listBox.DataSource = dataSource;
         }
 
+        //======================================================================
+        // Método para atualizar o ComboBox de gestores
         public void AtualizarGestorComboBox()
         {
             cbGestorProg.DataSource = null;

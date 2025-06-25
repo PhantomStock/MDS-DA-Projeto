@@ -12,13 +12,19 @@ namespace iTasks.Controllers
         ControllerDados controllerDados = new ControllerDados();
         public string ExibirPrevisao()
         {
+            // Método para exibir a previsão de conclusão das tarefas
             string texto;
 
             double tempoPrevisto = CalcularTempoPrevistoTodasTarefasTodo();
+            // Converte o tempo previsto de horas para minutos e depois separa em horas e minutos
             int totalMinutos = (int)Math.Round(tempoPrevisto * 60);
+
+            // Calcula as horas e minutos a partir do total de minutos
             int horas = totalMinutos / 60;
             int minutos = totalMinutos % 60;
-            return horas+";"+minutos;
+
+            // Retorna o tempo previsto formatado como "horas;minutos"
+            return horas +";"+minutos;
         }
 
         public double CalcularTempoPrevistoTodasTarefasTodo()
@@ -44,7 +50,10 @@ namespace iTasks.Controllers
             // Para cada tarefa Todo, calcular o tempo previsto com base na média de tempo gasto por Story Points
             foreach (var tarefa in tarefasTodo)
             {
+                // Inicializa o tempo previsto para a tarefa atual
                 double tempoPrevisto = 0;
+
+                // Verifica se a tarefa tem Story Points
                 if (tarefa.StoryPoints > 0)
                 {
                     //Verifica se se o calculo da media de tempo gasto por story poins foi feito
@@ -67,19 +76,8 @@ namespace iTasks.Controllers
                 tempoTotalPrevisto += tempoPrevisto;
             }
 
+            // Retorna o tempo total previsto para todas as tarefas Todo
             return tempoTotalPrevisto;
         }
-
-
-
-
-
-
-
-
-
-
-
-
     }
 }

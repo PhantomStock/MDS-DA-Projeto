@@ -95,7 +95,9 @@ namespace iTasks
         // funcao para criar uma nova tarefa
         public void NovaTarefa()
         {
-            AtualizarIdTarefa(txtId);
+            int Id = (int)txtId.Value;
+
+            AtualizarIdTarefa(Id);
 
             txtEstado.Text = Enums.EstadoAtual.ToDo.ToString();
             txtDataCriacao.Text = DateTime.Now.ToString("dd/MM/yyyy");
@@ -112,7 +114,7 @@ namespace iTasks
                 MessageBox.Show("Tarefa não encontrada.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             } else {
-                txtId.Text = tarefa.Id.ToString();
+                txtId.Value = tarefa.Id;
                 txtEstado.Text = tarefa.EstadoAtual.ToString();
                 txtDataCriacao.Text = tarefa.DataCriacao?.ToString("dd/MM/yyyy") ?? string.Empty;
                 txtDataRealini.Text = tarefa.DataRealInicio?.ToString("dd/MM/yyyy") ?? string.Empty;
@@ -246,7 +248,7 @@ namespace iTasks
                                             //Criar nova tarefa
                                             Tarefa tarefaNova = new Tarefa();
 
-                                            tarefaNova.Id = Convert.ToInt32(txtId.Text);
+                                            tarefaNova.Id = (int)txtId.Value;
                                             tarefaNova.Descricao = txtDesc.Text;
                                             tarefaNova.DataCriacao = DateTime.Now;
                                             tarefaNova.DataPrevistaInicio = dtInicio.Value;
@@ -271,7 +273,6 @@ namespace iTasks
                             }
                         }
                     }
-
                     //  this.Close();
                 }else{
                     //apresenta mensagem de erro caos o programador seja nulo
@@ -287,7 +288,7 @@ namespace iTasks
 
         private void LimparCampos()
         {
-            txtId.Text = "";
+            txtId.Value = 0;
             txtDesc.Text = "";
             txtDataCriacao.Text = "";
             txtDataRealini.Text = "";
@@ -302,13 +303,12 @@ namespace iTasks
         }
 
         //instancia uma nova tarefa
-        public void AtualizarIdTarefa(TextBox textBox)
+        public void AtualizarIdTarefa(int valorId)
         {
             var Tarefa = controllerDados.ObterTodasTarefas();
-            int proximoId = (Tarefa.Count == 0) ? 1 : Tarefa.Max(u => u.Id) + 1;
-            textBox.Text = proximoId.ToString();
+            int proximoId = (Tarefa.Count == 0 || Tarefa.Count == null) ? 1 : Tarefa.Max(u => u.Id) + 1;
+            txtId.Value = proximoId;
         }
-
 
 
     }

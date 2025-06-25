@@ -15,31 +15,35 @@ namespace iTasks
 {
     public partial class frmLogin : Form
     {
-        BaseDeDados db => BaseDeDados.Instance;
+        // Controlador responsável pelo login e configuração da base de dados
         ControllerLogin controllerLogin = new ControllerLogin();
         public frmLogin()
         {
             InitializeComponent();
-            controllerLogin.SetupBaseDeDados(); // Configura a base de dados com utilizadores iniciais
+            // Configura a base de dados com um Gestor inicial(nome: admin /username: admin / senha: admin)
+            controllerLogin.SetupBaseDeDados(); 
         }
 
-        private void btRegistar_Click(object sender, EventArgs e)
-        {
-            frmGereUtilizadores registar = new frmGereUtilizadores();
-            registar.Show();
-        }
+
         private void btLogin_Click(object sender, EventArgs e)
         {
+            // Obtém os valores dos campos de texto para o login
             string username = txtUsername.Text;
             string password = txtPassword.Text;
 
+            // Verifica as credenciais inseridas e usamos o FirstOrDefault para ver se o utilizador existe ou não
             var utilizador = controllerLogin.Login(username, password);
 
+            // Se o utilizador for encontrado, armazena-o na sessão atual e abre o formulário principal
             if (utilizador != null)
             {
-                SessaoAtual.Utilizador = utilizador; // Guarda o utilizador na sessão atual
+                // Guarda o utilizador na sessão atual
+                SessaoAtual.Utilizador = utilizador;
 
+                // Exibe uma mensagem de sucesso e abre o formulário principal
                 MessageBox.Show("Login successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                // Abre o formulário principal (Kanban)
                 new frmKanban().Show();
                 this.Hide();
             }

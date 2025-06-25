@@ -17,19 +17,31 @@ namespace iTasks.Views
         public frmPrevisaoDeConclusao()
         {
             InitializeComponent();
+            // Inicializa os campos de horas e minutos com a previsão de conclusão
             string tempoPrevistoCompleto = controllerPrevisaoDeConclusao.ExibirPrevisao();
+
+            // Divide o tempo previsto em horas e minutos
             string[] partes = tempoPrevistoCompleto.Split(';');
+            //Horas
             txbHoras.Text = partes[0];
+            //Minutos
             txbMinutos.Text = partes[1];
         }
 
         private void btnRefreshTempoPrevisto_Click(object sender, EventArgs e)
         {
-
+            // Atualiza os campos de horas e minutos com a previsão de conclusão atualizada
             ControllerPrevisaoDeConclusao controller = new ControllerPrevisaoDeConclusao();
+
+            // Obtém a previsão de conclusão atualizada
             string tempoPrevistoCompleto = controllerPrevisaoDeConclusao.ExibirPrevisao();
+
+            // Divide o tempo previsto em horas e minutos
             string[] partes = tempoPrevistoCompleto.Split(';');
+
+            //Horas
             txbHoras.Text = partes[0];
+            //Minutos
             txbMinutos.Text = partes[1];
         }
 
